@@ -1,0 +1,638 @@
+{
+  "version": "KJV",
+  "batch": 7,
+  "mood": "tired",
+  "count": 70,
+  "verses": [
+    {
+      "reference": "Matthew 11:28-30",
+      "text": "Come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light.",
+      "book": "Matthew",
+      "chapter": 11,
+      "verse_start": 28,
+      "verse_end": 30,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 23:1-3",
+      "text": "The LORD is my shepherd; I shall not want. He maketh me to lie down in green pastures: he leadeth me beside the still waters. He restoreth my soul: he leadeth me in the paths of righteousness for his name's sake.",
+      "book": "Psalms",
+      "chapter": 23,
+      "verse_start": 1,
+      "verse_end": 3,
+      "mood": "tired"
+    },
+    {
+      "reference": "Isaiah 40:29-31",
+      "text": "He giveth power to the faint; and to them that have no might he increaseth strength. Even the youths shall faint and be weary, and the young men shall utterly fall: But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.",
+      "book": "Isaiah",
+      "chapter": 40,
+      "verse_start": 29,
+      "verse_end": 31,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 46:10",
+      "text": "Be still, and know that I am God: I will be exalted among the heathen, I will be exalted in the earth.",
+      "book": "Psalms",
+      "chapter": 46,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Exodus 33:14",
+      "text": "And he said, My presence shall go with thee, and I will give thee rest.",
+      "book": "Exodus",
+      "chapter": 33,
+      "verse_start": 14,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Deuteronomy 33:12",
+      "text": "And of Benjamin he said, The beloved of the LORD shall dwell in safety by him; and the LORD shall cover him all the day long, and he shall dwell between his shoulders.",
+      "book": "Deuteronomy",
+      "chapter": 33,
+      "verse_start": 12,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Joshua 1:13",
+      "text": "Remember the word which Moses the servant of the LORD commanded you, saying, The LORD your God hath given you rest, and hath given you this land.",
+      "book": "Joshua",
+      "chapter": 1,
+      "verse_start": 13,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Joshua 21:44",
+      "text": "And the LORD gave them rest round about, according to all that he sware unto their fathers: and there stood not a man of all their enemies before them; the LORD delivered all their enemies into their hand.",
+      "book": "Joshua",
+      "chapter": 21,
+      "verse_start": 44,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "1 Kings 19:5-7",
+      "text": "And as he lay and slept under a juniper tree, behold, then an angel touched him, and said unto him, Arise and eat. And he looked, and, behold, there was a cake baken on the coals, and a cruse of water at his head. And he did eat and drink, and laid him down again. And the angel of the LORD came again the second time, and touched him, and said, Arise and eat; because the journey is too great for thee.",
+      "book": "1 Kings",
+      "chapter": 19,
+      "verse_start": 5,
+      "verse_end": 7,
+      "mood": "tired"
+    },
+    {
+      "reference": "Job 11:18-19",
+      "text": "And thou shalt be secure, because there is hope; yea, thou shalt dig about thee, and thou shalt take thy rest in safety. Also thou shalt lie down, and none shall make thee afraid; yea, many shall make suit unto thee.",
+      "book": "Job",
+      "chapter": 11,
+      "verse_start": 18,
+      "verse_end": 19,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 4:8",
+      "text": "I will both lay me down in peace, and sleep: for thou, LORD, only makest me dwell in safety.",
+      "book": "Psalms",
+      "chapter": 4,
+      "verse_start": 8,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 16:9",
+      "text": "Therefore my heart is glad, and my glory rejoiceth: my flesh also shall rest in hope.",
+      "book": "Psalms",
+      "chapter": 16,
+      "verse_start": 9,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 23:2",
+      "text": "He maketh me to lie down in green pastures: he leadeth me beside the still waters.",
+      "book": "Psalms",
+      "chapter": 23,
+      "verse_start": 2,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 37:7",
+      "text": "Rest in the LORD, and wait patiently for him: fret not thyself because of him who prospereth in his way, because of the man who bringeth wicked devices to pass.",
+      "book": "Psalms",
+      "chapter": 37,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 55:6",
+      "text": "And I said, Oh that I had wings like a dove! for then would I fly away, and be at rest.",
+      "book": "Psalms",
+      "chapter": 55,
+      "verse_start": 6,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 62:1",
+      "text": "Truly my soul waiteth upon God: from him cometh my salvation.",
+      "book": "Psalms",
+      "chapter": 62,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 62:5",
+      "text": "My soul, wait thou only upon God; for my expectation is from him.",
+      "book": "Psalms",
+      "chapter": 62,
+      "verse_start": 5,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 90:17",
+      "text": "And let the beauty of the LORD our God be upon us: and establish thou the work of our hands upon us; yea, the work of our hands establish thou it.",
+      "book": "Psalms",
+      "chapter": 90,
+      "verse_start": 17,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 91:1",
+      "text": "He that dwelleth in the secret place of the most High shall abide under the shadow of the Almighty.",
+      "book": "Psalms",
+      "chapter": 91,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 116:7",
+      "text": "Return unto thy rest, O my soul; for the LORD hath dealt bountifully with thee.",
+      "book": "Psalms",
+      "chapter": 116,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 119:28",
+      "text": "My soul melteth for heaviness: strengthen thou me according unto thy word.",
+      "book": "Psalms",
+      "chapter": 119,
+      "verse_start": 28,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 119:50",
+      "text": "This is my comfort in my affliction: for thy word hath quickened me.",
+      "book": "Psalms",
+      "chapter": 119,
+      "verse_start": 50,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 119:107",
+      "text": "I am afflicted very much: quicken me, O LORD, according unto thy word.",
+      "book": "Psalms",
+      "chapter": 119,
+      "verse_start": 107,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 119:143",
+      "text": "Trouble and anguish have taken hold on me: yet thy commandments are my delights.",
+      "book": "Psalms",
+      "chapter": 119,
+      "verse_start": 143,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 127:2",
+      "text": "It is vain for you to rise up early, to sit up late, to eat the bread of sorrows: for so he giveth his beloved sleep.",
+      "book": "Psalms",
+      "chapter": 127,
+      "verse_start": 2,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Psalm 131:2",
+      "text": "Surely I have behaved and quieted myself, as a child that is weaned of his mother: my soul is even as a weaned child.",
+      "book": "Psalms",
+      "chapter": 131,
+      "verse_start": 2,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Proverbs 3:24",
+      "text": "When thou liest down, thou shalt not be afraid: yea, thou shalt lie down, and thy sleep shall be sweet.",
+      "book": "Proverbs",
+      "chapter": 3,
+      "verse_start": 24,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Proverbs 19:23",
+      "text": "The fear of the LORD tendeth to life: and he that hath it shall abide satisfied; he shall not be visited with evil.",
+      "book": "Proverbs",
+      "chapter": 19,
+      "verse_start": 23,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Ecclesiastes 2:24",
+      "text": "There is nothing better for a man, than that he should eat and drink, and that he should make his soul enjoy good in his labour. This also I saw, that it was from the hand of God.",
+      "book": "Ecclesiastes",
+      "chapter": 2,
+      "verse_start": 24,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Ecclesiastes 4:6",
+      "text": "Better is an handful with quietness, than both the hands full with travail and vexation of spirit.",
+      "book": "Ecclesiastes",
+      "chapter": 4,
+      "verse_start": 6,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Ecclesiastes 9:7",
+      "text": "Go thy way, eat thy bread with joy, and drink thy wine with a merry heart; for God now accepteth thy works.",
+      "book": "Ecclesiastes",
+      "chapter": 9,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Isaiah 11:10",
+      "text": "And in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious.",
+      "book": "Isaiah",
+      "chapter": 11,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Isaiah 14:3",
+      "text": "And it shall come to pass in the day that the LORD shall give thee rest from thy sorrow, and from thy fear, and from the hard bondage wherein thou wast made to serve,",
+      "book": "Isaiah",
+      "chapter": 14,
+      "verse_start": 3,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Isaiah 28:12",
+      "text": "To whom he said, This is the rest wherewith ye may cause the weary to rest; and this is the refreshing: yet they would not hear.",
+      "book": "Isaiah",
+      "chapter": 28,
+      "verse_start": 12,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Isaiah 30:15",
+      "text": "For thus saith the Lord GOD, the Holy One of Israel; In returning and rest shall ye be saved; in quietness and in confidence shall be your strength: and ye would not.",
+      "book": "Isaiah",
+      "chapter": 30,
+      "verse_start": 15,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Isaiah 32:17-18",
+      "text": "And the work of righteousness shall be peace; and the effect of righteousness quietness and assurance for ever. And my people shall dwell in a peaceable habitation, and in sure dwellings, and in quiet resting places;",
+      "book": "Isaiah",
+      "chapter": 32,
+      "verse_start": 17,
+      "verse_end": 18,
+      "mood": "tired"
+    },
+    {
+      "reference": "Isaiah 40:28",
+      "text": "Hast thou not known? hast thou not heard, that the everlasting God, the LORD, the Creator of the ends of the earth, fainteth not, neither is weary? there is no searching of his understanding.",
+      "book": "Isaiah",
+      "chapter": 40,
+      "verse_start": 28,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Isaiah 50:4",
+      "text": "The Lord GOD hath given me the tongue of the learned, that I should know how to speak a word in season to him that is weary: he wakeneth morning by morning, he wakeneth mine ear to hear as the learned.",
+      "book": "Isaiah",
+      "chapter": 50,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Isaiah 57:18-19",
+      "text": "I have seen his ways, and will heal him: I will lead him also, and restore comforts unto him and to his mourners. I create the fruit of the lips; Peace, peace to him that is far off, and to him that is near, saith the LORD; and I will heal him.",
+      "book": "Isaiah",
+      "chapter": 57,
+      "verse_start": 18,
+      "verse_end": 19,
+      "mood": "tired"
+    },
+    {
+      "reference": "Isaiah 63:14",
+      "text": "As a beast goeth down into the valley, the Spirit of the LORD caused him to rest: so didst thou lead thy people, to make thyself a glorious name.",
+      "book": "Isaiah",
+      "chapter": 63,
+      "verse_start": 14,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Jeremiah 6:16",
+      "text": "Thus saith the LORD, Stand ye in the ways, and see, and ask for the old paths, where is the good way, and walk therein, and ye shall find rest for your souls. But they said, We will not walk therein.",
+      "book": "Jeremiah",
+      "chapter": 6,
+      "verse_start": 16,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Jeremiah 31:25",
+      "text": "For I have satiated the weary soul, and I have replenished every sorrowful soul.",
+      "book": "Jeremiah",
+      "chapter": 31,
+      "verse_start": 25,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Lamentations 5:21",
+      "text": "Turn thou us unto thee, O LORD, and we shall be turned; renew our days as of old.",
+      "book": "Lamentations",
+      "chapter": 5,
+      "verse_start": 21,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Ezekiel 34:15",
+      "text": "I will feed my flock, and I will cause them to lie down, saith the Lord GOD.",
+      "book": "Ezekiel",
+      "chapter": 34,
+      "verse_start": 15,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Hosea 2:18",
+      "text": "And in that day will I make a covenant for them with the beasts of the field, and with the fowls of heaven, and with the creeping things of the ground: and I will break the bow and the sword and the battle out of the earth, and will make them to lie down safely.",
+      "book": "Hosea",
+      "chapter": 2,
+      "verse_start": 18,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Hosea 11:4",
+      "text": "I drew them with cords of a man, with bands of love: and I was to them as they that take off the yoke on their jaws, and I laid meat unto them.",
+      "book": "Hosea",
+      "chapter": 11,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Micah 2:10",
+      "text": "Arise ye, and depart; for this is not your rest: because it is polluted, it shall destroy you, even with a sore destruction.",
+      "book": "Micah",
+      "chapter": 2,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Zechariah 9:12",
+      "text": "Turn you to the strong hold, ye prisoners of hope: even to day do I declare that I will render double unto thee;",
+      "book": "Zechariah",
+      "chapter": 9,
+      "verse_start": 12,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Matthew 6:25",
+      "text": "Therefore I say unto you, Take no thought for your life, what ye shall eat, or what ye shall drink; nor yet for your body, what ye shall put on. Is not the life more than meat, and the body than raiment?",
+      "book": "Matthew",
+      "chapter": 6,
+      "verse_start": 25,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Matthew 26:41",
+      "text": "Watch and pray, that ye enter not into temptation: the spirit indeed is willing, but the flesh is weak.",
+      "book": "Matthew",
+      "chapter": 26,
+      "verse_start": 41,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Mark 6:31",
+      "text": "And he said unto them, Come ye yourselves apart into a desert place, and rest a while: for there were many coming and going, and they had no leisure so much as to eat.",
+      "book": "Mark",
+      "chapter": 6,
+      "verse_start": 31,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Luke 5:16",
+      "text": "And he withdrew himself into the wilderness, and prayed.",
+      "book": "Luke",
+      "chapter": 5,
+      "verse_start": 16,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Luke 21:34",
+      "text": "And take heed to yourselves, lest at any time your hearts be overcharged with surfeiting, and drunkenness, and cares of this life, and so that day come upon you unawares.",
+      "book": "Luke",
+      "chapter": 21,
+      "verse_start": 34,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "John 4:6",
+      "text": "Now Jacob's well was there. Jesus therefore, being wearied with his journey, sat thus on the well: and it was about the sixth hour.",
+      "book": "John",
+      "chapter": 4,
+      "verse_start": 6,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "John 6:35",
+      "text": "And Jesus said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst.",
+      "book": "John",
+      "chapter": 6,
+      "verse_start": 35,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Romans 8:26",
+      "text": "Likewise the Spirit also helpeth our infirmities: for we know not what we should pray for as we ought: but the Spirit itself maketh intercession for us with groanings which cannot be uttered.",
+      "book": "Romans",
+      "chapter": 8,
+      "verse_start": 26,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "2 Corinthians 12:9-10",
+      "text": "And he said unto me, My grace is sufficient for thee: for my strength is made perfect in weakness. Most gladly therefore will I rather glory in my infirmities, that the power of Christ may rest upon me. Therefore I take pleasure in infirmities, in reproaches, in necessities, in persecutions, in distresses for Christ's sake: for when I am weak, then am I strong.",
+      "book": "2 Corinthians",
+      "chapter": 12,
+      "verse_start": 9,
+      "verse_end": 10,
+      "mood": "tired"
+    },
+    {
+      "reference": "Galatians 6:9",
+      "text": "And let us not be weary in well doing: for in due season we shall reap, if we faint not.",
+      "book": "Galatians",
+      "chapter": 6,
+      "verse_start": 9,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Ephesians 5:14",
+      "text": "Wherefore he saith, Awake thou that sleepest, and arise from the dead, and Christ shall give thee light.",
+      "book": "Ephesians",
+      "chapter": 5,
+      "verse_start": 14,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Philippians 2:13",
+      "text": "For it is God which worketh in you both to will and to do of his good pleasure.",
+      "book": "Philippians",
+      "chapter": 2,
+      "verse_start": 13,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Colossians 1:29",
+      "text": "Whereunto I also labour, striving according to his working, which worketh in me mightily.",
+      "book": "Colossians",
+      "chapter": 1,
+      "verse_start": 29,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "2 Thessalonians 3:13",
+      "text": "But ye, brethren, be not weary in well doing.",
+      "book": "2 Thessalonians",
+      "chapter": 3,
+      "verse_start": 13,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Hebrews 4:1",
+      "text": "Let us therefore fear, lest, a promise being left us of entering into his rest, any of you should seem to come short of it.",
+      "book": "Hebrews",
+      "chapter": 4,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Hebrews 4:9-11",
+      "text": "There remaineth therefore a rest to the people of God. For he that is entered into his rest, he also hath ceased from his own works, as God did from his. Let us labour therefore to enter into that rest, lest any man fall after the same example of unbelief.",
+      "book": "Hebrews",
+      "chapter": 4,
+      "verse_start": 9,
+      "verse_end": 11,
+      "mood": "tired"
+    },
+    {
+      "reference": "Hebrews 6:10",
+      "text": "For God is not unrighteous to forget your work and labour of love, which ye have shewed toward his name, in that ye have ministered to the saints, and do minister.",
+      "book": "Hebrews",
+      "chapter": 6,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "Hebrews 12:12-13",
+      "text": "Wherefore lift up the hands which hang down, and the feeble knees; And make straight paths for your feet, lest that which is lame be turned out of the way; but let it rather be healed.",
+      "book": "Hebrews",
+      "chapter": 12,
+      "verse_start": 12,
+      "verse_end": 13,
+      "mood": "tired"
+    },
+    {
+      "reference": "James 1:12",
+      "text": "Blessed is the man that endureth temptation: for when he is tried, he shall receive the crown of life, which the Lord hath promised to them that love him.",
+      "book": "James",
+      "chapter": 1,
+      "verse_start": 12,
+      "verse_end": null,
+      "mood": "tired"
+    },
+    {
+      "reference": "1 Peter 1:6-7",
+      "text": "Wherein ye greatly rejoice, though now for a season, if need be, ye are in heaviness through manifold temptations: That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Jesus Christ:",
+      "book": "1 Peter",
+      "chapter": 1,
+      "verse_start": 6,
+      "verse_end": 7,
+      "mood": "tired"
+    },
+    {
+      "reference": "1 Peter 4:12-13",
+      "text": "Beloved, think it not strange concerning the fiery trial which is to try you, as though some strange thing happened unto you: But rejoice, inasmuch as ye are partakers of Christ's sufferings; that, when his glory shall be revealed, ye may be glad also with exceeding joy.",
+      "book": "1 Peter",
+      "chapter": 4,
+      "verse_start": 12,
+      "verse_end": 13,
+      "mood": "tired"
+    },
+    {
+      "reference": "Revelation 14:13",
+      "text": "And I heard a voice from heaven saying unto me, Write, Blessed are the dead which die in the Lord from henceforth: Yea, saith the Spirit, that they may rest from their labours; and their works do follow them.",
+      "book": "Revelation",
+      "chapter": 14,
+      "verse_start": 13,
+      "verse_end": null,
+      "mood": "tired"
+    }
+  ]
+}

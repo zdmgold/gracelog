@@ -1,0 +1,602 @@
+{
+  "version": "KJV",
+  "batch": 6,
+  "mood": "worried",
+  "count": 66,
+  "verses": [
+    {
+      "reference": "Matthew 6:25",
+      "text": "Therefore I say unto you, Take no thought for your life, what ye shall eat, or what ye shall drink; nor yet for your body, what ye shall put on. Is not the life more than meat, and the body than raiment?",
+      "book": "Matthew",
+      "chapter": 6,
+      "verse_start": 25,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Matthew 6:27",
+      "text": "Which of you by taking thought can add one cubit unto his stature?",
+      "book": "Matthew",
+      "chapter": 6,
+      "verse_start": 27,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Matthew 6:31-33",
+      "text": "Therefore take no thought, saying, What shall we eat? or, What shall we drink? or, Wherewithal shall we be clothed? (For after all these things do the Gentiles seek:) for your heavenly Father knoweth that ye have need of all these things. But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you.",
+      "book": "Matthew",
+      "chapter": 6,
+      "verse_start": 31,
+      "verse_end": 33,
+      "mood": "worried"
+    },
+    {
+      "reference": "Luke 12:22",
+      "text": "And he said unto his disciples, Therefore I say unto you, Take no thought for your life, what ye shall eat; neither for the body, what ye shall put on.",
+      "book": "Luke",
+      "chapter": 12,
+      "verse_start": 22,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Luke 12:29-30",
+      "text": "And seek not ye what ye shall eat, or what ye shall drink, neither be ye of doubtful mind. For all these things do the nations of the world seek after: and your Father knoweth that ye have need of these things.",
+      "book": "Luke",
+      "chapter": 12,
+      "verse_start": 29,
+      "verse_end": 30,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 37:1-2",
+      "text": "Fret not thyself because of evildoers, neither be thou envious against the workers of iniquity. For they shall soon be cut down like the grass, and wither as the green herb.",
+      "book": "Psalms",
+      "chapter": 37,
+      "verse_start": 1,
+      "verse_end": 2,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 37:7-8",
+      "text": "Rest in the LORD, and wait patiently for him: fret not thyself because of him who prospereth in his way, because of the man who bringeth wicked devices to pass. Cease from anger, and forsake wrath: fret not thyself in any wise to do evil.",
+      "book": "Psalms",
+      "chapter": 37,
+      "verse_start": 7,
+      "verse_end": 8,
+      "mood": "worried"
+    },
+    {
+      "reference": "Proverbs 12:25",
+      "text": "Heaviness in the heart of man maketh it stoop: but a good word maketh it glad.",
+      "book": "Proverbs",
+      "chapter": 12,
+      "verse_start": 25,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Proverbs 17:22",
+      "text": "A merry heart doeth good like a medicine: but a broken spirit drieth the bones.",
+      "book": "Proverbs",
+      "chapter": 17,
+      "verse_start": 22,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Isaiah 35:3-4",
+      "text": "Strengthen ye the weak hands, and confirm the feeble knees. Say to them that are of a fearful heart, Be strong, fear not: behold, your God will come with vengeance, even God with a recompence; he will come and save you.",
+      "book": "Isaiah",
+      "chapter": 35,
+      "verse_start": 3,
+      "verse_end": 4,
+      "mood": "worried"
+    },
+    {
+      "reference": "Isaiah 41:10",
+      "text": "Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.",
+      "book": "Isaiah",
+      "chapter": 41,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Isaiah 41:13",
+      "text": "For I the LORD thy God will hold thy right hand, saying unto thee, Fear not; I will help thee.",
+      "book": "Isaiah",
+      "chapter": 41,
+      "verse_start": 13,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Isaiah 43:1",
+      "text": "But now thus saith the LORD that created thee, O Jacob, and he that formed thee, O Israel, Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine.",
+      "book": "Isaiah",
+      "chapter": 43,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Jeremiah 1:8",
+      "text": "Be not afraid of their faces: for I am with thee to deliver thee, saith the LORD.",
+      "book": "Jeremiah",
+      "chapter": 1,
+      "verse_start": 8,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Jeremiah 29:11",
+      "text": "For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end.",
+      "book": "Jeremiah",
+      "chapter": 29,
+      "verse_start": 11,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Jeremiah 30:10",
+      "text": "Therefore fear thou not, O my servant Jacob, saith the LORD; neither be dismayed, O Israel: for, lo, I will save thee from afar, and thy seed from the land of their captivity; and Jacob shall return, and shall be in rest, and be quiet, and none shall make him afraid.",
+      "book": "Jeremiah",
+      "chapter": 30,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Lamentations 3:22-23",
+      "text": "It is of the LORD'S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.",
+      "book": "Lamentations",
+      "chapter": 3,
+      "verse_start": 22,
+      "verse_end": 23,
+      "mood": "worried"
+    },
+    {
+      "reference": "Lamentations 3:31-32",
+      "text": "For the Lord will not cast off for ever: But though he cause grief, yet will he have compassion according to the multitude of his mercies.",
+      "book": "Lamentations",
+      "chapter": 3,
+      "verse_start": 31,
+      "verse_end": 32,
+      "mood": "worried"
+    },
+    {
+      "reference": "Matthew 10:28-31",
+      "text": "And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell. Are not two sparrows sold for a farthing? and one of them shall not fall on the ground without your Father. But the very hairs of your head are all numbered. Fear ye not therefore, ye are of more value than many sparrows.",
+      "book": "Matthew",
+      "chapter": 10,
+      "verse_start": 28,
+      "verse_end": 31,
+      "mood": "worried"
+    },
+    {
+      "reference": "Matthew 11:28-30",
+      "text": "Come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light.",
+      "book": "Matthew",
+      "chapter": 11,
+      "verse_start": 28,
+      "verse_end": 30,
+      "mood": "worried"
+    },
+    {
+      "reference": "Mark 5:36",
+      "text": "As soon as Jesus heard the word that was spoken, he saith unto the ruler of the synagogue, Be not afraid, only believe.",
+      "book": "Mark",
+      "chapter": 5,
+      "verse_start": 36,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Luke 8:50",
+      "text": "But when Jesus heard it, he answered him, saying, Fear not: believe only, and she shall be made whole.",
+      "book": "Luke",
+      "chapter": 8,
+      "verse_start": 50,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Luke 12:7",
+      "text": "But even the very hairs of your head are all numbered. Fear not therefore: ye are of more value than many sparrows.",
+      "book": "Luke",
+      "chapter": 12,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "John 14:1",
+      "text": "Let not your heart be troubled: ye believe in God, believe also in me.",
+      "book": "John",
+      "chapter": 14,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "John 14:27",
+      "text": "Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you. Let not your heart be troubled, neither let it be afraid.",
+      "book": "John",
+      "chapter": 14,
+      "verse_start": 27,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "John 16:33",
+      "text": "These things I have spoken unto you, that in me ye might have peace. In the world ye shall have tribulation: but be of good cheer; I have overcome the world.",
+      "book": "John",
+      "chapter": 16,
+      "verse_start": 33,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Romans 8:15",
+      "text": "For ye have not received the spirit of bondage again to fear; but ye have received the Spirit of adoption, whereby we cry, Abba, Father.",
+      "book": "Romans",
+      "chapter": 8,
+      "verse_start": 15,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Romans 8:28",
+      "text": "And we know that all things work together for good to them that love God, to them who are the called according to his purpose.",
+      "book": "Romans",
+      "chapter": 8,
+      "verse_start": 28,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Romans 8:31",
+      "text": "What shall we then say to these things? If God be for us, who can be against us?",
+      "book": "Romans",
+      "chapter": 8,
+      "verse_start": 31,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Romans 8:38-39",
+      "text": "For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come, Nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord.",
+      "book": "Romans",
+      "chapter": 8,
+      "verse_start": 38,
+      "verse_end": 39,
+      "mood": "worried"
+    },
+    {
+      "reference": "1 Corinthians 10:13",
+      "text": "There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.",
+      "book": "1 Corinthians",
+      "chapter": 10,
+      "verse_start": 13,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "2 Corinthians 1:3-4",
+      "text": "Blessed be God, even the Father of our Lord Jesus Christ, the Father of mercies, and the God of all comfort; Who comforteth us in all our tribulation, that we may be able to comfort them which are in any trouble, by the comfort wherewith we ourselves are comforted of God.",
+      "book": "2 Corinthians",
+      "chapter": 1,
+      "verse_start": 3,
+      "verse_end": 4,
+      "mood": "worried"
+    },
+    {
+      "reference": "2 Corinthians 4:16-18",
+      "text": "For which cause we faint not; but though our outward man perish, yet the inward man is renewed day by day. For our light affliction, which is but for a moment, worketh for us a far more exceeding and eternal weight of glory; While we look not at the things which are seen, but at the things which are not seen: for the things which are seen are temporal; but the things which are not seen are eternal.",
+      "book": "2 Corinthians",
+      "chapter": 4,
+      "verse_start": 16,
+      "verse_end": 18,
+      "mood": "worried"
+    },
+    {
+      "reference": "2 Corinthians 7:5-6",
+      "text": "For, when we were come into Macedonia, our flesh had no rest, but we were troubled on every side; without were fightings, within were fears. Nevertheless God, that comforteth those that are cast down, comforted us by the coming of Titus;",
+      "book": "2 Corinthians",
+      "chapter": 7,
+      "verse_start": 5,
+      "verse_end": 6,
+      "mood": "worried"
+    },
+    {
+      "reference": "Philippians 4:6-7",
+      "text": "Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God. And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus.",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse_start": 6,
+      "verse_end": 7,
+      "mood": "worried"
+    },
+    {
+      "reference": "Philippians 4:19",
+      "text": "But my God shall supply all your need according to his riches in glory by Christ Jesus.",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse_start": 19,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "2 Timothy 1:7",
+      "text": "For God hath not given us the spirit of fear; but of power, and of love, and of a sound mind.",
+      "book": "2 Timothy",
+      "chapter": 1,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Hebrews 13:5-6",
+      "text": "Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee. So that we may boldly say, The Lord is my helper, and I will not fear what man shall do unto me.",
+      "book": "Hebrews",
+      "chapter": 13,
+      "verse_start": 5,
+      "verse_end": 6,
+      "mood": "worried"
+    },
+    {
+      "reference": "James 1:2-4",
+      "text": "My brethren, count it all joy when ye fall into divers temptations; Knowing this, that the trying of your faith worketh patience. But let patience have her perfect work, that ye may be perfect and entire, wanting nothing.",
+      "book": "James",
+      "chapter": 1,
+      "verse_start": 2,
+      "verse_end": 4,
+      "mood": "worried"
+    },
+    {
+      "reference": "1 Peter 3:14",
+      "text": "But and if ye suffer for righteousness' sake, happy are ye: and be not afraid of their terror, neither be troubled;",
+      "book": "1 Peter",
+      "chapter": 3,
+      "verse_start": 14,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "1 Peter 5:6-7",
+      "text": "Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time: Casting all your care upon him; for he careth for you.",
+      "book": "1 Peter",
+      "chapter": 5,
+      "verse_start": 6,
+      "verse_end": 7,
+      "mood": "worried"
+    },
+    {
+      "reference": "1 John 4:4",
+      "text": "Ye are of God, little children, and have overcome them: because greater is he that is in you, than he that is in the world.",
+      "book": "1 John",
+      "chapter": 4,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "1 John 4:18",
+      "text": "There is no fear in love; but perfect love casteth out fear: because fear hath torment. He that feareth is not made perfect in love.",
+      "book": "1 John",
+      "chapter": 4,
+      "verse_start": 18,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 3:3-6",
+      "text": "But thou, O LORD, art a shield for me; my glory, and the lifter up of mine head. I cried unto the LORD with my voice, and he heard me out of his holy hill. Selah. I laid me down and slept; I awaked; for the LORD sustained me. I will not be afraid of ten thousands of people, that have set themselves against me round about.",
+      "book": "Psalms",
+      "chapter": 3,
+      "verse_start": 3,
+      "verse_end": 6,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 4:8",
+      "text": "I will both lay me down in peace, and sleep: for thou, LORD, only makest me dwell in safety.",
+      "book": "Psalms",
+      "chapter": 4,
+      "verse_start": 8,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 18:2-3",
+      "text": "The LORD is my rock, and my fortress, and my deliverer; my God, my strength, in whom I will trust; my buckler, and the horn of my salvation, and my high tower. I will call upon the LORD, who is worthy to be praised: so shall I be saved from mine enemies.",
+      "book": "Psalms",
+      "chapter": 18,
+      "verse_start": 2,
+      "verse_end": 3,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 23:4",
+      "text": "Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me.",
+      "book": "Psalms",
+      "chapter": 23,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 27:1-3",
+      "text": "The LORD is my light and my salvation; whom shall I fear? the LORD is the strength of my life; of whom shall I be afraid? When the wicked, even mine enemies and my foes, came upon me to eat up my flesh, they stumbled and fell. Though an host should encamp against me, my heart shall not fear: though war should rise against me, in this will I be confident.",
+      "book": "Psalms",
+      "chapter": 27,
+      "verse_start": 1,
+      "verse_end": 3,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 31:14-15",
+      "text": "But I trusted in thee, O LORD: I said, Thou art my God. My times are in thy hand: deliver me from the hand of mine enemies, and from them that persecute me.",
+      "book": "Psalms",
+      "chapter": 31,
+      "verse_start": 14,
+      "verse_end": 15,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 34:4",
+      "text": "I sought the LORD, and he heard me, and delivered me from all my fears.",
+      "book": "Psalms",
+      "chapter": 34,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 34:17-18",
+      "text": "The righteous cry, and the LORD heareth, and delivereth them out of all their troubles. The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.",
+      "book": "Psalms",
+      "chapter": 34,
+      "verse_start": 17,
+      "verse_end": 18,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 46:1-3",
+      "text": "God is our refuge and strength, a very present help in trouble. Therefore will not we fear, though the earth be removed, and though the mountains be carried into the midst of the sea; Though the waters thereof roar and be troubled, though the mountains shake with the swelling thereof. Selah.",
+      "book": "Psalms",
+      "chapter": 46,
+      "verse_start": 1,
+      "verse_end": 3,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 55:22",
+      "text": "Cast thy burden upon the LORD, and he shall sustain thee: he shall never suffer the righteous to be moved.",
+      "book": "Psalms",
+      "chapter": 55,
+      "verse_start": 22,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 56:3-4",
+      "text": "What time I am afraid, I will trust in thee. In God I will praise his word, in God I have put my trust; I will not fear what flesh can do unto me.",
+      "book": "Psalms",
+      "chapter": 56,
+      "verse_start": 3,
+      "verse_end": 4,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 61:2",
+      "text": "From the end of the earth will I cry unto thee, when my heart is overwhelmed: lead me to the rock that is higher than I.",
+      "book": "Psalms",
+      "chapter": 61,
+      "verse_start": 2,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 62:5-8",
+      "text": "My soul, wait thou only upon God; for my expectation is from him. He only is my rock and my salvation: he is my defence; I shall not be moved. In God is my salvation and my glory: the rock of my strength, and my refuge, is in God. Trust in him at all times; ye people, pour out your heart before him: God is a refuge for us. Selah.",
+      "book": "Psalms",
+      "chapter": 62,
+      "verse_start": 5,
+      "verse_end": 8,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 91:1-5",
+      "text": "He that dwelleth in the secret place of the most High shall abide under the shadow of the Almighty. I will say of the LORD, He is my refuge and my fortress: my God; in him will I trust. Surely he shall deliver thee from the snare of the fowler, and from the noisome pestilence. He shall cover thee with his feathers, and under his wings shalt thou trust: his truth shall be thy shield and buckler. Thou shalt not be afraid for the terror by night; nor for the arrow that flieth by day;",
+      "book": "Psalms",
+      "chapter": 91,
+      "verse_start": 1,
+      "verse_end": 5,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 112:7",
+      "text": "He shall not be afraid of evil tidings: his heart is fixed, trusting in the LORD.",
+      "book": "Psalms",
+      "chapter": 112,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 116:3-6",
+      "text": "The sorrows of death compassed me, and the pains of hell gat hold upon me: I found trouble and sorrow. Then called I upon the name of the LORD; O LORD, I beseech thee, deliver my soul. Gracious is the LORD, and righteous; yea, our God is merciful. The LORD preserveth the simple: I was brought low, and he helped me.",
+      "book": "Psalms",
+      "chapter": 116,
+      "verse_start": 3,
+      "verse_end": 6,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 118:5-6",
+      "text": "I called upon the LORD in distress: the LORD answered me, and set me in a large place. The LORD is on my side; I will not fear: what can man do unto me?",
+      "book": "Psalms",
+      "chapter": 118,
+      "verse_start": 5,
+      "verse_end": 6,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 121:1-2",
+      "text": "I will lift up mine eyes unto the hills, from whence cometh my help. My help cometh from the LORD, which made heaven and earth.",
+      "book": "Psalms",
+      "chapter": 121,
+      "verse_start": 1,
+      "verse_end": 2,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 138:7-8",
+      "text": "Though I walk in the midst of trouble, thou wilt revive me: thou shalt stretch forth thine hand against the wrath of mine enemies, and thy right hand shall save me. The LORD will perfect that which concerneth me: thy mercy, O LORD, endureth for ever: forsake not the works of thine own hands.",
+      "book": "Psalms",
+      "chapter": 138,
+      "verse_start": 7,
+      "verse_end": 8,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 139:23-24",
+      "text": "Search me, O God, and know my heart: try me, and know my thoughts: And see if there be any wicked way in me, and lead me in the way everlasting.",
+      "book": "Psalms",
+      "chapter": 139,
+      "verse_start": 23,
+      "verse_end": 24,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 142:1-3",
+      "text": "I cried unto the LORD with my voice; with my voice unto the LORD did I make my supplication. I poured out my complaint before him; I shewed before him my trouble. When my spirit was overwhelmed within me, then thou knewest my path. In the way wherein I walked have they privily laid a snare for me.",
+      "book": "Psalms",
+      "chapter": 142,
+      "verse_start": 1,
+      "verse_end": 3,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 143:3-4",
+      "text": "For the enemy hath persecuted my soul; he hath smitten my life down to the ground; he hath made me to dwell in darkness, as those that have been long dead. Therefore is my spirit overwhelmed within me; my heart within me is desolate.",
+      "book": "Psalms",
+      "chapter": 143,
+      "verse_start": 3,
+      "verse_end": 4,
+      "mood": "worried"
+    },
+    {
+      "reference": "Psalm 147:3",
+      "text": "He healeth the broken in heart, and bindeth up their wounds.",
+      "book": "Psalms",
+      "chapter": 147,
+      "verse_start": 3,
+      "verse_end": null,
+      "mood": "worried"
+    }
+  ]
+}
