@@ -1,0 +1,683 @@
+{
+  "version": "KJV",
+  "batch": 3,
+  "mood": "joyful",
+  "count": 75,
+  "verses": [
+    {
+      "reference": "Psalm 16:11",
+      "text": "Thou wilt shew me the path of life: in thy presence is fulness of joy; at thy right hand there are pleasures for evermore.",
+      "book": "Psalms",
+      "chapter": 16,
+      "verse_start": 11,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Nehemiah 8:10",
+      "text": "Then he said unto them, Go your way, eat the fat, and drink the sweet, and send portions unto them for whom nothing is prepared: for this day is holy unto our LORD: neither be ye sorry; for the joy of the LORD is your strength.",
+      "book": "Nehemiah",
+      "chapter": 8,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 5:11",
+      "text": "But let all those that put their trust in thee rejoice: let them ever shout for joy, because thou defendest them: let them also that love thy name be joyful in thee.",
+      "book": "Psalms",
+      "chapter": 5,
+      "verse_start": 11,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 20:5",
+      "text": "We will rejoice in thy salvation, and in the name of our God we will set up our banners: the LORD fulfil all thy petitions.",
+      "book": "Psalms",
+      "chapter": 20,
+      "verse_start": 5,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 27:6",
+      "text": "And now shall mine head be lifted up above mine enemies round about me: therefore will I offer in his tabernacle sacrifices of joy; I will sing, yea, I will sing praises unto the LORD.",
+      "book": "Psalms",
+      "chapter": 27,
+      "verse_start": 6,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 30:5",
+      "text": "For his anger endureth but a moment; in his favour is life: weeping may endure for a night, but joy cometh in the morning.",
+      "book": "Psalms",
+      "chapter": 30,
+      "verse_start": 5,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 32:11",
+      "text": "Be glad in the LORD, and rejoice, ye righteous: and shout for joy, all ye that are upright in heart.",
+      "book": "Psalms",
+      "chapter": 32,
+      "verse_start": 11,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 35:9",
+      "text": "And my soul shall be joyful in the LORD: it shall rejoice in his salvation.",
+      "book": "Psalms",
+      "chapter": 35,
+      "verse_start": 9,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 40:16",
+      "text": "Let all those that seek thee rejoice and be glad in thee: let such as love thy salvation say continually, The LORD be magnified.",
+      "book": "Psalms",
+      "chapter": 40,
+      "verse_start": 16,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 43:4",
+      "text": "Then will I go unto the altar of God, unto God my exceeding joy: yea, upon the harp will I praise thee, O God my God.",
+      "book": "Psalms",
+      "chapter": 43,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 47:1",
+      "text": "O clap your hands, all ye people; shout unto God with the voice of triumph.",
+      "book": "Psalms",
+      "chapter": 47,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 51:12",
+      "text": "Restore unto me the joy of thy salvation; and uphold me with thy free spirit.",
+      "book": "Psalms",
+      "chapter": 51,
+      "verse_start": 12,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 63:5",
+      "text": "My soul shall be satisfied as with marrow and fatness; and my mouth shall praise thee with joyful lips:",
+      "book": "Psalms",
+      "chapter": 63,
+      "verse_start": 5,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 66:1",
+      "text": "Make a joyful noise unto God, all ye lands:",
+      "book": "Psalms",
+      "chapter": 66,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 67:4",
+      "text": "O let the nations be glad and sing for joy: for thou shalt judge the people righteously, and govern the nations upon earth. Selah.",
+      "book": "Psalms",
+      "chapter": 67,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 68:3",
+      "text": "But let the righteous be glad; let them rejoice before God: yea, let them exceedingly rejoice.",
+      "book": "Psalms",
+      "chapter": 68,
+      "verse_start": 3,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 70:4",
+      "text": "Let all those that seek thee rejoice and be glad in thee: and let such as love thy salvation say continually, Let God be magnified.",
+      "book": "Psalms",
+      "chapter": 70,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 81:1",
+      "text": "Sing aloud unto God our strength: make a joyful noise unto the God of Jacob.",
+      "book": "Psalms",
+      "chapter": 81,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 89:15",
+      "text": "Blessed is the people that know the joyful sound: they shall walk, O LORD, in the light of thy countenance.",
+      "book": "Psalms",
+      "chapter": 89,
+      "verse_start": 15,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 95:1-2",
+      "text": "O come, let us sing unto the LORD: let us make a joyful noise to the rock of our salvation. Let us come before his presence with thanksgiving, and make a joyful noise unto him with psalms.",
+      "book": "Psalms",
+      "chapter": 95,
+      "verse_start": 1,
+      "verse_end": 2,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 96:11-12",
+      "text": "Let the heavens rejoice, and let the earth be glad; let the sea roar, and the fulness thereof. Let the field be joyful, and all that is therein: then shall all the trees of the wood rejoice",
+      "book": "Psalms",
+      "chapter": 96,
+      "verse_start": 11,
+      "verse_end": 12,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 97:1",
+      "text": "The LORD reigneth; let the earth rejoice; let the multitude of isles be glad thereof.",
+      "book": "Psalms",
+      "chapter": 97,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 97:11-12",
+      "text": "Light is sown for the righteous, and gladness for the upright in heart. Rejoice in the LORD, ye righteous; and give thanks at the remembrance of his holiness.",
+      "book": "Psalms",
+      "chapter": 97,
+      "verse_start": 11,
+      "verse_end": 12,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 98:4",
+      "text": "Make a joyful noise unto the LORD, all the earth: make a loud noise, and rejoice, and sing praise.",
+      "book": "Psalms",
+      "chapter": 98,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 105:43",
+      "text": "And he brought forth his people with joy, and his chosen with gladness:",
+      "book": "Psalms",
+      "chapter": 105,
+      "verse_start": 43,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 118:15",
+      "text": "The voice of rejoicing and salvation is in the tabernacles of the righteous: the right hand of the LORD doeth valiantly.",
+      "book": "Psalms",
+      "chapter": 118,
+      "verse_start": 15,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 126:3",
+      "text": "The LORD hath done great things for us; whereof we are glad.",
+      "book": "Psalms",
+      "chapter": 126,
+      "verse_start": 3,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 126:5-6",
+      "text": "They that sow in tears shall reap in joy. He that goeth forth and weepeth, bearing precious seed, shall doubtless come again with rejoicing, bringing his sheaves with him.",
+      "book": "Psalms",
+      "chapter": 126,
+      "verse_start": 5,
+      "verse_end": 6,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 132:9",
+      "text": "Let thy priests be clothed with righteousness; and let thy saints shout for joy.",
+      "book": "Psalms",
+      "chapter": 132,
+      "verse_start": 9,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 132:16",
+      "text": "I will also clothe her priests with salvation: and her saints shall shout aloud for joy.",
+      "book": "Psalms",
+      "chapter": 132,
+      "verse_start": 16,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Psalm 149:5",
+      "text": "Let the saints be joyful in glory: let them sing aloud upon their beds.",
+      "book": "Psalms",
+      "chapter": 149,
+      "verse_start": 5,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Proverbs 10:28",
+      "text": "The hope of the righteous shall be gladness: but the expectation of the wicked shall perish.",
+      "book": "Proverbs",
+      "chapter": 10,
+      "verse_start": 28,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Isaiah 12:3",
+      "text": "Therefore with joy shall ye draw water out of the wells of salvation.",
+      "book": "Isaiah",
+      "chapter": 12,
+      "verse_start": 3,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Isaiah 35:10",
+      "text": "And the ransomed of the LORD shall return, and come to Zion with songs and everlasting joy upon their heads: they shall obtain joy and gladness, and sorrow and sighing shall flee away.",
+      "book": "Isaiah",
+      "chapter": 35,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Isaiah 51:11",
+      "text": "Therefore the redeemed of the LORD shall return, and come with singing unto Zion; and everlasting joy shall be upon their head: they shall obtain gladness and joy; and sorrow and mourning shall flee away.",
+      "book": "Isaiah",
+      "chapter": 51,
+      "verse_start": 11,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Isaiah 52:9",
+      "text": "Break forth into joy, sing together, ye waste places of Jerusalem: for the LORD hath comforted his people, he hath redeemed Jerusalem.",
+      "book": "Isaiah",
+      "chapter": 52,
+      "verse_start": 9,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Isaiah 55:12",
+      "text": "For ye shall go out with joy, and be led forth with peace: the mountains and the hills shall break forth before you into singing, and all the trees of the field shall clap their hands.",
+      "book": "Isaiah",
+      "chapter": 55,
+      "verse_start": 12,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Isaiah 61:10",
+      "text": "I will greatly rejoice in the LORD, my soul shall be joyful in my God; for he hath clothed me with the garments of salvation, he hath covered me with the robe of righteousness, as a bridegroom decketh himself with ornaments, and as a bride adorneth herself with her jewels.",
+      "book": "Isaiah",
+      "chapter": 61,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Jeremiah 15:16",
+      "text": "Thy words were found, and I did eat them; and thy word was unto me the joy and rejoicing of mine heart: for I am called by thy name, O LORD God of hosts.",
+      "book": "Jeremiah",
+      "chapter": 15,
+      "verse_start": 16,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Habakkuk 3:18",
+      "text": "Yet I will rejoice in the LORD, I will joy in the God of my salvation.",
+      "book": "Habakkuk",
+      "chapter": 3,
+      "verse_start": 18,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Zephaniah 3:17",
+      "text": "The LORD thy God in the midst of thee is mighty; he will save, he will rejoice over thee with joy; he will rest in his love, he will joy over thee with singing.",
+      "book": "Zephaniah",
+      "chapter": 3,
+      "verse_start": 17,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Zechariah 9:9",
+      "text": "Rejoice greatly, O daughter of Zion; shout, O daughter of Jerusalem: behold, thy King cometh unto thee: he is just, and having salvation; lowly, and riding upon an ass, and upon a colt the foal of an ass.",
+      "book": "Zechariah",
+      "chapter": 9,
+      "verse_start": 9,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Matthew 2:10",
+      "text": "When they saw the star, they rejoiced with exceeding great joy.",
+      "book": "Matthew",
+      "chapter": 2,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Matthew 5:12",
+      "text": "Rejoice, and be exceeding glad: for great is your reward in heaven: for so persecuted they the prophets which were before you.",
+      "book": "Matthew",
+      "chapter": 5,
+      "verse_start": 12,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Matthew 13:44",
+      "text": "Again, the kingdom of heaven is like unto treasure hid in a field; the which when a man hath found, he hideth, and for joy thereof goeth and selleth all that he hath, and buyeth that field.",
+      "book": "Matthew",
+      "chapter": 13,
+      "verse_start": 44,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Matthew 25:21",
+      "text": "His lord said unto him, Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord.",
+      "book": "Matthew",
+      "chapter": 25,
+      "verse_start": 21,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Luke 1:14",
+      "text": "And thou shalt have joy and gladness; and many shall rejoice at his birth.",
+      "book": "Luke",
+      "chapter": 1,
+      "verse_start": 14,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Luke 2:10",
+      "text": "And the angel said unto them, Fear not: for, behold, I bring you good tidings of great joy, which shall be to all people.",
+      "book": "Luke",
+      "chapter": 2,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Luke 6:23",
+      "text": "Rejoice ye in that day, and leap for joy: for, behold, your reward is great in heaven: for in the like manner did their fathers unto the prophets.",
+      "book": "Luke",
+      "chapter": 6,
+      "verse_start": 23,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Luke 10:20",
+      "text": "Notwithstanding in this rejoice not, that the spirits are subject unto you; but rather rejoice, because your names are written in heaven.",
+      "book": "Luke",
+      "chapter": 10,
+      "verse_start": 20,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Luke 15:7",
+      "text": "I say unto you, that likewise joy shall be in heaven over one sinner that repenteth, more than over ninety and nine just persons, which need no repentance.",
+      "book": "Luke",
+      "chapter": 15,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Luke 15:10",
+      "text": "Likewise, I say unto you, there is joy in the presence of the angels of God over one sinner that repenteth.",
+      "book": "Luke",
+      "chapter": 15,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "John 15:11",
+      "text": "These things have I spoken unto you, that my joy might remain in you, and that your joy might be full.",
+      "book": "John",
+      "chapter": 15,
+      "verse_start": 11,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "John 16:20",
+      "text": "Verily, verily, I say unto you, That ye shall weep and lament, but the world shall rejoice: and ye shall be sorrowful, but your sorrow shall be turned into joy.",
+      "book": "John",
+      "chapter": 16,
+      "verse_start": 20,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "John 16:22",
+      "text": "And ye now therefore have sorrow: but I will see you again, and your heart shall rejoice, and your joy no man taketh from you.",
+      "book": "John",
+      "chapter": 16,
+      "verse_start": 22,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "John 16:24",
+      "text": "Hitherto have ye asked nothing in my name: ask, and ye shall receive, that your joy may be full.",
+      "book": "John",
+      "chapter": 16,
+      "verse_start": 24,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "John 17:13",
+      "text": "And now come I to thee; and these things I speak in the world, that they might have my joy fulfilled in themselves.",
+      "book": "John",
+      "chapter": 17,
+      "verse_start": 13,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Acts 8:8",
+      "text": "And there was great joy in that city.",
+      "book": "Acts",
+      "chapter": 8,
+      "verse_start": 8,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Acts 13:52",
+      "text": "And the disciples were filled with joy, and with the Holy Ghost.",
+      "book": "Acts",
+      "chapter": 13,
+      "verse_start": 52,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Acts 16:34",
+      "text": "And when he had brought them into his house, he set meat before them, and rejoiced, believing in God with all his house.",
+      "book": "Acts",
+      "chapter": 16,
+      "verse_start": 34,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Romans 12:12",
+      "text": "Rejoicing in hope; patient in tribulation; continuing instant in prayer;",
+      "book": "Romans",
+      "chapter": 12,
+      "verse_start": 12,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "2 Corinthians 1:24",
+      "text": "Not for that we have dominion over your faith, but are helpers of your joy: for by faith ye stand.",
+      "book": "2 Corinthians",
+      "chapter": 1,
+      "verse_start": 24,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "2 Corinthians 7:4",
+      "text": "Great is my boldness of speech toward you, great is my glorying of you: I am filled with comfort, I am exceeding joyful in all our tribulation.",
+      "book": "2 Corinthians",
+      "chapter": 7,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Galatians 5:22",
+      "text": "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith,",
+      "book": "Galatians",
+      "chapter": 5,
+      "verse_start": 22,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Philippians 1:4",
+      "text": "Always in every prayer of mine for you all making request with joy,",
+      "book": "Philippians",
+      "chapter": 1,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Philippians 2:2",
+      "text": "Fulfil ye my joy, that ye be likeminded, having the same love, being of one accord, of one mind.",
+      "book": "Philippians",
+      "chapter": 2,
+      "verse_start": 2,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Philippians 4:4",
+      "text": "Rejoice in the Lord alway: and again I say, Rejoice.",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Colossians 1:11",
+      "text": "Strengthened with all might, according to his glorious power, unto all patience and longsuffering with joyfulness;",
+      "book": "Colossians",
+      "chapter": 1,
+      "verse_start": 11,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "1 Thessalonians 1:6",
+      "text": "And ye became followers of us, and of the Lord, having received the word in much affliction, with joy of the Holy Ghost:",
+      "book": "1 Thessalonians",
+      "chapter": 1,
+      "verse_start": 6,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "1 Thessalonians 5:16",
+      "text": "Rejoice evermore.",
+      "book": "1 Thessalonians",
+      "chapter": 5,
+      "verse_start": 16,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Hebrews 12:2",
+      "text": "Looking unto Jesus the author and finisher of our faith; who for the joy that was set before him endured the cross, despising the shame, and is set down at the right hand of the throne of God.",
+      "book": "Hebrews",
+      "chapter": 12,
+      "verse_start": 2,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "James 1:2",
+      "text": "My brethren, count it all joy when ye fall into divers temptations;",
+      "book": "James",
+      "chapter": 1,
+      "verse_start": 2,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "1 Peter 1:8",
+      "text": "Whom having not seen, ye love; in whom, though now ye see him not, yet believing, ye rejoice with joy unspeakable and full of glory:",
+      "book": "1 Peter",
+      "chapter": 1,
+      "verse_start": 8,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "1 Peter 4:13",
+      "text": "But rejoice, inasmuch as ye are partakers of Christ's sufferings; that, when his glory shall be revealed, ye may be glad also with exceeding joy.",
+      "book": "1 Peter",
+      "chapter": 4,
+      "verse_start": 13,
+      "verse_end": null,
+      "mood": "joyful"
+    },
+    {
+      "reference": "Jude 1:24",
+      "text": "Now unto him that is able to keep you from falling, and to present you faultless before the presence of his glory with exceeding joy,",
+      "book": "Jude",
+      "chapter": 1,
+      "verse_start": 24,
+      "verse_end": null,
+      "mood": "joyful"
+    }
+  ]
+}

@@ -1,0 +1,989 @@
+{
+  "version": "KJV",
+  "batch": 2,
+  "mood": "thankful",
+  "count": 109,
+  "verses": [
+    {
+      "reference": "Psalm 107:1",
+      "text": "O give thanks unto the LORD, for he is good: for his mercy endureth for ever.",
+      "book": "Psalms",
+      "chapter": 107,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "1 Thessalonians 5:18",
+      "text": "In every thing give thanks: for this is the will of God in Christ Jesus concerning you.",
+      "book": "1 Thessalonians",
+      "chapter": 5,
+      "verse_start": 18,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Colossians 3:17",
+      "text": "And whatsoever ye do in word or deed, do all in the name of the Lord Jesus, giving thanks to God and the Father by him.",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse_start": 17,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 100:4",
+      "text": "Enter into his gates with thanksgiving, and into his courts with praise: be thankful unto him, and bless his name.",
+      "book": "Psalms",
+      "chapter": 100,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Ephesians 5:20",
+      "text": "Giving thanks always for all things unto God and the Father in the name of our Lord Jesus Christ;",
+      "book": "Ephesians",
+      "chapter": 5,
+      "verse_start": 20,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Philippians 4:6",
+      "text": "Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse_start": 6,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 118:1",
+      "text": "O give thanks unto the LORD; for he is good: because his mercy endureth for ever.",
+      "book": "Psalms",
+      "chapter": 118,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 136:1",
+      "text": "O give thanks unto the LORD; for he is good: for his mercy endureth for ever.",
+      "book": "Psalms",
+      "chapter": 136,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 136:26",
+      "text": "O give thanks unto the God of heaven: for his mercy endureth for ever.",
+      "book": "Psalms",
+      "chapter": 136,
+      "verse_start": 26,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "1 Chronicles 16:34",
+      "text": "O give thanks unto the LORD; for he is good; for his mercy endureth for ever.",
+      "book": "1 Chronicles",
+      "chapter": 16,
+      "verse_start": 34,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 92:1",
+      "text": "It is a good thing to give thanks unto the LORD, and to sing praises unto thy name, O most High:",
+      "book": "Psalms",
+      "chapter": 92,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 95:2",
+      "text": "Let us come before his presence with thanksgiving, and make a joyful noise unto him with psalms.",
+      "book": "Psalms",
+      "chapter": 95,
+      "verse_start": 2,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 105:1",
+      "text": "O give thanks unto the LORD; call upon his name: make known his deeds among the people.",
+      "book": "Psalms",
+      "chapter": 105,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 106:1",
+      "text": "Praise ye the LORD. O give thanks unto the LORD; for he is good: for his mercy endureth for ever.",
+      "book": "Psalms",
+      "chapter": 106,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 116:12",
+      "text": "What shall I render unto the LORD for all his benefits toward me?",
+      "book": "Psalms",
+      "chapter": 116,
+      "verse_start": 12,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 116:17",
+      "text": "I will offer to thee the sacrifice of thanksgiving, and will call upon the name of the LORD.",
+      "book": "Psalms",
+      "chapter": 116,
+      "verse_start": 17,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 119:62",
+      "text": "At midnight I will rise to give thanks unto thee because of thy righteous judgments.",
+      "book": "Psalms",
+      "chapter": 119,
+      "verse_start": 62,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 147:7",
+      "text": "Sing unto the LORD with thanksgiving; sing praise upon the harp unto our God:",
+      "book": "Psalms",
+      "chapter": 147,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Jeremiah 30:19",
+      "text": "And out of them shall proceed thanksgiving and the voice of them that make merry: and I will multiply them, and they shall not be few; I will also glorify them, and they shall not be small.",
+      "book": "Jeremiah",
+      "chapter": 30,
+      "verse_start": 19,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Jonah 2:9",
+      "text": "But I will sacrifice unto thee with the voice of thanksgiving; I will pay that that I have vowed. Salvation is of the LORD.",
+      "book": "Jonah",
+      "chapter": 2,
+      "verse_start": 9,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Luke 17:15-16",
+      "text": "And one of them, when he saw that he was healed, turned back, and with a loud voice glorified God, And fell down on his face at his feet, giving him thanks: and he was a Samaritan.",
+      "book": "Luke",
+      "chapter": 17,
+      "verse_start": 15,
+      "verse_end": 16,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Romans 1:21",
+      "text": "Because that, when they knew God, they glorified him not as God, neither were thankful; but became vain in their imaginations, and their foolish heart was darkened.",
+      "book": "Romans",
+      "chapter": 1,
+      "verse_start": 21,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "1 Corinthians 15:57",
+      "text": "But thanks be to God, which giveth us the victory through our Lord Jesus Christ.",
+      "book": "1 Corinthians",
+      "chapter": 15,
+      "verse_start": 57,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "2 Corinthians 2:14",
+      "text": "Now thanks be unto God, which always causeth us to triumph in Christ, and maketh manifest the savour of his knowledge by us in every place.",
+      "book": "2 Corinthians",
+      "chapter": 2,
+      "verse_start": 14,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "2 Corinthians 9:15",
+      "text": "Thanks be unto God for his unspeakable gift.",
+      "book": "2 Corinthians",
+      "chapter": 9,
+      "verse_start": 15,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Colossians 1:3",
+      "text": "We give thanks to God and the Father of our Lord Jesus Christ, praying always for you,",
+      "book": "Colossians",
+      "chapter": 1,
+      "verse_start": 3,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Colossians 1:12",
+      "text": "Giving thanks unto the Father, which hath made us meet to be partakers of the inheritance of the saints in light:",
+      "book": "Colossians",
+      "chapter": 1,
+      "verse_start": 12,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Colossians 4:2",
+      "text": "Continue in prayer, and watch in the same with thanksgiving;",
+      "book": "Colossians",
+      "chapter": 4,
+      "verse_start": 2,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "1 Timothy 4:4-5",
+      "text": "For every creature of God is good, and nothing to be refused, if it be received with thanksgiving: For it is sanctified by the word of God and prayer.",
+      "book": "1 Timothy",
+      "chapter": 4,
+      "verse_start": 4,
+      "verse_end": 5,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Hebrews 13:15",
+      "text": "By him therefore let us offer the sacrifice of praise to God continually, that is, the fruit of our lips giving thanks to his name.",
+      "book": "Hebrews",
+      "chapter": 13,
+      "verse_start": 15,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 30:4",
+      "text": "Sing unto the LORD, O ye saints of his, and give thanks at the remembrance of his holiness.",
+      "book": "Psalms",
+      "chapter": 30,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 30:12",
+      "text": "To the end that my glory may sing praise to thee, and not be silent. O LORD my God, I will give thanks unto thee for ever.",
+      "book": "Psalms",
+      "chapter": 30,
+      "verse_start": 12,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 33:1",
+      "text": "Rejoice in the LORD, O ye righteous: for praise is comely for the upright.",
+      "book": "Psalms",
+      "chapter": 33,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 34:1",
+      "text": "I will bless the LORD at all times: his praise shall continually be in my mouth.",
+      "book": "Psalms",
+      "chapter": 34,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 50:14",
+      "text": "Offer unto God thanksgiving; and pay thy vows unto the most High:",
+      "book": "Psalms",
+      "chapter": 50,
+      "verse_start": 14,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 50:23",
+      "text": "Whoso offereth praise glorifieth me: and to him that ordereth his conversation aright will I shew the salvation of God.",
+      "book": "Psalms",
+      "chapter": 50,
+      "verse_start": 23,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 69:30",
+      "text": "I will praise the name of God with a song, and will magnify him with thanksgiving.",
+      "book": "Psalms",
+      "chapter": 69,
+      "verse_start": 30,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 75:1",
+      "text": "Unto thee, O God, do we give thanks, unto thee do we give thanks: for that thy name is near thy wondrous works declare.",
+      "book": "Psalms",
+      "chapter": 75,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 79:13",
+      "text": "So we thy people and sheep of thy pasture will give thee thanks for ever: we will shew forth thy praise to all generations.",
+      "book": "Psalms",
+      "chapter": 79,
+      "verse_start": 13,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 96:2",
+      "text": "Sing unto the LORD, bless his name; shew forth his salvation from day to day.",
+      "book": "Psalms",
+      "chapter": 96,
+      "verse_start": 2,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 100:1-2",
+      "text": "Make a joyful noise unto the LORD, all ye lands. Serve the LORD with gladness: come before his presence with singing.",
+      "book": "Psalms",
+      "chapter": 100,
+      "verse_start": 1,
+      "verse_end": 2,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 103:1-2",
+      "text": "Bless the LORD, O my soul: and all that is within me, bless his holy name. Bless the LORD, O my soul, and forget not all his benefits:",
+      "book": "Psalms",
+      "chapter": 103,
+      "verse_start": 1,
+      "verse_end": 2,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 103:22",
+      "text": "Bless the LORD, all his works in all places of his dominion: bless the LORD, O my soul.",
+      "book": "Psalms",
+      "chapter": 103,
+      "verse_start": 22,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 111:1",
+      "text": "Praise ye the LORD. I will praise the LORD with my whole heart, in the assembly of the upright, and in the congregation.",
+      "book": "Psalms",
+      "chapter": 111,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 113:1",
+      "text": "Praise ye the LORD. Praise, O ye servants of the LORD, praise the name of the LORD.",
+      "book": "Psalms",
+      "chapter": 113,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 117:1-2",
+      "text": "O praise the LORD, all ye nations: praise him, all ye people. For his merciful kindness is great toward us: and the truth of the LORD endureth for ever. Praise ye the LORD.",
+      "book": "Psalms",
+      "chapter": 117,
+      "verse_start": 1,
+      "verse_end": 2,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 118:24",
+      "text": "This is the day which the LORD hath made; we will rejoice and be glad in it.",
+      "book": "Psalms",
+      "chapter": 118,
+      "verse_start": 24,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 119:164",
+      "text": "Seven times a day do I praise thee because of thy righteous judgments.",
+      "book": "Psalms",
+      "chapter": 119,
+      "verse_start": 164,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 135:1",
+      "text": "Praise ye the LORD. Praise ye the name of the LORD; praise him, O ye servants of the LORD.",
+      "book": "Psalms",
+      "chapter": 135,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 138:1-2",
+      "text": "I will praise thee with my whole heart: before the gods will I sing praise unto thee. I will worship toward thy holy temple, and praise thy name for thy lovingkindness and for thy truth: for thou hast magnified thy word above all thy name.",
+      "book": "Psalms",
+      "chapter": 138,
+      "verse_start": 1,
+      "verse_end": 2,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 139:14",
+      "text": "I will praise thee; for I am fearfully and wonderfully made: marvellous are thy works; and that my soul knoweth right well.",
+      "book": "Psalms",
+      "chapter": 139,
+      "verse_start": 14,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 145:1-2",
+      "text": "I will extol thee, my God, O king; and I will bless thy name for ever and ever. Every day will I bless thee; and I will praise thy name for ever and ever.",
+      "book": "Psalms",
+      "chapter": 145,
+      "verse_start": 1,
+      "verse_end": 2,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 145:3",
+      "text": "Great is the LORD, and greatly to be praised; and his greatness is unsearchable.",
+      "book": "Psalms",
+      "chapter": 145,
+      "verse_start": 3,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 145:21",
+      "text": "My mouth shall speak the praise of the LORD: and let all flesh bless his holy name for ever and ever.",
+      "book": "Psalms",
+      "chapter": 145,
+      "verse_start": 21,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 150:6",
+      "text": "Let every thing that hath breath praise the LORD. Praise ye the LORD.",
+      "book": "Psalms",
+      "chapter": 150,
+      "verse_start": 6,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "1 Chronicles 16:8",
+      "text": "Give thanks unto the LORD, call upon his name, make known his deeds among the people.",
+      "book": "1 Chronicles",
+      "chapter": 16,
+      "verse_start": 8,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "1 Chronicles 29:13",
+      "text": "Now therefore, our God, we thank thee, and praise thy glorious name.",
+      "book": "1 Chronicles",
+      "chapter": 29,
+      "verse_start": 13,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Ezra 3:11",
+      "text": "And they sang together by course in praising and giving thanks unto the LORD; because he is good, for his mercy endureth for ever toward Israel. And all the people shouted with a great shout, when they praised the LORD, because the foundation of the house of the LORD was laid.",
+      "book": "Ezra",
+      "chapter": 3,
+      "verse_start": 11,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Nehemiah 12:46",
+      "text": "For in the days of David and Asaph of old there were chief of the singers, and songs of praise and thanksgiving unto God.",
+      "book": "Nehemiah",
+      "chapter": 12,
+      "verse_start": 46,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Daniel 2:23",
+      "text": "I thank thee, and praise thee, O thou God of my fathers, who hast given me wisdom and might, and hast made known unto me now what we desired of thee: for thou hast now made known unto us the king's matter.",
+      "book": "Daniel",
+      "chapter": 2,
+      "verse_start": 23,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Daniel 6:10",
+      "text": "Now when Daniel knew that the writing was signed, he went into his house; and his windows being open in his chamber toward Jerusalem, he kneeled upon his knees three times a day, and prayed, and gave thanks before his God, as he did aforetime.",
+      "book": "Daniel",
+      "chapter": 6,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Matthew 15:36",
+      "text": "And he took the seven loaves and the fishes, and gave thanks, and brake them, and gave to his disciples, and the disciples to the multitude.",
+      "book": "Matthew",
+      "chapter": 15,
+      "verse_start": 36,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Mark 14:23",
+      "text": "And he took the cup, and when he had given thanks, he gave it to them: and they all drank of it.",
+      "book": "Mark",
+      "chapter": 14,
+      "verse_start": 23,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Luke 22:19",
+      "text": "And he took bread, and gave thanks, and brake it, and gave unto them, saying, This is my body which is given for you: this do in remembrance of me.",
+      "book": "Luke",
+      "chapter": 22,
+      "verse_start": 19,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "John 6:11",
+      "text": "And Jesus took the loaves; and when he had given thanks, he distributed to the disciples, and the disciples to them that were set down; and likewise of the fishes as much as they would.",
+      "book": "John",
+      "chapter": 6,
+      "verse_start": 11,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "John 11:41",
+      "text": "Then they took away the stone from the place where the dead was laid. And Jesus lifted up his eyes, and said, Father, I thank thee that thou hast heard me.",
+      "book": "John",
+      "chapter": 11,
+      "verse_start": 41,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Acts 27:35",
+      "text": "And when he had thus spoken, he took bread, and gave thanks to God in presence of them all: and when he had broken it, he began to eat.",
+      "book": "Acts",
+      "chapter": 27,
+      "verse_start": 35,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Romans 14:6",
+      "text": "He that regardeth the day, regardeth it unto the Lord; and he that regardeth not the day, to the Lord he doth not regard it. He that eateth, eateth to the Lord, for he giveth God thanks; and he that eateth not, to the Lord he eateth not, and giveth God thanks.",
+      "book": "Romans",
+      "chapter": 14,
+      "verse_start": 6,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "1 Corinthians 1:4",
+      "text": "I thank my God always on your behalf, for the grace of God which is given you by Jesus Christ;",
+      "book": "1 Corinthians",
+      "chapter": 1,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "1 Corinthians 10:30",
+      "text": "For if I by grace be a partaker, why am I evil spoken of for that for which I give thanks?",
+      "book": "1 Corinthians",
+      "chapter": 10,
+      "verse_start": 30,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Ephesians 1:16",
+      "text": "Cease not to give thanks for you, making mention of you in my prayers;",
+      "book": "Ephesians",
+      "chapter": 1,
+      "verse_start": 16,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Philippians 1:3",
+      "text": "I thank my God upon every remembrance of you,",
+      "book": "Philippians",
+      "chapter": 1,
+      "verse_start": 3,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "1 Thessalonians 1:2",
+      "text": "We give thanks to God always for you all, making mention of you in our prayers;",
+      "book": "1 Thessalonians",
+      "chapter": 1,
+      "verse_start": 2,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "1 Thessalonians 3:9",
+      "text": "For what thanks can we render to God again for you, for all the joy wherewith we joy for your sakes before our God;",
+      "book": "1 Thessalonians",
+      "chapter": 3,
+      "verse_start": 9,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "2 Thessalonians 1:3",
+      "text": "We are bound to thank God always for you, brethren, as it is meet, because that your faith groweth exceedingly, and the charity of every one of you all toward each other aboundeth;",
+      "book": "2 Thessalonians",
+      "chapter": 1,
+      "verse_start": 3,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Philemon 1:4",
+      "text": "I thank my God, making mention of thee always in my prayers,",
+      "book": "Philemon",
+      "chapter": 1,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Revelation 7:12",
+      "text": "Saying, Amen: Blessing, and glory, and wisdom, and thanksgiving, and honour, and power, and might, be unto our God for ever and ever. Amen.",
+      "book": "Revelation",
+      "chapter": 7,
+      "verse_start": 12,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Revelation 11:17",
+      "text": "Saying, We give thee thanks, O Lord God Almighty, which art, and wast, and art to come; because thou hast taken to thee thy great power, and hast reigned.",
+      "book": "Revelation",
+      "chapter": 11,
+      "verse_start": 17,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 9:1",
+      "text": "I will praise thee, O LORD, with my whole heart; I will shew forth all thy marvellous works.",
+      "book": "Psalms",
+      "chapter": 9,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 18:49",
+      "text": "Therefore will I give thanks unto thee, O LORD, among the heathen, and sing praises unto thy name.",
+      "book": "Psalms",
+      "chapter": 18,
+      "verse_start": 49,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 26:7",
+      "text": "That I may publish with the voice of thanksgiving, and tell of all thy wondrous works.",
+      "book": "Psalms",
+      "chapter": 26,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 28:7",
+      "text": "The LORD is my strength and my shield; my heart trusted in him, and I am helped: therefore my heart greatly rejoiceth; and with my song will I praise him.",
+      "book": "Psalms",
+      "chapter": 28,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 31:7",
+      "text": "I will be glad and rejoice in thy mercy: for thou hast considered my trouble; thou hast known my soul in adversities;",
+      "book": "Psalms",
+      "chapter": 31,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 35:18",
+      "text": "I will give thee thanks in the great congregation: I will praise thee among much people.",
+      "book": "Psalms",
+      "chapter": 35,
+      "verse_start": 18,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 42:4",
+      "text": "When I remember these things, I pour out my soul in me: for I had gone with the multitude, I went with them to the house of God, with the voice of joy and praise, with a multitude that kept holyday.",
+      "book": "Psalms",
+      "chapter": 42,
+      "verse_start": 4,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 52:9",
+      "text": "I will praise thee for ever, because thou hast done it: and I will wait on thy name; for it is good before thy saints.",
+      "book": "Psalms",
+      "chapter": 52,
+      "verse_start": 9,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 54:6",
+      "text": "I will freely sacrifice unto thee: I will praise thy name, O LORD; for it is good.",
+      "book": "Psalms",
+      "chapter": 54,
+      "verse_start": 6,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 57:9",
+      "text": "I will praise thee, O Lord, among the people: I will sing unto thee among the nations.",
+      "book": "Psalms",
+      "chapter": 57,
+      "verse_start": 9,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 63:3-4",
+      "text": "Because thy lovingkindness is better than life, my lips shall praise thee. Thus will I bless thee while I live: I will lift up my hands in thy name.",
+      "book": "Psalms",
+      "chapter": 63,
+      "verse_start": 3,
+      "verse_end": 4,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 66:8",
+      "text": "O bless our God, ye people, and make the voice of his praise to be heard:",
+      "book": "Psalms",
+      "chapter": 66,
+      "verse_start": 8,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 71:6",
+      "text": "By thee have I been holden up from the womb: thou art he that took me out of my mother's bowels: my praise shall be continually of thee.",
+      "book": "Psalms",
+      "chapter": 71,
+      "verse_start": 6,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 71:14",
+      "text": "But I will hope continually, and will yet praise thee more and more.",
+      "book": "Psalms",
+      "chapter": 71,
+      "verse_start": 14,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 86:12",
+      "text": "I will praise thee, O Lord my God, with all my heart: and I will glorify thy name for evermore.",
+      "book": "Psalms",
+      "chapter": 86,
+      "verse_start": 12,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 89:1",
+      "text": "I will sing of the mercies of the LORD for ever: with my mouth will I make known thy faithfulness to all generations.",
+      "book": "Psalms",
+      "chapter": 89,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 108:3",
+      "text": "I will praise thee, O LORD, among the people: and I will sing praises unto thee among the nations.",
+      "book": "Psalms",
+      "chapter": 108,
+      "verse_start": 3,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 109:30",
+      "text": "I will greatly praise the LORD with my mouth; yea, I will praise him among the multitude.",
+      "book": "Psalms",
+      "chapter": 109,
+      "verse_start": 30,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 111:10",
+      "text": "The fear of the LORD is the beginning of wisdom: a good understanding have all they that do his commandments: his praise endureth for ever.",
+      "book": "Psalms",
+      "chapter": 111,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 119:7",
+      "text": "I will praise thee with uprightness of heart, when I shall have learned thy righteous judgments.",
+      "book": "Psalms",
+      "chapter": 119,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 119:171",
+      "text": "My lips shall utter praise, when thou hast taught me thy statutes.",
+      "book": "Psalms",
+      "chapter": 119,
+      "verse_start": 171,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 138:4-5",
+      "text": "All the kings of the earth shall praise thee, O LORD, when they hear the words of thy mouth. Yea, they shall sing in the ways of the LORD: for great is the glory of the LORD.",
+      "book": "Psalms",
+      "chapter": 138,
+      "verse_start": 4,
+      "verse_end": 5,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 145:10",
+      "text": "All thy works shall praise thee, O LORD; and thy saints shall bless thee.",
+      "book": "Psalms",
+      "chapter": 145,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 146:1-2",
+      "text": "Praise ye the LORD. Praise the LORD, O my soul. While I live will I praise the LORD: I will sing praises unto my God while I have any being.",
+      "book": "Psalms",
+      "chapter": 146,
+      "verse_start": 1,
+      "verse_end": 2,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 147:1",
+      "text": "Praise ye the LORD: for it is good to sing praises unto our God; for it is pleasant; and praise is comely.",
+      "book": "Psalms",
+      "chapter": 147,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 148:1-2",
+      "text": "Praise ye the LORD. Praise ye the LORD from the heavens: praise him in the heights. Praise ye him, all his angels: praise ye him, all his hosts.",
+      "book": "Psalms",
+      "chapter": 148,
+      "verse_start": 1,
+      "verse_end": 2,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Psalm 149:1",
+      "text": "Praise ye the LORD. Sing unto the LORD a new song, and his praise in the congregation of saints.",
+      "book": "Psalms",
+      "chapter": 149,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Isaiah 12:4-5",
+      "text": "And in that day shall ye say, Praise the LORD, call upon his name, declare his doings among the people, make mention that his name is exalted. Sing unto the LORD; for he hath done excellent things: this is known in all the earth.",
+      "book": "Isaiah",
+      "chapter": 12,
+      "verse_start": 4,
+      "verse_end": 5,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Isaiah 25:1",
+      "text": "O LORD, thou art my God; I will exalt thee, I will praise thy name; for thou hast done wonderful things; thy counsels of old are faithfulness and truth.",
+      "book": "Isaiah",
+      "chapter": 25,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Isaiah 38:20",
+      "text": "The LORD was ready to save me: therefore we will sing my songs to the stringed instruments all the days of our life in the house of the LORD.",
+      "book": "Isaiah",
+      "chapter": 38,
+      "verse_start": 20,
+      "verse_end": null,
+      "mood": "thankful"
+    },
+    {
+      "reference": "Jeremiah 31:7",
+      "text": "For thus saith the LORD; Sing with gladness for Jacob, and shout among the chief of the nations: publish ye, praise ye, and say, O LORD, save thy people, the remnant of Israel.",
+      "book": "Jeremiah",
+      "chapter": 31,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "thankful"
+    }
+  ]
+}

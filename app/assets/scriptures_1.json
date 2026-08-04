@@ -1,0 +1,647 @@
+{
+  "version": "KJV",
+  "batch": 1,
+  "mood": "peaceful",
+  "count": 71,
+  "verses": [
+    {
+      "reference": "Philippians 4:7",
+      "text": "And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus.",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "John 14:27",
+      "text": "Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you. Let not your heart be troubled, neither let it be afraid.",
+      "book": "John",
+      "chapter": 14,
+      "verse_start": 27,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Isaiah 26:3",
+      "text": "Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee.",
+      "book": "Isaiah",
+      "chapter": 26,
+      "verse_start": 3,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Psalm 29:11",
+      "text": "The LORD will give strength unto his people; the LORD will bless his people with peace.",
+      "book": "Psalms",
+      "chapter": 29,
+      "verse_start": 11,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Romans 15:13",
+      "text": "Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost.",
+      "book": "Romans",
+      "chapter": 15,
+      "verse_start": 13,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Colossians 3:15",
+      "text": "And let the peace of God rule in your hearts, to the which also ye are called in one body; and be ye thankful.",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse_start": 15,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "2 Thessalonians 3:16",
+      "text": "Now the Lord of peace himself give you peace always by all means. The Lord be with you all.",
+      "book": "2 Thessalonians",
+      "chapter": 3,
+      "verse_start": 16,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Psalm 4:8",
+      "text": "I will both lay me down in peace, and sleep: for thou, LORD, only makest me dwell in safety.",
+      "book": "Psalms",
+      "chapter": 4,
+      "verse_start": 8,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Psalm 85:8",
+      "text": "I will hear what God the LORD will speak: for he will speak peace unto his people, and to his saints: but let them not turn again to folly.",
+      "book": "Psalms",
+      "chapter": 85,
+      "verse_start": 8,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Isaiah 9:6",
+      "text": "For unto us a child is born, unto us a son is given: and the government shall be upon his shoulder: and his name shall be called Wonderful, Counsellor, The mighty God, The everlasting Father, The Prince of Peace.",
+      "book": "Isaiah",
+      "chapter": 9,
+      "verse_start": 6,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Luke 2:14",
+      "text": "Glory to God in the highest, and on earth peace, good will toward men.",
+      "book": "Luke",
+      "chapter": 2,
+      "verse_start": 14,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "John 16:33",
+      "text": "These things I have spoken unto you, that in me ye might have peace. In the world ye shall have tribulation: but be of good cheer; I have overcome the world.",
+      "book": "John",
+      "chapter": 16,
+      "verse_start": 33,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Romans 5:1",
+      "text": "Therefore being justified by faith, we have peace with God through our Lord Jesus Christ:",
+      "book": "Romans",
+      "chapter": 5,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Ephesians 2:14",
+      "text": "For he is our peace, who hath made both one, and hath broken down the middle wall of partition between us;",
+      "book": "Ephesians",
+      "chapter": 2,
+      "verse_start": 14,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Ephesians 2:17",
+      "text": "And came and preached peace to you which were afar off, and to them that were nigh.",
+      "book": "Ephesians",
+      "chapter": 2,
+      "verse_start": 17,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Hebrews 12:14",
+      "text": "Follow peace with all men, and holiness, without which no man shall see the Lord:",
+      "book": "Hebrews",
+      "chapter": 12,
+      "verse_start": 14,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "James 3:18",
+      "text": "And the fruit of righteousness is sown in peace of them that make peace.",
+      "book": "James",
+      "chapter": 3,
+      "verse_start": 18,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "1 Peter 3:11",
+      "text": "Let him eschew evil, and do good; let him seek peace, and ensue it.",
+      "book": "1 Peter",
+      "chapter": 3,
+      "verse_start": 11,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "2 Peter 3:14",
+      "text": "Wherefore, beloved, seeing that ye look for such things, be diligent that ye may be found of him in peace, without spot, and blameless.",
+      "book": "2 Peter",
+      "chapter": 3,
+      "verse_start": 14,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "1 John 4:18",
+      "text": "There is no fear in love; but perfect love casteth out fear: because fear hath torment. He that feareth is not made perfect in love.",
+      "book": "1 John",
+      "chapter": 4,
+      "verse_start": 18,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Psalm 23:2-3",
+      "text": "He maketh me to lie down in green pastures: he leadeth me beside the still waters. He restoreth my soul: he leadeth me in the paths of righteousness for his name's sake.",
+      "book": "Psalms",
+      "chapter": 23,
+      "verse_start": 2,
+      "verse_end": 3,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Psalm 46:10",
+      "text": "Be still, and know that I am God: I will be exalted among the heathen, I will be exalted in the earth.",
+      "book": "Psalms",
+      "chapter": 46,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Psalm 119:165",
+      "text": "Great peace have they which love thy law: and nothing shall offend them.",
+      "book": "Psalms",
+      "chapter": 119,
+      "verse_start": 165,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Psalm 131:2",
+      "text": "Surely I have behaved and quieted myself, as a child that is weaned of his mother: my soul is even as a weaned child.",
+      "book": "Psalms",
+      "chapter": 131,
+      "verse_start": 2,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Proverbs 3:17",
+      "text": "Her ways are ways of pleasantness, and all her paths are peace.",
+      "book": "Proverbs",
+      "chapter": 3,
+      "verse_start": 17,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Isaiah 32:17",
+      "text": "And the work of righteousness shall be peace; and the effect of righteousness quietness and assurance for ever.",
+      "book": "Isaiah",
+      "chapter": 32,
+      "verse_start": 17,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Isaiah 48:18",
+      "text": "O that thou hadst hearkened to my commandments! then had thy peace been as a river, and thy righteousness as the waves of the sea:",
+      "book": "Isaiah",
+      "chapter": 48,
+      "verse_start": 18,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Isaiah 54:10",
+      "text": "For the mountains shall depart, and the hills be removed; but my kindness shall not depart from thee, neither shall the covenant of my peace be removed, saith the LORD that hath mercy on thee.",
+      "book": "Isaiah",
+      "chapter": 54,
+      "verse_start": 10,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Isaiah 55:12",
+      "text": "For ye shall go out with joy, and be led forth with peace: the mountains and the hills shall break forth before you into singing, and all the trees of the field shall clap their hands.",
+      "book": "Isaiah",
+      "chapter": 55,
+      "verse_start": 12,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Jeremiah 33:6",
+      "text": "Behold, I will bring it health and cure, and I will cure them, and will reveal unto them the abundance of peace and truth.",
+      "book": "Jeremiah",
+      "chapter": 33,
+      "verse_start": 6,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Micah 5:5",
+      "text": "And this man shall be the peace, when the Assyrian shall come into our land: and when he shall tread in our palaces, then shall we raise against him seven shepherds, and eight principal men.",
+      "book": "Micah",
+      "chapter": 5,
+      "verse_start": 5,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Zechariah 8:19",
+      "text": "Thus saith the LORD of hosts; The fast of the fourth month, and the fast of the fifth, and the fast of the seventh, and the fast of the tenth, shall be to the house of Judah joy and gladness, and cheerful feasts; therefore love the truth and peace.",
+      "book": "Zechariah",
+      "chapter": 8,
+      "verse_start": 19,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Matthew 5:9",
+      "text": "Blessed are the peacemakers: for they shall be called the children of God.",
+      "book": "Matthew",
+      "chapter": 5,
+      "verse_start": 9,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Mark 4:39",
+      "text": "And he arose, and rebuked the wind, and said unto the sea, Peace, be still. And the wind ceased, and there was a great calm.",
+      "book": "Mark",
+      "chapter": 4,
+      "verse_start": 39,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Luke 1:79",
+      "text": "To give light to them that sit in darkness and in the shadow of death, to guide our feet into the way of peace.",
+      "book": "Luke",
+      "chapter": 1,
+      "verse_start": 79,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Luke 7:50",
+      "text": "And he said to the woman, Thy faith hath saved thee; go in peace.",
+      "book": "Luke",
+      "chapter": 7,
+      "verse_start": 50,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Luke 8:48",
+      "text": "And he said unto her, Daughter, be of good comfort: thy faith hath made thee whole; go in peace.",
+      "book": "Luke",
+      "chapter": 8,
+      "verse_start": 48,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Acts 10:36",
+      "text": "The word which God sent unto the children of Israel, preaching peace by Jesus Christ: (he is Lord of all:)",
+      "book": "Acts",
+      "chapter": 10,
+      "verse_start": 36,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Romans 8:6",
+      "text": "For to be carnally minded is death; but to be spiritually minded is life and peace.",
+      "book": "Romans",
+      "chapter": 8,
+      "verse_start": 6,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Romans 14:17",
+      "text": "For the kingdom of God is not meat and drink; but righteousness, and peace, and joy in the Holy Ghost.",
+      "book": "Romans",
+      "chapter": 14,
+      "verse_start": 17,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Galatians 5:22",
+      "text": "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith,",
+      "book": "Galatians",
+      "chapter": 5,
+      "verse_start": 22,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Ephesians 4:3",
+      "text": "Endeavouring to keep the unity of the Spirit in the bond of peace.",
+      "book": "Ephesians",
+      "chapter": 4,
+      "verse_start": 3,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Ephesians 6:15",
+      "text": "And your feet shod with the preparation of the gospel of peace;",
+      "book": "Ephesians",
+      "chapter": 6,
+      "verse_start": 15,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Philippians 4:9",
+      "text": "Those things, which ye have both learned, and received, and heard, and seen in me, do: and the God of peace shall be with you.",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse_start": 9,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "1 Timothy 2:2",
+      "text": "For kings, and for all that are in authority; that we may lead a quiet and peaceable life in all godliness and honesty.",
+      "book": "1 Timothy",
+      "chapter": 2,
+      "verse_start": 2,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Hebrews 13:20",
+      "text": "Now the God of peace, that brought again from the dead our Lord Jesus, that great shepherd of the sheep, through the blood of the everlasting covenant,",
+      "book": "Hebrews",
+      "chapter": 13,
+      "verse_start": 20,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Psalm 27:1",
+      "text": "The LORD is my light and my salvation; whom shall I fear? the LORD is the strength of my life; of whom shall I be afraid?",
+      "book": "Psalms",
+      "chapter": 27,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Psalm 37:7",
+      "text": "Rest in the LORD, and wait patiently for him: fret not thyself because of him who prospereth in his way, because of the man who bringeth wicked devices to pass.",
+      "book": "Psalms",
+      "chapter": 37,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Psalm 62:5",
+      "text": "My soul, wait thou only upon God; for my expectation is from him.",
+      "book": "Psalms",
+      "chapter": 62,
+      "verse_start": 5,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Psalm 91:1",
+      "text": "He that dwelleth in the secret place of the most High shall abide under the shadow of the Almighty.",
+      "book": "Psalms",
+      "chapter": 91,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Psalm 107:29",
+      "text": "He maketh the storm a calm, so that the waves thereof are still.",
+      "book": "Psalms",
+      "chapter": 107,
+      "verse_start": 29,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Psalm 121:3-4",
+      "text": "He will not suffer thy foot to be moved: he that keepeth thee will not slumber. Behold, he that keepeth Israel shall neither slumber nor sleep.",
+      "book": "Psalms",
+      "chapter": 121,
+      "verse_start": 3,
+      "verse_end": 4,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Psalm 125:1",
+      "text": "They that trust in the LORD shall be as mount Zion, which cannot be removed, but abideth for ever.",
+      "book": "Psalms",
+      "chapter": 125,
+      "verse_start": 1,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Psalm 139:5",
+      "text": "Thou hast beset me behind and before, and laid thine hand upon me.",
+      "book": "Psalms",
+      "chapter": 139,
+      "verse_start": 5,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Proverbs 14:30",
+      "text": "A sound heart is the life of the flesh: but envy the rottenness of the bones.",
+      "book": "Proverbs",
+      "chapter": 14,
+      "verse_start": 30,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Isaiah 30:15",
+      "text": "For thus saith the Lord GOD, the Holy One of Israel; In returning and rest shall ye be saved; in quietness and in confidence shall be your strength: and ye would not.",
+      "book": "Isaiah",
+      "chapter": 30,
+      "verse_start": 15,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Isaiah 40:11",
+      "text": "He shall feed his flock like a shepherd: he shall gather the lambs with his arm, and carry them in his bosom, and shall gently lead those that are with young.",
+      "book": "Isaiah",
+      "chapter": 40,
+      "verse_start": 11,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Isaiah 41:13",
+      "text": "For I the LORD thy God will hold thy right hand, saying unto thee, Fear not; I will help thee.",
+      "book": "Isaiah",
+      "chapter": 41,
+      "verse_start": 13,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Isaiah 43:2",
+      "text": "When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee: when thou walkest through the fire, thou shalt not be burned; neither shall the flame kindle upon thee.",
+      "book": "Isaiah",
+      "chapter": 43,
+      "verse_start": 2,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Isaiah 66:13",
+      "text": "As one whom his mother comforteth, so will I comfort you; and ye shall be comforted in Jerusalem.",
+      "book": "Isaiah",
+      "chapter": 66,
+      "verse_start": 13,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Jeremiah 31:3",
+      "text": "The LORD hath appeared of old unto me, saying, Yea, I have loved thee with an everlasting love: therefore with lovingkindness have I drawn thee.",
+      "book": "Jeremiah",
+      "chapter": 31,
+      "verse_start": 3,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Lamentations 3:22-23",
+      "text": "It is of the LORD'S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.",
+      "book": "Lamentations",
+      "chapter": 3,
+      "verse_start": 22,
+      "verse_end": 23,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Nahum 1:7",
+      "text": "The LORD is good, a strong hold in the day of trouble; and he knoweth them that trust in him.",
+      "book": "Nahum",
+      "chapter": 1,
+      "verse_start": 7,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Matthew 11:28-29",
+      "text": "Come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls.",
+      "book": "Matthew",
+      "chapter": 11,
+      "verse_start": 28,
+      "verse_end": 29,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "John 10:28-29",
+      "text": "And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand. My Father, which gave them me, is greater than all; and no man is able to pluck them out of my Father's hand.",
+      "book": "John",
+      "chapter": 10,
+      "verse_start": 28,
+      "verse_end": 29,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Romans 8:28",
+      "text": "And we know that all things work together for good to them that love God, to them who are the called according to his purpose.",
+      "book": "Romans",
+      "chapter": 8,
+      "verse_start": 28,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Romans 8:38-39",
+      "text": "For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come, Nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord.",
+      "book": "Romans",
+      "chapter": 8,
+      "verse_start": 38,
+      "verse_end": 39,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "2 Corinthians 1:3-4",
+      "text": "Blessed be God, even the Father of our Lord Jesus Christ, the Father of mercies, and the God of all comfort; Who comforteth us in all our tribulation, that we may be able to comfort them which are in any trouble, by the comfort wherewith we ourselves are comforted of God.",
+      "book": "2 Corinthians",
+      "chapter": 1,
+      "verse_start": 3,
+      "verse_end": 4,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "2 Corinthians 13:11",
+      "text": "Finally, brethren, farewell. Be perfect, be of good comfort, be of one mind, live in peace; and the God of love and peace shall be with you.",
+      "book": "2 Corinthians",
+      "chapter": 13,
+      "verse_start": 11,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "Philippians 1:6",
+      "text": "Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:",
+      "book": "Philippians",
+      "chapter": 1,
+      "verse_start": 6,
+      "verse_end": null,
+      "mood": "peaceful"
+    },
+    {
+      "reference": "1 Peter 5:6-7",
+      "text": "Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time: Casting all your care upon him; for he careth for you.",
+      "book": "1 Peter",
+      "chapter": 5,
+      "verse_start": 6,
+      "verse_end": 7,
+      "mood": "peaceful"
+    }
+  ]
+}
