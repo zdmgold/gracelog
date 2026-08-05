@@ -1,0 +1,182 @@
+{
+  "@@locale": "ko",
+  "@appName": {
+    "description": "Application name"
+  },
+  "@entriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightThankful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightJoyful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightPeaceful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightHopeful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightAnxious": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightWorried": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightTired": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "appName": "GraceLog",
+  "greetingMorning": "좋은 아침입니다",
+  "greetingAfternoon": "좋은 오후입니다",
+  "greetingEvening": "좋은 저녁입니다",
+  "moodPeaceful": "평화로운",
+  "moodThankful": "감사하는",
+  "moodJoyful": "기쁜",
+  "moodHopeful": "희망찬",
+  "moodAnxious": "불안한",
+  "moodWorried": "걱정하는",
+  "moodTired": "피곤한",
+  "todayEntryRecorded": "오늘의 감사가 기록되었습니다",
+  "todayEntryMissing": "오늘 아직 작성하지 않았습니다",
+  "todayEntryRecordedSubtitle": "연속 기록을 유지하려면 내일 다시 오세요.",
+  "todayEntryMissingSubtitle": "잠시 시간을 내어 성찰하고 감사하세요.",
+  "newEntry": "새 입력",
+  "weeklyReview": "주간 리뷰",
+  "settings": "설정",
+  "howAreYouFeeling": "기분이 어떠신가요？",
+  "whatAreYouGratefulFor": "무엇에 감사하십니까？",
+  "gratitudeHint": "...에 감사합니다",
+  "addAtLeastThree": "3개 이상 추가하세요 (각 10자 이상)",
+  "save": "저장",
+  "saving": "저장 중...",
+  "entrySaved": "입력이 저장되었습니다！",
+  "suggestAnotherVerse": "다른 성구 제안",
+  "scriptureOfTheDay": "오늘의 성구",
+  "suggestedScripture": "제안된 성구",
+  "useThisVerse": "이 성구를 입력에 사용",
+  "copy": "복사",
+  "share": "공유",
+  "verseCopied": "성구가 클립보드에 복사되었습니다",
+  "moodTrendTitle": "기분 추세 (7일)",
+  "weeklyBlessing": "주간 축복",
+  "moodBreakdown": "기분 분석",
+  "thisWeeksEntries": "이번 주 입력",
+  "entriesCount": "{count}개 입력",
+  "noEntriesThisWeek": "이번 주 아직 입력이 없습니다。",
+  "noEntriesYet": "이번 주 아직 입력이 없습니다",
+  "export": "내보내기",
+  "exportJson": "JSON",
+  "exportImage": "이미지",
+  "exportJournal": "저널",
+  "exportAllData": "모든 데이터 내보내기",
+  "exportSubtitle": "입력을 JSON으로 백업",
+  "shareWithPartner": "책임 파트너와 공유",
+  "sharePartnerSubtitle": "당신의 신앙 여정을 격려하는 사람에게 주간 요약을 보내세요。",
+  "myGraceLogWeek": "나의 GraceLog 주간",
+  "shareWeeklySummary": "주간 요약 공유",
+  "sharePrivacyNote": "귀하의 데이터는 기기에 남아 있습니다。 공유하는 것만 외부로 나갑니다。",
+  "bedtimeReflection": "취침 전 성찰",
+  "bedtimeEnabled": "OLED 블랙 모드 활성화。 휴식을 위해 어둡게 설정되었습니다。",
+  "bedtimeDisabled": "취침 전 간단하고 어두운 입력을 활성화하세요。",
+  "restWell": "편안히 쉬세요",
+  "bedtimePrompt": "쉬기 전에， 오늘 무엇에 감사합니까？",
+  "bedtimePrivacy": "귀하의 입력은 기기에 로컬로 저장됩니다。",
+  "appearance": "외관",
+  "theme": "테마",
+  "themeLight": "밝음",
+  "themeDark": "어두움",
+  "themeSystem": "시스템 기본값",
+  "security": "보안",
+  "biometricLock": "생체 인식 잠금",
+  "biometricSubtitle": "앱을 열려면 지문 또는 Face ID가 필요합니다",
+  "language": "언어",
+  "subscription": "구독",
+  "proActive": "Pro 활성",
+  "proTitle": "GraceLog Pro",
+  "proActiveSubtitle": "광고 없는 경험。 지원해 주셔서 감사합니다！",
+  "proInactiveSubtitle": "월 $0.99에 광고 제거",
+  "upgrade": "업그레이드",
+  "restorePurchases": "구매 복원",
+  "restoreSubtitle": "이 기기에서 Pro 구독을 복원",
+  "data": "데이터",
+  "about": "정보",
+  "privacyPolicy": "개인정보 처리방침",
+  "support": "지원",
+  "version": "버전",
+  "deleteEntryTitle": "입력을 삭제하시겠습니까？",
+  "deleteEntryMessage": "이 입력이 영구적으로 삭제됩니다。 이 작업은 취소할 수 없습니다。",
+  "cancel": "취소",
+  "delete": "삭제",
+  "categoryFamily": "가족",
+  "categoryHealth": "건강",
+  "categoryProvision": "공급",
+  "categoryGrace": "은혜",
+  "categoryNature": "자연",
+  "categoryFriends": "친구",
+  "categoryWork": "일",
+  "categoryRest": "휴식",
+  "categoryChurch": "교회",
+  "categoryScripture": "성경",
+  "streakDays": "{count,plural, =1{1일}other{{count}일}}",
+  "errorGeneric": "문제가 발생했습니다",
+  "errorSaveEntry": "입력 저장에 실패했습니다。 다시 시도하세요。",
+  "errorUpdateEntry": "입력 업데이트에 실패했습니다。",
+  "errorDeleteEntry": "입력 삭제에 실패했습니다。",
+  "errorSearch": "검색에 실패했습니다。",
+  "errorLoadEntries": "입력 로드에 실패했습니다。",
+  "errorMinItems": "감사 항목을 3개 이상 추가하세요。",
+  "errorMinChars": "각 항목은 10자 이상이어야 합니다。",
+  "errorExportImage": "이미지로 내보낼 입력을 선택하세요",
+  "loading": "GraceLog 로드 중...",
+  "retry": "재시도",
+  "restartApp": "앱 재시작",
+  "selectImageExport": "이미지로 내보낼 입력을 선택하세요",
+  "insightThankful": "이번 주에 {count}번 감사를 느꼈습니다。 감사는 우리가 가진 것을 충분하게 만듭니다。",
+  "insightJoyful": "기쁨이 이번 주를 {count}개 입력으로 장식했습니다。 주의 기쁨이 당신의 힘입니다。",
+  "insightPeaceful": "평화가 이번 주의 주제였습니다 ({count}개)。 그의 평화는 모든 이해를 뛰어넘습니다。",
+  "insightHopeful": "희망이 이번 주 {count}개의 순간을 통해 당신을 이끌었습니다。 믿음은 소망의 실체입니다。",
+  "insightAnxious": "이번 주에 불안한 순간에 직면했습니다 ({count}개)。 모든 염려를 그에게 던지세요。",
+  "insightWorried": "걱정이 이번 주에 {count}번 떠올랐습니다。 내일을 걱정하지 마세요。",
+  "insightTired": "이번 주에 {count}번 피로를 기록했습니다。 수고하고 무거운 짐 진 자들아 다 내게로 오라。"
+}

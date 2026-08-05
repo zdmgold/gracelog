@@ -1,0 +1,182 @@
+{
+  "@@locale": "he",
+  "@appName": {
+    "description": "Application name"
+  },
+  "@entriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightThankful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightJoyful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightPeaceful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightHopeful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightAnxious": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightWorried": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightTired": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "appName": "GraceLog",
+  "greetingMorning": "בוקר טוב",
+  "greetingAfternoon": "צהריים טובים",
+  "greetingEvening": "ערב טוב",
+  "moodPeaceful": "שלו",
+  "moodThankful": "אסיר תודה",
+  "moodJoyful": "שמח",
+  "moodHopeful": "מלא תקווה",
+  "moodAnxious": "חרד",
+  "moodWorried": "דואג",
+  "moodTired": "עייף",
+  "todayEntryRecorded": "תודת היום נרשמה",
+  "todayEntryMissing": "עדיין לא כתבת היום",
+  "todayEntryRecordedSubtitle": "חזור מחר כדי לשמור על הרצף שלך.",
+  "todayEntryMissingSubtitle": "קח רגע להרהר ולהודות.",
+  "newEntry": "רשומה חדשה",
+  "weeklyReview": "סקירה שבועית",
+  "settings": "הגדרות",
+  "howAreYouFeeling": "איך אתה מרגיש？",
+  "whatAreYouGratefulFor": "על מה אתה אסיר תודה？",
+  "gratitudeHint": "אני אסיר תודה על...",
+  "addAtLeastThree": "הוסף לפחות 3 פריטים (10+ תווים כל אחד)",
+  "save": "שמור",
+  "saving": "שומר...",
+  "entrySaved": "הרשומה נשמרה！",
+  "suggestAnotherVerse": "הצע פסוק נוסף",
+  "scriptureOfTheDay": "פסוק היום",
+  "suggestedScripture": "פסוק מוצע",
+  "useThisVerse": "השתמש בפסוק זה ברשומה",
+  "copy": "העתק",
+  "share": "שתף",
+  "verseCopied": "הפסוק הועתק ללוח",
+  "moodTrendTitle": "מגמת מצב הרוח (7 ימים)",
+  "weeklyBlessing": "ברכה שבועית",
+  "moodBreakdown": "פירוט מצב הרוח",
+  "thisWeeksEntries": "הרשומות השבוע",
+  "entriesCount": "{count} רשומות",
+  "noEntriesThisWeek": "עדיין אין רשומות השבוע。",
+  "noEntriesYet": "עדיין אין רשומות השבוע",
+  "export": "ייצוא",
+  "exportJson": "JSON",
+  "exportImage": "תמונה",
+  "exportJournal": "יומן",
+  "exportAllData": "ייצא את כל הנתונים",
+  "exportSubtitle": "גבה את הרשומות שלך כ-JSON",
+  "shareWithPartner": "שתף עם שותף לשימור חשבון",
+  "sharePartnerSubtitle": "שלח את הסיכום השבועי שלך למישהו שמעודד את מסע האמונה שלך。",
+  "myGraceLogWeek": "השבוע שלי ב-GraceLog",
+  "shareWeeklySummary": "שתף סיכום שבועי",
+  "sharePrivacyNote": "הנתונים שלך נשארים על המכשיר שלך。 רק מה שאתה משתף יוצא。",
+  "bedtimeReflection": "הרהור לפני השינה",
+  "bedtimeEnabled": "מצב שחור OLED פעיל。 מעומעם למנוחה。",
+  "bedtimeDisabled": "הפעל רשומה פשוטה ומעומעמת לפני השינה。",
+  "restWell": "נוח היטב",
+  "bedtimePrompt": "לפני שאתה נח， על מה דבר אחד אתה אסיר תודה היום？",
+  "bedtimePrivacy": "הרשומה שלך נשמרת באופן מקומי על המכשיר שלך。",
+  "appearance": "מראה",
+  "theme": "ערכת נושא",
+  "themeLight": "בהיר",
+  "themeDark": "כהה",
+  "themeSystem": "ברירת מחדל של המערכת",
+  "security": "אבטחה",
+  "biometricLock": "נעילה ביומטרית",
+  "biometricSubtitle": "דרוש טביעת אצבע או Face ID לפתיחת האפליקציה",
+  "language": "שפה",
+  "subscription": "מנוי",
+  "proActive": "Pro פעיל",
+  "proTitle": "GraceLog Pro",
+  "proActiveSubtitle": "חוויה ללא פרסומות。 תודה על התמיכה שלך！",
+  "proInactiveSubtitle": "הסר פרסומות תמורת $0.99 לחודש",
+  "upgrade": "שדרוג",
+  "restorePurchases": "שחזר רכישות",
+  "restoreSubtitle": "שחזר את המנוי ה-Pro שלך במכשיר זה",
+  "data": "נתונים",
+  "about": "אודות",
+  "privacyPolicy": "מדיניות פרטיות",
+  "support": "תמיכה",
+  "version": "גרסה",
+  "deleteEntryTitle": "למחוק רשומה？",
+  "deleteEntryMessage": "רשומה זו תוסר לצמיתות。 לא ניתן לבטל פעולה זו。",
+  "cancel": "ביטול",
+  "delete": "מחק",
+  "categoryFamily": "משפחה",
+  "categoryHealth": "בריאות",
+  "categoryProvision": "פרנסה",
+  "categoryGrace": "חסד",
+  "categoryNature": "טבע",
+  "categoryFriends": "חברים",
+  "categoryWork": "עבודה",
+  "categoryRest": "מנוחה",
+  "categoryChurch": "כנסייה",
+  "categoryScripture": "כתבי הקודש",
+  "streakDays": "{count,plural, =1{יום אחד}other={{count} ימים}}",
+  "errorGeneric": "משהו השתבש",
+  "errorSaveEntry": "שמירת הרשומה נכשלה。 נסה שוב。",
+  "errorUpdateEntry": "עדכון הרשומה נכשל。",
+  "errorDeleteEntry": "מחיקת הרשומה נכשלה。",
+  "errorSearch": "החיפוש נכשל。",
+  "errorLoadEntries": "טעינת הרשומות נכשלה。",
+  "errorMinItems": "אנא הוסף לפחות 3 פריטי הכרת תודה。",
+  "errorMinChars": "כל פריט חייב להכיל לפחות 10 תווים。",
+  "errorExportImage": "בחר רשומה לייצוא כתמונה",
+  "loading": "טוען את GraceLog...",
+  "retry": "נסה שוב",
+  "restartApp": "הפעל מחדש את האפליקציה",
+  "selectImageExport": "בחר רשומה לייצוא כתמונה",
+  "insightThankful": "הרגשת הכרת תודה {count} פעמים השבוע。 הכרת תודה הופכת את מה שיש לנו למספיק。",
+  "insightJoyful": "שמחה סימנה את השבוע שלך עם {count} רשומות。 שמחת ה' היא עוזכם。",
+  "insightPeaceful": "שלום היה הנושא שלך השבוע ({count} רשומות)。 שלומו עובר כל שכל。",
+  "insightHopeful": "תקווה נשאה אותך דרך {count} רגעים השבוע。 אמונה היא ממשות הדברים הנקווים。",
+  "insightAnxious": "התמודדת עם רגעי חרדה השבוע ({count} רשומות)。 השליכו עליו כל דאגתכם。",
+  "insightWorried": "דאגה עלתה {count} פעמים השבוע。 אל תדאגו למחר。",
+  "insightTired": "רשמת עייפות {count} פעמים השבוע。 באו אלי כל העמלים והטעונים。"
+}

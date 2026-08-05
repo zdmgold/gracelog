@@ -1,0 +1,182 @@
+{
+  "@@locale": "hi",
+  "@appName": {
+    "description": "Application name"
+  },
+  "@entriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightThankful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightJoyful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightPeaceful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightHopeful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightAnxious": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightWorried": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightTired": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "appName": "GraceLog",
+  "greetingMorning": "सुप्रभात",
+  "greetingAfternoon": "शुभ अपराह्न",
+  "greetingEvening": "शुभ संध्या",
+  "moodPeaceful": "शांत",
+  "moodThankful": "आभारी",
+  "moodJoyful": "आनंदित",
+  "moodHopeful": "आशावादी",
+  "moodAnxious": "चिंतित",
+  "moodWorried": "चिंतित",
+  "moodTired": "थका हुआ",
+  "todayEntryRecorded": "आज की कृतज्ञता दर्ज है",
+  "todayEntryMissing": "आपने आज अभी तक लिखा नहीं है",
+  "todayEntryRecordedSubtitle": "अपनी लड़ी जीवित रखने के लिए कल वापस आएं।",
+  "todayEntryMissingSubtitle": "विचार करने और धन्यवाद देने के लिए एक क्षण लें।",
+  "newEntry": "नया प्रवेश",
+  "weeklyReview": "साप्ताहिक समीक्षा",
+  "settings": "सेटिंग्स",
+  "howAreYouFeeling": "आप कैसा महसूस कर रहे हैं?",
+  "whatAreYouGratefulFor": "आप किसके लिए आभारी हैं?",
+  "gratitudeHint": "मैं ... के लिए आभारी हूँ",
+  "addAtLeastThree": "कम से कम 3 आइटम जोड़ें (प्रत्येक 10+ अक्षर)",
+  "save": "सहेजें",
+  "saving": "सहेज रहा है...",
+  "entrySaved": "प्रवेश सहेजा गया!",
+  "suggestAnotherVerse": "एक और पद सुझाएं",
+  "scriptureOfTheDay": "दिन का पद",
+  "suggestedScripture": "सुझाया गया पद",
+  "useThisVerse": "प्रवेश में इस पद का उपयोग करें",
+  "copy": "कॉपी",
+  "share": "साझा करें",
+  "verseCopied": "पद क्लिपबोर्ड पर कॉपी किया गया",
+  "moodTrendTitle": "मूड ट्रेंड (7 दिन)",
+  "weeklyBlessing": "साप्ताहिक आशीर्वाद",
+  "moodBreakdown": "मूड विश्लेषण",
+  "thisWeeksEntries": "इस सप्ताह की प्रविष्टियाँ",
+  "entriesCount": "{count} प्रविष्टियाँ",
+  "noEntriesThisWeek": "इस सप्ताह अभी तक कोई प्रविष्टि नहीं।",
+  "noEntriesYet": "इस सप्ताह अभी तक कोई प्रविष्टि नहीं",
+  "export": "निर्यात",
+  "exportJson": "JSON",
+  "exportImage": "छवि",
+  "exportJournal": "पत्रिका",
+  "exportAllData": "सभी डेटा निर्यात करें",
+  "exportSubtitle": "अपनी प्रविष्टियों का JSON के रूप में बैकअप लें",
+  "shareWithPartner": "अपने जवाबदेही साथी के साथ साझा करें",
+  "sharePartnerSubtitle": "अपने साप्ताहिक सारांश को किसी ऐसे व्यक्ति को भेजें जो आपकी विश्वास यात्रा को प्रोत्साहित करता है।",
+  "myGraceLogWeek": "मेरा GraceLog सप्ताह",
+  "shareWeeklySummary": "साप्ताहिक सारांश साझा करें",
+  "sharePrivacyNote": "आपका डेटा आपके डिवाइस पर रहता है। केवल वही बाहर जाता है जो आप साझा करते हैं।",
+  "bedtimeReflection": "सोने से पहले का चिंतन",
+  "bedtimeEnabled": "OLED ब्लैक मोड सक्रिय। आराम के लिए धुंधला।",
+  "bedtimeDisabled": "सोने से पहले एक सरल, धुंधली प्रविष्टि सक्षम करें।",
+  "restWell": "अच्छा आराम करें",
+  "bedtimePrompt": "आराम करने से पहले, आज आप किस एक चीज़ के लिए आभारी हैं?",
+  "bedtimePrivacy": "आपकी प्रविष्टि आपके डिवाइस पर स्थानीय रूप से सहेजी गई है।",
+  "appearance": "दिखावट",
+  "theme": "थीम",
+  "themeLight": "हल्का",
+  "themeDark": "गहरा",
+  "themeSystem": "सिस्टम डिफ़ॉल्ट",
+  "security": "सुरक्षा",
+  "biometricLock": "बायोमेट्रिक लॉक",
+  "biometricSubtitle": "ऐप खोलने के लिए फिंगरप्रिंट या फेस ID आवश्यक करें",
+  "language": "भाषा",
+  "subscription": "सदस्यता",
+  "proActive": "Pro सक्रिय",
+  "proTitle": "GraceLog Pro",
+  "proActiveSubtitle": "विज्ञापन-मुक्त अनुभव। आपके समर्थन के लिए धन्यवाद!",
+  "proInactiveSubtitle": "$0.99/माह में विज्ञापन हटाएं",
+  "upgrade": "अपग्रेड",
+  "restorePurchases": "खरीदारी पुनर्स्थापित करें",
+  "restoreSubtitle": "इस डिवाइस पर अपनी Pro सदस्यता पुनर्प्राप्त करें",
+  "data": "डेटा",
+  "about": "के बारे में",
+  "privacyPolicy": "गोपनीयता नीति",
+  "support": "सहायता",
+  "version": "संस्करण",
+  "deleteEntryTitle": "प्रविष्टि हटाएं?",
+  "deleteEntryMessage": "यह प्रविष्टि स्थायी रूप से हटा दी जाएगी। इस क्रिया को पूर्ववत नहीं किया जा सकता।",
+  "cancel": "रद्द करें",
+  "delete": "हटाएं",
+  "categoryFamily": "परिवार",
+  "categoryHealth": "स्वास्थ्य",
+  "categoryProvision": "प्रावधान",
+  "categoryGrace": "अनुग्रह",
+  "categoryNature": "प्रकृति",
+  "categoryFriends": "दोस्त",
+  "categoryWork": "काम",
+  "categoryRest": "आराम",
+  "categoryChurch": "चर्च",
+  "categoryScripture": "पवित्र शास्त्र",
+  "streakDays": "{count,plural, =1{1 दिन}other{{count} दिन}}",
+  "errorGeneric": "कुछ गलत हो गया",
+  "errorSaveEntry": "प्रविष्टि सहेजने में विफल। कृपया पुनः प्रयास करें।",
+  "errorUpdateEntry": "प्रविष्टि अपडेट करने में विफल।",
+  "errorDeleteEntry": "प्रविष्टि हटाने में विफल।",
+  "errorSearch": "खोज विफल।",
+  "errorLoadEntries": "प्रविष्टियाँ लोड करने में विफल।",
+  "errorMinItems": "कृपया कम से कम 3 कृतज्ञता आइटम जोड़ें।",
+  "errorMinChars": "प्रत्येक आइटम में कम से कम 10 अक्षर होने चाहिए।",
+  "errorExportImage": "छवि के रूप में निर्यात करने के लिए एक प्रविष्टि चुनें",
+  "loading": "GraceLog लोड हो रहा है...",
+  "retry": "पुनः प्रयास करें",
+  "restartApp": "ऐप पुनरारंभ करें",
+  "selectImageExport": "छवि के रूप में निर्यात करने के लिए एक प्रविष्टि चुनें",
+  "insightThankful": "आपने इस सप्ताह {count} बार कृतज्ञता महसूस की। कृतज्ञता हमारे पास को पर्याप्त में बदल देती है।",
+  "insightJoyful": "आनंद ने आपके सप्ताह को {count} प्रविष्टियों के साथ चिह्नित किया। प्रभु का आनंद आपकी शक्ति है।",
+  "insightPeaceful": "शांति इस सप्ताह आपका विषय थी ({count} प्रविष्टियाँ)। उसकी शांति हर समझ से परे है।",
+  "insightHopeful": "आशा ने आपको इस सप्ताह {count} क्षणों के माध्यम से ले जाया। विश्वास आशा की वस्तुओं का सार है।",
+  "insightAnxious": "आपने इस सप्ताह चिंतित क्षणों का सामना किया ({count} प्रविष्टियाँ)। अपनी सारी चिंता उस पर डाल दें।",
+  "insightWorried": "चिंता इस सप्ताह {count} बार उभरी। कल की चिंता न करें।",
+  "insightTired": "आपने इस सप्ताह {count} बार थकान दर्ज की। मेरे पास आओ, सब थके हुए।"
+}

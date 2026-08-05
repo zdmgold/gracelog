@@ -1,0 +1,182 @@
+{
+  "@@locale": "pt",
+  "@appName": {
+    "description": "Application name"
+  },
+  "@entriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightThankful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightJoyful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightPeaceful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightHopeful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightAnxious": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightWorried": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightTired": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "appName": "GraceLog",
+  "greetingMorning": "Bom dia",
+  "greetingAfternoon": "Boa tarde",
+  "greetingEvening": "Boa noite",
+  "moodPeaceful": "Pacífico",
+  "moodThankful": "Grato",
+  "moodJoyful": "Alegre",
+  "moodHopeful": "Esperançoso",
+  "moodAnxious": "Ansioso",
+  "moodWorried": "Preocupado",
+  "moodTired": "Cansado",
+  "todayEntryRecorded": "A gratidão de hoje está registrada",
+  "todayEntryMissing": "Você ainda não escreveu hoje",
+  "todayEntryRecordedSubtitle": "Volte amanhã para manter sua sequência viva.",
+  "todayEntryMissingSubtitle": "Tome um momento para refletir e agradecer.",
+  "newEntry": "Nova Entrada",
+  "weeklyReview": "Revisão Semanal",
+  "settings": "Configurações",
+  "howAreYouFeeling": "Como você está se sentindo?",
+  "whatAreYouGratefulFor": "Pelo que você é grato?",
+  "gratitudeHint": "Sou grato por...",
+  "addAtLeastThree": "Adicione pelo menos 3 itens (10+ caracteres cada)",
+  "save": "Salvar",
+  "saving": "Salvando...",
+  "entrySaved": "Entrada Salva!",
+  "suggestAnotherVerse": "Sugerir outro versículo",
+  "scriptureOfTheDay": "Versículo do Dia",
+  "suggestedScripture": "Versículo Sugerido",
+  "useThisVerse": "Usar Este Versículo na Entrada",
+  "copy": "Copiar",
+  "share": "Compartilhar",
+  "verseCopied": "Versículo copiado para a área de transferência",
+  "moodTrendTitle": "Tendência de Humor (7 Dias)",
+  "weeklyBlessing": "Bênção Semanal",
+  "moodBreakdown": "Divisão de Humor",
+  "thisWeeksEntries": "Entradas Desta Semana",
+  "entriesCount": "{count} entradas",
+  "noEntriesThisWeek": "Ainda não há entradas esta semana.",
+  "noEntriesYet": "Ainda não há entradas esta semana",
+  "export": "Exportar",
+  "exportJson": "JSON",
+  "exportImage": "Imagem",
+  "exportJournal": "Diário",
+  "exportAllData": "Exportar Todos os Dados",
+  "exportSubtitle": "Faça backup das suas entradas como JSON",
+  "shareWithPartner": "Compartilhar com Seu Parceiro de Responsabilidade",
+  "sharePartnerSubtitle": "Envie seu resumo semanal para alguém que encoraja sua jornada de fé.",
+  "myGraceLogWeek": "Minha Semana GraceLog",
+  "shareWeeklySummary": "Compartilhar Resumo Semanal",
+  "sharePrivacyNote": "Seus dados permanecem no seu dispositivo. Apenas o que você compartilha sai.",
+  "bedtimeReflection": "Reflexão Noturna",
+  "bedtimeEnabled": "Modo preto OLED ativo. Escurecido para descansar.",
+  "bedtimeDisabled": "Ative uma entrada simplificada e escurecida antes de dormir.",
+  "restWell": "Descanse Bem",
+  "bedtimePrompt": "Antes de descansar, por qual uma coisa você é grato hoje?",
+  "bedtimePrivacy": "Sua entrada é salva localmente no seu dispositivo.",
+  "appearance": "Aparência",
+  "theme": "Tema",
+  "themeLight": "Claro",
+  "themeDark": "Escuro",
+  "themeSystem": "Padrão do sistema",
+  "security": "Segurança",
+  "biometricLock": "Bloqueio Biométrico",
+  "biometricSubtitle": "Exigir impressão digital ou face ID para abrir o app",
+  "language": "Idioma",
+  "subscription": "Assinatura",
+  "proActive": "Pro Ativo",
+  "proTitle": "GraceLog Pro",
+  "proActiveSubtitle": "Experiência sem anúncios. Obrigado pelo seu apoio!",
+  "proInactiveSubtitle": "Remova anúncios por $0,99/mês",
+  "upgrade": "Atualizar",
+  "restorePurchases": "Restaurar Compras",
+  "restoreSubtitle": "Recupere sua assinatura Pro neste dispositivo",
+  "data": "Dados",
+  "about": "Sobre",
+  "privacyPolicy": "Política de Privacidade",
+  "support": "Suporte",
+  "version": "Versão",
+  "deleteEntryTitle": "Excluir Entrada?",
+  "deleteEntryMessage": "Esta entrada será permanentemente removida. Esta ação não pode ser desfeita.",
+  "cancel": "Cancelar",
+  "delete": "Excluir",
+  "categoryFamily": "Família",
+  "categoryHealth": "Saúde",
+  "categoryProvision": "Providência",
+  "categoryGrace": "Graça",
+  "categoryNature": "Natureza",
+  "categoryFriends": "Amigos",
+  "categoryWork": "Trabalho",
+  "categoryRest": "Descanso",
+  "categoryChurch": "Igreja",
+  "categoryScripture": "Escritura",
+  "streakDays": "{count,plural, =1{1 dia}other{{count} dias}}",
+  "errorGeneric": "Algo deu errado",
+  "errorSaveEntry": "Falha ao salvar a entrada. Tente novamente.",
+  "errorUpdateEntry": "Falha ao atualizar a entrada.",
+  "errorDeleteEntry": "Falha ao excluir a entrada.",
+  "errorSearch": "A pesquisa falhou.",
+  "errorLoadEntries": "Falha ao carregar as entradas.",
+  "errorMinItems": "Por favor adicione pelo menos 3 itens de gratidão.",
+  "errorMinChars": "Cada item deve ter pelo menos 10 caracteres.",
+  "errorExportImage": "Selecione uma entrada para exportar como imagem",
+  "loading": "Carregando GraceLog...",
+  "retry": "Tentar novamente",
+  "restartApp": "Reiniciar App",
+  "selectImageExport": "Selecione uma entrada para exportar como imagem",
+  "insightThankful": "Você sentiu gratidão {count} vezes esta semana. A gratidão transforma o que temos em suficiência.",
+  "insightJoyful": "A alegria marcou sua semana com {count} entradas. A alegria do Senhor é sua força.",
+  "insightPeaceful": "A paz foi seu tema esta semana ({count} entradas). Sua paz excede todo entendimento.",
+  "insightHopeful": "A esperança o levou através de {count} momentos esta semana. A fé é a substância das coisas esperadas.",
+  "insightAnxious": "Você enfrentou momentos de ansiedade esta semana ({count} entradas). Lance sobre Ele toda a sua ansiedade.",
+  "insightWorried": "A preocupação surgiu {count} vezes esta semana. Não se preocupe com o amanhã.",
+  "insightTired": "Você registrou cansaço {count} vezes esta semana. Vinde a mim, todos os que estais cansados."
+}

@@ -1,0 +1,182 @@
+{
+  "@@locale": "ar",
+  "@appName": {
+    "description": "Application name"
+  },
+  "@entriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightThankful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightJoyful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightPeaceful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightHopeful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightAnxious": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightWorried": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightTired": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "appName": "GraceLog",
+  "greetingMorning": "صباح الخير",
+  "greetingAfternoon": "مساء الخير",
+  "greetingEvening": "مساء الخير",
+  "moodPeaceful": "هادئ",
+  "moodThankful": "شاكر",
+  "moodJoyful": "مبتهج",
+  "moodHopeful": "مأمول",
+  "moodAnxious": "قلق",
+  "moodWorried": "قلق",
+  "moodTired": "متعب",
+  "todayEntryRecorded": "امتنان اليوم مسجل",
+  "todayEntryMissing": "لم تسجل اليوم بعد",
+  "todayEntryRecordedSubtitle": "عد غداً للحفاظ على سلسلتك.",
+  "todayEntryMissingSubtitle": "خذ لحظة للتأمل والشكر.",
+  "newEntry": "إدخال جديد",
+  "weeklyReview": "المراجعة الأسبوعية",
+  "settings": "الإعدادات",
+  "howAreYouFeeling": "كيف تشعر؟",
+  "whatAreYouGratefulFor": "لماذا أنت شاكر؟",
+  "gratitudeHint": "أنا شاكر لـ...",
+  "addAtLeastThree": "أضف 3 عناصر على الأقل (10+ حرف لكل منها)",
+  "save": "حفظ",
+  "saving": "جاري الحفظ...",
+  "entrySaved": "تم حفظ الإدخال!",
+  "suggestAnotherVerse": "اقترح آية أخرى",
+  "scriptureOfTheDay": "آية اليوم",
+  "suggestedScripture": "آية مقترحة",
+  "useThisVerse": "استخدم هذه الآية في الإدخال",
+  "copy": "نسخ",
+  "share": "مشاركة",
+  "verseCopied": "تم نسخ الآية إلى الحافظة",
+  "moodTrendTitle": "اتجاه المزاج (7 أيام)",
+  "weeklyBlessing": "البركة الأسبوعية",
+  "moodBreakdown": "تحليل المزاج",
+  "thisWeeksEntries": "إدخالات هذا الأسبوع",
+  "entriesCount": "{count} إدخالات",
+  "noEntriesThisWeek": "لا توجد إدخالات هذا الأسبوع بعد.",
+  "noEntriesYet": "لا توجد إدخالات هذا الأسبوع بعد",
+  "export": "تصدير",
+  "exportJson": "JSON",
+  "exportImage": "صورة",
+  "exportJournal": "يومية",
+  "exportAllData": "تصدير جميع البيانات",
+  "exportSubtitle": "احتفظ بنسخة احتياطية من إدخالاتك كـ JSON",
+  "shareWithPartner": "مشاركة مع شريك المساءلة",
+  "sharePartnerSubtitle": "أرسل ملخصك الأسبوعي لشخص يشجع رحلتك الإيمانية.",
+  "myGraceLogWeek": "أسبوعي في GraceLog",
+  "shareWeeklySummary": "مشاركة الملخص الأسبوعي",
+  "sharePrivacyNote": "بياناتك تبقى على جهازك. فقط ما تشاركه يخرج.",
+  "bedtimeReflection": "تأمل المساء",
+  "bedtimeEnabled": "وضع الأسود OLED نشط. مظلم للراحة.",
+  "bedtimeDisabled": "فعّل إدخال مبسط ومظلم قبل النوم.",
+  "restWell": "استرح جيداً",
+  "bedtimePrompt": "قبل أن تستريح، لأي شيء أنت شاكر اليوم؟",
+  "bedtimePrivacy": "إدخالك محفوظ محلياً على جهازك.",
+  "appearance": "المظهر",
+  "theme": "السمة",
+  "themeLight": "فاتح",
+  "themeDark": "داكن",
+  "themeSystem": "افتراضي النظام",
+  "security": "الأمان",
+  "biometricLock": "القفل البيومتري",
+  "biometricSubtitle": "اطلب بصمة الإصبع أو Face ID لفتح التطبيق",
+  "language": "اللغة",
+  "subscription": "الاشتراك",
+  "proActive": "Pro نشط",
+  "proTitle": "GraceLog Pro",
+  "proActiveSubtitle": "تجربة خالية من الإعلانات. شكراً لدعمك!",
+  "proInactiveSubtitle": "أزل الإعلانات مقابل 0.99 دولار/شهر",
+  "upgrade": "الترقية",
+  "restorePurchases": "استعادة المشتريات",
+  "restoreSubtitle": "استعد اشتراكك Pro على هذا الجهاز",
+  "data": "البيانات",
+  "about": "حول",
+  "privacyPolicy": "سياسة الخصوصية",
+  "support": "الدعم",
+  "version": "الإصدار",
+  "deleteEntryTitle": "حذف الإدخال؟",
+  "deleteEntryMessage": "سيتم حذف هذا الإدخال نهائياً. لا يمكن التراجع عن هذا الإجراء.",
+  "cancel": "إلغاء",
+  "delete": "حذف",
+  "categoryFamily": "العائلة",
+  "categoryHealth": "الصحة",
+  "categoryProvision": "الرزق",
+  "categoryGrace": "النعمة",
+  "categoryNature": "الطبيعة",
+  "categoryFriends": "الأصدقاء",
+  "categoryWork": "العمل",
+  "categoryRest": "الراحة",
+  "categoryChurch": "الكنيسة",
+  "categoryScripture": "الكتاب المقدس",
+  "streakDays": "{count,plural, =1{يوم واحد}other{{count} أيام}}",
+  "errorGeneric": "حدث خطأ ما",
+  "errorSaveEntry": "فشل في حفظ الإدخال. يرجى المحاولة مرة أخرى.",
+  "errorUpdateEntry": "فشل في تحديث الإدخال.",
+  "errorDeleteEntry": "فشل في حذف الإدخال.",
+  "errorSearch": "فشل البحث.",
+  "errorLoadEntries": "فشل في تحميل الإدخالات.",
+  "errorMinItems": "يرجى إضافة 3 عناصر امتنان على الأقل.",
+  "errorMinChars": "يجب أن يحتوي كل عنصر على 10 أحرف على الأقل.",
+  "errorExportImage": "اختر إدخالاً للتصدير كصورة",
+  "loading": "جاري تحميل GraceLog...",
+  "retry": "إعادة المحاولة",
+  "restartApp": "إعادة تشغيل التطبيق",
+  "selectImageExport": "اختر إدخالاً للتصدير كصورة",
+  "insightThankful": "شعرت بالامتنان {count} مرة هذا الأسبوع. الامتنان يحول ما لدينا إلى كفاية.",
+  "insightJoyful": "الفرح أ marked أسبوعك بـ {count} إدخالات. فرح الرب هو قوتك.",
+  "insightPeaceful": "السلام كان موضوعك هذا الأسبوع ({count} إدخالات). سلامه يفوق كل عقل.",
+  "insightHopeful": "الأمل حملك عبر {count} لحظة هذا الأسبوع. الإيمان هو جوهر الأمور المرجوة.",
+  "insightAnxious": "واجهت لحظات قلق هذا الأسبوع ({count} إدخالات). اطرح كل قلقك عليه.",
+  "insightWorried": "ظهر القلق {count} مرة هذا الأسبوع. لا تقلقوا من الغد.",
+  "insightTired": "سجلت التعب {count} مرة هذا الأسبوع. تعالوا إليّ يا جميع المتعبين."
+}

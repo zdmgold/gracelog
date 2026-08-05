@@ -1,0 +1,182 @@
+{
+  "@@locale": "de",
+  "@appName": {
+    "description": "Application name"
+  },
+  "@entriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightThankful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightJoyful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightPeaceful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightHopeful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightAnxious": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightWorried": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightTired": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "appName": "GraceLog",
+  "greetingMorning": "Guten Morgen",
+  "greetingAfternoon": "Guten Tag",
+  "greetingEvening": "Guten Abend",
+  "moodPeaceful": "Friedlich",
+  "moodThankful": "Dankbar",
+  "moodJoyful": "Freudig",
+  "moodHopeful": "Hoffnungsvoll",
+  "moodAnxious": "Ängstlich",
+  "moodWorried": "Besorgt",
+  "moodTired": "Müde",
+  "todayEntryRecorded": "Die Dankbarkeit von heute ist aufgezeichnet",
+  "todayEntryMissing": "Sie haben heute noch nicht geschrieben",
+  "todayEntryRecordedSubtitle": "Kommen Sie morgen zurück, um Ihre Serie am Leben zu halten.",
+  "todayEntryMissingSubtitle": "Nehmen Sie sich einen Moment Zeit zum Nachdenken und Danken.",
+  "newEntry": "Neuer Eintrag",
+  "weeklyReview": "Wöchentliche Übersicht",
+  "settings": "Einstellungen",
+  "howAreYouFeeling": "Wie fühlen Sie sich?",
+  "whatAreYouGratefulFor": "Wofür sind Sie dankbar?",
+  "gratitudeHint": "Ich bin dankbar für...",
+  "addAtLeastThree": "Fügen Sie mindestens 3 Einträge hinzu (10+ Zeichen pro Eintrag)",
+  "save": "Speichern",
+  "saving": "Speichern...",
+  "entrySaved": "Eintrag Gespeichert!",
+  "suggestAnotherVerse": "Anderen Vers vorschlagen",
+  "scriptureOfTheDay": "Vers des Tages",
+  "suggestedScripture": "Vorgeschlagener Vers",
+  "useThisVerse": "Diesen Vers im Eintrag verwenden",
+  "copy": "Kopieren",
+  "share": "Teilen",
+  "verseCopied": "Vers in die Zwischenablage kopiert",
+  "moodTrendTitle": "Stimmungstrend (7 Tage)",
+  "weeklyBlessing": "Wöchentlicher Segen",
+  "moodBreakdown": "Stimmungsaufschlüsselung",
+  "thisWeeksEntries": "Einträge dieser Woche",
+  "entriesCount": "{count} Einträge",
+  "noEntriesThisWeek": "Noch keine Einträge diese Woche.",
+  "noEntriesYet": "Noch keine Einträge diese Woche",
+  "export": "Exportieren",
+  "exportJson": "JSON",
+  "exportImage": "Bild",
+  "exportJournal": "Journal",
+  "exportAllData": "Alle Daten exportieren",
+  "exportSubtitle": "Sichern Sie Ihre Einträge als JSON",
+  "shareWithPartner": "Mit Ihrem Verantwortungspartner teilen",
+  "sharePartnerSubtitle": "Senden Sie Ihre wöchentliche Zusammenfassung an jemanden, der Ihren Glaubensweg ermutigt.",
+  "myGraceLogWeek": "Meine GraceLog-Woche",
+  "shareWeeklySummary": "Wöchentliche Zusammenfassung teilen",
+  "sharePrivacyNote": "Ihre Daten bleiben auf Ihrem Gerät. Nur das, was Sie teilen, verlässt es.",
+  "bedtimeReflection": "Abendliche Reflexion",
+  "bedtimeEnabled": "OLED-Schwarzmodus aktiv. Gedimmt für die Ruhe.",
+  "bedtimeDisabled": "Aktivieren Sie einen vereinfachten, gedimmten Eintrag vor dem Schlafen.",
+  "restWell": "Gut Rasten",
+  "bedtimePrompt": "Bevor Sie sich ausruhen, wofür eine Sache sind Sie heute dankbar?",
+  "bedtimePrivacy": "Ihr Eintrag wird lokal auf Ihrem Gerät gespeichert.",
+  "appearance": "Erscheinungsbild",
+  "theme": "Thema",
+  "themeLight": "Hell",
+  "themeDark": "Dunkel",
+  "themeSystem": "Systemstandard",
+  "security": "Sicherheit",
+  "biometricLock": "Biometrische Sperre",
+  "biometricSubtitle": "Fingerabdruck oder Face ID zum Öffnen der App erforderlich",
+  "language": "Sprache",
+  "subscription": "Abonnement",
+  "proActive": "Pro Aktiv",
+  "proTitle": "GraceLog Pro",
+  "proActiveSubtitle": "Werbefreie Erfahrung. Danke für Ihre Unterstützung!",
+  "proInactiveSubtitle": "Werbung für 0,99€/Monat entfernen",
+  "upgrade": "Upgrade",
+  "restorePurchases": "Käufe wiederherstellen",
+  "restoreSubtitle": "Stellen Sie Ihr Pro-Abonnement auf diesem Gerät wieder her",
+  "data": "Daten",
+  "about": "Über",
+  "privacyPolicy": "Datenschutzrichtlinie",
+  "support": "Support",
+  "version": "Version",
+  "deleteEntryTitle": "Eintrag löschen?",
+  "deleteEntryMessage": "Dieser Eintrag wird dauerhaft entfernt. Diese Aktion kann nicht rückgängig gemacht werden.",
+  "cancel": "Abbrechen",
+  "delete": "Löschen",
+  "categoryFamily": "Familie",
+  "categoryHealth": "Gesundheit",
+  "categoryProvision": "Versorgung",
+  "categoryGrace": "Gnade",
+  "categoryNature": "Natur",
+  "categoryFriends": "Freunde",
+  "categoryWork": "Arbeit",
+  "categoryRest": "Ruhe",
+  "categoryChurch": "Kirche",
+  "categoryScripture": "Schrift",
+  "streakDays": "{count,plural, =1{1 Tag}other{{count} Tage}}",
+  "errorGeneric": "Etwas ist schief gelaufen",
+  "errorSaveEntry": "Fehler beim Speichern des Eintrags. Bitte versuchen Sie es erneut.",
+  "errorUpdateEntry": "Fehler beim Aktualisieren des Eintrags.",
+  "errorDeleteEntry": "Fehler beim Löschen des Eintrags.",
+  "errorSearch": "Suche fehlgeschlagen.",
+  "errorLoadEntries": "Fehler beim Laden der Einträge.",
+  "errorMinItems": "Bitte fügen Sie mindestens 3 Dankbarkeitseinträge hinzu.",
+  "errorMinChars": "Jeder Eintrag muss mindestens 10 Zeichen enthalten.",
+  "errorExportImage": "Wählen Sie einen Eintrag zum Exportieren als Bild aus",
+  "loading": "GraceLog wird geladen...",
+  "retry": "Wiederholen",
+  "restartApp": "App neu starten",
+  "selectImageExport": "Wählen Sie einen Eintrag zum Exportieren als Bild aus",
+  "insightThankful": "Sie haben diese Woche {count} Mal Dankbarkeit empfunden. Dankbarkeit verwandelt das, was wir haben, in Genügsamkeit.",
+  "insightJoyful": "Freude hat Ihre Woche mit {count} Einträgen geprägt. Die Freude des Herrn ist Ihre Stärke.",
+  "insightPeaceful": "Frieden war Ihr Thema diese Woche ({count} Einträge). Sein Frieden übersteigt allen Verstand.",
+  "insightHopeful": "Hoffnung hat Sie durch {count} Momente dieser Woche getragen. Glaube ist die Substanz der gehofften Dinge.",
+  "insightAnxious": "Sie haben diese Woche ängstliche Momente erlebt ({count} Einträge). Werfen Sie alle Ihre Sorge auf Ihn.",
+  "insightWorried": "Sorge tauchte diese Woche {count} Mal auf. Sorgt euch nicht um den morgigen Tag.",
+  "insightTired": "Sie haben diese Woche {count} Mal Müdigkeit aufgezeichnet. Kommt her zu mir, alle, die ihr mühselig und belastet seid."
+}

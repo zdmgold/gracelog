@@ -1,1 +1,182 @@
-
+{
+  "@@locale": "en",
+  "appName": "GraceLog",
+  "@appName": {
+    "description": "Application name"
+  },
+  "greetingMorning": "Good morning",
+  "greetingAfternoon": "Good afternoon",
+  "greetingEvening": "Good evening",
+  "moodPeaceful": "Peaceful",
+  "moodThankful": "Thankful",
+  "moodJoyful": "Joyful",
+  "moodHopeful": "Hopeful",
+  "moodAnxious": "Anxious",
+  "moodWorried": "Worried",
+  "moodTired": "Tired",
+  "todayEntryRecorded": "Today's gratitude is recorded",
+  "todayEntryMissing": "You haven't journaled today",
+  "todayEntryRecordedSubtitle": "Come back tomorrow to keep your streak alive.",
+  "todayEntryMissingSubtitle": "Take a moment to reflect and give thanks.",
+  "newEntry": "New Entry",
+  "weeklyReview": "Weekly Review",
+  "settings": "Settings",
+  "howAreYouFeeling": "How are you feeling?",
+  "whatAreYouGratefulFor": "What are you grateful for?",
+  "gratitudeHint": "I am grateful for...",
+  "addAtLeastThree": "Add at least 3 items (10+ characters each)",
+  "save": "Save",
+  "saving": "Saving...",
+  "entrySaved": "Entry Saved!",
+  "suggestAnotherVerse": "Suggest another verse",
+  "scriptureOfTheDay": "Scripture of the Day",
+  "suggestedScripture": "Suggested Scripture",
+  "useThisVerse": "Use This Verse in Entry",
+  "copy": "Copy",
+  "share": "Share",
+  "verseCopied": "Verse copied to clipboard",
+  "moodTrendTitle": "Mood Trend (7 Days)",
+  "weeklyBlessing": "Weekly Blessing",
+  "moodBreakdown": "Mood Breakdown",
+  "thisWeeksEntries": "This Week's Entries",
+  "entriesCount": "{count} entries",
+  "@entriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noEntriesThisWeek": "No entries this week yet.",
+  "noEntriesYet": "No entries yet this week",
+  "export": "Export",
+  "exportJson": "JSON",
+  "exportImage": "Image",
+  "exportJournal": "Journal",
+  "exportAllData": "Export All Data",
+  "exportSubtitle": "Backup your entries as JSON",
+  "shareWithPartner": "Share with Your Accountability Partner",
+  "sharePartnerSubtitle": "Send your weekly summary to someone who encourages your faith journey.",
+  "myGraceLogWeek": "My GraceLog Week",
+  "shareWeeklySummary": "Share Weekly Summary",
+  "sharePrivacyNote": "Your data stays on your device. Only what you share leaves.",
+  "bedtimeReflection": "Bedtime Reflection",
+  "bedtimeEnabled": "OLED black mode active. Dimmed for rest.",
+  "bedtimeDisabled": "Enable a simplified, dimmed entry before sleep.",
+  "restWell": "Rest Well",
+  "bedtimePrompt": "Before you rest, what is one thing you are grateful for today?",
+  "bedtimePrivacy": "Your entry is saved locally on your device.",
+  "appearance": "Appearance",
+  "theme": "Theme",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "themeSystem": "System default",
+  "security": "Security",
+  "biometricLock": "Biometric Lock",
+  "biometricSubtitle": "Require fingerprint or face ID to open the app",
+  "language": "Language",
+  "subscription": "Subscription",
+  "proActive": "Pro Active",
+  "proTitle": "GraceLog Pro",
+  "proActiveSubtitle": "Ad-free experience. Thank you for your support!",
+  "proInactiveSubtitle": "Remove ads for $0.99/month",
+  "upgrade": "Upgrade",
+  "restorePurchases": "Restore Purchases",
+  "restoreSubtitle": "Recover your Pro subscription on this device",
+  "data": "Data",
+  "about": "About",
+  "privacyPolicy": "Privacy Policy",
+  "support": "Support",
+  "version": "Version",
+  "deleteEntryTitle": "Delete Entry?",
+  "deleteEntryMessage": "This entry will be permanently removed. This action cannot be undone.",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "categoryFamily": "Family",
+  "categoryHealth": "Health",
+  "categoryProvision": "Provision",
+  "categoryGrace": "Grace",
+  "categoryNature": "Nature",
+  "categoryFriends": "Friends",
+  "categoryWork": "Work",
+  "categoryRest": "Rest",
+  "categoryChurch": "Church",
+  "categoryScripture": "Scripture",
+  "streakDays": "{count,plural, =1{1 day}other{{count} days}}",
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "errorGeneric": "Something went wrong",
+  "errorSaveEntry": "Failed to save entry. Please try again.",
+  "errorUpdateEntry": "Failed to update entry.",
+  "errorDeleteEntry": "Failed to delete entry.",
+  "errorSearch": "Search failed.",
+  "errorLoadEntries": "Failed to load entries.",
+  "errorMinItems": "Please add at least 3 gratitude items.",
+  "errorMinChars": "Each gratitude item must be at least 10 characters.",
+  "errorExportImage": "Select an entry to export as image",
+  "loading": "Loading GraceLog...",
+  "retry": "Retry",
+  "restartApp": "Restart App",
+  "selectImageExport": "Select an entry to export as image",
+  "insightThankful": "You felt thankful {count} times this week. Gratitude turns what we have into enough.",
+  "@insightThankful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "insightJoyful": "Joy marked your week with {count} entries. The joy of the Lord is your strength.",
+  "@insightJoyful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "insightPeaceful": "Peace was your theme this week ({count} entries). His peace passes all understanding.",
+  "@insightPeaceful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "insightHopeful": "Hope carried you through {count} moments this week. Faith is the substance of things hoped for.",
+  "@insightHopeful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "insightAnxious": "You faced anxious moments this week ({count} entries). Cast all your anxiety on Him.",
+  "@insightAnxious": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "insightWorried": "Worry surfaced {count} times this week. Do not worry about tomorrow.",
+  "@insightWorried": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "insightTired": "You recorded weariness {count} times this week. Come to Me, all who are weary.",
+  "@insightTired": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
+}

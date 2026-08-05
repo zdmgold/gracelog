@@ -1,0 +1,182 @@
+{
+  "@@locale": "ja",
+  "@appName": {
+    "description": "Application name"
+  },
+  "@entriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightThankful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightJoyful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightPeaceful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightHopeful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightAnxious": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightWorried": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightTired": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "appName": "GraceLog",
+  "greetingMorning": "おはようございます",
+  "greetingAfternoon": "こんにちは",
+  "greetingEvening": "こんばんは",
+  "moodPeaceful": "平和",
+  "moodThankful": "感謝",
+  "moodJoyful": "喜び",
+  "moodHopeful": "希望",
+  "moodAnxious": "不安",
+  "moodWorried": "心配",
+  "moodTired": "疲れた",
+  "todayEntryRecorded": "今日の感謝は記録されました",
+  "todayEntryMissing": "今日はまだ書いていません",
+  "todayEntryRecordedSubtitle": "連続記録を維持するために明日もお越しください。",
+  "todayEntryMissingSubtitle": "少し時間を取って反省し、感謝の気持ちを込めてください。",
+  "newEntry": "新規入力",
+  "weeklyReview": "週間レビュー",
+  "settings": "設定",
+  "howAreYouFeeling": "今の気分はどうですか？",
+  "whatAreYouGratefulFor": "何に感謝していますか？",
+  "gratitudeHint": "...に感謝しています",
+  "addAtLeastThree": "3つ以上追加してください（各10文字以上）",
+  "save": "保存",
+  "saving": "保存中...",
+  "entrySaved": "入力が保存されました！",
+  "suggestAnotherVerse": "別の聖句を提案",
+  "scriptureOfTheDay": "今日の聖句",
+  "suggestedScripture": "提案された聖句",
+  "useThisVerse": "この聖句を入力に使用",
+  "copy": "コピー",
+  "share": "共有",
+  "verseCopied": "聖句をクリップボードにコピーしました",
+  "moodTrendTitle": "気分の傾向（7日間）",
+  "weeklyBlessing": "週間の祝福",
+  "moodBreakdown": "気分の内訳",
+  "thisWeeksEntries": "今週の入力",
+  "entriesCount": "{count}件の入力",
+  "noEntriesThisWeek": "今週はまだ入力がありません。",
+  "noEntriesYet": "今週はまだ入力がありません",
+  "export": "エクスポート",
+  "exportJson": "JSON",
+  "exportImage": "画像",
+  "exportJournal": "ジャーナル",
+  "exportAllData": "すべてのデータをエクスポート",
+  "exportSubtitle": "入力をJSONとしてバックアップ",
+  "shareWithPartner": "責任パートナーと共有",
+  "sharePartnerSubtitle": "あなたの信仰の旅を励ましてくれる人に週間サマリーを送りましょう。",
+  "myGraceLogWeek": "私のGraceLog週間",
+  "shareWeeklySummary": "週間サマリーを共有",
+  "sharePrivacyNote": "あなたのデータはデバイスに留まります。共有したものだけが外部に出ます。",
+  "bedtimeReflection": "就寝前の反省",
+  "bedtimeEnabled": "OLEDブラックモード有効。休息のために暗くなっています。",
+  "bedtimeDisabled": "就寝前にシンプルで暗い入力を有効にします。",
+  "restWell": "よく休んでください",
+  "bedtimePrompt": "休む前に、今日何か一つ感謝していることは何ですか？",
+  "bedtimePrivacy": "あなたの入力はデバイスにローカルに保存されます。",
+  "appearance": "外観",
+  "theme": "テーマ",
+  "themeLight": "ライト",
+  "themeDark": "ダーク",
+  "themeSystem": "システムデフォルト",
+  "security": "セキュリティ",
+  "biometricLock": "生体認証ロック",
+  "biometricSubtitle": "アプリを開くには指紋またはFace IDが必要です",
+  "language": "言語",
+  "subscription": "サブスクリプション",
+  "proActive": "Pro有効",
+  "proTitle": "GraceLog Pro",
+  "proActiveSubtitle": "広告なしの体験。ご支援ありがとうございます！",
+  "proInactiveSubtitle": "月額$0.99で広告を削除",
+  "upgrade": "アップグレード",
+  "restorePurchases": "購入を復元",
+  "restoreSubtitle": "このデバイスでProサブスクリプションを復元",
+  "data": "データ",
+  "about": "について",
+  "privacyPolicy": "プライバシーポリシー",
+  "support": "サポート",
+  "version": "バージョン",
+  "deleteEntryTitle": "入力を削除しますか？",
+  "deleteEntryMessage": "この入力は完全に削除されます。この操作は元に戻せません。",
+  "cancel": "キャンセル",
+  "delete": "削除",
+  "categoryFamily": "家族",
+  "categoryHealth": "健康",
+  "categoryProvision": "供給",
+  "categoryGrace": "恵み",
+  "categoryNature": "自然",
+  "categoryFriends": "友人",
+  "categoryWork": "仕事",
+  "categoryRest": "休息",
+  "categoryChurch": "教会",
+  "categoryScripture": "聖書",
+  "streakDays": "{count,plural, =1{1日}other{{count}日}}",
+  "errorGeneric": "問題が発生しました",
+  "errorSaveEntry": "入力の保存に失敗しました。もう一度お試しください。",
+  "errorUpdateEntry": "入力の更新に失敗しました。",
+  "errorDeleteEntry": "入力の削除に失敗しました。",
+  "errorSearch": "検索に失敗しました。",
+  "errorLoadEntries": "入力の読み込みに失敗しました。",
+  "errorMinItems": "感謝の項目を3つ以上追加してください。",
+  "errorMinChars": "各項目は10文字以上である必要があります。",
+  "errorExportImage": "画像としてエクスポートする入力を選択してください",
+  "loading": "GraceLogを読み込み中...",
+  "retry": "再試行",
+  "restartApp": "アプリを再起動",
+  "selectImageExport": "画像としてエクスポートする入力を選択してください",
+  "insightThankful": "今週は{count}回感謝の気持ちを感じました。感謝は持っているものを十分なものに変えます。",
+  "insightJoyful": "喜びが今週を{count}件の入力で彩りました。主の喜びはあなたの力です。",
+  "insightPeaceful": "平和が今週のテーマでした（{count}件）。彼の平和はすべての理解を超えています。",
+  "insightHopeful": "希望が今週{count}の瞬間を通じてあなたを支えました。信仰は望みの実体です。",
+  "insightAnxious": "今週は不安な瞬間に直面しました（{count}件）。あなたの不安をすべて彼に投げかけなさい。",
+  "insightWorried": "心配が今週{count}回浮上しました。明日のことを心配しないでください。",
+  "insightTired": "今週は{count}回疲労を記録しました。疲れ果てた人はみな、わたしのもとに来なさい。"
+}

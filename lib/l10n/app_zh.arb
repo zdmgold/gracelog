@@ -1,0 +1,182 @@
+{
+  "@@locale": "zh",
+  "@appName": {
+    "description": "Application name"
+  },
+  "@entriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightThankful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightJoyful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightPeaceful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightHopeful": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightAnxious": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightWorried": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@insightTired": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "appName": "GraceLog",
+  "greetingMorning": "早上好",
+  "greetingAfternoon": "下午好",
+  "greetingEvening": "晚上好",
+  "moodPeaceful": "平静",
+  "moodThankful": "感恩",
+  "moodJoyful": "喜乐",
+  "moodHopeful": "充满希望",
+  "moodAnxious": "焦虑",
+  "moodWorried": "担忧",
+  "moodTired": "疲惫",
+  "todayEntryRecorded": "今天的感恩已记录",
+  "todayEntryMissing": "您今天还没有记录",
+  "todayEntryRecordedSubtitle": "明天回来继续保持您的连续记录。",
+  "todayEntryMissingSubtitle": "花点时间反思并感恩。",
+  "newEntry": "新记录",
+  "weeklyReview": "每周回顾",
+  "settings": "设置",
+  "howAreYouFeeling": "您感觉如何？",
+  "whatAreYouGratefulFor": "您感恩什么？",
+  "gratitudeHint": "我感恩...",
+  "addAtLeastThree": "至少添加3项（每项10个字符以上）",
+  "save": "保存",
+  "saving": "保存中...",
+  "entrySaved": "记录已保存！",
+  "suggestAnotherVerse": "建议另一节经文",
+  "scriptureOfTheDay": "今日经文",
+  "suggestedScripture": "建议经文",
+  "useThisVerse": "在记录中使用这节经文",
+  "copy": "复制",
+  "share": "分享",
+  "verseCopied": "经文已复制到剪贴板",
+  "moodTrendTitle": "情绪趋势（7天）",
+  "weeklyBlessing": "每周祝福",
+  "moodBreakdown": "情绪分析",
+  "thisWeeksEntries": "本周记录",
+  "entriesCount": "{count}条记录",
+  "noEntriesThisWeek": "本周还没有记录。",
+  "noEntriesYet": "本周还没有记录",
+  "export": "导出",
+  "exportJson": "JSON",
+  "exportImage": "图片",
+  "exportJournal": "日记",
+  "exportAllData": "导出所有数据",
+  "exportSubtitle": "将您的记录备份为JSON",
+  "shareWithPartner": "与问责伙伴分享",
+  "sharePartnerSubtitle": "将您的每周摘要发送给鼓励您信仰旅程的人。",
+  "myGraceLogWeek": "我的GraceLog周",
+  "shareWeeklySummary": "分享每周摘要",
+  "sharePrivacyNote": "您的数据保留在您的设备上。只有您分享的内容才会离开。",
+  "bedtimeReflection": "睡前反思",
+  "bedtimeEnabled": "OLED黑色模式已激活。为休息而调暗。",
+  "bedtimeDisabled": "启用睡前简化、调暗的记录。",
+  "restWell": "好好休息",
+  "bedtimePrompt": "休息之前，今天您感恩哪一件事？",
+  "bedtimePrivacy": "您的记录本地保存在您的设备上。",
+  "appearance": "外观",
+  "theme": "主题",
+  "themeLight": "浅色",
+  "themeDark": "深色",
+  "themeSystem": "系统默认",
+  "security": "安全",
+  "biometricLock": "生物识别锁",
+  "biometricSubtitle": "需要指纹或面容ID才能打开应用",
+  "language": "语言",
+  "subscription": "订阅",
+  "proActive": "Pro已激活",
+  "proTitle": "GraceLog Pro",
+  "proActiveSubtitle": "无广告体验。感谢您的支持！",
+  "proInactiveSubtitle": "每月$0.99移除广告",
+  "upgrade": "升级",
+  "restorePurchases": "恢复购买",
+  "restoreSubtitle": "在此设备上恢复您的Pro订阅",
+  "data": "数据",
+  "about": "关于",
+  "privacyPolicy": "隐私政策",
+  "support": "支持",
+  "version": "版本",
+  "deleteEntryTitle": "删除记录？",
+  "deleteEntryMessage": "此记录将被永久删除。此操作无法撤销。",
+  "cancel": "取消",
+  "delete": "删除",
+  "categoryFamily": "家庭",
+  "categoryHealth": "健康",
+  "categoryProvision": "供应",
+  "categoryGrace": "恩典",
+  "categoryNature": "自然",
+  "categoryFriends": "朋友",
+  "categoryWork": "工作",
+  "categoryRest": "休息",
+  "categoryChurch": "教会",
+  "categoryScripture": "圣经",
+  "streakDays": "{count,plural, =1{1天}other{{count}天}}",
+  "errorGeneric": "出了点问题",
+  "errorSaveEntry": "保存记录失败。请重试。",
+  "errorUpdateEntry": "更新记录失败。",
+  "errorDeleteEntry": "删除记录失败。",
+  "errorSearch": "搜索失败。",
+  "errorLoadEntries": "加载记录失败。",
+  "errorMinItems": "请至少添加3个感恩项目。",
+  "errorMinChars": "每个项目必须至少10个字符。",
+  "errorExportImage": "选择要导出为图片的记录",
+  "loading": "正在加载GraceLog...",
+  "retry": "重试",
+  "restartApp": "重启应用",
+  "selectImageExport": "选择要导出为图片的记录",
+  "insightThankful": "本周您感到感恩{count}次。感恩将我们所拥有的变为足够。",
+  "insightJoyful": "喜乐以{count}条记录标记了您的一周。主的喜乐是您的力量。",
+  "insightPeaceful": "平安是本周您的主题（{count}条）。他的平安超越一切理解。",
+  "insightHopeful": "希望带您度过了本周{count}个时刻。信心是所望之事的实底。",
+  "insightAnxious": "本周您面临焦虑时刻（{count}条）。将一切忧虑卸给他。",
+  "insightWorried": "担忧本周出现了{count}次。不要为明天忧虑。",
+  "insightTired": "本周您记录了{count}次疲惫。凡劳苦担重担的人，可以到我这里来。"
+}
