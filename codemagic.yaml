@@ -1,1 +1,56 @@
+workflows:
+  gracelog-ios-release:
+    name: GraceLog iOS Release
+    instance: mac_mini_m1
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      vars:
+        FLUTTER_VERSION: '3.24.0'
+    cache:
+      cache_paths:
+        - $FLUTTER_ROOT/.pub-cache
+        - $HOME/.gradle/caches
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: false
+          source: false
+      # Manual trigger only via Codemagic UI; no automatic builds
+    scripts:
+      - name: Set Flutter version
+        script: |
+          flutter --version
+          flutter config --no-analytics
 
+      - name: Get dependencies
+        script: flutter pub get
+
+      - name: Run tests
+        script: flutter test
+
+      - name: Build iOS
+        script: |
+          flutter build ios --release             --obfuscate             --split-debug-info=build/symbols/ios
+
+      - name: Build IPA
+        script: |
+          cd ios
+          xcodebuild -workspace Runner.xcworkspace             -scheme Runner             -configuration Release             -sdk iphoneos             -destination 'generic/platform=iOS'             clean build             CODE_SIGNING_ALLOWED=NO
+
+    artifacts:
+      - build/ios/iphoneos/Runner.app
+      - build/ios/ipa/*.ipa
+      - build/symbols/ios/**
+
+    publishing:
+      email:
+        recipients:
+          - developer@gracelog.app
+        notify:
+          success: true
+          failure: true
