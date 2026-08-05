@@ -24,17 +24,19 @@ dependencies:
   flutter_local_notifications: ^16.3.2
   timezone: ^0.9.2
   url_launcher: ^6.2.2
+  package_info_plus: ^5.0.1
+  uuid: ^4.2.1
 
 flutter:
   uses-material-design: true
   assets:
-    - assets/scriptures_1.json
-    - assets/scriptures_2.json
-    - assets/scriptures_3.json
-    - assets/scriptures_4.json
-    - assets/scriptures_5.json
-    - assets/scriptures_6.json
-    - assets/scriptures_7.json
+    - app/assets/scriptures_1.json
+    - app/assets/scriptures_2.json
+    - app/assets/scriptures_3.json
+    - app/assets/scriptures_4.json
+    - app/assets/scriptures_5.json
+    - app/assets/scriptures_6.json
+    - app/assets/scriptures_7.json
 
 dev_dependencies:
   flutter_test:
