@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GraceLog Support — Frequently asked questions and contact information.">
+  <meta name="theme-color" content="#FDFCF8">
+  <title>Support — GraceLog</title>
+  <style>
+    :root {
+      --primary: #7C5C2E;
+      --primary-dark: #D4A76A;
+      --bg: #FDFCF8;
+      --bg-secondary: #F5F2EB;
+      --surface: #FFFFFF;
+      --text-primary: #1A1A1A;
+      --text-secondary: #5C5C5C;
+      --text-tertiary: #8A8A8A;
+      --border: #E0DCD3;
+      --accent-gold: #D4A76A;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+      --space-sm: 8px;
+      --space-md: 12px;
+      --space-lg: 16px;
+      --space-xl: 24px;
+      --space-xxl: 32px;
+      --space-xxxl: 48px;
+      --touch-target: 48px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #D4A76A;
+        --bg: #121212;
+        --bg-secondary: #1E1E1E;
+        --surface: #1E1E1E;
+        --text-primary: #EAEAEA;
+        --text-secondary: #B0B0B0;
+        --text-tertiary: #808080;
+        --border: #3A3A3A;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 var(--space-xl); }
+    header {
+      background-color: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-size: 22px; font-weight: 700; color: var(--primary); letter-spacing: -0.5px; }
+    .nav-links { display: flex; gap: var(--space-xl); list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 600; color: var(--text-secondary); }
+    .nav-links a:hover { color: var(--primary); }
+    main { padding: var(--space-xxxl) 0; }
+    h1 { font-size: 32px; font-weight: 700; margin-bottom: var(--space-xl); }
+    h2 { font-size: 22px; font-weight: 600; margin-top: var(--space-xxl); margin-bottom: var(--space-md); color: var(--primary); }
+    p { margin-bottom: var(--space-lg); color: var(--text-secondary); }
+    .faq-item {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl);
+      margin-bottom: var(--space-lg);
+    }
+    .faq-item h3 { font-size: 16px; font-weight: 600; margin-bottom: var(--space-sm); color: var(--text-primary); }
+    .faq-item p { margin: 0; color: var(--text-secondary); font-size: 15px; }
+    .contact-box {
+      background-color: var(--bg-secondary);
+      border-radius: var(--radius-xl);
+      padding: var(--space-xxl);
+      text-align: center;
+      margin-top: var(--space-xxl);
+    }
+    .contact-box h2 { margin-top: 0; }
+    .contact-box p { margin-bottom: var(--space-xl); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: var(--touch-target); padding: 0 var(--space-xxl);
+      border-radius: var(--radius-lg); border: none; cursor: pointer;
+      font-size: 16px; font-weight: 600; transition: transform 0.15s ease, opacity 0.15s ease;
+      background-color: var(--primary); color: #FFFFFF;
+    }
+    .btn:hover { opacity: 0.9; text-decoration: none; }
+    .btn:active { transform: scale(0.98); }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: var(--space-xxl) 0;
+      text-align: center;
+      color: var(--text-tertiary);
+      font-size: 14px;
+    }
+    footer a { color: var(--text-tertiary); margin: 0 var(--space-md); }
+    footer a:hover { color: var(--primary); }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a href="index.html" class="logo">GraceLog</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Support</h1>
+      <p>Find answers to common questions below. If you need further assistance, we are here to help.</p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>Is GraceLog free?</h3>
+        <p>Yes. GraceLog is free to download and use. A voluntary subscription of $0.99 per month removes banner advertisements. The subscription does not unlock any additional features — all journaling, scripture, streak, and export capabilities are available to every user.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where is my data stored?</h3>
+        <p>Exclusively on your device. GraceLog has no backend servers, no cloud sync, and no user accounts. Your journal lives in a local SQLite database inside the app's sandboxed storage. Uninstalling the app deletes all data.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I export my journal?</h3>
+        <p>Yes. From the Weekly Review screen, you can export your entries as JSON, a 1080x1080 Instagram-ready image, or a PDF. Exports are saved to your device's local storage or shared through your device's native share sheet.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do streaks work?</h3>
+        <p>A streak counts consecutive days with at least one gratitude entry. If you miss a day, the streak resets to zero. Milestones are celebrated at 7, 30, 100, and 365 days. You can enable daily reminder notifications in Settings to help maintain your streak.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What Bible translation is used?</h3>
+        <p>GraceLog bundles the King James Version (KJV) of the Bible. The app ships with 500 mood-tagged verses across seven emotional states: peaceful, thankful, joyful, hopeful, anxious, worried, and tired. All verses are stored offline — no internet connection is required.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I restore my subscription?</h3>
+        <p>Open Settings within GraceLog and tap "Restore Purchases." The app will query Apple App Store or Google Play Store to verify your active subscription and remove ads immediately. Ensure you are signed in with the same Apple ID or Google account used for the original purchase.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is Bedtime Mode?</h3>
+        <p>Bedtime Mode is an optional OLED-black reflection screen designed for low-light environments. It presents a simplified single-item gratitude entry with warm, dimmed typography to reduce eye strain before sleep. Enable it from the Settings screen or the home dashboard moon toggle.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does GraceLog support other languages?</h3>
+        <p>Yes. GraceLog supports 11 languages: English, Spanish, French, German, Portuguese, Arabic, Hindi, Japanese, Korean, Chinese, and Hebrew. The app interface adapts automatically to your device language. Arabic and Hebrew receive full right-to-left (RTL) layout support.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why does the app request biometric permission?</h3>
+        <p>The biometric permission is optional. If you enable "Biometric Lock" in Settings, GraceLog uses Face ID or fingerprint to unlock the app. Your biometric data is never accessed, stored, or transmitted by GraceLog — it is handled entirely by your device's secure enclave.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I delete my account or data?</h3>
+        <p>Because GraceLog has no user accounts, there is no remote account to delete. To erase all local data, go to your device Settings > Apps > GraceLog > Storage > Clear Data, or simply uninstall the app.</p>
+      </div>
+
+      <div class="contact-box">
+        <h2>Still need help?</h2>
+        <p>We read every message and typically respond within 24–48 hours.</p>
+        <a href="mailto:support@gracelog.app" class="btn">Email support@gracelog.app</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 GraceLog. All rights reserved.</p>
+      <p style="margin-top: var(--space-sm);">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="mailto:support@gracelog.app">Contact</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
