@@ -74,7 +74,7 @@ class NotificationService {
       _initialized = true;
     } catch (e, stackTrace) {
       _logError('initialize', e, stackTrace);
-      _initialized = true; // Mark initialized to prevent retry loops
+      _initialized = true;
       _permissionGranted = false;
     }
   }
@@ -116,8 +116,6 @@ class NotificationService {
   ///
   /// If [hour] and [minute] are omitted, defaults to 20:00.
   /// If permissions are not granted, this is a no-op.
-  /// If the user has already logged today, the notification is
-  /// rescheduled for tomorrow at the same time.
   Future<void> scheduleDailyReminder({int? hour, int? minute}) async {
     if (!_initialized || !_permissionGranted) return;
 
@@ -128,7 +126,7 @@ class NotificationService {
       await _plugin.zonedSchedule(
         _dailyReminderId,
         AppConstants.appName,
-        'Don't break your streak! Take a moment to reflect on today's blessings.',
+        "Don't break your streak! Take a moment to reflect on today's blessings.",
         _nextInstanceOfTime(targetHour, targetMinute),
         const NotificationDetails(
           android: AndroidNotificationDetails(
@@ -188,8 +186,14 @@ class NotificationService {
   tz.TZDateTime _nextInstanceOfTime(int hour, int minute) {
     final location = tz.local;
     final now = tz.TZDateTime.now(location);
-    var scheduled = tz.TZDateTime(location, now.year, now.month, now.day,
-        hour, minute);
+    var scheduled = tz.TZDateTime(
+      location,
+      now.year,
+      now.month,
+      now.day,
+      hour,
+      minute,
+    );
 
     if (scheduled.isBefore(now)) {
       scheduled = scheduled.add(const Duration(days: 1));
@@ -211,6 +215,7 @@ class NotificationService {
 
   void _logError(String method, Object error, StackTrace stackTrace) {
     // ignore: avoid_print
-    print('[NotificationService::$method] $error\n$stackTrace');
+    print('[NotificationService::$method] $error
+$stackTrace');
   }
 }
