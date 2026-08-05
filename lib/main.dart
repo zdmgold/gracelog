@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'core/providers/app_state_provider.dart';
 import 'core/providers/entries_provider.dart';
@@ -12,6 +13,7 @@ import 'core/utils/constants.dart';
 import 'core/utils/error_handler.dart';
 import 'core/utils/theme.dart';
 import 'platform/admob_service.dart';
+import 'platform/notification_service.dart';
 import 'screens/home_dashboard.dart';
 
 void main() {
@@ -64,10 +66,13 @@ class _GraceLogAppState extends State<GraceLogApp> {
       // 4. AdMob with graceful degradation
       await AdMobService().initialize();
 
-      // 5. Wire AdMob to subscription state
+      // 5. Local notifications (streak reminders)
+      await NotificationService().initialize();
+
+      // 6. Wire AdMob to subscription state
       AdMobService().shouldShowAds = () => !_subscriptionProvider.value;
 
-      // 6. Load persisted entries
+      // 7. Load persisted entries
       await _entriesProvider.loadEntries();
 
       if (mounted) {
@@ -193,7 +198,7 @@ class _GraceLogAppState extends State<GraceLogApp> {
           locale: _appStateProvider.value.currentLocale,
           home: const HomeDashboard(),
           builder: (context, child) {
-            // Global error boundary
+            // Global error boundary with restart + email report
             ErrorWidget.builder = (details) {
               return Scaffold(
                 backgroundColor: AppColors.bgPrimary,
@@ -230,6 +235,26 @@ class _GraceLogAppState extends State<GraceLogApp> {
                         ElevatedButton(
                           onPressed: () => _initializeApp(),
                           child: const Text('Restart App'),
+                        ),
+                        const SizedBox(height: 12),
+                        TextButton(
+                          onPressed: () async {
+                            final uri = Uri(
+                              scheme: 'mailto',
+                              path: 'support@gracelog.app',
+                              queryParameters: {
+                                'subject': 'GraceLog Error Report',
+                                'body': 'Error: ${details.exception}\n\nStack: ${details.stack}',
+                              },
+                            );
+                            if (await canLaunchUrl(uri)) {
+                              await launchUrl(uri);
+                            }
+                          },
+                          child: const Text(
+                            'Report issue: support@gracelog.app',
+                            style: TextStyle(fontSize: 13),
+                          ),
                         ),
                       ],
                     ),
