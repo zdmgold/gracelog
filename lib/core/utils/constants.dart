@@ -103,6 +103,21 @@ class AppColors {
   static const Color accentSuccess = accentSage;
   static const Color accentOrange = accentAmber;
   static const Color accentWarm = accentGold;
+
+  // ─── Shadow tokens ───
+  static const List<BoxShadow> shadowLight = [
+    BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2)),
+  ];
+  static const List<BoxShadow> shadowMedium = [
+    BoxShadow(color: Colors.black26, blurRadius: 8, offset: Offset(0, 4)),
+  ];
+  static const List<BoxShadow> shadowHeavy = [
+    BoxShadow(color: Colors.black38, blurRadius: 16, offset: Offset(0, 8)),
+  ];
+
+  // ─── Glassmorphism tokens ───
+  static const Color glassWhite = Color(0x20FFFFFF);
+  static const Color glassDark = Color(0x20121212);
 }
 
 /// App-wide string constants.
@@ -130,6 +145,13 @@ class AppConstants {
   static const String exportPngMimeType = 'image/png';
   static const String exportPdfMimeType = 'application/pdf';
   static const int exportImageSize = 1080;
+
+  // ─── Animation ───
+  static const Duration durationFast = Duration(milliseconds: 150);
+  static const Duration durationNormal = Duration(milliseconds: 300);
+  static const Duration durationSlow = Duration(milliseconds: 500);
+  static const Curve easeOutExpo = Curves.easeOutExpo;
+  static const Curve easeInOutCubic = Curves.easeInOutCubic;
 }
 
 /// SharedPreferences keys.
