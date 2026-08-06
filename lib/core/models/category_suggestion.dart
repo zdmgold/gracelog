@@ -9,9 +9,11 @@ class CategorySuggestion {
     required this.keywords,
   });
 
-  final String name;
+    final String name;
   final String iconName;
   final List<String> keywords;
+
+  static const List<CategorySuggestion> predefined = DefaultCategories.all;
 
   CategorySuggestion copyWith({
     String? name,
