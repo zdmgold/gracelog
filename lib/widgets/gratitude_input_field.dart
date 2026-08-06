@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../core/models/category_suggestion.dart';
-import '../core/utils/constants.dart';
 
 /// Reusable gratitude item input field with category auto-suggest.
 ///
 /// Features:
 ///   - Min 10 chars, max 200 chars with live counter
 ///   - Category auto-suggest dropdown based on keyword matching
-///   - Filled background (bgTertiary), 12px radius, focused border
+///   - Filled background, 12px radius, focused border
 ///   - 48dp touch target, haptic feedback on submit
+///   - Animated underline progress indicator
 class GratitudeInputField extends StatefulWidget {
   const GratitudeInputField({
     super.key,
@@ -36,6 +36,7 @@ class GratitudeInputField extends StatefulWidget {
 class _GratitudeInputFieldState extends State<GratitudeInputField> {
   String? _suggestedCategory;
   bool _showSuggestion = false;
+  bool _isFocused = false;
 
   @override
   void initState() {
@@ -82,58 +83,78 @@ class _GratitudeInputFieldState extends State<GratitudeInputField> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     final length = widget.controller.text.length;
     final isValid = length >= widget.minLength;
+    final progress = (length / widget.maxLength).clamp(0.0, 1.0);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TextField(
-          controller: widget.controller,
-          maxLength: widget.maxLength,
-          maxLines: 3,
-          minLines: 1,
-          textInputAction: TextInputAction.done,
-          onSubmitted: (value) {
-            if (value.trim().length >= widget.minLength) {
-              HapticFeedback.lightImpact();
-              widget.onSubmitted?.call(value.trim());
-            }
-          },
-          decoration: InputDecoration(
-            hintText: widget.hintText,
-            filled: true,
-            fillColor: AppColors.bgTertiary,
-            counterText: '$length/${widget.maxLength}',
-            counterStyle: TextStyle(
-              fontSize: 12,
-              color: isValid
-                  ? AppColors.textSecondary
-                  : AppColors.textError,
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide.none,
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide.none,
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: AppColors.borderFocus,
-                width: 2,
+        Focus(
+          onFocusChange: (focused) => setState(() => _isFocused = focused),
+          child: TextField(
+            controller: widget.controller,
+            maxLength: widget.maxLength,
+            maxLines: 3,
+            minLines: 1,
+            textInputAction: TextInputAction.done,
+            onSubmitted: (value) {
+              if (value.trim().length >= widget.minLength) {
+                HapticFeedback.lightImpact();
+                widget.onSubmitted?.call(value.trim());
+              }
+            },
+            decoration: InputDecoration(
+              hintText: widget.hintText,
+              filled: true,
+              fillColor: theme.colorScheme.surfaceContainerHighest,
+              counterText: '$length/${widget.maxLength}',
+              counterStyle: TextStyle(
+                fontSize: 12,
+                color: isValid
+                    ? theme.colorScheme.onSurface.withOpacity(0.5)
+                    : theme.colorScheme.error,
               ),
-            ),
-            errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: AppColors.borderError,
-                width: 2,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide.none,
               ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide.none,
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  color: theme.colorScheme.primary,
+                  width: 2,
+                ),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  color: theme.colorScheme.error,
+                  width: 2,
+                ),
+              ),
+              contentPadding: const EdgeInsets.all(16),
             ),
-            contentPadding: const EdgeInsets.all(16),
+          ),
+        ),
+        // Animated underline progress
+        AnimatedContainer(
+          duration: AppConstants.durationFast,
+          height: 2,
+          width: _isFocused
+              ? MediaQuery.of(context).size.width * progress
+              : 0,
+          margin: const EdgeInsets.only(top: 2, left: 16, right: 16),
+          decoration: BoxDecoration(
+            color: isValid
+                ? theme.colorScheme.primary
+                : theme.colorScheme.error,
+            borderRadius: BorderRadius.circular(1),
           ),
         ),
         if (_showSuggestion && _suggestedCategory != null)
@@ -142,7 +163,7 @@ class _GratitudeInputFieldState extends State<GratitudeInputField> {
             child: Chip(
               avatar: const Icon(Icons.auto_awesome, size: 16),
               label: Text('Category: $_suggestedCategory'),
-              backgroundColor: AppColors.bgSecondary,
+              backgroundColor: theme.colorScheme.surfaceContainerHighest,
               side: BorderSide.none,
             ),
           ),
