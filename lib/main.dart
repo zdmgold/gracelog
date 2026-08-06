@@ -15,6 +15,7 @@ import 'core/utils/theme.dart';
 import 'platform/admob_service.dart';
 import 'platform/notification_service.dart';
 import 'screens/home_dashboard.dart';
+import 'widgets/accessibility_wrapper.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -89,41 +90,31 @@ class _GraceLogAppState extends State<GraceLogApp> {
     }
   }
 
-  @override
-  void dispose() {
-    _themeProvider.dispose();
-    _subscriptionProvider.dispose();
-    _appStateProvider.dispose();
-    _entriesProvider.dispose();
-    AdMobService().disposeBannerAd();
-    IAPService().dispose();
-    LocalStorage().close();
-    super.dispose();
-  }
+  // DELETED: dispose() method. Root widget lives for app lifetime.
+  // Providers and services are singletons — never dispose them here.
 
   @override
   Widget build(BuildContext context) {
     if (_isInitializing) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          backgroundColor: AppColors.bgPrimary,
-          body: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                CircularProgressIndicator(
-                  color: AppColors.accentPrimary,
-                ),
-                const SizedBox(height: 20),
-                Text(
-                  'Loading GraceLog...',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: AppColors.textSecondary,
+        home: Builder(
+          builder: (context) => Scaffold(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            body: Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  CircularProgressIndicator(
+                    color: Theme.of(context).colorScheme.primary,
                   ),
-                ),
-              ],
+                  const SizedBox(height: 20),
+                  Text(
+                    'Loading GraceLog...',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -133,34 +124,33 @@ class _GraceLogAppState extends State<GraceLogApp> {
     if (_initError != null) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          backgroundColor: AppColors.bgPrimary,
-          body: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(32),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.error_outline,
-                    size: 48,
-                    color: AppColors.textError,
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    _initError!,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: AppColors.textPrimary,
+        home: Builder(
+          builder: (context) => Scaffold(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            body: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(32),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.error_outline,
+                      size: 48,
+                      color: Theme.of(context).colorScheme.error,
                     ),
-                  ),
-                  const SizedBox(height: 24),
-                  ElevatedButton(
-                    onPressed: _initializeApp,
-                    child: const Text('Retry'),
-                  ),
-                ],
+                    const SizedBox(height: 16),
+                    Text(
+                      _initError!,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                    const SizedBox(height: 24),
+                    ElevatedButton(
+                      onPressed: _initializeApp,
+                      child: const Text('Retry'),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -201,7 +191,7 @@ class _GraceLogAppState extends State<GraceLogApp> {
             // Global error boundary with restart + email report
             ErrorWidget.builder = (details) {
               return Scaffold(
-                backgroundColor: AppColors.bgPrimary,
+                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 body: SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.all(24),
@@ -211,25 +201,18 @@ class _GraceLogAppState extends State<GraceLogApp> {
                         Icon(
                           Icons.broken_image_outlined,
                           size: 48,
-                          color: AppColors.textTertiary,
+                          color: Theme.of(context).colorScheme.onSurface.withOpacity(0.4),
                         ),
                         const SizedBox(height: 16),
                         Text(
                           'Something went wrong',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.textPrimary,
-                          ),
+                          style: Theme.of(context).textTheme.headlineSmall,
                         ),
                         const SizedBox(height: 8),
                         Text(
                           details.exception.toString(),
                           textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: AppColors.textSecondary,
-                          ),
+                          style: Theme.of(context).textTheme.bodySmall,
                         ),
                         const SizedBox(height: 24),
                         ElevatedButton(
@@ -251,9 +234,9 @@ class _GraceLogAppState extends State<GraceLogApp> {
                               await launchUrl(uri);
                             }
                           },
-                          child: const Text(
+                          child: Text(
                             'Report issue: support@gracelog.app',
-                            style: TextStyle(fontSize: 13),
+                            style: Theme.of(context).textTheme.labelSmall,
                           ),
                         ),
                       ],
@@ -262,7 +245,10 @@ class _GraceLogAppState extends State<GraceLogApp> {
                 ),
               );
             };
-            return child ?? const SizedBox.shrink();
+            return AccessibilityWrapper.interactive(
+              label: 'GraceLog app',
+              child: child ?? const SizedBox.shrink(),
+            );
           },
         );
       },
