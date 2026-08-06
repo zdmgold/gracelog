@@ -82,6 +82,7 @@ class AppColors {
   // ───────────────────────────────────────────────────────────────
   static const Color bgPrimary = bgPrimaryLight;
   static const Color bgSecondary = bgSecondaryLight;
+  static const Color bgTertiary = surfaceElevatedLight;
   static const Color surface = surfaceLight;
   static const Color surfaceElevated = surfaceElevatedLight;
 
@@ -93,10 +94,15 @@ class AppColors {
   static const Color border = borderLight;
   static const Color borderSubtle = borderLight;
   static const Color borderFocused = borderFocusedLight;
+  static const Color borderFocus = borderFocusedLight;
+  static const Color borderError = textError;
   static const Color divider = dividerLight;
 
   static const Color accentPrimary = accentGold;
   static const Color accentSecondary = accentSage;
+  static const Color accentSuccess = accentSage;
+  static const Color accentOrange = accentAmber;
+  static const Color accentWarm = accentGold;
 }
 
 /// App-wide string constants.
