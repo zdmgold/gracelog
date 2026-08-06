@@ -215,7 +215,6 @@ class NotificationService {
 
   void _logError(String method, Object error, StackTrace stackTrace) {
     // ignore: avoid_print
-    print('[NotificationService::$method] $error
-$stackTrace');
+    print('[NotificationService::$method] $error\n$stackTrace');
   }
 }
