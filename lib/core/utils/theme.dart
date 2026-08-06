@@ -294,3 +294,23 @@ class AppTheme {
     );
   }
 }
+
+/// Extension on [ThemeData] for quick access to GraceLog design tokens.
+extension AppThemeData on ThemeData {
+  /// Returns the appropriate shadow list based on brightness.
+  List<BoxShadow> get shadowLight => AppColors.shadowLight;
+  List<BoxShadow> get shadowMedium => AppColors.shadowMedium;
+  List<BoxShadow> get shadowHeavy => AppColors.shadowHeavy;
+
+  /// Returns the appropriate glassmorphism overlay color.
+  Color get glassColor => brightness == Brightness.dark
+      ? AppColors.glassDark
+      : AppColors.glassWhite;
+
+  /// Animation helpers.
+  Duration get durationFast => AppConstants.durationFast;
+  Duration get durationNormal => AppConstants.durationNormal;
+  Duration get durationSlow => AppConstants.durationSlow;
+  Curve get easeOutExpo => AppConstants.easeOutExpo;
+  Curve get easeInOutCubic => AppConstants.easeInOutCubic;
+}
