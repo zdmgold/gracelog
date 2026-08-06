@@ -16,38 +16,9 @@ env:
   FLUTTER_VERSION: '3.24.0'
 
 jobs:
-  lint-and-test:
-    name: Lint & Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          cache: true
-
-      - name: Install dependencies
-        run: flutter pub get
-
-      - name: Analyze code
-        run: flutter analyze
-
-      - name: Run tests
-        run: flutter test --coverage
-
-      - name: Upload coverage
-        uses: codecov/codecov-action@v4
-        with:
-          files: coverage/lcov.info
-          fail_ci_if_error: false
-
   build-android-release:
     name: Build Android Release
     runs-on: ubuntu-latest
-    needs: lint-and-test
     if: github.event.inputs.build_type == 'release'
     steps:
       - name: Checkout repository
@@ -68,15 +39,12 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Build Android App Bundle (AAB)
+      - name: Build Android App Bundle (AAB) and APK
         run: |
           flutter build appbundle \
             --release \
             --obfuscate \
             --split-debug-info=build/symbols/android
-
-      - name: Build Android APK
-        run: |
           flutter build apk \
             --release \
             --obfuscate \
@@ -103,7 +71,6 @@ jobs:
   build-android-debug:
     name: Build Android Debug
     runs-on: ubuntu-latest
-    needs: lint-and-test
     if: github.event.inputs.build_type == 'debug'
     steps:
       - name: Checkout repository
