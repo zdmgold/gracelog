@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../core/models/scripture_verse.dart';
-import '../core/utils/constants.dart';
 
 /// Card widget displaying a scripture verse with reference, mood tag,
 /// copy button, and bookmark toggle.
@@ -16,11 +15,13 @@ class ScriptureCard extends StatefulWidget {
     required this.verse,
     this.showActions = true,
     this.onUseVerse,
+    this.onTap,
   });
 
   final ScriptureVerse verse;
   final bool showActions;
   final VoidCallback? onUseVerse;
+  final VoidCallback? onTap;
 
   @override
   State<ScriptureCard> createState() => _ScriptureCardState();
@@ -36,8 +37,6 @@ class _ScriptureCardState extends State<ScriptureCard> {
   }
 
   Future<void> _loadBookmarkState() async {
-    // SharedPreferences bookmark state would be loaded here.
-    // For now, default to false on first render.
     setState(() {
       _isBookmarked = false;
     });
@@ -48,7 +47,6 @@ class _ScriptureCardState extends State<ScriptureCard> {
       _isBookmarked = !_isBookmarked;
     });
     HapticFeedback.lightImpact();
-    // Persist to SharedPreferences would happen here.
   }
 
   Future<void> _copyToClipboard() async {
@@ -71,16 +69,18 @@ class _ScriptureCardState extends State<ScriptureCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    final theme = Theme.of(context);
+
+    Widget cardContent = Card(
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
         side: BorderSide(
-          color: AppColors.borderSubtle,
+          color: theme.colorScheme.outline.withOpacity(0.2),
           width: 1,
         ),
       ),
-      color: AppColors.bgSecondary,
+      color: theme.colorScheme.surfaceContainerHighest,
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -94,7 +94,7 @@ class _ScriptureCardState extends State<ScriptureCard> {
                     vertical: 4,
                   ),
                   decoration: BoxDecoration(
-                    color: AppColors.accentPrimary.withOpacity(0.1),
+                    color: theme.colorScheme.primary.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
@@ -102,7 +102,7 @@ class _ScriptureCardState extends State<ScriptureCard> {
                     style: TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.accentPrimary,
+                      color: theme.colorScheme.primary,
                     ),
                   ),
                 ),
@@ -113,7 +113,7 @@ class _ScriptureCardState extends State<ScriptureCard> {
                     vertical: 4,
                   ),
                   decoration: BoxDecoration(
-                    color: AppColors.bgTertiary,
+                    color: theme.colorScheme.surface,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
@@ -121,7 +121,7 @@ class _ScriptureCardState extends State<ScriptureCard> {
                         widget.verse.mood.substring(1),
                     style: TextStyle(
                       fontSize: 12,
-                      color: AppColors.textSecondary,
+                      color: theme.colorScheme.onSurface.withOpacity(0.6),
                     ),
                   ),
                 ),
@@ -134,8 +134,8 @@ class _ScriptureCardState extends State<ScriptureCard> {
                           ? Icons.bookmark
                           : Icons.bookmark_border,
                       color: _isBookmarked
-                          ? AppColors.accentGold
-                          : AppColors.textSecondary,
+                          ? theme.colorScheme.primary
+                          : theme.colorScheme.onSurface.withOpacity(0.4),
                       size: 22,
                     ),
                     tooltip: _isBookmarked
@@ -152,11 +152,9 @@ class _ScriptureCardState extends State<ScriptureCard> {
             const SizedBox(height: 16),
             Text(
               '"${widget.verse.text}"',
-              style: TextStyle(
-                fontSize: 16,
-                height: 1.6,
-                color: AppColors.textPrimary,
+              style: theme.textTheme.bodyLarge?.copyWith(
                 fontStyle: FontStyle.italic,
+                height: 1.6,
               ),
             ),
             if (widget.showActions) ...[
@@ -190,6 +188,16 @@ class _ScriptureCardState extends State<ScriptureCard> {
         ),
       ),
     );
+
+    if (widget.onTap != null) {
+      return InkWell(
+        onTap: widget.onTap,
+        borderRadius: BorderRadius.circular(16),
+        child: cardContent,
+      );
+    }
+
+    return cardContent;
   }
 
   Widget _buildActionButton({
@@ -198,6 +206,8 @@ class _ScriptureCardState extends State<ScriptureCard> {
     required VoidCallback onTap,
     bool isPrimary = false,
   }) {
+    final theme = Theme.of(context);
+
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(8),
@@ -205,8 +215,8 @@ class _ScriptureCardState extends State<ScriptureCard> {
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         decoration: BoxDecoration(
           color: isPrimary
-              ? AppColors.accentPrimary.withOpacity(0.1)
-              : AppColors.bgTertiary,
+              ? theme.colorScheme.primary.withOpacity(0.1)
+              : theme.colorScheme.surfaceContainerHighest,
           borderRadius: BorderRadius.circular(8),
         ),
         child: Row(
@@ -216,8 +226,8 @@ class _ScriptureCardState extends State<ScriptureCard> {
               icon,
               size: 16,
               color: isPrimary
-                  ? AppColors.accentPrimary
-                  : AppColors.textSecondary,
+                  ? theme.colorScheme.primary
+                  : theme.colorScheme.onSurface.withOpacity(0.5),
             ),
             const SizedBox(width: 6),
             Text(
@@ -226,8 +236,8 @@ class _ScriptureCardState extends State<ScriptureCard> {
                 fontSize: 13,
                 fontWeight: isPrimary ? FontWeight.w500 : FontWeight.w400,
                 color: isPrimary
-                    ? AppColors.accentPrimary
-                    : AppColors.textSecondary,
+                    ? theme.colorScheme.primary
+                    : theme.colorScheme.onSurface.withOpacity(0.5),
               ),
             ),
           ],
