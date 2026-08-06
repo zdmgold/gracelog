@@ -39,16 +39,21 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Build Android App Bundle (AAB) and APK
+      - name: Build Android App Bundle (AAB)
         run: |
           flutter build appbundle \
             --release \
             --obfuscate \
-            --split-debug-info=build/symbols/android
+            --split-debug-info=build/symbols/android \
+            2>&1 | tee build/build-log-aab.txt
+
+      - name: Build Android APK
+        run: |
           flutter build apk \
             --release \
             --obfuscate \
-            --split-debug-info=build/symbols/android
+            --split-debug-info=build/symbols/android \
+            2>&1 | tee build/build-log-apk.txt
 
       - name: Upload AAB artifact
         uses: actions/upload-artifact@v4
@@ -67,6 +72,12 @@ jobs:
         with:
           name: gracelog-android-symbols
           path: build/symbols/android/
+
+      - name: Upload build logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: gracelog-build-logs
+          path: build/build-log-*.txt
 
   build-android-debug:
     name: Build Android Debug
@@ -92,10 +103,17 @@ jobs:
         run: flutter pub get
 
       - name: Build Android Debug APK
-        run: flutter build apk --debug
+        run: |
+          flutter build apk --debug 2>&1 | tee build/build-log-debug.txt
 
       - name: Upload Debug APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: gracelog-android-debug-apk
           path: build/app/outputs/flutter-apk/app-debug.apk
+
+      - name: Upload build log
+        uses: actions/upload-artifact@v4
+        with:
+          name: gracelog-build-logs
+          path: build/build-log-debug.txt
