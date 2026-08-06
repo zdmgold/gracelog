@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../core/models/mood_type.dart';
-import '../core/utils/constants.dart';
 
 /// Horizontal scrollable mood selector with 7 chips.
 ///
@@ -21,6 +20,8 @@ class MoodSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -50,12 +51,12 @@ class MoodSelector extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: isSelected
                         ? mood.colorToken.withOpacity(0.2)
-                        : AppColors.bgTertiary,
+                        : theme.colorScheme.surfaceContainerHighest,
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
                       color: isSelected
                           ? mood.colorToken
-                          : AppColors.borderSubtle,
+                          : theme.colorScheme.outline.withOpacity(0.3),
                       width: isSelected ? 2 : 1,
                     ),
                   ),
@@ -66,7 +67,7 @@ class MoodSelector extends StatelessWidget {
                         mood.icon,
                         color: isSelected
                             ? mood.colorToken
-                            : AppColors.textSecondary,
+                            : theme.colorScheme.onSurface.withOpacity(0.5),
                         size: 24,
                       ),
                       const SizedBox(height: 4),
@@ -79,7 +80,7 @@ class MoodSelector extends StatelessWidget {
                               : FontWeight.w400,
                           color: isSelected
                               ? mood.colorToken
-                              : AppColors.textSecondary,
+                              : theme.colorScheme.onSurface.withOpacity(0.5),
                         ),
                       ),
                     ],
@@ -94,8 +95,6 @@ class MoodSelector extends StatelessWidget {
   }
 
   String _moodLabel(MoodType mood) {
-    // ARB keys map to localized strings at the screen level.
-    // This fallback ensures the widget never shows a raw key.
     return switch (mood) {
       MoodType.peaceful => 'Peaceful',
       MoodType.thankful => 'Thankful',
