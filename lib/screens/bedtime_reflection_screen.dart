@@ -13,7 +13,7 @@ import '../core/services/scripture_engine.dart';
 ///
 /// Simplified entry mode with OLED-black background (#000000), one
 /// gratitude item, peaceful mood default, sleep-prompt scripture,
-/// and "Rest well" close button.
+/// and a "Save" close button.
 ///
 /// Colors here are intentionally hardcoded (not theme-driven) — this
 /// screen must stay true black regardless of light/dark theme, for
@@ -54,9 +54,6 @@ class _BedtimeReflectionScreenState extends State<BedtimeReflectionScreen> {
 
   @override
   void dispose() {
-    // Only revert bedtime mode if this screen was the one that turned
-    // it on — avoids clobbering a state the user set manually in
-    // Settings before opening this screen.
     if (_weTurnedOnBedtimeMode) {
       _appStateProvider.toggleBedtimeMode();
     }
@@ -127,11 +124,7 @@ class _BedtimeReflectionScreenState extends State<BedtimeReflectionScreen> {
                   const SizedBox(width: 8),
                   Text(
                     'Bedtime Reflection',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white.withOpacity(0.6),
-                    ),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white.withOpacity(0.6)),
                   ),
                   const Spacer(),
                   IconButton(
@@ -154,8 +147,9 @@ class _BedtimeReflectionScreenState extends State<BedtimeReflectionScreen> {
                 ),
                 const SizedBox(height: 40),
               ],
+              // FIX: bedtime-appropriate wording
               Text(
-                'Before you rest, what is one thing you are grateful for today?',
+                'Before you go to bed, what is one thing you are grateful for today?',
                 style: TextStyle(fontSize: 18, height: 1.5, color: Colors.white.withOpacity(0.8)),
               ),
               const SizedBox(height: 20),
@@ -195,7 +189,8 @@ class _BedtimeReflectionScreenState extends State<BedtimeReflectionScreen> {
                           height: 20,
                           child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white.withOpacity(0.8)),
                         )
-                      : const Text('Rest Well', style: TextStyle(fontSize: 16)),
+                      // FIX: button label changed from "Rest Well" to "Save"
+                      : const Text('Save', style: TextStyle(fontSize: 16)),
                 ),
               ),
               const SizedBox(height: 16),
