@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import '../core/providers/app_state_provider.dart';
+import '../core/providers/entries_provider.dart';
 import '../core/providers/subscription_provider.dart';
 import '../core/providers/theme_provider.dart';
 import '../core/services/export_service.dart';
-import '../core/utils/constants.dart';
 import '../widgets/bedtime_mode_toggle.dart';
 
 /// Settings screen.
@@ -25,6 +25,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   final ThemeProvider _themeProvider = ThemeProvider();
   final SubscriptionProvider _subscriptionProvider = SubscriptionProvider();
   final AppStateProvider _appStateProvider = AppStateProvider();
+  final EntriesProvider _entriesProvider = EntriesProvider();
   String _appVersion = '';
   bool _isExporting = false;
 
@@ -55,43 +56,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
         setState(() => _appVersion = '${info.version} (${info.buildNumber})');
       }
     } catch (_) {
-      setState(() => _appVersion = '1.0.0');
+      if (mounted) setState(() => _appVersion = '1.0.0');
     }
   }
 
   @override
   void dispose() {
-    _themeProvider.dispose();
-    _subscriptionProvider.dispose();
-    _appStateProvider.dispose();
+    // Providers intentionally not disposed — instance-per-screen
+    // convention established in Batch 1.
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Scaffold(
-      backgroundColor: AppColors.bgPrimary,
       appBar: AppBar(
-        backgroundColor: AppColors.bgPrimary,
-        elevation: 0,
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
-          icon: Icon(Icons.arrow_back, color: AppColors.textPrimary),
+          icon: const Icon(Icons.arrow_back),
         ),
-        title: Text(
-          'Settings',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-            color: AppColors.textPrimary,
-          ),
-        ),
+        title: Text('Settings', style: theme.textTheme.titleLarge),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8),
         children: [
-          _buildSectionHeader('Appearance'),
-          _buildThemeTile(),
+          _buildSectionHeader(theme, 'Appearance'),
+          _buildThemeTile(theme),
           ListenableBuilder(
             listenable: _appStateProvider,
             builder: (context, _) => BedtimeModeToggle(
@@ -100,42 +92,38 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
           ),
           const Divider(height: 32),
-          _buildSectionHeader('Security'),
-          _buildBiometricTile(),
+          _buildSectionHeader(theme, 'Security'),
+          _buildBiometricTile(theme),
           const Divider(height: 32),
-          _buildSectionHeader('Language'),
-          _buildLanguageTile(),
+          _buildSectionHeader(theme, 'Language'),
+          _buildLanguageTile(theme),
           const Divider(height: 32),
-          _buildSectionHeader('Subscription'),
-          _buildSubscriptionTile(),
-          _buildRestoreTile(),
+          _buildSectionHeader(theme, 'Subscription'),
+          _buildSubscriptionTile(theme),
+          _buildRestoreTile(theme),
           const Divider(height: 32),
-          _buildSectionHeader('Data'),
-          _buildExportTile(),
+          _buildSectionHeader(theme, 'Data'),
+          _buildExportTile(theme),
           const Divider(height: 32),
-          _buildSectionHeader('About'),
+          _buildSectionHeader(theme, 'About'),
           _buildLinkTile(
+            theme,
             icon: Icons.privacy_tip_outlined,
             title: 'Privacy Policy',
             subtitle: 'gracelog.pages.dev/privacy',
             onTap: () {}, // Would launch URL via url_launcher
           ),
           _buildLinkTile(
+            theme,
             icon: Icons.help_outline,
             title: 'Support',
             subtitle: 'gracelog.pages.dev/support',
             onTap: () {}, // Would launch URL via url_launcher
           ),
           ListTile(
-            leading: Icon(Icons.info_outline, color: AppColors.textSecondary),
-            title: Text(
-              'Version',
-              style: TextStyle(color: AppColors.textPrimary),
-            ),
-            subtitle: Text(
-              _appVersion,
-              style: TextStyle(color: AppColors.textSecondary),
-            ),
+            leading: Icon(Icons.info_outline, color: theme.colorScheme.onSurface.withOpacity(0.6)),
+            title: Text('Version', style: theme.textTheme.bodyLarge),
+            subtitle: Text(_appVersion, style: theme.textTheme.bodySmall),
           ),
           const SizedBox(height: 24),
         ],
@@ -143,22 +131,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  Widget _buildSectionHeader(String title) {
+  Widget _buildSectionHeader(ThemeData theme, String title) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
       child: Text(
         title.toUpperCase(),
-        style: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w600,
-          color: AppColors.textTertiary,
+        style: theme.textTheme.labelMedium?.copyWith(
+          color: theme.colorScheme.onSurface.withOpacity(0.5),
           letterSpacing: 1.2,
         ),
       ),
     );
   }
 
-  Widget _buildThemeTile() {
+  Widget _buildThemeTile(ThemeData theme) {
     return ListenableBuilder(
       listenable: _themeProvider,
       builder: (context, _) {
@@ -170,53 +156,44 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 : mode == ThemeMode.light
                     ? Icons.light_mode
                     : Icons.brightness_auto,
-            color: AppColors.textSecondary,
+            color: theme.colorScheme.onSurface.withOpacity(0.6),
           ),
-          title: Text(
-            'Theme',
-            style: TextStyle(color: AppColors.textPrimary),
-          ),
+          title: Text('Theme', style: theme.textTheme.bodyLarge),
           subtitle: Text(
             mode == ThemeMode.dark
                 ? 'Dark'
                 : mode == ThemeMode.light
                     ? 'Light'
                     : 'System default',
-            style: TextStyle(color: AppColors.textSecondary),
+            style: theme.textTheme.bodySmall,
           ),
-          trailing: const Icon(Icons.chevron_right, color: AppColors.textTertiary),
+          trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurface.withOpacity(0.4)),
           onTap: _showThemePicker,
         );
       },
     );
   }
 
-  Widget _buildBiometricTile() {
+  Widget _buildBiometricTile(ThemeData theme) {
     return ListenableBuilder(
       listenable: _appStateProvider,
       builder: (context, _) {
         return SwitchListTile(
-          secondary: Icon(
-            Icons.fingerprint,
-            color: AppColors.textSecondary,
-          ),
-          title: Text(
-            'Biometric Lock',
-            style: TextStyle(color: AppColors.textPrimary),
-          ),
+          secondary: Icon(Icons.fingerprint, color: theme.colorScheme.onSurface.withOpacity(0.6)),
+          title: Text('Biometric Lock', style: theme.textTheme.bodyLarge),
           subtitle: Text(
             'Require fingerprint or face ID to open the app',
-            style: TextStyle(color: AppColors.textSecondary),
+            style: theme.textTheme.bodySmall,
           ),
           value: _appStateProvider.value.isBiometricEnabled,
           onChanged: (_) => _appStateProvider.toggleBiometric(),
-          activeColor: AppColors.accentPrimary,
+          activeColor: theme.colorScheme.primary,
         );
       },
     );
   }
 
-  Widget _buildLanguageTile() {
+  Widget _buildLanguageTile(ThemeData theme) {
     return ListenableBuilder(
       listenable: _appStateProvider,
       builder: (context, _) {
@@ -226,50 +203,33 @@ class _SettingsScreenState extends State<SettingsScreen> {
           orElse: () => _languages.first,
         );
         return ListTile(
-          leading: Icon(Icons.language, color: AppColors.textSecondary),
-          title: Text(
-            'Language',
-            style: TextStyle(color: AppColors.textPrimary),
-          ),
-          subtitle: Text(
-            currentLang['name']!,
-            style: TextStyle(color: AppColors.textSecondary),
-          ),
-          trailing: const Icon(Icons.chevron_right, color: AppColors.textTertiary),
+          leading: Icon(Icons.language, color: theme.colorScheme.onSurface.withOpacity(0.6)),
+          title: Text('Language', style: theme.textTheme.bodyLarge),
+          subtitle: Text(currentLang['name']!, style: theme.textTheme.bodySmall),
+          trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurface.withOpacity(0.4)),
           onTap: _showLanguagePicker,
         );
       },
     );
   }
 
-  Widget _buildSubscriptionTile() {
+  Widget _buildSubscriptionTile(ThemeData theme) {
     return ListenableBuilder(
       listenable: _subscriptionProvider,
       builder: (context, _) {
         final isSubscribed = _subscriptionProvider.value;
+        final accent = isSubscribed ? theme.colorScheme.secondary : theme.colorScheme.primary;
         return Container(
           margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: isSubscribed
-                ? AppColors.accentSuccess.withOpacity(0.1)
-                : AppColors.accentPrimary.withOpacity(0.1),
+            color: accent.withOpacity(0.1),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(
-              color: isSubscribed
-                  ? AppColors.accentSuccess.withOpacity(0.3)
-                  : AppColors.accentPrimary.withOpacity(0.3),
-            ),
+            border: Border.all(color: accent.withOpacity(0.3)),
           ),
           child: Row(
             children: [
-              Icon(
-                isSubscribed ? Icons.check_circle : Icons.lock_open,
-                color: isSubscribed
-                    ? AppColors.accentSuccess
-                    : AppColors.accentPrimary,
-                size: 28,
-              ),
+              Icon(isSubscribed ? Icons.check_circle : Icons.lock_open, color: accent, size: 28),
               const SizedBox(width: 12),
               Expanded(
                 child: Column(
@@ -277,21 +237,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   children: [
                     Text(
                       isSubscribed ? 'Pro Active' : 'GraceLog Pro',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.textPrimary,
-                      ),
+                      style: theme.textTheme.titleMedium,
                     ),
                     const SizedBox(height: 2),
                     Text(
                       isSubscribed
                           ? 'Ad-free experience. Thank you for your support!'
                           : r'Remove ads for $0.99/month',
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: AppColors.textSecondary,
-                      ),
+                      style: theme.textTheme.bodySmall,
                     ),
                   ],
                 ),
@@ -300,12 +253,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ElevatedButton(
                   onPressed: () => _subscriptionProvider.purchaseSubscription(),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.accentPrimary,
-                    foregroundColor: Colors.white,
+                    backgroundColor: theme.colorScheme.primary,
+                    foregroundColor: theme.colorScheme.onPrimary,
                     elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                   ),
                   child: const Text('Upgrade'),
                 ),
@@ -316,71 +267,65 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  Widget _buildRestoreTile() {
+  Widget _buildRestoreTile(ThemeData theme) {
     return ListTile(
-      leading: Icon(Icons.restore, color: AppColors.textSecondary),
-      title: Text(
-        'Restore Purchases',
-        style: TextStyle(color: AppColors.textPrimary),
-      ),
-      subtitle: Text(
-        'Recover your Pro subscription on this device',
-        style: TextStyle(color: AppColors.textSecondary),
-      ),
+      leading: Icon(Icons.restore, color: theme.colorScheme.onSurface.withOpacity(0.6)),
+      title: Text('Restore Purchases', style: theme.textTheme.bodyLarge),
+      subtitle: Text('Recover your Pro subscription on this device', style: theme.textTheme.bodySmall),
       onTap: () => _subscriptionProvider.restorePurchases(),
     );
   }
 
-  Widget _buildExportTile() {
+  Widget _buildExportTile(ThemeData theme) {
     return ListTile(
       leading: _isExporting
           ? SizedBox(
               width: 24,
               height: 24,
-              child: CircularProgressIndicator(
-                strokeWidth: 2,
-                color: AppColors.accentPrimary,
-              ),
+              child: CircularProgressIndicator(strokeWidth: 2, color: theme.colorScheme.primary),
             )
-          : Icon(Icons.download, color: AppColors.textSecondary),
-      title: Text(
-        'Export All Data',
-        style: TextStyle(color: AppColors.textPrimary),
-      ),
-      subtitle: Text(
-        'Backup your entries as JSON',
-        style: TextStyle(color: AppColors.textSecondary),
-      ),
+          : Icon(Icons.download, color: theme.colorScheme.onSurface.withOpacity(0.6)),
+      title: Text('Export All Data', style: theme.textTheme.bodyLarge),
+      subtitle: Text('Backup your entries as JSON', style: theme.textTheme.bodySmall),
       onTap: _isExporting ? null : _exportAllData,
     );
   }
 
-  Widget _buildLinkTile({
+  Widget _buildLinkTile(
+    ThemeData theme, {
     required IconData icon,
     required String title,
     required String subtitle,
     required VoidCallback onTap,
   }) {
     return ListTile(
-      leading: Icon(icon, color: AppColors.textSecondary),
-      title: Text(title, style: TextStyle(color: AppColors.textPrimary)),
-      subtitle: Text(subtitle, style: TextStyle(color: AppColors.textSecondary)),
-      trailing: const Icon(Icons.open_in_new, size: 18, color: AppColors.textTertiary),
+      leading: Icon(icon, color: theme.colorScheme.onSurface.withOpacity(0.6)),
+      title: Text(title, style: theme.textTheme.bodyLarge),
+      subtitle: Text(subtitle, style: theme.textTheme.bodySmall),
+      trailing: Icon(Icons.open_in_new, size: 18, color: theme.colorScheme.onSurface.withOpacity(0.4)),
       onTap: onTap,
     );
   }
 
   Future<void> _exportAllData() async {
     setState(() => _isExporting = true);
-    // In a real implementation, this would fetch all entries from
-    // the EntriesProvider and pass them to ExportService.
-    await Future.delayed(const Duration(seconds: 1));
-    if (mounted) {
+
+    await _entriesProvider.loadEntries();
+    final entries = _entriesProvider.value.entries;
+
+    if (!mounted) return;
+
+    if (entries.isEmpty) {
       setState(() => _isExporting = false);
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Export feature requires entries provider integration')),
+        const SnackBar(content: Text('No entries to export yet.')),
       );
+      return;
     }
+
+    await ExportService().exportToJson(entries);
+
+    if (mounted) setState(() => _isExporting = false);
   }
 
   void _showThemePicker() {
