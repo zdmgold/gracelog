@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'core/providers/app_state_provider.dart';
@@ -9,12 +10,12 @@ import 'core/providers/theme_provider.dart';
 import 'core/services/iap_service.dart';
 import 'core/services/local_storage.dart';
 import 'core/services/scripture_engine.dart';
-import 'core/utils/constants.dart';
 import 'core/utils/error_handler.dart';
 import 'core/utils/theme.dart';
 import 'platform/admob_service.dart';
 import 'platform/notification_service.dart';
 import 'screens/home_dashboard.dart';
+import 'screens/onboarding_screen.dart';
 import 'widgets/accessibility_wrapper.dart';
 
 void main() {
@@ -27,7 +28,8 @@ void main() {
 ///
 /// Initializes all services in [initState], configures the
 /// [MaterialApp] with 11 supported locales, theme/darkTheme from
-/// [ThemeProvider], and [HomeDashboard] as the initial route.
+/// [ThemeProvider], and routes to [OnboardingScreen] on first launch
+/// or [HomeDashboard] thereafter.
 ///
 /// AdMob banner visibility is wired to [SubscriptionProvider] via
 /// the [shouldShowAds] callback injected during initialization.
@@ -45,6 +47,7 @@ class _GraceLogAppState extends State<GraceLogApp> {
   final EntriesProvider _entriesProvider = EntriesProvider();
 
   bool _isInitializing = true;
+  bool _hasSeenOnboarding = false;
   String? _initError;
 
   @override
@@ -76,8 +79,15 @@ class _GraceLogAppState extends State<GraceLogApp> {
       // 7. Load persisted entries
       await _entriesProvider.loadEntries();
 
+      // 8. Check first-launch onboarding flag
+      final prefs = await SharedPreferences.getInstance();
+      final seenOnboarding = prefs.getBool(OnboardingScreen.prefsKey) ?? false;
+
       if (mounted) {
-        setState(() => _isInitializing = false);
+        setState(() {
+          _hasSeenOnboarding = seenOnboarding;
+          _isInitializing = false;
+        });
       }
     } catch (e, stackTrace) {
       ErrorHandler.logError(e, stackTrace);
@@ -105,14 +115,9 @@ class _GraceLogAppState extends State<GraceLogApp> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  CircularProgressIndicator(
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
+                  CircularProgressIndicator(color: Theme.of(context).colorScheme.primary),
                   const SizedBox(height: 20),
-                  Text(
-                    'Loading GraceLog...',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
+                  Text('Loading GraceLog...', style: Theme.of(context).textTheme.bodyLarge),
                 ],
               ),
             ),
@@ -133,22 +138,11 @@ class _GraceLogAppState extends State<GraceLogApp> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(
-                      Icons.error_outline,
-                      size: 48,
-                      color: Theme.of(context).colorScheme.error,
-                    ),
+                    Icon(Icons.error_outline, size: 48, color: Theme.of(context).colorScheme.error),
                     const SizedBox(height: 16),
-                    Text(
-                      _initError!,
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    ),
+                    Text(_initError!, textAlign: TextAlign.center, style: Theme.of(context).textTheme.bodyLarge),
                     const SizedBox(height: 24),
-                    ElevatedButton(
-                      onPressed: _initializeApp,
-                      child: const Text('Retry'),
-                    ),
+                    ElevatedButton(onPressed: _initializeApp, child: const Text('Retry')),
                   ],
                 ),
               ),
@@ -186,7 +180,7 @@ class _GraceLogAppState extends State<GraceLogApp> {
             Locale('he'), // Hebrew (RTL)
           ],
           locale: _appStateProvider.value.currentLocale,
-          home: const HomeDashboard(),
+          home: _hasSeenOnboarding ? const HomeDashboard() : const OnboardingScreen(),
           builder: (context, child) {
             // Global error boundary with restart + email report
             ErrorWidget.builder = (details) {
@@ -204,10 +198,7 @@ class _GraceLogAppState extends State<GraceLogApp> {
                           color: Theme.of(context).colorScheme.onSurface.withOpacity(0.4),
                         ),
                         const SizedBox(height: 16),
-                        Text(
-                          'Something went wrong',
-                          style: Theme.of(context).textTheme.headlineSmall,
-                        ),
+                        Text('Something went wrong', style: Theme.of(context).textTheme.headlineSmall),
                         const SizedBox(height: 8),
                         Text(
                           details.exception.toString(),
