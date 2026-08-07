@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../core/providers/app_state_provider.dart';
 import '../core/providers/entries_provider.dart';
@@ -111,14 +112,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
             icon: Icons.privacy_tip_outlined,
             title: 'Privacy Policy',
             subtitle: 'gracelog.pages.dev/privacy',
-            onTap: () {}, // Would launch URL via url_launcher
+            onTap: () => _launchUrl('https://gracelog.pages.dev/privacy'),
           ),
           _buildLinkTile(
             theme,
             icon: Icons.help_outline,
             title: 'Support',
             subtitle: 'gracelog.pages.dev/support',
-            onTap: () {}, // Would launch URL via url_launcher
+            onTap: () => _launchUrl('https://gracelog.pages.dev/support'),
           ),
           ListTile(
             leading: Icon(Icons.info_outline, color: theme.colorScheme.onSurface.withOpacity(0.6)),
@@ -181,10 +182,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         return SwitchListTile(
           secondary: Icon(Icons.fingerprint, color: theme.colorScheme.onSurface.withOpacity(0.6)),
           title: Text('Biometric Lock', style: theme.textTheme.bodyLarge),
-          subtitle: Text(
-            'Require fingerprint or face ID to open the app',
-            style: theme.textTheme.bodySmall,
-          ),
+          subtitle: Text('Require fingerprint or face ID to open the app', style: theme.textTheme.bodySmall),
           value: _appStateProvider.value.isBiometricEnabled,
           onChanged: (_) => _appStateProvider.toggleBiometric(),
           activeColor: theme.colorScheme.primary,
@@ -235,10 +233,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      isSubscribed ? 'Pro Active' : 'GraceLog Pro',
-                      style: theme.textTheme.titleMedium,
-                    ),
+                    Text(isSubscribed ? 'Pro Active' : 'GraceLog Pro', style: theme.textTheme.titleMedium),
                     const SizedBox(height: 2),
                     Text(
                       isSubscribed
@@ -251,7 +246,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
               if (!isSubscribed)
                 ElevatedButton(
-                  onPressed: () => _subscriptionProvider.purchaseSubscription(),
+                  onPressed: () => _handleUpgrade(),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: theme.colorScheme.primary,
                     foregroundColor: theme.colorScheme.onPrimary,
@@ -326,6 +321,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
     await ExportService().exportToJson(entries);
 
     if (mounted) setState(() => _isExporting = false);
+  }
+
+  // FIX: real user feedback on tap. Actual purchase completion still
+  // requires a signed release build with configured store products —
+  // this stops the button from feeling broken in the meantime.
+  Future<void> _handleUpgrade() async {
+    final sent = await _subscriptionProvider.purchaseSubscription();
+    if (!mounted) return;
+    if (!sent) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Subscriptions aren't available in this build yet. Check back soon."),
+        ),
+      );
+    }
+  }
+
+  // FIX: Privacy/Support links now actually open, using url_launcher
+  // which was already a dependency but never wired here.
+  Future<void> _launchUrl(String url) async {
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } else if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Could not open link.')),
+      );
+    }
   }
 
   void _showThemePicker() {
