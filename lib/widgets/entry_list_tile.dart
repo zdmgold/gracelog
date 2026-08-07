@@ -7,7 +7,8 @@ import '../core/utils/theme.dart';
 /// List tile for the entry history list.
 ///
 /// Shows date, mood icon, first gratitude item preview, category chip.
-/// 48dp minimum height. Tap to view detail. Swipe to delete with
+/// 48dp minimum height. Tap to view detail. Swipe to delete, or use
+/// the explicit trailing delete button — both route through the same
 /// confirmation dialog.
 class EntryListTile extends StatelessWidget {
   const EntryListTile({
@@ -101,7 +102,18 @@ class EntryListTile extends StatelessWidget {
                     ],
                   ),
                 ),
-                Icon(Icons.chevron_right, color: theme.colorScheme.onSurface.withOpacity(0.4), size: 20),
+                // FIX: explicit delete button added — swipe-to-dismiss
+                // alone wasn't discoverable enough. Both paths share the
+                // same confirmation dialog.
+                IconButton(
+                  onPressed: () async {
+                    final confirmed = await _showDeleteConfirm(context, theme);
+                    if (confirmed) onDelete();
+                  },
+                  icon: Icon(Icons.delete_outline, color: theme.colorScheme.onSurface.withOpacity(0.4), size: 20),
+                  tooltip: 'Delete entry',
+                  constraints: const BoxConstraints(minWidth: 40, minHeight: 40),
+                ),
               ],
             ),
           ),
