@@ -8,19 +8,21 @@ import '../core/models/scripture_verse.dart';
 import '../core/providers/app_state_provider.dart';
 import '../core/providers/entries_provider.dart';
 import '../core/services/scripture_engine.dart';
-import '../core/utils/constants.dart';
 
 /// Bedtime reflection screen.
 ///
 /// Simplified entry mode with OLED-black background (#000000), one
 /// gratitude item, peaceful mood default, sleep-prompt scripture,
-/// and "Rest well" close button. Auto-enables bedtime mode.
+/// and "Rest well" close button.
+///
+/// Colors here are intentionally hardcoded (not theme-driven) — this
+/// screen must stay true black regardless of light/dark theme, for
+/// genuine OLED power savings and reduced brightness before sleep.
 class BedtimeReflectionScreen extends StatefulWidget {
   const BedtimeReflectionScreen({super.key});
 
   @override
-  State<BedtimeReflectionScreen> createState() =>
-      _BedtimeReflectionScreenState();
+  State<BedtimeReflectionScreen> createState() => _BedtimeReflectionScreenState();
 }
 
 class _BedtimeReflectionScreenState extends State<BedtimeReflectionScreen> {
@@ -29,11 +31,15 @@ class _BedtimeReflectionScreenState extends State<BedtimeReflectionScreen> {
   final TextEditingController _controller = TextEditingController();
   ScriptureVerse? _sleepVerse;
   bool _isSaving = false;
+  bool _weTurnedOnBedtimeMode = false;
 
   @override
   void initState() {
     super.initState();
-    _appStateProvider.toggleBedtimeMode();
+    if (!_appStateProvider.value.isBedtimeMode) {
+      _appStateProvider.toggleBedtimeMode();
+      _weTurnedOnBedtimeMode = true;
+    }
     _loadSleepVerse();
   }
 
@@ -48,9 +54,15 @@ class _BedtimeReflectionScreenState extends State<BedtimeReflectionScreen> {
 
   @override
   void dispose() {
+    // Only revert bedtime mode if this screen was the one that turned
+    // it on — avoids clobbering a state the user set manually in
+    // Settings before opening this screen.
+    if (_weTurnedOnBedtimeMode) {
+      _appStateProvider.toggleBedtimeMode();
+    }
     _controller.dispose();
-    _entriesProvider.dispose();
-    _appStateProvider.dispose();
+    // EntriesProvider intentionally not disposed — instance-per-screen
+    // convention established in Batch 1.
     super.dispose();
   }
 
@@ -109,14 +121,9 @@ class _BedtimeReflectionScreenState extends State<BedtimeReflectionScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Header
               Row(
                 children: [
-                  Icon(
-                    Icons.nights_stay,
-                    color: Colors.white.withOpacity(0.6),
-                    size: 20,
-                  ),
+                  Icon(Icons.nights_stay, color: Colors.white.withOpacity(0.6), size: 20),
                   const SizedBox(width: 8),
                   Text(
                     'Bedtime Reflection',
@@ -129,78 +136,48 @@ class _BedtimeReflectionScreenState extends State<BedtimeReflectionScreen> {
                   const Spacer(),
                   IconButton(
                     onPressed: () => Navigator.of(context).pop(),
-                    icon: Icon(
-                      Icons.close,
-                      color: Colors.white.withOpacity(0.6),
-                    ),
+                    icon: Icon(Icons.close, color: Colors.white.withOpacity(0.6)),
                     tooltip: 'Close',
                   ),
                 ],
               ),
               const SizedBox(height: 32),
-              // Scripture
               if (_sleepVerse != null) ...[
                 Text(
                   _sleepVerse!.reference,
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white.withOpacity(0.5),
-                  ),
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white.withOpacity(0.5)),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   '"${_sleepVerse!.text}"',
-                  style: TextStyle(
-                    fontSize: 20,
-                    height: 1.6,
-                    color: Colors.white.withOpacity(0.9),
-                    fontStyle: FontStyle.italic,
-                  ),
+                  style: TextStyle(fontSize: 20, height: 1.6, color: Colors.white.withOpacity(0.9), fontStyle: FontStyle.italic),
                 ),
                 const SizedBox(height: 40),
               ],
-              // Prompt
               Text(
                 'Before you rest, what is one thing you are grateful for today?',
-                style: TextStyle(
-                  fontSize: 18,
-                  height: 1.5,
-                  color: Colors.white.withOpacity(0.8),
-                ),
+                style: TextStyle(fontSize: 18, height: 1.5, color: Colors.white.withOpacity(0.8)),
               ),
               const SizedBox(height: 20),
-              // Input
               TextField(
                 controller: _controller,
                 maxLines: 3,
                 minLines: 1,
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.white.withOpacity(0.9),
-                ),
+                style: TextStyle(fontSize: 18, color: Colors.white.withOpacity(0.9)),
                 decoration: InputDecoration(
                   hintText: 'I am grateful for...',
-                  hintStyle: TextStyle(
-                    color: Colors.white.withOpacity(0.3),
-                  ),
+                  hintStyle: TextStyle(color: Colors.white.withOpacity(0.3)),
                   filled: true,
                   fillColor: Colors.white.withOpacity(0.05),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide.none,
-                  ),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(
-                      color: Colors.white.withOpacity(0.2),
-                    ),
+                    borderSide: BorderSide(color: Colors.white.withOpacity(0.2)),
                   ),
                   contentPadding: const EdgeInsets.all(16),
                 ),
               ),
               const Spacer(),
-              // Rest well button
               SizedBox(
                 width: double.infinity,
                 height: 52,
@@ -210,33 +187,22 @@ class _BedtimeReflectionScreenState extends State<BedtimeReflectionScreen> {
                     backgroundColor: Colors.white.withOpacity(0.15),
                     foregroundColor: Colors.white,
                     elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),
                   child: _isSaving
                       ? SizedBox(
                           width: 20,
                           height: 20,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            color: Colors.white.withOpacity(0.8),
-                          ),
+                          child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white.withOpacity(0.8)),
                         )
-                      : const Text(
-                          'Rest Well',
-                          style: TextStyle(fontSize: 16),
-                        ),
+                      : const Text('Rest Well', style: TextStyle(fontSize: 16)),
                 ),
               ),
               const SizedBox(height: 16),
               Center(
                 child: Text(
                   'Your entry is saved locally on your device.',
-                  style: TextStyle(
-                    fontSize: 11,
-                    color: Colors.white.withOpacity(0.3),
-                  ),
+                  style: TextStyle(fontSize: 11, color: Colors.white.withOpacity(0.3)),
                 ),
               ),
             ],
