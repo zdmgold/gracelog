@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../core/models/daily_entry.dart';
 import '../core/models/mood_type.dart';
-import '../core/utils/constants.dart';
 
 /// 7-day mood trend line chart drawn with [CustomPainter].
 ///
 /// No external chart library dependency. Maps each [MoodType] to a
 /// Y-axis index (0-6), draws a smooth line with gradient fill,
-/// dots at data points, and day labels below.
-///
-/// Handles empty state gracefully.
+/// dots at data points, and day labels below. Handles empty state.
 class MoodTrendChart extends StatelessWidget {
   const MoodTrendChart({
     super.key,
@@ -18,23 +15,18 @@ class MoodTrendChart extends StatelessWidget {
     this.height = 180,
   });
 
-  /// Entries for the last 7 days, ordered from oldest to newest.
   final List<DailyEntry> entries;
   final double height;
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     if (entries.isEmpty) {
       return SizedBox(
         height: height,
         child: Center(
-          child: Text(
-            'No entries yet this week',
-            style: TextStyle(
-              fontSize: 14,
-              color: AppColors.textTertiary,
-            ),
-          ),
+          child: Text('No entries yet this week', style: theme.textTheme.bodyMedium),
         ),
       );
     }
@@ -43,16 +35,32 @@ class MoodTrendChart extends StatelessWidget {
       height: height,
       child: CustomPaint(
         size: Size.infinite,
-        painter: _MoodTrendPainter(entries: entries),
+        painter: _MoodTrendPainter(
+          entries: entries,
+          gridColor: theme.colorScheme.outline.withOpacity(0.15),
+          labelColor: theme.colorScheme.onSurface.withOpacity(0.4),
+          lineColor: theme.colorScheme.primary,
+          dotCenterColor: theme.colorScheme.surface,
+        ),
       ),
     );
   }
 }
 
 class _MoodTrendPainter extends CustomPainter {
-  _MoodTrendPainter({required this.entries});
+  _MoodTrendPainter({
+    required this.entries,
+    required this.gridColor,
+    required this.labelColor,
+    required this.lineColor,
+    required this.dotCenterColor,
+  });
 
   final List<DailyEntry> entries;
+  final Color gridColor;
+  final Color labelColor;
+  final Color lineColor;
+  final Color dotCenterColor;
 
   static const List<MoodType> _moodOrder = [
     MoodType.peaceful,
@@ -68,57 +76,37 @@ class _MoodTrendPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final padding = const EdgeInsets.only(
-      left: 40,
-      right: 16,
-      top: 24,
-      bottom: 32,
-    );
-
+    final padding = const EdgeInsets.only(left: 40, right: 16, top: 24, bottom: 32);
     final chartWidth = size.width - padding.left - padding.right;
     final chartHeight = size.height - padding.top - padding.bottom;
 
-    // Draw Y-axis labels (mood names, abbreviated)
-    final labelStyle = TextPainter(
-      textDirection: TextDirection.ltr,
-      textAlign: TextAlign.right,
-    );
+    final labelStyle = TextPainter(textDirection: TextDirection.ltr, textAlign: TextAlign.right);
 
     for (int i = 0; i < _moodOrder.length; i++) {
       final y = padding.top + chartHeight - (i / (_moodOrder.length - 1)) * chartHeight;
       labelStyle.text = TextSpan(
         text: _moodOrder[i].name.substring(0, 3).toUpperCase(),
-        style: TextStyle(
-          fontSize: 10,
-          color: AppColors.textTertiary,
-        ),
+        style: TextStyle(fontSize: 10, color: labelColor),
       );
       labelStyle.layout();
       labelStyle.paint(canvas, Offset(padding.left - 36, y - 6));
     }
 
-    // Draw grid lines
     final gridPaint = Paint()
-      ..color = AppColors.borderSubtle
+      ..color = gridColor
       ..strokeWidth = 0.5;
 
     for (int i = 0; i < _moodOrder.length; i++) {
       final y = padding.top + chartHeight - (i / (_moodOrder.length - 1)) * chartHeight;
-      canvas.drawLine(
-        Offset(padding.left, y),
-        Offset(size.width - padding.right, y),
-        gridPaint,
-      );
+      canvas.drawLine(Offset(padding.left, y), Offset(size.width - padding.right, y), gridPaint);
     }
 
     if (entries.length < 2) {
-      // Single point: draw dot only
       _drawDot(canvas, padding, chartWidth, chartHeight, 0);
       _drawDayLabel(canvas, padding, chartWidth, chartHeight, 0, size.height);
       return;
     }
 
-    // Build points
     final points = <Offset>[];
     for (int i = 0; i < entries.length; i++) {
       final x = padding.left + (i / (entries.length - 1)) * chartWidth;
@@ -127,15 +115,12 @@ class _MoodTrendPainter extends CustomPainter {
       points.add(Offset(x, y));
     }
 
-    // Draw gradient fill under line
     final fillPath = Path()
       ..moveTo(points.first.dx, padding.top + chartHeight)
       ..lineTo(points.first.dx, points.first.dy);
-
     for (int i = 1; i < points.length; i++) {
       fillPath.lineTo(points[i].dx, points[i].dy);
     }
-
     fillPath
       ..lineTo(points.last.dx, padding.top + chartHeight)
       ..close();
@@ -144,10 +129,7 @@ class _MoodTrendPainter extends CustomPainter {
       ..shader = LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
-        colors: [
-          AppColors.accentPrimary.withOpacity(0.3),
-          AppColors.accentPrimary.withOpacity(0.0),
-        ],
+        colors: [lineColor.withOpacity(0.3), lineColor.withOpacity(0.0)],
       ).createShader(Rect.fromLTRB(
         padding.left,
         padding.top,
@@ -157,9 +139,8 @@ class _MoodTrendPainter extends CustomPainter {
 
     canvas.drawPath(fillPath, fillPaint);
 
-    // Draw line
     final linePaint = Paint()
-      ..color = AppColors.accentPrimary
+      ..color = lineColor
       ..strokeWidth = 3
       ..strokeCap = StrokeCap.round
       ..strokeJoin = StrokeJoin.round
@@ -171,19 +152,16 @@ class _MoodTrendPainter extends CustomPainter {
     }
     canvas.drawPath(linePath, linePaint);
 
-    // Draw dots
     for (int i = 0; i < points.length; i++) {
       _drawDotAt(canvas, points[i], entries[i].mood.colorToken);
     }
 
-    // Draw day labels
     for (int i = 0; i < entries.length; i++) {
       _drawDayLabel(canvas, padding, chartWidth, chartHeight, i, size.height);
     }
   }
 
-  void _drawDot(Canvas canvas, EdgeInsets padding, double chartWidth,
-      double chartHeight, int index) {
+  void _drawDot(Canvas canvas, EdgeInsets padding, double chartWidth, double chartHeight, int index) {
     final x = padding.left + (index / (entries.length - 1)) * chartWidth;
     final moodIdx = _moodIndex(entries[index].mood);
     final y = padding.top + chartHeight - (moodIdx / (_moodOrder.length - 1)) * chartHeight;
@@ -191,47 +169,22 @@ class _MoodTrendPainter extends CustomPainter {
   }
 
   void _drawDotAt(Canvas canvas, Offset center, Color color) {
-    // Outer glow
-    canvas.drawCircle(
-      center,
-      8,
-      Paint()..color = color.withOpacity(0.2),
-    );
-    // Inner dot
-    canvas.drawCircle(
-      center,
-      5,
-      Paint()..color = color,
-    );
-    // White center
-    canvas.drawCircle(
-      center,
-      2,
-      Paint()..color = Colors.white,
-    );
+    canvas.drawCircle(center, 8, Paint()..color = color.withOpacity(0.2));
+    canvas.drawCircle(center, 5, Paint()..color = color);
+    canvas.drawCircle(center, 2, Paint()..color = dotCenterColor);
   }
 
-  void _drawDayLabel(Canvas canvas, EdgeInsets padding, double chartWidth,
-      double chartHeight, int index, double totalHeight) {
+  void _drawDayLabel(Canvas canvas, EdgeInsets padding, double chartWidth, double chartHeight, int index, double totalHeight) {
     final x = padding.left + (index / (entries.length - 1)) * chartWidth;
     final dayName = _dayAbbreviation(entries[index].date);
 
     final labelPainter = TextPainter(
-      text: TextSpan(
-        text: dayName,
-        style: TextStyle(
-          fontSize: 10,
-          color: AppColors.textTertiary,
-        ),
-      ),
+      text: TextSpan(text: dayName, style: TextStyle(fontSize: 10, color: labelColor)),
       textDirection: TextDirection.ltr,
       textAlign: TextAlign.center,
     );
     labelPainter.layout();
-    labelPainter.paint(
-      canvas,
-      Offset(x - labelPainter.width / 2, totalHeight - 24),
-    );
+    labelPainter.paint(canvas, Offset(x - labelPainter.width / 2, totalHeight - 24));
   }
 
   String _dayAbbreviation(DateTime date) {
@@ -242,6 +195,7 @@ class _MoodTrendPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant _MoodTrendPainter oldDelegate) {
     return oldDelegate.entries.length != entries.length ||
-        oldDelegate.entries != entries;
+        oldDelegate.entries != entries ||
+        oldDelegate.lineColor != lineColor;
   }
 }
