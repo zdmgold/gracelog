@@ -1,12 +1,13 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
-import '../core/models/scripture_verse.dart';
 import '../core/models/daily_entry.dart';
+import '../core/models/scripture_verse.dart';
 import '../core/models/weekly_summary.dart';
 import '../core/providers/entries_provider.dart';
 import '../core/services/export_service.dart';
-import '../core/utils/constants.dart';
-import '../core/utils/date_formatter.dart';
+import '../core/utils/theme.dart';
 import '../widgets/accountability_share_sheet.dart';
 import '../widgets/entry_list_tile.dart';
 import '../widgets/mood_trend_chart.dart';
@@ -15,9 +16,9 @@ import 'scripture_detail_screen.dart';
 
 /// Weekly review screen.
 ///
-/// Displays: scrollable list of the last 7 days' entries, mood trend
-/// chart, category breakdown bar counts, weekly blessing card, and
-/// export buttons (JSON, PNG, PDF).
+/// Displays: scripture highlight, mood trend chart, category
+/// breakdown, scrollable list of the week's entries, weekly
+/// blessing card, and export buttons (JSON, image, journal text).
 class WeeklyReviewScreen extends StatefulWidget {
   const WeeklyReviewScreen({super.key});
 
@@ -49,44 +50,34 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
 
   @override
   void dispose() {
-    _entriesProvider.dispose();
+    // Provider intentionally not disposed — instance-per-screen
+    // convention established in Batch 1.
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: AppColors.bgPrimary,
       appBar: AppBar(
-        backgroundColor: AppColors.bgPrimary,
-        elevation: 0,
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
-          icon: Icon(Icons.arrow_back, color: AppColors.textPrimary),
+          icon: const Icon(Icons.arrow_back),
         ),
-        title: Text(
-          'Weekly Review',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-            color: AppColors.textPrimary,
-          ),
-        ),
+        title: Text('Weekly Review', style: theme.textTheme.titleLarge),
         actions: [
           IconButton(
             onPressed: _showShareSheet,
-            icon: Icon(Icons.share, color: AppColors.accentPrimary),
+            icon: Icon(Icons.share, color: theme.colorScheme.primary),
             tooltip: 'Share weekly summary',
           ),
         ],
       ),
-      body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : _buildContent(),
+      body: _isLoading ? const Center(child: CircularProgressIndicator()) : _buildContent(theme),
     );
   }
 
-  Widget _buildContent() {
+  Widget _buildContent(ThemeData theme) {
     final now = DateTime.now();
     final weekStart = now.subtract(Duration(days: now.weekday % 7 + 6));
     final weekEntries = _entriesProvider.value.entries
@@ -106,21 +97,18 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(20, 8, 20, 12),
+            child: _buildScriptureHighlight(theme, weekEntries),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 8, 20, 12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Mood Trend',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.textPrimary,
-                  ),
-                ),
+                Text('Mood Trend', style: theme.textTheme.titleLarge),
                 const SizedBox(height: 12),
-                MoodTrendChart(
-                  entries: weekEntries.reversed.toList(),
-                ),
+                MoodTrendChart(entries: weekEntries.reversed.toList()),
               ],
             ),
           ),
@@ -128,7 +116,7 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(20, 8, 20, 12),
-            child: _buildCategoryBreakdown(),
+            child: _buildCategoryBreakdown(theme),
           ),
         ),
         SliverToBoxAdapter(
@@ -137,21 +125,8 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  'This Week\'s Entries',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.textPrimary,
-                  ),
-                ),
-                Text(
-                  '${weekEntries.length} entries',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: AppColors.textSecondary,
-                  ),
-                ),
+                Text("This Week's Entries", style: theme.textTheme.titleLarge),
+                Text('${weekEntries.length} entries', style: theme.textTheme.bodyMedium),
               ],
             ),
           ),
@@ -163,19 +138,9 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
               child: Center(
                 child: Column(
                   children: [
-                    Icon(
-                      Icons.edit_note,
-                      size: 48,
-                      color: AppColors.textTertiary,
-                    ),
+                    Icon(Icons.edit_note, size: 48, color: theme.colorScheme.onSurface.withOpacity(0.3)),
                     const SizedBox(height: 12),
-                    Text(
-                      'No entries this week yet.',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: AppColors.textSecondary,
-                      ),
-                    ),
+                    Text('No entries this week yet.', style: theme.textTheme.bodyLarge),
                   ],
                 ),
               ),
@@ -201,31 +166,67 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.all(20),
-            child: _buildExportButtons(weekEntries),
+            child: _buildExportButtons(theme, weekEntries),
           ),
         ),
       ],
     );
   }
 
-  Widget _buildCategoryBreakdown() {
-    if (_summary == null || _summary!.moodCounts.isEmpty) {
-      return const SizedBox.shrink();
+  Widget _buildScriptureHighlight(ThemeData theme, List<DailyEntry> weekEntries) {
+    DailyEntry? withVerse;
+    for (final e in weekEntries) {
+      if (e.scriptureReference != null && e.scriptureText != null) {
+        withVerse = e;
+        break;
+      }
     }
+    if (withVerse == null) return const SizedBox.shrink();
+
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: theme.glassColor,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: theme.colorScheme.outline.withOpacity(0.15)),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.menu_book, size: 16, color: theme.colorScheme.primary),
+                  const SizedBox(width: 6),
+                  Text('This Week\'s Scripture', style: theme.textTheme.labelMedium),
+                ],
+              ),
+              const SizedBox(height: 12),
+              Text(
+                '"${withVerse.scriptureText}"',
+                style: theme.textTheme.bodyLarge?.copyWith(fontStyle: FontStyle.italic, height: 1.5),
+              ),
+              const SizedBox(height: 8),
+              Text('— ${withVerse.scriptureReference}', style: theme.textTheme.bodySmall),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCategoryBreakdown(ThemeData theme) {
+    if (_summary == null || _summary!.moodCounts.isEmpty) return const SizedBox.shrink();
 
     final total = _summary!.moodCounts.values.reduce((a, b) => a + b);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Mood Breakdown',
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: AppColors.textPrimary,
-          ),
-        ),
+        Text('Mood Breakdown', style: theme.textTheme.titleLarge),
         const SizedBox(height: 12),
         ..._summary!.moodCounts.entries.map((entry) {
           final pct = (entry.value / total * 100).round();
@@ -233,19 +234,11 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
             padding: const EdgeInsets.only(bottom: 8),
             child: Row(
               children: [
-                Icon(
-                  entry.key.icon,
-                  size: 16,
-                  color: entry.key.colorToken,
-                ),
+                Icon(entry.key.icon, size: 16, color: entry.key.colorToken),
                 const SizedBox(width: 8),
                 Text(
-                  entry.key.name[0].toUpperCase() +
-                      entry.key.name.substring(1),
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: AppColors.textSecondary,
-                  ),
+                  entry.key.name[0].toUpperCase() + entry.key.name.substring(1),
+                  style: theme.textTheme.bodyMedium,
                 ),
                 const SizedBox(width: 8),
                 Expanded(
@@ -253,48 +246,33 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
                     borderRadius: BorderRadius.circular(4),
                     child: LinearProgressIndicator(
                       value: entry.value / total,
-                      backgroundColor: AppColors.bgTertiary,
-                      valueColor: AlwaysStoppedAnimation(
-                        entry.key.colorToken,
-                      ),
+                      backgroundColor: theme.colorScheme.surfaceContainerHighest,
+                      valueColor: AlwaysStoppedAnimation(entry.key.colorToken),
                       minHeight: 8,
                     ),
                   ),
                 ),
                 const SizedBox(width: 8),
-                Text(
-                  '$pct%',
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.textSecondary,
-                  ),
-                ),
+                Text('$pct%', style: theme.textTheme.labelMedium),
               ],
             ),
           );
-        }).toList(),
+        }),
       ],
     );
   }
 
-  Widget _buildExportButtons(List<DailyEntry> entries) {
+  Widget _buildExportButtons(ThemeData theme, List<DailyEntry> entries) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Export',
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: AppColors.textPrimary,
-          ),
-        ),
+        Text('Export', style: theme.textTheme.titleLarge),
         const SizedBox(height: 12),
         Row(
           children: [
             Expanded(
               child: _buildExportButton(
+                theme,
                 icon: Icons.code,
                 label: 'JSON',
                 onTap: () => ExportService().exportToJson(entries),
@@ -303,21 +281,16 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
             const SizedBox(width: 12),
             Expanded(
               child: _buildExportButton(
+                theme,
                 icon: Icons.image,
                 label: 'Image',
-                onTap: () {
-                  // Image export requires a specific entry + verse
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Select an entry to export as image'),
-                    ),
-                  );
-                },
+                onTap: () => _exportImage(entries),
               ),
             ),
             const SizedBox(width: 12),
             Expanded(
               child: _buildExportButton(
+                theme,
                 icon: Icons.description,
                 label: 'Journal',
                 onTap: () => ExportService().exportToPdf(entries),
@@ -329,7 +302,36 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
     );
   }
 
-  Widget _buildExportButton({
+  Future<void> _exportImage(List<DailyEntry> entries) async {
+    DailyEntry? withVerse;
+    for (final e in entries) {
+      if (e.scriptureReference != null && e.scriptureText != null) {
+        withVerse = e;
+        break;
+      }
+    }
+
+    if (withVerse == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('No entry with scripture found this week yet.')),
+      );
+      return;
+    }
+
+    final verse = ScriptureVerse(
+      reference: withVerse.scriptureReference!,
+      text: withVerse.scriptureText!,
+      mood: withVerse.mood.name,
+      book: withVerse.scriptureReference!.split(' ').first,
+      chapter: 1,
+      verseStart: 1,
+    );
+
+    await ExportService().exportToImage(withVerse, verse);
+  }
+
+  Widget _buildExportButton(
+    ThemeData theme, {
     required IconData icon,
     required String label,
     required VoidCallback onTap,
@@ -340,21 +342,15 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 16),
         decoration: BoxDecoration(
-          color: AppColors.bgSecondary,
+          color: theme.colorScheme.surfaceContainerHighest,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: AppColors.borderSubtle),
+          border: Border.all(color: theme.colorScheme.outline.withOpacity(0.3)),
         ),
         child: Column(
           children: [
-            Icon(icon, color: AppColors.accentPrimary, size: 24),
+            Icon(icon, color: theme.colorScheme.primary, size: 24),
             const SizedBox(height: 8),
-            Text(
-              label,
-              style: TextStyle(
-                fontSize: 13,
-                color: AppColors.textSecondary,
-              ),
-            ),
+            Text(label, style: theme.textTheme.bodySmall),
           ],
         ),
       ),
@@ -372,9 +368,7 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
         verseStart: 1,
       );
       Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (_) => ScriptureDetailScreen(verse: verse),
-        ),
+        MaterialPageRoute(builder: (_) => ScriptureDetailScreen(verse: verse)),
       );
     }
   }
