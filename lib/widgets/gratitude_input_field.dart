@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../core/utils/constants.dart';
 import '../core/models/category_suggestion.dart';
 
 /// Reusable gratitude item input field with category auto-suggest.
