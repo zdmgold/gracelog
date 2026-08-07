@@ -63,10 +63,17 @@ class _HomeDashboardState extends State<HomeDashboard>
   Future<void> _initialize() async {
     await ScriptureEngine().initialize();
     await _entriesProvider.loadEntries();
-    _refreshData();
+    await _refreshData();
   }
 
-  void _refreshData() {
+  // FIX: now reloads entries before recalculating anything derived from
+  // them. Previously this only recomputed the daily verse, weekly summary,
+  // and streak — the entries list itself was never refreshed after the
+  // initial load, so the Journey heatmap and Mood Trend chart never saw
+  // newly saved entries.
+  Future<void> _refreshData() async {
+    if (!mounted) return;
+    await _entriesProvider.loadEntries();
     if (!mounted) return;
     _loadDailyVerse();
     _loadWeeklySummary();
@@ -104,7 +111,6 @@ class _HomeDashboardState extends State<HomeDashboard>
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
 
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
@@ -117,14 +123,8 @@ class _HomeDashboardState extends State<HomeDashboard>
             SliverToBoxAdapter(child: _buildCalendarHeatmap(theme)),
             SliverToBoxAdapter(child: _buildMoodTrendSection(theme)),
             SliverToBoxAdapter(child: _buildRecentEntriesSection(theme)),
-            // Weekly blessing ALWAYS renders — placeholder when null
-            SliverToBoxAdapter(
-              child: _buildWeeklyBlessingSection(theme),
-            ),
-            // Scripture ALWAYS renders — placeholder when null
-            SliverToBoxAdapter(
-              child: _buildScriptureSection(theme),
-            ),
+            SliverToBoxAdapter(child: _buildWeeklyBlessingSection(theme)),
+            SliverToBoxAdapter(child: _buildScriptureSection(theme)),
             const SliverToBoxAdapter(child: SizedBox(height: 24)),
           ],
         ),
@@ -135,7 +135,7 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 
   // ═══════════════════════════════════════════════════════════════
-  // HERO HEADER — Animated gradient with wordmark
+  // HERO HEADER
   // ═══════════════════════════════════════════════════════════════
   Widget _buildHeroHeader(ThemeData theme) {
     return AnimatedBuilder(
@@ -166,9 +166,7 @@ class _HomeDashboardState extends State<HomeDashboard>
                     children: [
                       Text(
                         _greeting(),
-                        style: theme.textTheme.bodySmall?.copyWith(
-                          color: Colors.white.withOpacity(0.8),
-                        ),
+                        style: theme.textTheme.bodySmall?.copyWith(color: Colors.white.withOpacity(0.8)),
                       ),
                       const SizedBox(height: 4),
                       Text(
@@ -183,29 +181,18 @@ class _HomeDashboardState extends State<HomeDashboard>
                   ),
                   Row(
                     children: [
-                      // Bedtime navigation button
                       IconButton(
                         onPressed: _navigateToBedtime,
-                        icon: Icon(
-                          Icons.bedtime_outlined,
-                          color: Colors.white.withOpacity(0.9),
-                        ),
+                        icon: Icon(Icons.bedtime_outlined, color: Colors.white.withOpacity(0.9)),
                         tooltip: 'Bedtime Reflection',
-                        style: IconButton.styleFrom(
-                          backgroundColor: Colors.white.withOpacity(0.15),
-                        ),
+                        style: IconButton.styleFrom(backgroundColor: Colors.white.withOpacity(0.15)),
                       ),
                       const SizedBox(width: 8),
                       IconButton(
                         onPressed: _navigateToSettings,
-                        icon: Icon(
-                          Icons.settings_outlined,
-                          color: Colors.white.withOpacity(0.9),
-                        ),
+                        icon: Icon(Icons.settings_outlined, color: Colors.white.withOpacity(0.9)),
                         tooltip: 'Settings',
-                        style: IconButton.styleFrom(
-                          backgroundColor: Colors.white.withOpacity(0.15),
-                        ),
+                        style: IconButton.styleFrom(backgroundColor: Colors.white.withOpacity(0.15)),
                       ),
                     ],
                   ),
@@ -214,9 +201,7 @@ class _HomeDashboardState extends State<HomeDashboard>
               const SizedBox(height: 8),
               Text(
                 '${DateTime.now().day} ${_monthName(DateTime.now().month)}, ${DateTime.now().year}',
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  color: Colors.white.withOpacity(0.7),
-                ),
+                style: theme.textTheme.bodyMedium?.copyWith(color: Colors.white.withOpacity(0.7)),
               ),
             ],
           ),
@@ -226,7 +211,7 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 
   // ═══════════════════════════════════════════════════════════════
-  // TODAY STATUS — Entry completion indicator
+  // TODAY STATUS
   // ═══════════════════════════════════════════════════════════════
   Widget _buildTodayStatus(ThemeData theme) {
     return ListenableBuilder(
@@ -257,9 +242,7 @@ class _HomeDashboardState extends State<HomeDashboard>
               children: [
                 Icon(
                   hasEntry ? Icons.check_circle : Icons.circle_outlined,
-                  color: hasEntry
-                      ? theme.colorScheme.primary
-                      : theme.colorScheme.onSurface.withOpacity(0.3),
+                  color: hasEntry ? theme.colorScheme.primary : theme.colorScheme.onSurface.withOpacity(0.3),
                   size: 24,
                 ),
                 const SizedBox(width: 12),
@@ -268,9 +251,7 @@ class _HomeDashboardState extends State<HomeDashboard>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        hasEntry
-                            ? "Today's gratitude is recorded"
-                            : "You haven't journaled today",
+                        hasEntry ? "Today's gratitude is recorded" : "You haven't journaled today",
                         style: theme.textTheme.titleMedium,
                       ),
                       const SizedBox(height: 2),
@@ -292,7 +273,7 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 
   // ═══════════════════════════════════════════════════════════════
-  // STREAK SECTION — Flame + weekly review link
+  // STREAK SECTION
   // ═══════════════════════════════════════════════════════════════
   Widget _buildStreakSection(ThemeData theme) {
     return Padding(
@@ -320,10 +301,7 @@ class _HomeDashboardState extends State<HomeDashboard>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Your Journey',
-            style: theme.textTheme.titleLarge,
-          ),
+          Text('Your Journey', style: theme.textTheme.titleLarge),
           const SizedBox(height: 12),
           ListenableBuilder(
             listenable: _entriesProvider,
@@ -351,18 +329,13 @@ class _HomeDashboardState extends State<HomeDashboard>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Mood Trend (7 Days)',
-            style: theme.textTheme.titleLarge,
-          ),
+          Text('Mood Trend (7 Days)', style: theme.textTheme.titleLarge),
           const SizedBox(height: 12),
           ListenableBuilder(
             listenable: _entriesProvider,
             builder: (context, _) {
               final now = DateTime.now();
-              final weekStart = now.subtract(
-                Duration(days: now.weekday % 7 + 6),
-              );
+              final weekStart = now.subtract(Duration(days: now.weekday % 7 + 6));
               final weekEntries = _entriesProvider.value.entries
                   .where((e) => e.date.isAfter(weekStart))
                   .toList()
@@ -377,7 +350,7 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 
   // ═══════════════════════════════════════════════════════════════
-  // RECENT ENTRIES SECTION — Last 7 entries
+  // RECENT ENTRIES SECTION
   // ═══════════════════════════════════════════════════════════════
   Widget _buildRecentEntriesSection(ThemeData theme) {
     return Padding(
@@ -385,17 +358,12 @@ class _HomeDashboardState extends State<HomeDashboard>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Recent Entries',
-            style: theme.textTheme.titleLarge,
-          ),
+          Text('Recent Entries', style: theme.textTheme.titleLarge),
           const SizedBox(height: 12),
           ListenableBuilder(
             listenable: _entriesProvider,
             builder: (context, _) {
-              final recent = _entriesProvider.value.entries
-                  .take(7)
-                  .toList();
+              final recent = _entriesProvider.value.entries.take(7).toList();
 
               if (recent.isEmpty) {
                 return Container(
@@ -422,17 +390,22 @@ class _HomeDashboardState extends State<HomeDashboard>
                     padding: const EdgeInsets.only(bottom: 8),
                     child: EntryListTile(
                       entry: entry,
-                      onTap: () => _navigateToEntry(verse: entry.scriptureReference != null
-                          ? ScriptureVerse(
-                              reference: entry.scriptureReference!,
-                              text: entry.scriptureText ?? '',
-                              mood: entry.mood.name,
-                              book: entry.scriptureReference!.split(' ').first,
-                              chapter: 1,
-                              verseStart: 1,
-                            )
-                          : null),
-                      onDelete: () => _entriesProvider.deleteEntry(entry.id),
+                      onTap: () => _navigateToEntry(
+                        verse: entry.scriptureReference != null
+                            ? ScriptureVerse(
+                                reference: entry.scriptureReference!,
+                                text: entry.scriptureText ?? '',
+                                mood: entry.mood.name,
+                                book: entry.scriptureReference!.split(' ').first,
+                                chapter: 1,
+                                verseStart: 1,
+                              )
+                            : null,
+                      ),
+                      onDelete: () async {
+                        await _entriesProvider.deleteEntry(entry.id);
+                        await _refreshData();
+                      },
                     ),
                   );
                 }).toList(),
@@ -445,7 +418,7 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 
   // ═══════════════════════════════════════════════════════════════
-  // WEEKLY BLESSING — Always renders, placeholder when null
+  // WEEKLY BLESSING
   // ═══════════════════════════════════════════════════════════════
   Widget _buildWeeklyBlessingSection(ThemeData theme) {
     return Padding(
@@ -462,7 +435,7 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 
   // ═══════════════════════════════════════════════════════════════
-  // SCRIPTURE SECTION — Always renders, placeholder when null
+  // SCRIPTURE SECTION
   // ═══════════════════════════════════════════════════════════════
   Widget _buildScriptureSection(ThemeData theme) {
     return Padding(
@@ -470,10 +443,7 @@ class _HomeDashboardState extends State<HomeDashboard>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Scripture of the Day',
-            style: theme.textTheme.titleLarge,
-          ),
+          Text('Scripture of the Day', style: theme.textTheme.titleLarge),
           const SizedBox(height: 12),
           _dailyVerse != null
               ? ScriptureCard(
@@ -493,7 +463,7 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 
   // ═══════════════════════════════════════════════════════════════
-  // PLACEHOLDER CARD — Used when data is loading/null
+  // PLACEHOLDER CARD
   // ═══════════════════════════════════════════════════════════════
   Widget _buildPlaceholderCard(
     ThemeData theme, {
@@ -506,9 +476,7 @@ class _HomeDashboardState extends State<HomeDashboard>
       decoration: BoxDecoration(
         color: theme.colorScheme.surfaceContainerHighest,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: theme.colorScheme.outline.withOpacity(0.2),
-        ),
+        border: Border.all(color: theme.colorScheme.outline.withOpacity(0.2)),
       ),
       child: Row(
         children: [
@@ -530,7 +498,7 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 
   // ═══════════════════════════════════════════════════════════════
-  // EXPANDABLE FAB — Quick actions
+  // EXPANDABLE FAB
   // ═══════════════════════════════════════════════════════════════
   Widget _buildExpandableFab(ThemeData theme) {
     return Column(
@@ -544,7 +512,7 @@ class _HomeDashboardState extends State<HomeDashboard>
             onTap: () {
               HapticFeedback.lightImpact();
               setState(() => _isFabExpanded = false);
-              // TODO: Voice note entry
+              // TODO: Voice note entry — Phase 2
             },
           ),
           const SizedBox(height: 8),
@@ -554,7 +522,7 @@ class _HomeDashboardState extends State<HomeDashboard>
             onTap: () {
               HapticFeedback.lightImpact();
               setState(() => _isFabExpanded = false);
-              // TODO: Photo entry
+              // TODO: Photo entry — Phase 2
             },
           ),
           const SizedBox(height: 8),
@@ -580,13 +548,13 @@ class _HomeDashboardState extends State<HomeDashboard>
           const SizedBox(height: 12),
         ],
         FloatingActionButton.extended(
+          // FIX: this button now only ever toggles expand/collapse.
+          // It previously called _navigateToEntry() when already
+          // expanded, which meant tapping "Close" silently opened the
+          // entry screen instead of collapsing the menu.
           onPressed: () {
             HapticFeedback.lightImpact();
-            if (_isFabExpanded) {
-              _navigateToEntry();
-            } else {
-              setState(() => _isFabExpanded = true);
-            }
+            setState(() => _isFabExpanded = !_isFabExpanded);
           },
           icon: AnimatedRotation(
             turns: _isFabExpanded ? 0.125 : 0,
@@ -633,7 +601,7 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 
   // ═══════════════════════════════════════════════════════════════
-  // BOTTOM BAR — Ad banner or nothing
+  // BOTTOM BAR
   // ═══════════════════════════════════════════════════════════════
   Widget _buildBottomBar() {
     return ListenableBuilder(
@@ -675,42 +643,32 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 
   void _navigateToEntry({ScriptureVerse? verse}) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (_) => DailyEntryScreen(preselectedVerse: verse),
-      ),
-    ).then((_) => _refreshData());
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (_) => DailyEntryScreen(preselectedVerse: verse)))
+        .then((_) => _refreshData());
   }
 
   void _navigateToWeeklyReview() {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => const WeeklyReviewScreen()),
-    );
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const WeeklyReviewScreen()));
   }
 
   void _navigateToSettings() {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => const SettingsScreen()),
-    );
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SettingsScreen()));
   }
 
   void _navigateToBedtime() {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => const BedtimeReflectionScreen()),
-    ).then((_) => _refreshData());
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (_) => const BedtimeReflectionScreen()))
+        .then((_) => _refreshData());
   }
 
   void _navigateToScriptureDetail(ScriptureVerse verse) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (_) => ScriptureDetailScreen(verse: verse),
-      ),
-    );
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) => ScriptureDetailScreen(verse: verse)));
   }
 }
 
 // ═════════════════════════════════════════════════════════════════
-// MINI CALENDAR HEATMAP — Inline widget for home dashboard
+// MINI CALENDAR HEATMAP
 // ═════════════════════════════════════════════════════════════════
 class _CalendarHeatmapMini extends StatelessWidget {
   const _CalendarHeatmapMini({
@@ -725,9 +683,7 @@ class _CalendarHeatmapMini extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final now = DateTime.now();
-    final days = List.generate(28, (i) {
-      return now.subtract(Duration(days: 27 - i));
-    });
+    final days = List.generate(28, (i) => now.subtract(Duration(days: 27 - i)));
 
     return Wrap(
       spacing: 4,
@@ -761,18 +717,14 @@ class _CalendarHeatmapMini extends StatelessWidget {
                   ? theme.colorScheme.primary.withOpacity(intensity as double)
                   : theme.colorScheme.surfaceContainerHighest,
               borderRadius: BorderRadius.circular(6),
-              border: Border.all(
-                color: theme.colorScheme.outline.withOpacity(0.1),
-              ),
+              border: Border.all(color: theme.colorScheme.outline.withOpacity(0.1)),
             ),
             child: hasEntry
                 ? Center(
                     child: Text(
                       '${date.day}',
                       style: theme.textTheme.labelSmall?.copyWith(
-                        color: intensity > 0.6
-                            ? theme.colorScheme.onPrimary
-                            : theme.colorScheme.primary,
+                        color: intensity > 0.6 ? theme.colorScheme.onPrimary : theme.colorScheme.primary,
                         fontSize: 10,
                       ),
                     ),
