@@ -7,8 +7,10 @@ import '../core/models/scripture_verse.dart';
 import '../core/models/weekly_summary.dart';
 import '../core/providers/entries_provider.dart';
 import '../core/services/export_service.dart';
+import '../core/utils/date_formatter.dart';
 import '../core/utils/theme.dart';
 import '../widgets/accountability_share_sheet.dart';
+import '../widgets/calendar_heatmap.dart';
 import '../widgets/entry_list_tile.dart';
 import '../widgets/mood_trend_chart.dart';
 import '../widgets/weekly_blessing_card.dart';
@@ -16,9 +18,9 @@ import 'scripture_detail_screen.dart';
 
 /// Weekly review screen.
 ///
-/// Displays: scripture highlight, mood trend chart, category
-/// breakdown, scrollable list of the week's entries, weekly
-/// blessing card, and export buttons (JSON, image, journal text).
+/// Displays: weekly blessing card, 12-week journey heatmap, scripture
+/// highlight, mood trend chart, category breakdown, scrollable list
+/// of the week's entries, and export buttons (JSON, image, journal text).
 class WeeklyReviewScreen extends StatefulWidget {
   const WeeklyReviewScreen({super.key});
 
@@ -95,6 +97,9 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
             ),
           ),
         SliverToBoxAdapter(
+          child: _buildJourneySection(theme),
+        ),
+        SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(20, 8, 20, 12),
             child: _buildScriptureHighlight(theme, weekEntries),
@@ -170,6 +175,40 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildJourneySection(ThemeData theme) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 8, 20, 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Your Journey', style: theme.textTheme.titleLarge),
+          const SizedBox(height: 4),
+          Text('Last 12 weeks', style: theme.textTheme.bodySmall),
+          const SizedBox(height: 12),
+          ListenableBuilder(
+            listenable: _entriesProvider,
+            builder: (context, _) {
+              return CalendarHeatmap(
+                entries: _entriesProvider.value.entries,
+                weeks: 12,
+                onDayTap: (date) {
+                  DailyEntry? match;
+                  for (final e in _entriesProvider.value.entries) {
+                    if (DateFormatter.isSameDay(e.date, date)) {
+                      match = e;
+                      break;
+                    }
+                  }
+                  if (match != null) _navigateToDetail(match);
+                },
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 
