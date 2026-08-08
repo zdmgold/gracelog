@@ -10,11 +10,6 @@ import '../core/services/export_service.dart';
 import '../widgets/bedtime_mode_toggle.dart';
 
 /// Settings screen.
-///
-/// Sections: theme toggle, bedtime mode, biometric lock, language
-/// selector (11 languages), subscription status card, restore
-/// purchases, export all data, privacy policy link, support link,
-/// app version.
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
 
@@ -53,9 +48,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Future<void> _loadVersion() async {
     try {
       final info = await PackageInfo.fromPlatform();
-      if (mounted) {
-        setState(() => _appVersion = '${info.version} (${info.buildNumber})');
-      }
+      if (mounted) setState(() => _appVersion = '${info.version} (${info.buildNumber})');
     } catch (_) {
       if (mounted) setState(() => _appVersion = '1.0.0');
     }
@@ -63,8 +56,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   @override
   void dispose() {
-    // Providers intentionally not disposed — instance-per-screen
-    // convention established in Batch 1.
     super.dispose();
   }
 
@@ -74,10 +65,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => Navigator.of(context).pop(),
-          icon: const Icon(Icons.arrow_back),
-        ),
+        leading: IconButton(onPressed: () => Navigator.of(context).pop(), icon: const Icon(Icons.arrow_back)),
         title: Text('Settings', style: theme.textTheme.titleLarge),
       ),
       body: ListView(
@@ -95,6 +83,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
           const Divider(height: 32),
           _buildSectionHeader(theme, 'Security'),
           _buildBiometricTile(theme),
+          const Divider(height: 32),
+          _buildSectionHeader(theme, 'Notifications'),
+          _buildReminderTile(theme),
           const Divider(height: 32),
           _buildSectionHeader(theme, 'Language'),
           _buildLanguageTile(theme),
@@ -137,10 +128,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
       child: Text(
         title.toUpperCase(),
-        style: theme.textTheme.labelMedium?.copyWith(
-          color: theme.colorScheme.onSurface.withOpacity(0.5),
-          letterSpacing: 1.2,
-        ),
+        style: theme.textTheme.labelMedium?.copyWith(color: theme.colorScheme.onSurface.withOpacity(0.5), letterSpacing: 1.2),
       ),
     );
   }
@@ -152,20 +140,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
         final mode = _themeProvider.value;
         return ListTile(
           leading: Icon(
-            mode == ThemeMode.dark
-                ? Icons.dark_mode
-                : mode == ThemeMode.light
-                    ? Icons.light_mode
-                    : Icons.brightness_auto,
+            mode == ThemeMode.dark ? Icons.dark_mode : mode == ThemeMode.light ? Icons.light_mode : Icons.brightness_auto,
             color: theme.colorScheme.onSurface.withOpacity(0.6),
           ),
           title: Text('Theme', style: theme.textTheme.bodyLarge),
           subtitle: Text(
-            mode == ThemeMode.dark
-                ? 'Dark'
-                : mode == ThemeMode.light
-                    ? 'Light'
-                    : 'System default',
+            mode == ThemeMode.dark ? 'Dark' : mode == ThemeMode.light ? 'Light' : 'System default',
             style: theme.textTheme.bodySmall,
           ),
           trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurface.withOpacity(0.4)),
@@ -191,15 +171,35 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
+  // NEW: Daily Reminder tile — the gap you found. Shows the currently
+  // scheduled time and lets you change it at any point after onboarding.
+  Widget _buildReminderTile(ThemeData theme) {
+    return ListenableBuilder(
+      listenable: _appStateProvider,
+      builder: (context, _) {
+        final time = _appStateProvider.value.reminderTime;
+        return ListTile(
+          leading: Icon(Icons.notifications_outlined, color: theme.colorScheme.onSurface.withOpacity(0.6)),
+          title: Text('Daily Reminder', style: theme.textTheme.bodyLarge),
+          subtitle: Text('Remind me at ${time.format(context)}', style: theme.textTheme.bodySmall),
+          trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurface.withOpacity(0.4)),
+          onTap: () async {
+            final picked = await showTimePicker(context: context, initialTime: time);
+            if (picked != null) {
+              await _appStateProvider.setReminderTime(picked);
+            }
+          },
+        );
+      },
+    );
+  }
+
   Widget _buildLanguageTile(ThemeData theme) {
     return ListenableBuilder(
       listenable: _appStateProvider,
       builder: (context, _) {
         final currentCode = _appStateProvider.value.currentLocale.languageCode;
-        final currentLang = _languages.firstWhere(
-          (l) => l['code'] == currentCode,
-          orElse: () => _languages.first,
-        );
+        final currentLang = _languages.firstWhere((l) => l['code'] == currentCode, orElse: () => _languages.first);
         return ListTile(
           leading: Icon(Icons.language, color: theme.colorScheme.onSurface.withOpacity(0.6)),
           title: Text('Language', style: theme.textTheme.bodyLarge),
@@ -236,9 +236,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     Text(isSubscribed ? 'Pro Active' : 'GraceLog Pro', style: theme.textTheme.titleMedium),
                     const SizedBox(height: 2),
                     Text(
-                      isSubscribed
-                          ? 'Ad-free experience. Thank you for your support!'
-                          : r'Remove ads for $0.99/month',
+                      isSubscribed ? 'Ad-free experience. Thank you for your support!' : r'Remove ads for $0.99/month',
                       style: theme.textTheme.bodySmall,
                     ),
                   ],
@@ -274,11 +272,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget _buildExportTile(ThemeData theme) {
     return ListTile(
       leading: _isExporting
-          ? SizedBox(
-              width: 24,
-              height: 24,
-              child: CircularProgressIndicator(strokeWidth: 2, color: theme.colorScheme.primary),
-            )
+          ? SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2, color: theme.colorScheme.primary))
           : Icon(Icons.download, color: theme.colorScheme.onSurface.withOpacity(0.6)),
       title: Text('Export All Data', style: theme.textTheme.bodyLarge),
       subtitle: Text('Backup your entries as JSON', style: theme.textTheme.bodySmall),
@@ -304,50 +298,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Future<void> _exportAllData() async {
     setState(() => _isExporting = true);
-
     await _entriesProvider.loadEntries();
     final entries = _entriesProvider.value.entries;
-
     if (!mounted) return;
-
     if (entries.isEmpty) {
       setState(() => _isExporting = false);
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('No entries to export yet.')),
-      );
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('No entries to export yet.')));
       return;
     }
-
     await ExportService().exportToJson(entries);
-
     if (mounted) setState(() => _isExporting = false);
   }
 
-  // FIX: real user feedback on tap. Actual purchase completion still
-  // requires a signed release build with configured store products —
-  // this stops the button from feeling broken in the meantime.
   Future<void> _handleUpgrade() async {
     final sent = await _subscriptionProvider.purchaseSubscription();
     if (!mounted) return;
     if (!sent) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text("Subscriptions aren't available in this build yet. Check back soon."),
-        ),
+        const SnackBar(content: Text("Subscriptions aren't available in this build yet. Check back soon.")),
       );
     }
   }
 
-  // FIX: Privacy/Support links now actually open, using url_launcher
-  // which was already a dependency but never wired here.
   Future<void> _launchUrl(String url) async {
     final uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri, mode: LaunchMode.externalApplication);
     } else if (mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Could not open link.')),
-      );
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Could not open link.')));
     }
   }
 
