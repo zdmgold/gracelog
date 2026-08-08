@@ -23,18 +23,16 @@ import '../models/scripture_verse.dart';
 class ExportService {
   static const int _instagramSize = 1080;
 
-  /// Exports a list of [DailyEntry] objects as a JSON file and
-  /// triggers the native share sheet.
-  ///
-  /// Returns the share result, or null on failure.
   Future<ShareResult?> exportToJson(List<DailyEntry> entries) async {
     try {
       final jsonList = entries.map((e) => e.toJson()).toList();
       final jsonString = jsonEncode(jsonList);
       final file = await _writeTempFile('gracelog_export.json', jsonString);
-      return await Share.shareXFiles(
-        [XFile(file.path)],
-        subject: 'GraceLog Export',
+      return await SharePlus.instance.share(
+        ShareParams(
+          files: [XFile(file.path)],
+          subject: 'GraceLog Export',
+        ),
       );
     } catch (e, stackTrace) {
       _logError('exportToJson', e, stackTrace);
@@ -42,14 +40,6 @@ class ExportService {
     }
   }
 
-  /// Generates a 1080x1080 PNG image combining the entry's gratitude
-  /// items and the associated scripture verse.
-  ///
-  /// The design uses a warm gradient background, white text, the
-  /// GraceLog watermark, and the date. Optimized for Instagram
-  /// feed posts.
-  ///
-  /// Returns the share result, or null on failure.
   Future<ShareResult?> exportToImage(
     DailyEntry entry,
     ScriptureVerse verse,
@@ -61,9 +51,11 @@ class ExportService {
         'gracelog_${_dateFileName(entry.date)}.png',
         pngBytes,
       );
-      return await Share.shareXFiles(
-        [XFile(file.path)],
-        subject: 'My GraceLog Entry',
+      return await SharePlus.instance.share(
+        ShareParams(
+          files: [XFile(file.path)],
+          subject: 'My GraceLog Entry',
+        ),
       );
     } catch (e, stackTrace) {
       _logError('exportToImage', e, stackTrace);
@@ -71,10 +63,6 @@ class ExportService {
     }
   }
 
-  /// Generates a simple PDF journal from a list of entries and
-  /// triggers the native share sheet.
-  ///
-  /// Returns the share result, or null on failure.
   Future<ShareResult?> exportToPdf(List<DailyEntry> entries) async {
     try {
       final pdfContent = _generatePlainTextPdf(entries);
@@ -82,12 +70,11 @@ class ExportService {
         'gracelog_journal_${_dateFileName(DateTime.now())}.txt',
         pdfContent,
       );
-      // Note: Full PDF generation with the `pdf` package requires
-      // additional setup. This implementation exports as structured
-      // plain text as a robust fallback that always works.
-      return await Share.shareXFiles(
-        [XFile(file.path)],
-        subject: 'GraceLog Journal',
+      return await SharePlus.instance.share(
+        ShareParams(
+          files: [XFile(file.path)],
+          subject: 'GraceLog Journal',
+        ),
       );
     } catch (e, stackTrace) {
       _logError('exportToPdf', e, stackTrace);
@@ -95,23 +82,13 @@ class ExportService {
     }
   }
 
-  // ------------------------------------------------------------------
-  // Image generation (Instagram-ready 1080x1080)
-  // ------------------------------------------------------------------
-
   img.Image _generateInstagramImage(DailyEntry entry, ScriptureVerse verse) {
     const size = _instagramSize;
-
-    // Create canvas
     final image = img.Image(width: size, height: size);
 
-    // Warm gradient background: top #1A1A2E -> bottom #16213E
     _drawGradientBackground(image, top: 0xFF1A1A2E, bottom: 0xFF16213E);
-
-    // Accent bar at top
     _drawAccentBar(image, color: 0xFFE94560, height: 8);
 
-    // GraceLog watermark (top-left)
     img.drawString(
       image,
       'GRACELOG',
@@ -121,7 +98,6 @@ class ExportService {
       color: img.ColorRgba8(255, 255, 255, 128),
     );
 
-    // Date (top-right)
     final dateText =
         '${entry.date.year}-${entry.date.month.toString().padLeft(2, '0')}-${entry.date.day.toString().padLeft(2, '0')}';
     img.drawString(
@@ -133,7 +109,6 @@ class ExportService {
       color: img.ColorRgba8(255, 255, 255, 128),
     );
 
-    // Scripture reference (center-top)
     img.drawString(
       image,
       verse.reference,
@@ -143,7 +118,6 @@ class ExportService {
       color: img.ColorRgba8(233, 69, 96, 255),
     );
 
-    // Scripture text (wrapped, centered)
     final verseLines = _wrapText(verse.text, maxCharsPerLine: 42);
     int yPos = 280;
     for (final line in verseLines) {
@@ -158,7 +132,6 @@ class ExportService {
       yPos += 44;
     }
 
-    // Divider line
     img.drawLine(
       image,
       x1: 60,
@@ -168,7 +141,6 @@ class ExportService {
       color: img.ColorRgba8(255, 255, 255, 64),
     );
 
-    // Gratitude items label
     yPos += 60;
     img.drawString(
       image,
@@ -179,7 +151,6 @@ class ExportService {
       color: img.ColorRgba8(233, 69, 96, 255),
     );
 
-    // Gratitude items
     yPos += 50;
     for (int i = 0; i < entry.gratitudeItems.length && i < 3; i++) {
       final item = entry.gratitudeItems[i];
@@ -198,7 +169,6 @@ class ExportService {
       }
     }
 
-    // Footer
     img.drawString(
       image,
       'Generated with GraceLog',
@@ -267,10 +237,6 @@ class ExportService {
     return lines;
   }
 
-  // ------------------------------------------------------------------
-  // PDF / plain text generation
-  // ------------------------------------------------------------------
-
   String _generatePlainTextPdf(List<DailyEntry> entries) {
     final buffer = StringBuffer();
     buffer.writeln('GRACELOG JOURNAL EXPORT');
@@ -304,10 +270,6 @@ class ExportService {
     return buffer.toString();
   }
 
-  // ------------------------------------------------------------------
-  // File I/O helpers
-  // ------------------------------------------------------------------
-
   Future<File> _writeTempFile(String fileName, String content) async {
     final tempDir = await getTemporaryDirectory();
     final file = File('${tempDir.path}/$fileName');
@@ -325,7 +287,6 @@ class ExportService {
   }
 
   void _logError(String method, Object error, StackTrace stackTrace) {
-    // In production this routes to the global ErrorHandler.
     // ignore: avoid_print
     print('[ExportService::$method] $error\n$stackTrace');
   }
