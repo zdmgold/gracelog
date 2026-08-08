@@ -7,7 +7,9 @@ import '../core/models/mood_type.dart';
 ///
 /// No external chart library dependency. Maps each [MoodType] to a
 /// Y-axis index (0-6), draws a smooth line with gradient fill,
-/// dots at data points, and day labels below. Handles empty state.
+/// dots at data points, and day labels below. Handles both the empty
+/// state and the single-entry state (previously a NaN-coordinate
+/// crash caused by dividing by zero when only one point existed).
 class MoodTrendChart extends StatelessWidget {
   const MoodTrendChart({
     super.key,
@@ -76,6 +78,8 @@ class _MoodTrendPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
+    if (entries.isEmpty) return;
+
     final padding = const EdgeInsets.only(left: 40, right: 16, top: 24, bottom: 32);
     final chartWidth = size.width - padding.left - padding.right;
     final chartHeight = size.height - padding.top - padding.bottom;
@@ -101,9 +105,25 @@ class _MoodTrendPainter extends CustomPainter {
       canvas.drawLine(Offset(padding.left, y), Offset(size.width - padding.right, y), gridPaint);
     }
 
-    if (entries.length < 2) {
-      _drawDot(canvas, padding, chartWidth, chartHeight, 0);
-      _drawDayLabel(canvas, padding, chartWidth, chartHeight, 0, size.height);
+    // FIX: single-entry case handled explicitly instead of falling
+    // through to the same (index / (entries.length - 1)) formula used
+    // for 2+ points — with exactly one entry that division was 0/0
+    // (NaN), which Flutter's canvas rejects. A lone point is now
+    // placed at the horizontal center of the chart instead.
+    if (entries.length == 1) {
+      final moodIdx = _moodIndex(entries[0].mood);
+      final x = padding.left + chartWidth / 2;
+      final y = padding.top + chartHeight - (moodIdx / (_moodOrder.length - 1)) * chartHeight;
+
+      _drawDotAt(canvas, Offset(x, y), entries[0].mood.colorToken);
+
+      final labelPainter = TextPainter(
+        text: TextSpan(text: _dayAbbreviation(entries[0].date), style: TextStyle(fontSize: 10, color: labelColor)),
+        textDirection: TextDirection.ltr,
+        textAlign: TextAlign.center,
+      );
+      labelPainter.layout();
+      labelPainter.paint(canvas, Offset(x - labelPainter.width / 2, size.height - 24));
       return;
     }
 
@@ -157,34 +177,21 @@ class _MoodTrendPainter extends CustomPainter {
     }
 
     for (int i = 0; i < entries.length; i++) {
-      _drawDayLabel(canvas, padding, chartWidth, chartHeight, i, size.height);
+      final x = padding.left + (i / (entries.length - 1)) * chartWidth;
+      final labelPainter = TextPainter(
+        text: TextSpan(text: _dayAbbreviation(entries[i].date), style: TextStyle(fontSize: 10, color: labelColor)),
+        textDirection: TextDirection.ltr,
+        textAlign: TextAlign.center,
+      );
+      labelPainter.layout();
+      labelPainter.paint(canvas, Offset(x - labelPainter.width / 2, size.height - 24));
     }
-  }
-
-  void _drawDot(Canvas canvas, EdgeInsets padding, double chartWidth, double chartHeight, int index) {
-    final x = padding.left + (index / (entries.length - 1)) * chartWidth;
-    final moodIdx = _moodIndex(entries[index].mood);
-    final y = padding.top + chartHeight - (moodIdx / (_moodOrder.length - 1)) * chartHeight;
-    _drawDotAt(canvas, Offset(x, y), entries[index].mood.colorToken);
   }
 
   void _drawDotAt(Canvas canvas, Offset center, Color color) {
     canvas.drawCircle(center, 8, Paint()..color = color.withOpacity(0.2));
     canvas.drawCircle(center, 5, Paint()..color = color);
     canvas.drawCircle(center, 2, Paint()..color = dotCenterColor);
-  }
-
-  void _drawDayLabel(Canvas canvas, EdgeInsets padding, double chartWidth, double chartHeight, int index, double totalHeight) {
-    final x = padding.left + (index / (entries.length - 1)) * chartWidth;
-    final dayName = _dayAbbreviation(entries[index].date);
-
-    final labelPainter = TextPainter(
-      text: TextSpan(text: dayName, style: TextStyle(fontSize: 10, color: labelColor)),
-      textDirection: TextDirection.ltr,
-      textAlign: TextAlign.center,
-    );
-    labelPainter.layout();
-    labelPainter.paint(canvas, Offset(x - labelPainter.width / 2, totalHeight - 24));
   }
 
   String _dayAbbreviation(DateTime date) {
