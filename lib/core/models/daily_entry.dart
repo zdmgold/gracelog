@@ -14,6 +14,8 @@ class DailyEntry {
     this.scriptureReference,
     this.scriptureText,
     this.category,
+    this.audioPath,
+    this.photoPaths = const [],
     required this.createdAt,
     required this.updatedAt,
   });
@@ -25,8 +27,20 @@ class DailyEntry {
   final String? scriptureReference;
   final String? scriptureText;
   final String? category;
+
+  /// Absolute file path to a recorded voice note, or null if this
+  /// entry has no audio attachment.
+  final String? audioPath;
+
+  /// Absolute file paths to attached photos. Empty for entries with
+  /// no photo attachment.
+  final List<String> photoPaths;
+
   final DateTime createdAt;
   final DateTime updatedAt;
+
+  bool get hasAudio => audioPath != null && audioPath!.isNotEmpty;
+  bool get hasPhotos => photoPaths.isNotEmpty;
 
   /// Creates a copy with optional field overrides.
   DailyEntry copyWith({
@@ -37,6 +51,8 @@ class DailyEntry {
     String? scriptureReference,
     String? scriptureText,
     String? category,
+    String? audioPath,
+    List<String>? photoPaths,
     DateTime? createdAt,
     DateTime? updatedAt,
   }) {
@@ -48,6 +64,8 @@ class DailyEntry {
       scriptureReference: scriptureReference ?? this.scriptureReference,
       scriptureText: scriptureText ?? this.scriptureText,
       category: category ?? this.category,
+      audioPath: audioPath ?? this.audioPath,
+      photoPaths: photoPaths ?? this.photoPaths,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
     );
@@ -63,6 +81,8 @@ class DailyEntry {
       'scriptureReference': scriptureReference,
       'scriptureText': scriptureText,
       'category': category,
+      'audioPath': audioPath,
+      'photoPaths': photoPaths,
       'createdAt': DateFormatter.toIso8601(createdAt),
       'updatedAt': DateFormatter.toIso8601(updatedAt),
     };
@@ -80,12 +100,17 @@ class DailyEntry {
       scriptureReference: json['scriptureReference'] as String?,
       scriptureText: json['scriptureText'] as String?,
       category: json['category'] as String?,
+      audioPath: json['audioPath'] as String?,
+      photoPaths: json['photoPaths'] != null
+          ? (json['photoPaths'] as List<dynamic>).map((e) => e as String).toList()
+          : const [],
       createdAt: DateFormatter.fromIso8601(json['createdAt'] as String),
       updatedAt: DateFormatter.fromIso8601(json['updatedAt'] as String),
     );
   }
 
-  /// Serializes to a database map.
+  /// Serializes to a database map. [photoPaths] is joined with a
+  /// newline, matching the existing [gratitudeItems] convention.
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -95,6 +120,8 @@ class DailyEntry {
       'scriptureReference': scriptureReference,
       'scriptureText': scriptureText,
       'category': category,
+      'audioPath': audioPath,
+      'photoPaths': photoPaths.join('\n'),
       'createdAt': DateFormatter.toIso8601(createdAt),
       'updatedAt': DateFormatter.toIso8601(updatedAt),
     };
@@ -113,6 +140,10 @@ class DailyEntry {
       scriptureReference: map['scriptureReference'] as String?,
       scriptureText: map['scriptureText'] as String?,
       category: map['category'] as String?,
+      audioPath: map['audioPath'] as String?,
+      photoPaths: map['photoPaths'] != null
+          ? (map['photoPaths'] as String).split('\n').where((s) => s.isNotEmpty).toList()
+          : const [],
       createdAt: DateFormatter.fromIso8601(map['createdAt'] as String),
       updatedAt: DateFormatter.fromIso8601(map['updatedAt'] as String),
     );
@@ -129,6 +160,8 @@ class DailyEntry {
         other.scriptureReference == scriptureReference &&
         other.scriptureText == scriptureText &&
         other.category == category &&
+        other.audioPath == audioPath &&
+        listEquals(other.photoPaths, photoPaths) &&
         other.createdAt == createdAt &&
         other.updatedAt == updatedAt;
   }
@@ -143,6 +176,8 @@ class DailyEntry {
       scriptureReference,
       scriptureText,
       category,
+      audioPath,
+      Object.hashAll(photoPaths),
       createdAt,
       updatedAt,
     );
@@ -151,6 +186,6 @@ class DailyEntry {
   @override
   String toString() {
     return 'DailyEntry(id: $id, date: $date, mood: ${mood.name}, '
-        'items: ${gratitudeItems.length})';
+        'items: ${gratitudeItems.length}, hasAudio: $hasAudio, photos: ${photoPaths.length})';
   }
 }
