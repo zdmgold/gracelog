@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../core/providers/app_state_provider.dart';
 import '../core/providers/theme_provider.dart';
 import '../core/utils/constants.dart';
 import '../core/utils/haptics.dart';
@@ -8,14 +9,9 @@ import '../platform/notification_service.dart';
 import 'home_dashboard.dart';
 
 /// 3-page parallax onboarding flow, shown once on first launch.
-///
-/// Page 1: Welcome. Page 2: How It Works. Page 3: Get Started —
-/// collects an optional name, a daily reminder time, and a theme
-/// preference, then awards the "First Step" badge and enters the app.
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
 
-  /// SharedPreferences flag checked at app startup.
   static const String prefsKey = 'hasSeenOnboarding';
 
   @override
@@ -26,6 +22,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _pageController = PageController();
   final TextEditingController _nameController = TextEditingController();
   final ThemeProvider _themeProvider = ThemeProvider();
+  final AppStateProvider _appStateProvider = AppStateProvider();
 
   double _page = 0;
   TimeOfDay _reminderTime = const TimeOfDay(hour: 20, minute: 0);
@@ -47,10 +44,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   void _nextPage() {
     Haptics.tap(context);
-    _pageController.nextPage(
-      duration: AppConstants.durationNormal,
-      curve: AppConstants.easeOutExpo,
-    );
+    _pageController.nextPage(duration: AppConstants.durationNormal, curve: AppConstants.easeOutExpo);
   }
 
   Future<void> _pickReminderTime() async {
@@ -71,20 +65,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     }
 
     await NotificationService().initialize();
-    await NotificationService().scheduleDailyReminder(
-      hour: _reminderTime.hour,
-      minute: _reminderTime.minute,
-    );
+    // Sets AND persists AND schedules — single source of truth, editable
+    // later from Settings.
+    await _appStateProvider.setReminderTime(_reminderTime);
 
     if (!mounted) return;
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => const HomeDashboard()),
-    );
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const HomeDashboard()));
   }
 
-  double _parallaxOffset(int pageIndex, double speed) {
-    return (_page - pageIndex) * 100 * speed;
-  }
+  double _parallaxOffset(int pageIndex, double speed) => (_page - pageIndex) * 100 * speed;
 
   @override
   Widget build(BuildContext context) {
@@ -138,20 +127,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 opacity: _page < 1.5 ? 1 : 0,
                 child: TextButton(
                   onPressed: _page < 1.5 ? _completeOnboarding : null,
-                  child: Text(
-                    'Skip',
-                    style: TextStyle(color: theme.colorScheme.onSurface.withOpacity(0.5)),
-                  ),
+                  child: Text('Skip', style: TextStyle(color: theme.colorScheme.onSurface.withOpacity(0.5))),
                 ),
               ),
             ),
           ),
-          Positioned(
-            bottom: 32,
-            left: 0,
-            right: 0,
-            child: _buildPageIndicator(theme),
-          ),
+          Positioned(bottom: 32, left: 0, right: 0, child: _buildPageIndicator(theme)),
         ],
       ),
     );
@@ -211,7 +192,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }) {
     return Stack(
       children: [
-        // Background gradient — 0.5x parallax speed
         Transform.translate(
           offset: Offset(_parallaxOffset(index, 0.5), 0),
           child: Container(
@@ -234,7 +214,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: Icon(icon, size: 120, color: theme.colorScheme.primary.withOpacity(0.12)),
           ),
         ),
-        // Text content — moves at page speed (1.0x, effectively static per-page)
         SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 32),
@@ -253,7 +232,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   extraContent,
                 ],
                 const SizedBox(height: 48),
-                // Button — 1.2x parallax speed
                 Transform.translate(
                   offset: Offset(_parallaxOffset(index, 1.2), 0),
                   child: SizedBox(
