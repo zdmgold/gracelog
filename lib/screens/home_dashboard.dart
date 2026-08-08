@@ -24,11 +24,6 @@ import 'scripture_detail_screen.dart';
 import 'settings_screen.dart';
 import 'weekly_review_screen.dart';
 
-/// GraceLog home dashboard.
-///
-/// Displays: animated hero header, today's entry status, streak flame,
-/// calendar heatmap, 7-day mood trend, recent entries list, weekly
-/// blessing card, scripture of the day, and expandable quick-action FAB.
 class HomeDashboard extends StatefulWidget {
   const HomeDashboard({super.key});
 
@@ -36,8 +31,7 @@ class HomeDashboard extends StatefulWidget {
   State<HomeDashboard> createState() => _HomeDashboardState();
 }
 
-class _HomeDashboardState extends State<HomeDashboard>
-    with SingleTickerProviderStateMixin {
+class _HomeDashboardState extends State<HomeDashboard> with SingleTickerProviderStateMixin {
   final EntriesProvider _entriesProvider = EntriesProvider();
   final SubscriptionProvider _subscriptionProvider = SubscriptionProvider();
   final AppStateProvider _appStateProvider = AppStateProvider();
@@ -53,10 +47,7 @@ class _HomeDashboardState extends State<HomeDashboard>
   @override
   void initState() {
     super.initState();
-    _gradientController = AnimationController(
-      duration: const Duration(seconds: 12),
-      vsync: this,
-    )..repeat();
+    _gradientController = AnimationController(duration: const Duration(seconds: 12), vsync: this)..repeat();
     _initialize();
   }
 
@@ -66,11 +57,6 @@ class _HomeDashboardState extends State<HomeDashboard>
     await _refreshData();
   }
 
-  // FIX: now reloads entries before recalculating anything derived from
-  // them. Previously this only recomputed the daily verse, weekly summary,
-  // and streak — the entries list itself was never refreshed after the
-  // initial load, so the Journey heatmap and Mood Trend chart never saw
-  // newly saved entries.
   Future<void> _refreshData() async {
     if (!mounted) return;
     await _entriesProvider.loadEntries();
@@ -82,29 +68,22 @@ class _HomeDashboardState extends State<HomeDashboard>
 
   void _loadDailyVerse() {
     final verse = ScriptureEngine().getRandomVerse();
-    if (mounted) {
-      setState(() => _dailyVerse = verse);
-    }
+    if (mounted) setState(() => _dailyVerse = verse);
   }
 
   Future<void> _loadWeeklySummary() async {
     final summary = await _entriesProvider.getWeeklySummary(DateTime.now());
-    if (mounted) {
-      setState(() => _weeklySummary = summary);
-    }
+    if (mounted) setState(() => _weeklySummary = summary);
   }
 
   Future<void> _loadStreak() async {
     final streak = await _entriesProvider.getStreak();
-    if (mounted) {
-      setState(() => _streak = streak);
-    }
+    if (mounted) setState(() => _streak = streak);
   }
 
   @override
   void dispose() {
     _gradientController.dispose();
-    // DELETED: provider disposals. Singletons live for app lifetime.
     super.dispose();
   }
 
@@ -125,7 +104,9 @@ class _HomeDashboardState extends State<HomeDashboard>
             SliverToBoxAdapter(child: _buildRecentEntriesSection(theme)),
             SliverToBoxAdapter(child: _buildWeeklyBlessingSection(theme)),
             SliverToBoxAdapter(child: _buildScriptureSection(theme)),
-            const SliverToBoxAdapter(child: SizedBox(height: 24)),
+            // FIX: was 24 — too little clearance for the FAB, which cut
+            // off the "Use this verse" action on the Scripture card.
+            const SliverToBoxAdapter(child: SizedBox(height: 100)),
           ],
         ),
       ),
@@ -134,9 +115,6 @@ class _HomeDashboardState extends State<HomeDashboard>
     );
   }
 
-  // ═══════════════════════════════════════════════════════════════
-  // HERO HEADER
-  // ═══════════════════════════════════════════════════════════════
   Widget _buildHeroHeader(ThemeData theme) {
     return AnimatedBuilder(
       animation: _gradientController,
@@ -164,18 +142,11 @@ class _HomeDashboardState extends State<HomeDashboard>
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        _greeting(),
-                        style: theme.textTheme.bodySmall?.copyWith(color: Colors.white.withOpacity(0.8)),
-                      ),
+                      Text(_greeting(), style: theme.textTheme.bodySmall?.copyWith(color: Colors.white.withOpacity(0.8))),
                       const SizedBox(height: 4),
                       Text(
                         'GraceLog',
-                        style: theme.textTheme.displaySmall?.copyWith(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: -0.5,
-                        ),
+                        style: theme.textTheme.displaySmall?.copyWith(color: Colors.white, fontWeight: FontWeight.w700, letterSpacing: -0.5),
                       ),
                     ],
                   ),
@@ -210,32 +181,20 @@ class _HomeDashboardState extends State<HomeDashboard>
     );
   }
 
-  // ═══════════════════════════════════════════════════════════════
-  // TODAY STATUS
-  // ═══════════════════════════════════════════════════════════════
   Widget _buildTodayStatus(ThemeData theme) {
     return ListenableBuilder(
       listenable: _entriesProvider,
       builder: (context, _) {
         final today = DateTime.now();
-        final hasEntry = _entriesProvider.value.entries.any(
-          (e) => DateFormatter.isSameDay(e.date, today),
-        );
-
+        final hasEntry = _entriesProvider.value.entries.any((e) => DateFormatter.isSameDay(e.date, today));
         return Padding(
           padding: const EdgeInsets.fromLTRB(20, 16, 20, 8),
           child: Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: hasEntry
-                  ? theme.colorScheme.primaryContainer.withOpacity(0.3)
-                  : theme.colorScheme.surfaceContainerHighest,
+              color: hasEntry ? theme.colorScheme.primaryContainer.withOpacity(0.3) : theme.colorScheme.surfaceContainerHighest,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: hasEntry
-                    ? theme.colorScheme.primary.withOpacity(0.3)
-                    : theme.colorScheme.outline.withOpacity(0.3),
-              ),
+              border: Border.all(color: hasEntry ? theme.colorScheme.primary.withOpacity(0.3) : theme.colorScheme.outline.withOpacity(0.3)),
               boxShadow: theme.shadowLight,
             ),
             child: Row(
@@ -250,15 +209,10 @@ class _HomeDashboardState extends State<HomeDashboard>
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        hasEntry ? "Today's gratitude is recorded" : "You haven't journaled today",
-                        style: theme.textTheme.titleMedium,
-                      ),
+                      Text(hasEntry ? "Today's gratitude is recorded" : "You haven't journaled today", style: theme.textTheme.titleMedium),
                       const SizedBox(height: 2),
                       Text(
-                        hasEntry
-                            ? 'Come back tomorrow to keep your streak alive.'
-                            : 'Take a moment to reflect and give thanks.',
+                        hasEntry ? 'Come back tomorrow to keep your streak alive.' : 'Take a moment to reflect and give thanks.',
                         style: theme.textTheme.bodySmall,
                       ),
                     ],
@@ -272,9 +226,6 @@ class _HomeDashboardState extends State<HomeDashboard>
     );
   }
 
-  // ═══════════════════════════════════════════════════════════════
-  // STREAK SECTION
-  // ═══════════════════════════════════════════════════════════════
   Widget _buildStreakSection(ThemeData theme) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
@@ -292,9 +243,6 @@ class _HomeDashboardState extends State<HomeDashboard>
     );
   }
 
-  // ═══════════════════════════════════════════════════════════════
-  // CALENDAR HEATMAP — Mini 7×4 grid
-  // ═══════════════════════════════════════════════════════════════
   Widget _buildCalendarHeatmap(ThemeData theme) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
@@ -307,12 +255,7 @@ class _HomeDashboardState extends State<HomeDashboard>
             listenable: _entriesProvider,
             builder: (context, _) {
               final entries = _entriesProvider.value.entries;
-              return _CalendarHeatmapMini(
-                entries: entries,
-                onDayTap: (date) {
-                  // TODO: Open entry detail for this date
-                },
-              );
+              return _CalendarHeatmapMini(entries: entries, onDayTap: (date) {});
             },
           ),
         ],
@@ -320,9 +263,6 @@ class _HomeDashboardState extends State<HomeDashboard>
     );
   }
 
-  // ═══════════════════════════════════════════════════════════════
-  // MOOD TREND SECTION
-  // ═══════════════════════════════════════════════════════════════
   Widget _buildMoodTrendSection(ThemeData theme) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
@@ -336,11 +276,8 @@ class _HomeDashboardState extends State<HomeDashboard>
             builder: (context, _) {
               final now = DateTime.now();
               final weekStart = now.subtract(Duration(days: now.weekday % 7 + 6));
-              final weekEntries = _entriesProvider.value.entries
-                  .where((e) => e.date.isAfter(weekStart))
-                  .toList()
+              final weekEntries = _entriesProvider.value.entries.where((e) => e.date.isAfter(weekStart)).toList()
                 ..sort((a, b) => a.date.compareTo(b.date));
-
               return MoodTrendChart(entries: weekEntries);
             },
           ),
@@ -349,9 +286,6 @@ class _HomeDashboardState extends State<HomeDashboard>
     );
   }
 
-  // ═══════════════════════════════════════════════════════════════
-  // RECENT ENTRIES SECTION
-  // ═══════════════════════════════════════════════════════════════
   Widget _buildRecentEntriesSection(ThemeData theme) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
@@ -364,26 +298,19 @@ class _HomeDashboardState extends State<HomeDashboard>
             listenable: _entriesProvider,
             builder: (context, _) {
               final recent = _entriesProvider.value.entries.take(7).toList();
-
               if (recent.isEmpty) {
                 return Container(
                   padding: const EdgeInsets.all(24),
-                  decoration: BoxDecoration(
-                    color: theme.colorScheme.surfaceContainerHighest,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
+                  decoration: BoxDecoration(color: theme.colorScheme.surfaceContainerHighest, borderRadius: BorderRadius.circular(12)),
                   child: Center(
                     child: Text(
                       'No entries yet. Start your gratitude journey today!',
                       textAlign: TextAlign.center,
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        color: theme.colorScheme.onSurface.withOpacity(0.5),
-                      ),
+                      style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurface.withOpacity(0.5)),
                     ),
                   ),
                 );
               }
-
               return Column(
                 children: recent.map((entry) {
                   return Padding(
@@ -417,26 +344,15 @@ class _HomeDashboardState extends State<HomeDashboard>
     );
   }
 
-  // ═══════════════════════════════════════════════════════════════
-  // WEEKLY BLESSING
-  // ═══════════════════════════════════════════════════════════════
   Widget _buildWeeklyBlessingSection(ThemeData theme) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
       child: _weeklySummary != null
           ? WeeklyBlessingCard(summary: _weeklySummary!)
-          : _buildPlaceholderCard(
-              theme,
-              icon: Icons.auto_awesome,
-              title: 'Weekly Blessing',
-              subtitle: 'Log entries this week to see your personalized insight.',
-            ),
+          : _buildPlaceholderCard(theme, icon: Icons.auto_awesome, title: 'Weekly Blessing', subtitle: 'Log entries this week to see your personalized insight.'),
     );
   }
 
-  // ═══════════════════════════════════════════════════════════════
-  // SCRIPTURE SECTION
-  // ═══════════════════════════════════════════════════════════════
   Widget _buildScriptureSection(ThemeData theme) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
@@ -451,26 +367,13 @@ class _HomeDashboardState extends State<HomeDashboard>
                   onUseVerse: () => _navigateToEntry(verse: _dailyVerse),
                   onTap: () => _navigateToScriptureDetail(_dailyVerse!),
                 )
-              : _buildPlaceholderCard(
-                  theme,
-                  icon: Icons.menu_book,
-                  title: 'Daily Scripture',
-                  subtitle: 'A verse will appear here to guide your reflection.',
-                ),
+              : _buildPlaceholderCard(theme, icon: Icons.menu_book, title: 'Daily Scripture', subtitle: 'A verse will appear here to guide your reflection.'),
         ],
       ),
     );
   }
 
-  // ═══════════════════════════════════════════════════════════════
-  // PLACEHOLDER CARD
-  // ═══════════════════════════════════════════════════════════════
-  Widget _buildPlaceholderCard(
-    ThemeData theme, {
-    required IconData icon,
-    required String title,
-    required String subtitle,
-  }) {
+  Widget _buildPlaceholderCard(ThemeData theme, {required IconData icon, required String title, required String subtitle}) {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
@@ -497,9 +400,6 @@ class _HomeDashboardState extends State<HomeDashboard>
     );
   }
 
-  // ═══════════════════════════════════════════════════════════════
-  // EXPANDABLE FAB
-  // ═══════════════════════════════════════════════════════════════
   Widget _buildExpandableFab(ThemeData theme) {
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -548,10 +448,6 @@ class _HomeDashboardState extends State<HomeDashboard>
           const SizedBox(height: 12),
         ],
         FloatingActionButton.extended(
-          // FIX: this button now only ever toggles expand/collapse.
-          // It previously called _navigateToEntry() when already
-          // expanded, which meant tapping "Close" silently opened the
-          // entry screen instead of collapsing the menu.
           onPressed: () {
             HapticFeedback.lightImpact();
             setState(() => _isFabExpanded = !_isFabExpanded);
@@ -569,11 +465,7 @@ class _HomeDashboardState extends State<HomeDashboard>
     );
   }
 
-  Widget _buildFabAction({
-    required IconData icon,
-    required String label,
-    required VoidCallback onTap,
-  }) {
+  Widget _buildFabAction({required IconData icon, required String label, required VoidCallback onTap}) {
     return AnimatedContainer(
       duration: AppConstants.durationNormal,
       curve: AppConstants.easeOutExpo,
@@ -586,47 +478,28 @@ class _HomeDashboardState extends State<HomeDashboard>
           borderRadius: BorderRadius.circular(12),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(icon, size: 20),
-                const SizedBox(width: 8),
-                Text(label),
-              ],
-            ),
+            child: Row(mainAxisSize: MainAxisSize.min, children: [Icon(icon, size: 20), const SizedBox(width: 8), Text(label)]),
           ),
         ),
       ),
     );
   }
 
-  // ═══════════════════════════════════════════════════════════════
-  // BOTTOM BAR
-  // ═══════════════════════════════════════════════════════════════
   Widget _buildBottomBar() {
     return ListenableBuilder(
       listenable: _subscriptionProvider,
       builder: (context, _) {
         final isSubscribed = _subscriptionProvider.value;
         if (isSubscribed) return const SizedBox.shrink();
-
         return Container(
           height: 60,
           color: Theme.of(context).colorScheme.surfaceContainerHighest,
-          child: const Center(
-            child: Text(
-              'Ad Banner Placeholder',
-              style: TextStyle(fontSize: 12, color: Colors.grey),
-            ),
-          ),
+          child: const Center(child: Text('Ad Banner Placeholder', style: TextStyle(fontSize: 12, color: Colors.grey))),
         );
       },
     );
   }
 
-  // ═══════════════════════════════════════════════════════════════
-  // HELPERS
-  // ═══════════════════════════════════════════════════════════════
   String _greeting() {
     final hour = DateTime.now().hour;
     if (hour < 12) return 'Good morning';
@@ -635,17 +508,12 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 
   String _monthName(int month) {
-    const months = [
-      'January', 'February', 'March', 'April', 'May', 'June',
-      'July', 'August', 'September', 'October', 'November', 'December'
-    ];
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     return months[month - 1];
   }
 
   void _navigateToEntry({ScriptureVerse? verse}) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (_) => DailyEntryScreen(preselectedVerse: verse)))
-        .then((_) => _refreshData());
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) => DailyEntryScreen(preselectedVerse: verse))).then((_) => _refreshData());
   }
 
   void _navigateToWeeklyReview() {
@@ -657,9 +525,7 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 
   void _navigateToBedtime() {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (_) => const BedtimeReflectionScreen()))
-        .then((_) => _refreshData());
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const BedtimeReflectionScreen())).then((_) => _refreshData());
   }
 
   void _navigateToScriptureDetail(ScriptureVerse verse) {
@@ -667,14 +533,8 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 }
 
-// ═════════════════════════════════════════════════════════════════
-// MINI CALENDAR HEATMAP
-// ═════════════════════════════════════════════════════════════════
 class _CalendarHeatmapMini extends StatelessWidget {
-  const _CalendarHeatmapMini({
-    required this.entries,
-    this.onDayTap,
-  });
+  const _CalendarHeatmapMini({required this.entries, this.onDayTap});
 
   final List<DailyEntry> entries;
   final ValueChanged<DateTime>? onDayTap;
@@ -691,20 +551,10 @@ class _CalendarHeatmapMini extends StatelessWidget {
       children: days.map((date) {
         final entry = entries.firstWhere(
           (e) => DateFormatter.isSameDay(e.date, date),
-          orElse: () => DailyEntry(
-            id: '',
-            date: date,
-            gratitudeItems: const [],
-            mood: MoodType.peaceful,
-            createdAt: date,
-            updatedAt: date,
-          ),
+          orElse: () => DailyEntry(id: '', date: date, gratitudeItems: const [], mood: MoodType.peaceful, createdAt: date, updatedAt: date),
         );
-
         final hasEntry = entry.id.isNotEmpty;
-        final intensity = hasEntry
-            ? (entry.gratitudeItems.join(' ').length / 200).clamp(0.3, 1.0)
-            : 0.0;
+        final intensity = hasEntry ? (entry.gratitudeItems.join(' ').length / 200).clamp(0.3, 1.0) : 0.0;
 
         return InkWell(
           onTap: hasEntry ? () => onDayTap?.call(date) : null,
@@ -713,9 +563,7 @@ class _CalendarHeatmapMini extends StatelessWidget {
             width: 32,
             height: 32,
             decoration: BoxDecoration(
-              color: hasEntry
-                  ? theme.colorScheme.primary.withOpacity(intensity as double)
-                  : theme.colorScheme.surfaceContainerHighest,
+              color: hasEntry ? theme.colorScheme.primary.withOpacity(intensity as double) : theme.colorScheme.surfaceContainerHighest,
               borderRadius: BorderRadius.circular(6),
               border: Border.all(color: theme.colorScheme.outline.withOpacity(0.1)),
             ),
