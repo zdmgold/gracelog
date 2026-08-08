@@ -13,29 +13,16 @@ import '../widgets/gratitude_input_field.dart';
 import '../widgets/mood_selector.dart';
 import '../widgets/scripture_card.dart';
 
-/// Daily gratitude entry form.
-///
-/// Features:
-/// - Dynamic list of 3+ gratitude items
-/// - Mood selector with scripture suggestion, mood-tinted background
-/// - Category auto-suggest
-/// - Save with validation (min 3 items, 10 chars each)
-/// - Haptic feedback, checkmark morph, and milestone celebration on save
 class DailyEntryScreen extends StatefulWidget {
-  const DailyEntryScreen({
-    super.key,
-    this.preselectedVerse,
-  });
+  const DailyEntryScreen({super.key, this.preselectedVerse});
 
-  /// If provided, this verse is pre-filled in the entry.
   final ScriptureVerse? preselectedVerse;
 
   @override
   State<DailyEntryScreen> createState() => _DailyEntryScreenState();
 }
 
-class _DailyEntryScreenState extends State<DailyEntryScreen>
-    with SingleTickerProviderStateMixin {
+class _DailyEntryScreenState extends State<DailyEntryScreen> with SingleTickerProviderStateMixin {
   final EntriesProvider _entriesProvider = EntriesProvider();
   final List<TextEditingController> _itemControllers = [];
   late final AnimationController _checkmarkController;
@@ -50,15 +37,11 @@ class _DailyEntryScreenState extends State<DailyEntryScreen>
   @override
   void initState() {
     super.initState();
-    _checkmarkController = AnimationController(
-      duration: AppConstants.durationSlow,
-      vsync: this,
-    );
+    _checkmarkController = AnimationController(duration: AppConstants.durationSlow, vsync: this);
     _addItemField();
     _addItemField();
     _addItemField();
-    _suggestedVerse = widget.preselectedVerse ??
-        ScriptureEngine().getVerseForMood(_selectedMood);
+    _suggestedVerse = widget.preselectedVerse ?? ScriptureEngine().getVerseForMood(_selectedMood);
   }
 
   @override
@@ -67,15 +50,11 @@ class _DailyEntryScreenState extends State<DailyEntryScreen>
       controller.dispose();
     }
     _checkmarkController.dispose();
-    // Provider intentionally not disposed here — matches the
-    // instance-per-screen convention established in Batch 1.
     super.dispose();
   }
 
   void _addItemField() {
-    setState(() {
-      _itemControllers.add(TextEditingController());
-    });
+    setState(() => _itemControllers.add(TextEditingController()));
   }
 
   void _removeItemField(int index) {
@@ -97,10 +76,7 @@ class _DailyEntryScreenState extends State<DailyEntryScreen>
   Future<void> _saveEntry() async {
     if (_isSaving) return;
 
-    final items = _itemControllers
-        .map((c) => c.text.trim())
-        .where((t) => t.isNotEmpty)
-        .toList();
+    final items = _itemControllers.map((c) => c.text.trim()).where((t) => t.isNotEmpty).toList();
 
     if (items.length < 3) {
       _showError('Please add at least 3 gratitude items.');
@@ -135,16 +111,13 @@ class _DailyEntryScreenState extends State<DailyEntryScreen>
     if (success) {
       HapticFeedback.heavyImpact();
       final streak = await _entriesProvider.getStreak();
-
       if (!mounted) return;
 
       if (streak > 0 && AppConstants.streakMilestones.contains(streak)) {
-        // Milestone: celebration overlay
         setState(() => _showConfetti = true);
         await Future.delayed(const Duration(seconds: 2));
         if (mounted) setState(() => _showConfetti = false);
       } else {
-        // Regular save: checkmark morph
         setState(() => _showSuccess = true);
         _checkmarkController.forward(from: 0);
         await Future.delayed(const Duration(seconds: 1));
@@ -162,11 +135,7 @@ class _DailyEntryScreenState extends State<DailyEntryScreen>
 
   void _showError(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        backgroundColor: Theme.of(context).colorScheme.error,
-        behavior: SnackBarBehavior.floating,
-      ),
+      SnackBar(content: Text(message), backgroundColor: Theme.of(context).colorScheme.error, behavior: SnackBarBehavior.floating),
     );
   }
 
@@ -183,14 +152,8 @@ class _DailyEntryScreenState extends State<DailyEntryScreen>
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          leading: IconButton(
-            onPressed: () => Navigator.of(context).pop(),
-            icon: Icon(Icons.close, color: theme.colorScheme.onSurface),
-          ),
-          title: Text(
-            'New Entry',
-            style: theme.textTheme.titleLarge,
-          ),
+          leading: IconButton(onPressed: () => Navigator.of(context).pop(), icon: Icon(Icons.close, color: theme.colorScheme.onSurface)),
+          title: Text('New Entry', style: theme.textTheme.titleLarge),
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 8),
@@ -198,21 +161,8 @@ class _DailyEntryScreenState extends State<DailyEntryScreen>
                 child: TextButton(
                   onPressed: _isSaving ? null : _saveEntry,
                   child: _isSaving
-                      ? SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            color: theme.colorScheme.primary,
-                          ),
-                        )
-                      : Text(
-                          'Save',
-                          style: theme.textTheme.labelLarge?.copyWith(
-                            color: theme.colorScheme.primary,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
+                      ? SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2, color: theme.colorScheme.primary))
+                      : Text('Save', style: theme.textTheme.labelLarge?.copyWith(color: theme.colorScheme.primary, fontWeight: FontWeight.w600)),
                 ),
               ),
             ),
@@ -225,63 +175,43 @@ class _DailyEntryScreenState extends State<DailyEntryScreen>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'How are you feeling?',
-                    style: theme.textTheme.titleMedium,
-                  ),
+                  // 1. Mood
+                  Text('How are you feeling?', style: theme.textTheme.titleMedium),
                   const SizedBox(height: 12),
-                  MoodSelector(
-                    selectedMood: _selectedMood,
-                    onMoodSelected: _onMoodSelected,
-                  ),
+                  MoodSelector(selectedMood: _selectedMood, onMoodSelected: _onMoodSelected),
                   const SizedBox(height: 24),
-                  Text(
-                    'What are you grateful for?',
-                    style: theme.textTheme.titleMedium,
-                  ),
+
+                  // 2. Scripture — moved here (was below the gratitude
+                  // items) so the verse update from a mood change is
+                  // visible immediately without scrolling.
+                  if (_suggestedVerse != null) ...[
+                    Text('Suggested Scripture', style: theme.textTheme.titleMedium),
+                    const SizedBox(height: 12),
+                    ScriptureCard(verse: _suggestedVerse!, showActions: false),
+                    const SizedBox(height: 8),
+                    Center(
+                      child: TextButton(
+                        onPressed: () {
+                          setState(() => _suggestedVerse = ScriptureEngine().getVerseForMood(_selectedMood));
+                        },
+                        child: Text('Suggest another verse', style: TextStyle(color: theme.colorScheme.primary)),
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                  ],
+
+                  // 3. Gratitude items
+                  Text('What are you grateful for?', style: theme.textTheme.titleMedium),
                   const SizedBox(height: 4),
-                  Text(
-                    'Add at least 3 items (10+ characters each)',
-                    style: theme.textTheme.bodySmall,
-                  ),
+                  Text('Add at least 3 items (10+ characters each)', style: theme.textTheme.bodySmall),
                   const SizedBox(height: 12),
                   ..._buildItemFields(theme),
                   const SizedBox(height: 8),
                   TextButton.icon(
                     onPressed: _addItemField,
                     icon: Icon(Icons.add, color: theme.colorScheme.primary),
-                    label: Text(
-                      'Add another item',
-                      style: TextStyle(color: theme.colorScheme.primary),
-                    ),
+                    label: Text('Add another item', style: TextStyle(color: theme.colorScheme.primary)),
                   ),
-                  const SizedBox(height: 24),
-                  if (_suggestedVerse != null) ...[
-                    Text(
-                      'Suggested Scripture',
-                      style: theme.textTheme.titleMedium,
-                    ),
-                    const SizedBox(height: 12),
-                    ScriptureCard(
-                      verse: _suggestedVerse!,
-                      showActions: false,
-                    ),
-                    const SizedBox(height: 8),
-                    Center(
-                      child: TextButton(
-                        onPressed: () {
-                          setState(() {
-                            _suggestedVerse = ScriptureEngine()
-                                .getVerseForMood(_selectedMood);
-                          });
-                        },
-                        child: Text(
-                          'Suggest another verse',
-                          style: TextStyle(color: theme.colorScheme.primary),
-                        ),
-                      ),
-                    ),
-                  ],
                   const SizedBox(height: 80),
                 ],
               ),
@@ -306,19 +236,14 @@ class _DailyEntryScreenState extends State<DailyEntryScreen>
                 controller: _itemControllers[index],
                 hintText: 'I am grateful for...',
                 onCategorySuggested: (cat) {
-                  if (_category == null) {
-                    setState(() => _category = cat);
-                  }
+                  if (_category == null) setState(() => _category = cat);
                 },
               ),
             ),
             if (_itemControllers.length > 3)
               IconButton(
                 onPressed: () => _removeItemField(index),
-                icon: Icon(
-                  Icons.remove_circle_outline,
-                  color: theme.colorScheme.error,
-                ),
+                icon: Icon(Icons.remove_circle_outline, color: theme.colorScheme.error),
                 tooltip: 'Remove item',
               ),
           ],
@@ -332,25 +257,13 @@ class _DailyEntryScreenState extends State<DailyEntryScreen>
       color: Colors.black54,
       child: Center(
         child: ScaleTransition(
-          scale: CurvedAnimation(
-            parent: _checkmarkController,
-            curve: Curves.elasticOut,
-          ),
+          scale: CurvedAnimation(parent: _checkmarkController, curve: Curves.elasticOut),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(
-                Icons.check_circle,
-                color: AppColors.accentSuccess,
-                size: 64,
-              ),
+              Icon(Icons.check_circle, color: AppColors.accentSuccess, size: 64),
               const SizedBox(height: 16),
-              Text(
-                'Entry Saved!',
-                style: theme.textTheme.headlineSmall?.copyWith(
-                  color: Colors.white,
-                ),
-              ),
+              Text('Entry Saved!', style: theme.textTheme.headlineSmall?.copyWith(color: Colors.white)),
             ],
           ),
         ),
@@ -365,25 +278,11 @@ class _DailyEntryScreenState extends State<DailyEntryScreen>
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              Icons.celebration,
-              color: AppColors.accentWarm,
-              size: 72,
-            ),
+            Icon(Icons.celebration, color: AppColors.accentWarm, size: 72),
             const SizedBox(height: 16),
-            Text(
-              'Milestone reached!',
-              style: theme.textTheme.headlineSmall?.copyWith(
-                color: Colors.white,
-              ),
-            ),
+            Text('Milestone reached!', style: theme.textTheme.headlineSmall?.copyWith(color: Colors.white)),
             const SizedBox(height: 4),
-            Text(
-              'Keep the streak alive.',
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: Colors.white70,
-              ),
-            ),
+            Text('Keep the streak alive.', style: theme.textTheme.bodyMedium?.copyWith(color: Colors.white70)),
           ],
         ),
       ),
