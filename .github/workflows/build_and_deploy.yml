@@ -11,7 +11,7 @@ on:
           - release
           - debug
 env:
-  FLUTTER_VERSION: '3.38.0'
+  FLUTTER_VERSION: '3.38.1'
 jobs:
   build-android-release:
     name: Build Android Release
