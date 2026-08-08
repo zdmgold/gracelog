@@ -57,7 +57,6 @@ class ScriptureDetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Large reference display
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(20),
@@ -98,7 +97,6 @@ class ScriptureDetailScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            // Large verse text
             Text(
               '"${verse.text}"',
               style: TextStyle(
@@ -117,7 +115,6 @@ class ScriptureDetailScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 40),
-            // Action buttons
             SizedBox(
               width: double.infinity,
               height: 52,
@@ -208,6 +205,8 @@ class ScriptureDetailScreen extends StatelessWidget {
 
   Future<void> _shareVerse() async {
     final text = '${verse.reference}\n\n"${verse.text}"\n\n-- GraceLog';
-    await Share.share(text, subject: verse.reference);
+    await SharePlus.instance.share(
+      ShareParams(text: text, subject: verse.reference),
+    );
   }
 }
