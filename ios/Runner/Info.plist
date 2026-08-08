@@ -73,6 +73,16 @@
     <key>NSFaceIDUsageDescription</key>
     <string>GraceLog uses Face ID to protect your gratitude journal with an optional biometric lock.</string>
 
+    <!-- Voice Note quick-entry feature -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>GraceLog needs microphone access to record voice gratitude notes.</string>
+
+    <!-- Photo Memory quick-entry feature -->
+    <key>NSCameraUsageDescription</key>
+    <string>GraceLog needs camera access to capture photo memories for your entries.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>GraceLog needs photo library access to attach existing photos to your entries.</string>
+
     <!-- Background Modes: notification delivery and fetch -->
     <key>UIBackgroundModes</key>
     <array>
