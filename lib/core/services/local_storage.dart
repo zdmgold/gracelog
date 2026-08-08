@@ -8,12 +8,14 @@ import '../models/mood_type.dart';
 
 /// GraceLog local persistence layer using sqflite.
 ///
-/// Schema version 1 -- entries table with full DailyEntry fields.
-/// All async operations are wrapped in try/catch and check for
-/// initialization before executing.
+/// Schema version 2 — entries table with audioPath and photoPaths
+/// columns added on top of the version 1 schema. Existing installs
+/// migrate via [onUpgrade]; new installs get the full schema directly
+/// via [onCreate]. All async operations are wrapped in try/catch and
+/// check for initialization before executing.
 class LocalStorage {
   static const String _databaseName = 'gracelog.db';
-  static const int _databaseVersion = 1;
+  static const int _databaseVersion = 2;
   static const String _entriesTable = 'entries';
 
   Database? _db;
@@ -42,6 +44,8 @@ class LocalStorage {
             scriptureReference TEXT,
             scriptureText TEXT,
             category TEXT,
+            audioPath TEXT,
+            photoPaths TEXT,
             createdAt TEXT NOT NULL,
             updatedAt TEXT NOT NULL
           )
@@ -52,6 +56,15 @@ class LocalStorage {
         await db.execute("""
           CREATE INDEX idx_entries_mood ON $_entriesTable(mood)
         """);
+      },
+      onUpgrade: (db, oldVersion, newVersion) async {
+        if (oldVersion < 2) {
+          // Existing installs: add the two new columns. Existing rows
+          // get NULL for both, which DailyEntry.fromMap already
+          // handles gracefully (treated as no attachment).
+          await db.execute("ALTER TABLE $_entriesTable ADD COLUMN audioPath TEXT");
+          await db.execute("ALTER TABLE $_entriesTable ADD COLUMN photoPaths TEXT");
+        }
       },
     );
   }
@@ -215,14 +228,12 @@ class LocalStorage {
           streak++;
           previous = current;
         } else if (difference == 0) {
-          // Same day, multiple entries -- skip without breaking streak
           continue;
         } else {
           break;
         }
       }
 
-      // Verify streak is still active (most recent entry within 1 day)
       final now = DateTime.now();
       final daysSinceLastEntry = DateTime(now.year, now.month, now.day)
           .difference(DateTime(previous.year, previous.month, previous.day))
@@ -299,6 +310,8 @@ class LocalStorage {
       'scriptureReference': entry.scriptureReference,
       'scriptureText': entry.scriptureText,
       'category': entry.category,
+      'audioPath': entry.audioPath,
+      'photoPaths': entry.photoPaths.isEmpty ? null : jsonEncode(entry.photoPaths),
       'createdAt': entry.createdAt.toIso8601String(),
       'updatedAt': entry.updatedAt.toIso8601String(),
     };
@@ -314,6 +327,10 @@ class LocalStorage {
       scriptureReference: map['scriptureReference'] as String?,
       scriptureText: map['scriptureText'] as String?,
       category: map['category'] as String?,
+      audioPath: map['audioPath'] as String?,
+      photoPaths: map['photoPaths'] != null
+          ? List<String>.from(jsonDecode(map['photoPaths'] as String))
+          : const [],
       createdAt: DateTime.parse(map['createdAt'] as String),
       updatedAt: DateTime.parse(map['updatedAt'] as String),
     );
