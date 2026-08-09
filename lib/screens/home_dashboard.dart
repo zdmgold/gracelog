@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../core/models/mood_type.dart';
 import '../core/models/daily_entry.dart';
@@ -28,10 +29,6 @@ import 'voice_note_screen.dart';
 import 'weekly_review_screen.dart';
 
 /// GraceLog home dashboard.
-///
-/// Displays: animated hero header, today's entry status, streak flame,
-/// calendar heatmap, 7-day mood trend, recent entries list, weekly
-/// blessing card, scripture of the day, and expandable quick-action FAB.
 class HomeDashboard extends StatefulWidget {
   const HomeDashboard({super.key});
 
@@ -133,7 +130,8 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 
   // ═══════════════════════════════════════════════════════════════
-  // HERO HEADER
+  // HERO HEADER — personalized greeting, rotating tagline, redesigned
+  // wordmark (Fraunces, two-tone, gold underline accent), avatar
   // ═══════════════════════════════════════════════════════════════
   Widget _buildHeroHeader(ThemeData theme) {
     return AnimatedBuilder(
@@ -147,9 +145,8 @@ class _HomeDashboardState extends State<HomeDashboard>
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Color.lerp(const Color(0xFFD4A76A), const Color(0xFF8FBC8F), t)!,
-                Color.lerp(const Color(0xFF8FBC8F), const Color(0xFFFFB300), (t * 2) % 1)!,
-                Color.lerp(const Color(0xFFFFB300), const Color(0xFFD4A76A), (t * 3) % 1)!,
+                Color.lerp(AppColors.accentGold, AppColors.accentAmethyst, t)!,
+                Color.lerp(AppColors.accentAmethyst, AppColors.accentGold, (t * 2) % 1)!,
               ],
             ),
           ),
@@ -158,27 +155,51 @@ class _HomeDashboardState extends State<HomeDashboard>
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        _greeting(),
-                        style: theme.textTheme.bodySmall?.copyWith(color: Colors.white.withOpacity(0.8)),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        'GraceLog',
-                        style: theme.textTheme.displaySmall?.copyWith(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: -0.5,
-                        ),
-                      ),
-                    ],
+                  Expanded(
+                    child: ListenableBuilder(
+                      listenable: _appStateProvider,
+                      builder: (context, _) {
+                        final name = _appStateProvider.value.userName;
+                        final greeting = name.isNotEmpty ? '${_greeting()}, $name' : _greeting();
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              greeting,
+                              style: theme.textTheme.bodySmall?.copyWith(color: Colors.white.withOpacity(0.9)),
+                            ),
+                            const SizedBox(height: 2),
+                            Text(
+                              AppConstants.currentTagline(),
+                              style: theme.textTheme.bodySmall?.copyWith(
+                                color: Colors.white.withOpacity(0.7),
+                                fontStyle: FontStyle.italic,
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
                   ),
                   Row(
                     children: [
+                      ListenableBuilder(
+                        listenable: _appStateProvider,
+                        builder: (context, _) {
+                          final name = _appStateProvider.value.userName;
+                          return CircleAvatar(
+                            radius: 17,
+                            backgroundColor: Colors.white.withOpacity(0.15),
+                            child: Text(
+                              name.isNotEmpty ? name[0].toUpperCase() : '?',
+                              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 14),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(width: 8),
                       IconButton(
                         onPressed: _navigateToBedtime,
                         icon: Icon(Icons.bedtime_outlined, color: Colors.white.withOpacity(0.9)),
@@ -195,6 +216,42 @@ class _HomeDashboardState extends State<HomeDashboard>
                     ],
                   ),
                 ],
+              ),
+              const SizedBox(height: 16),
+              // Wordmark — two-tone, bold, Fraunces, with a gold
+              // underline accent instead of a plain Text() label.
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                textBaseline: TextBaseline.alphabetic,
+                children: [
+                  Text(
+                    'Grace',
+                    style: GoogleFonts.fraunces(
+                      fontSize: 27,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                      letterSpacing: -0.3,
+                    ),
+                  ),
+                  Text(
+                    'Log',
+                    style: GoogleFonts.fraunces(
+                      fontSize: 27,
+                      fontWeight: FontWeight.w700,
+                      color: const Color(0xFFF4D160),
+                      letterSpacing: -0.3,
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                width: 32,
+                height: 2,
+                margin: const EdgeInsets.only(top: 3),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF4D160),
+                  borderRadius: BorderRadius.circular(1),
+                ),
               ),
               const SizedBox(height: 8),
               Text(
@@ -308,8 +365,6 @@ class _HomeDashboardState extends State<HomeDashboard>
               return _CalendarHeatmapMini(
                 entries: entries,
                 onDayTap: (date) {
-                  // FIX: was a TODO stub — now finds the matching
-                  // entry and opens its detail screen.
                   DailyEntry? match;
                   for (final e in entries) {
                     if (DateFormatter.isSameDay(e.date, date)) {
@@ -397,9 +452,6 @@ class _HomeDashboardState extends State<HomeDashboard>
                     padding: const EdgeInsets.only(bottom: 8),
                     child: EntryListTile(
                       entry: entry,
-                      // FIX: was _navigateToEntry(verse: ...), which
-                      // opened a NEW blank entry pre-filled with the
-                      // verse instead of showing the saved entry.
                       onTap: () => _navigateToEntryDetail(entry),
                       onDelete: () async {
                         await _entriesProvider.deleteEntry(entry.id);
@@ -643,7 +695,6 @@ class _HomeDashboardState extends State<HomeDashboard>
         .then((_) => _refreshData());
   }
 
-  // NEW: opens the read-only detail view for an already-saved entry.
   void _navigateToEntryDetail(DailyEntry entry) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (_) => EntryDetailScreen(entry: entry)))
@@ -667,7 +718,9 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 
   void _navigateToSettings() {
-    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SettingsScreen()));
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (_) => const SettingsScreen()))
+        .then((_) => setState(() {}));
   }
 
   void _navigateToBedtime() {
