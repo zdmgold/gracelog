@@ -20,6 +20,7 @@ import '../widgets/streak_flame.dart';
 import '../widgets/weekly_blessing_card.dart';
 import 'bedtime_reflection_screen.dart';
 import 'daily_entry_screen.dart';
+import 'entry_detail_screen.dart';
 import 'photo_memory_screen.dart';
 import 'scripture_detail_screen.dart';
 import 'settings_screen.dart';
@@ -307,7 +308,16 @@ class _HomeDashboardState extends State<HomeDashboard>
               return _CalendarHeatmapMini(
                 entries: entries,
                 onDayTap: (date) {
-                  // TODO: Open entry detail for this date
+                  // FIX: was a TODO stub — now finds the matching
+                  // entry and opens its detail screen.
+                  DailyEntry? match;
+                  for (final e in entries) {
+                    if (DateFormatter.isSameDay(e.date, date)) {
+                      match = e;
+                      break;
+                    }
+                  }
+                  if (match != null) _navigateToEntryDetail(match);
                 },
               );
             },
@@ -387,18 +397,10 @@ class _HomeDashboardState extends State<HomeDashboard>
                     padding: const EdgeInsets.only(bottom: 8),
                     child: EntryListTile(
                       entry: entry,
-                      onTap: () => _navigateToEntry(
-                        verse: entry.scriptureReference != null
-                            ? ScriptureVerse(
-                                reference: entry.scriptureReference!,
-                                text: entry.scriptureText ?? '',
-                                mood: entry.mood.name,
-                                book: entry.scriptureReference!.split(' ').first,
-                                chapter: 1,
-                                verseStart: 1,
-                              )
-                            : null,
-                      ),
+                      // FIX: was _navigateToEntry(verse: ...), which
+                      // opened a NEW blank entry pre-filled with the
+                      // verse instead of showing the saved entry.
+                      onTap: () => _navigateToEntryDetail(entry),
                       onDelete: () async {
                         await _entriesProvider.deleteEntry(entry.id);
                         await _refreshData();
@@ -638,6 +640,13 @@ class _HomeDashboardState extends State<HomeDashboard>
   void _navigateToEntry({ScriptureVerse? verse}) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (_) => DailyEntryScreen(preselectedVerse: verse)))
+        .then((_) => _refreshData());
+  }
+
+  // NEW: opens the read-only detail view for an already-saved entry.
+  void _navigateToEntryDetail(DailyEntry entry) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (_) => EntryDetailScreen(entry: entry)))
         .then((_) => _refreshData());
   }
 
