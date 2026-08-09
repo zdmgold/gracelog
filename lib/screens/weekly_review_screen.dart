@@ -14,7 +14,7 @@ import '../widgets/calendar_heatmap.dart';
 import '../widgets/entry_list_tile.dart';
 import '../widgets/mood_trend_chart.dart';
 import '../widgets/weekly_blessing_card.dart';
-import 'scripture_detail_screen.dart';
+import 'entry_detail_screen.dart';
 
 /// Weekly review screen.
 ///
@@ -396,20 +396,13 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
     );
   }
 
+  // FIX: was scripture-only (silently did nothing for entries without
+  // a scripture reference, i.e. every voice note and photo memory).
+  // Now always opens the full entry detail screen.
   void _navigateToDetail(DailyEntry entry) {
-    if (entry.scriptureReference != null && entry.scriptureText != null) {
-      final verse = ScriptureVerse(
-        reference: entry.scriptureReference!,
-        text: entry.scriptureText!,
-        mood: entry.mood.name,
-        book: entry.scriptureReference!.split(' ').first,
-        chapter: 1,
-        verseStart: 1,
-      );
-      Navigator.of(context).push(
-        MaterialPageRoute(builder: (_) => ScriptureDetailScreen(verse: verse)),
-      );
-    }
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (_) => EntryDetailScreen(entry: entry)))
+        .then((_) => _loadData());
   }
 
   Future<void> _deleteEntry(String id) async {
