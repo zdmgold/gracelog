@@ -60,13 +60,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(OnboardingScreen.prefsKey, true);
     await prefs.setBool('badge_first_step', true);
-    if (_nameController.text.trim().isNotEmpty) {
-      await prefs.setString('user_first_name', _nameController.text.trim());
-    }
+
+    // FIX: previously wrote directly to SharedPreferences under
+    // 'user_first_name', which nothing else in the app ever read.
+    // Now goes through AppStateProvider, so it's actually usable
+    // (home screen greeting) and editable later (Settings).
+    await _appStateProvider.setUserName(_nameController.text.trim());
 
     await NotificationService().initialize();
-    // Sets AND persists AND schedules — single source of truth, editable
-    // later from Settings.
     await _appStateProvider.setReminderTime(_reminderTime);
 
     if (!mounted) return;
