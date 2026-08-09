@@ -71,6 +71,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8),
         children: [
+          _buildSectionHeader(theme, 'Profile'),
+          _buildProfileTile(theme),
+          const Divider(height: 32),
           _buildSectionHeader(theme, 'Appearance'),
           _buildThemeTile(theme),
           ListenableBuilder(
@@ -133,6 +136,58 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
+  // NEW: Profile tile — edits the name captured (or skipped) during
+  // onboarding. Previously there was no way to set or change this
+  // after the first launch.
+  Widget _buildProfileTile(ThemeData theme) {
+    return ListenableBuilder(
+      listenable: _appStateProvider,
+      builder: (context, _) {
+        final name = _appStateProvider.value.userName;
+        return ListTile(
+          leading: CircleAvatar(
+            radius: 20,
+            backgroundColor: theme.colorScheme.primary.withOpacity(0.15),
+            child: Text(
+              name.isNotEmpty ? name[0].toUpperCase() : '?',
+              style: TextStyle(color: theme.colorScheme.primary, fontWeight: FontWeight.w700),
+            ),
+          ),
+          title: Text('Name', style: theme.textTheme.bodyLarge),
+          subtitle: Text(name.isNotEmpty ? name : 'Not set', style: theme.textTheme.bodySmall),
+          trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurface.withOpacity(0.4)),
+          onTap: () => _showEditNameDialog(name),
+        );
+      },
+    );
+  }
+
+  Future<void> _showEditNameDialog(String currentName) async {
+    final controller = TextEditingController(text: currentName);
+    final result = await showDialog<String>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Your name'),
+        content: TextField(
+          controller: controller,
+          autofocus: true,
+          textCapitalization: TextCapitalization.words,
+          decoration: const InputDecoration(hintText: 'First name'),
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('Cancel')),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(controller.text.trim()),
+            child: const Text('Save'),
+          ),
+        ],
+      ),
+    );
+    if (result != null) {
+      await _appStateProvider.setUserName(result);
+    }
+  }
+
   Widget _buildThemeTile(ThemeData theme) {
     return ListenableBuilder(
       listenable: _themeProvider,
@@ -171,8 +226,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  // NEW: Daily Reminder tile — the gap you found. Shows the currently
-  // scheduled time and lets you change it at any point after onboarding.
   Widget _buildReminderTile(ThemeData theme) {
     return ListenableBuilder(
       listenable: _appStateProvider,
