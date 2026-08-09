@@ -146,7 +146,13 @@ class _DailyEntryScreenState extends State<DailyEntryScreen> with SingleTickerPr
 
     return AnimatedContainer(
       duration: theme.durationNormal,
-      color: moodColor.withOpacity(0.06),
+      // FIX: was moodColor.withOpacity(0.06) alone, which floats on
+      // nothing since the Scaffold beneath is transparent — nothing
+      // ever painted the actual light/dark theme background, so the
+      // screen defaulted to always looking dark regardless of the
+      // user's theme setting. Color.alphaBlend mixes the mood tint
+      // onto the real theme background instead.
+      color: Color.alphaBlend(moodColor.withOpacity(0.06), theme.scaffoldBackgroundColor),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
@@ -175,15 +181,10 @@ class _DailyEntryScreenState extends State<DailyEntryScreen> with SingleTickerPr
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // 1. Mood
                   Text('How are you feeling?', style: theme.textTheme.titleMedium),
                   const SizedBox(height: 12),
                   MoodSelector(selectedMood: _selectedMood, onMoodSelected: _onMoodSelected),
                   const SizedBox(height: 24),
-
-                  // 2. Scripture — moved here (was below the gratitude
-                  // items) so the verse update from a mood change is
-                  // visible immediately without scrolling.
                   if (_suggestedVerse != null) ...[
                     Text('Suggested Scripture', style: theme.textTheme.titleMedium),
                     const SizedBox(height: 12),
@@ -199,8 +200,6 @@ class _DailyEntryScreenState extends State<DailyEntryScreen> with SingleTickerPr
                     ),
                     const SizedBox(height: 24),
                   ],
-
-                  // 3. Gratitude items
                   Text('What are you grateful for?', style: theme.textTheme.titleMedium),
                   const SizedBox(height: 4),
                   Text('Add at least 3 items (10+ characters each)', style: theme.textTheme.bodySmall),
