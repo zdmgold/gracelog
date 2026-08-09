@@ -13,6 +13,7 @@ class AppState {
     this.currentLocale = const Locale('en'),
     this.reminderHour = 20,
     this.reminderMinute = 0,
+    this.userName = '',
   });
 
   final bool isBiometricEnabled;
@@ -20,6 +21,10 @@ class AppState {
   final Locale currentLocale;
   final int reminderHour;
   final int reminderMinute;
+
+  /// The user's first name, collected during onboarding and editable
+  /// later from Settings. Empty string if never set.
+  final String userName;
 
   TimeOfDay get reminderTime => TimeOfDay(hour: reminderHour, minute: reminderMinute);
 
@@ -29,6 +34,7 @@ class AppState {
     Locale? currentLocale,
     int? reminderHour,
     int? reminderMinute,
+    String? userName,
   }) {
     return AppState(
       isBiometricEnabled: isBiometricEnabled ?? this.isBiometricEnabled,
@@ -36,13 +42,14 @@ class AppState {
       currentLocale: currentLocale ?? this.currentLocale,
       reminderHour: reminderHour ?? this.reminderHour,
       reminderMinute: reminderMinute ?? this.reminderMinute,
+      userName: userName ?? this.userName,
     );
   }
 }
 
 /// Manages app-wide state: biometric lock, bedtime reflection mode,
-/// current locale, and the daily reminder time. Persists all settings
-/// to SharedPreferences.
+/// current locale, daily reminder time, and the user's display name.
+/// Persists all settings to SharedPreferences.
 class AppStateProvider extends ValueNotifier<AppState> {
   AppStateProvider() : super(const AppState()) {
     _load();
@@ -53,6 +60,7 @@ class AppStateProvider extends ValueNotifier<AppState> {
   static const String _localeKey = 'app_locale';
   static const String _reminderHourKey = 'reminder_hour';
   static const String _reminderMinuteKey = 'reminder_minute';
+  static const String _userNameKey = 'user_name';
 
   Future<void> _load() async {
     try {
@@ -62,6 +70,11 @@ class AppStateProvider extends ValueNotifier<AppState> {
       final localeCode = prefs.getString(_localeKey) ?? 'en';
       final reminderHour = prefs.getInt(_reminderHourKey) ?? 20;
       final reminderMinute = prefs.getInt(_reminderMinuteKey) ?? 0;
+      // Falls back to the legacy 'user_first_name' key so a name
+      // captured before this field existed isn't silently lost.
+      final userName = prefs.getString(_userNameKey) ??
+          prefs.getString('user_first_name') ??
+          '';
 
       value = value.copyWith(
         isBiometricEnabled: biometric,
@@ -69,6 +82,7 @@ class AppStateProvider extends ValueNotifier<AppState> {
         currentLocale: Locale(localeCode),
         reminderHour: reminderHour,
         reminderMinute: reminderMinute,
+        userName: userName,
       );
     } catch (e, stackTrace) {
       _logError('_load', e, stackTrace);
@@ -109,8 +123,6 @@ class AppStateProvider extends ValueNotifier<AppState> {
     }
   }
 
-  /// Updates the daily reminder time, persists it, and reschedules the
-  /// actual notification so this stays the single source of truth.
   Future<void> setReminderTime(TimeOfDay time) async {
     value = value.copyWith(reminderHour: time.hour, reminderMinute: time.minute);
     try {
@@ -120,6 +132,19 @@ class AppStateProvider extends ValueNotifier<AppState> {
       await NotificationService().scheduleDailyReminder(hour: time.hour, minute: time.minute);
     } catch (e, stackTrace) {
       _logError('setReminderTime', e, stackTrace);
+    }
+  }
+
+  /// Updates and persists the user's display name. Pass an empty
+  /// string to clear it.
+  Future<void> setUserName(String name) async {
+    final trimmed = name.trim();
+    value = value.copyWith(userName: trimmed);
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString(_userNameKey, trimmed);
+    } catch (e, stackTrace) {
+      _logError('setUserName', e, stackTrace);
     }
   }
 
