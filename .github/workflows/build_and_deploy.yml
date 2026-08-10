@@ -32,6 +32,10 @@ jobs:
           java-version: '17'
       - name: Install dependencies
         run: flutter pub get
+      - name: Generate splash screen
+        run: dart run flutter_native_splash:create
+      - name: Generate launcher icons
+        run: dart run flutter_launcher_icons
       - name: Create build output directory
         run: mkdir -p build/symbols/android
       - name: Build Android App Bundle (AAB)
@@ -87,6 +91,10 @@ jobs:
           java-version: '17'
       - name: Install dependencies
         run: flutter pub get
+      - name: Generate splash screen
+        run: dart run flutter_native_splash:create
+      - name: Generate launcher icons
+        run: dart run flutter_launcher_icons
       - name: Create build output directory
         run: mkdir -p build
       - name: Build Android Debug APK
