@@ -7,6 +7,7 @@ import '../core/providers/entries_provider.dart';
 import '../core/providers/subscription_provider.dart';
 import '../core/providers/theme_provider.dart';
 import '../core/services/export_service.dart';
+import '../core/utils/theme.dart';
 import '../widgets/bedtime_mode_toggle.dart';
 
 /// Settings screen.
@@ -136,9 +137,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  // NEW: Profile tile — edits the name captured (or skipped) during
-  // onboarding. Previously there was no way to set or change this
-  // after the first launch.
   Widget _buildProfileTile(ThemeData theme) {
     return ListenableBuilder(
       listenable: _appStateProvider,
@@ -277,6 +275,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
             color: accent.withOpacity(0.1),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(color: accent.withOpacity(0.3)),
+            // FIX: border-only before — no shadow, unlike other cards.
+            boxShadow: theme.shadowLight,
           ),
           child: Row(
             children: [
