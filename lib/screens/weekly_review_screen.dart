@@ -384,6 +384,9 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
           color: theme.colorScheme.surfaceContainerHighest,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: theme.colorScheme.outline.withOpacity(0.3)),
+          // FIX: was border-only, no shadow — inconsistent with the
+          // rest of the app's card depth system.
+          boxShadow: theme.shadowLight,
         ),
         child: Column(
           children: [
@@ -396,9 +399,6 @@ class _WeeklyReviewScreenState extends State<WeeklyReviewScreen> {
     );
   }
 
-  // FIX: was scripture-only (silently did nothing for entries without
-  // a scripture reference, i.e. every voice note and photo memory).
-  // Now always opens the full entry detail screen.
   void _navigateToDetail(DailyEntry entry) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (_) => EntryDetailScreen(entry: entry)))
