@@ -4,16 +4,8 @@ import '../core/models/weekly_summary.dart';
 import '../core/utils/constants.dart';
 import '../core/utils/theme.dart';
 
-/// Card widget displaying the auto-generated weekly insight.
-///
-/// Shows the dominant mood theme, entry count, streak, and the
-/// generated blessing text. Soft shadow for depth, warm gradient
-/// accent on the left edge.
 class WeeklyBlessingCard extends StatelessWidget {
-  const WeeklyBlessingCard({
-    super.key,
-    required this.summary,
-  });
+  const WeeklyBlessingCard({super.key, required this.summary});
 
   final WeeklySummary summary;
 
@@ -26,14 +18,11 @@ class WeeklyBlessingCard extends StatelessWidget {
         color: theme.colorScheme.surfaceContainerHighest,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: theme.colorScheme.outline.withOpacity(0.15)),
-        boxShadow: theme.shadowLight,
+        boxShadow: theme.shadowMedium,
         gradient: LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
-          colors: [
-            AppColors.accentWarm.withOpacity(0.18),
-            Colors.transparent,
-          ],
+          colors: [AppColors.accentWarm.withOpacity(0.18), Colors.transparent],
           stops: const [0.0, 0.2],
         ),
       ),
@@ -53,10 +42,7 @@ class WeeklyBlessingCard extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             summary.generatedInsight,
-            style: theme.textTheme.bodyLarge?.copyWith(
-              height: 1.5,
-              fontStyle: FontStyle.italic,
-            ),
+            style: theme.textTheme.bodyLarge?.copyWith(height: 1.5, fontStyle: FontStyle.italic),
           ),
           const SizedBox(height: 16),
           Row(
@@ -106,10 +92,7 @@ class WeeklyBlessingCard extends StatelessWidget {
         const SizedBox(width: 4),
         Text(
           dominant.name[0].toUpperCase() + dominant.name.substring(1),
-          style: theme.textTheme.labelMedium?.copyWith(
-            color: dominant.colorToken,
-            fontWeight: FontWeight.w500,
-          ),
+          style: theme.textTheme.labelMedium?.copyWith(color: dominant.colorToken, fontWeight: FontWeight.w500),
         ),
       ],
     );
