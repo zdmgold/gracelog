@@ -8,6 +8,7 @@ import '../core/models/scripture_verse.dart';
 import '../core/providers/entries_provider.dart';
 import '../core/utils/date_formatter.dart';
 import '../core/utils/haptics.dart';
+import '../core/utils/theme.dart';
 import 'scripture_detail_screen.dart';
 
 /// Read-only detail view for a saved [DailyEntry], regardless of how
@@ -196,6 +197,8 @@ class _EntryDetailScreenState extends State<EntryDetailScreen> {
                     color: theme.colorScheme.surfaceContainerHighest,
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(color: theme.colorScheme.outline.withOpacity(0.2)),
+                    // FIX: border-only before — no shadow, unlike other cards.
+                    boxShadow: theme.shadowLight,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -276,6 +279,8 @@ class _EntryDetailScreenState extends State<EntryDetailScreen> {
         color: theme.colorScheme.surfaceContainerHighest,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: theme.colorScheme.outline.withOpacity(0.2)),
+        // FIX: border-only before — no shadow, unlike other cards.
+        boxShadow: theme.shadowLight,
       ),
       child: Row(
         children: [
