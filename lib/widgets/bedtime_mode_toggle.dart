@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../core/utils/constants.dart';
-
 /// Toggle switch with moon icon for bedtime reflection mode.
 ///
 /// When enabled, triggers OLED-black theme (pure #000000 background),
@@ -20,6 +18,8 @@ class BedtimeModeToggle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Semantics(
       label: 'Bedtime reflection mode',
       hint: isEnabled
@@ -36,14 +36,16 @@ class BedtimeModeToggle extends StatelessWidget {
           constraints: const BoxConstraints(minHeight: 48),
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           decoration: BoxDecoration(
+            // FIX: was AppColors.accentPrimary / bgSecondary — always
+            // light-mode values regardless of theme. Now theme-aware.
             color: isEnabled
-                ? AppColors.accentPrimary.withOpacity(0.1)
-                : AppColors.bgSecondary,
+                ? theme.colorScheme.primary.withOpacity(0.1)
+                : theme.colorScheme.surfaceContainerHighest,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: isEnabled
-                  ? AppColors.accentPrimary
-                  : AppColors.borderSubtle,
+                  ? theme.colorScheme.primary
+                  : theme.colorScheme.outline.withOpacity(0.3),
               width: isEnabled ? 2 : 1,
             ),
           ),
@@ -54,15 +56,13 @@ class BedtimeModeToggle extends StatelessWidget {
                 height: 36,
                 decoration: BoxDecoration(
                   color: isEnabled
-                      ? AppColors.accentPrimary.withOpacity(0.15)
-                      : AppColors.bgTertiary,
+                      ? theme.colorScheme.primary.withOpacity(0.15)
+                      : theme.colorScheme.surfaceContainerHighest,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Icon(
                   isEnabled ? Icons.nights_stay : Icons.nightlight_outlined,
-                  color: isEnabled
-                      ? AppColors.accentPrimary
-                      : AppColors.textSecondary,
+                  color: isEnabled ? theme.colorScheme.primary : theme.colorScheme.onSurface.withOpacity(0.6),
                   size: 20,
                 ),
               ),
@@ -72,24 +72,13 @@ class BedtimeModeToggle extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      'Bedtime Reflection',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.textPrimary,
-                      ),
-                    ),
+                    Text('Bedtime Reflection', style: theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w500)),
                     const SizedBox(height: 2),
                     Text(
                       isEnabled
                           ? 'OLED black mode active. Dimmed for rest.'
                           : 'Enable a simplified, dimmed entry before sleep.',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: AppColors.textSecondary,
-                        height: 1.3,
-                      ),
+                      style: theme.textTheme.bodySmall,
                     ),
                   ],
                 ),
@@ -100,10 +89,10 @@ class BedtimeModeToggle extends StatelessWidget {
                   HapticFeedback.mediumImpact();
                   onToggle();
                 },
-                activeColor: AppColors.accentPrimary,
-                activeTrackColor: AppColors.accentPrimary.withOpacity(0.3),
-                inactiveThumbColor: AppColors.bgTertiary,
-                inactiveTrackColor: AppColors.borderSubtle,
+                activeColor: theme.colorScheme.primary,
+                activeTrackColor: theme.colorScheme.primary.withOpacity(0.3),
+                inactiveThumbColor: theme.colorScheme.surfaceContainerHighest,
+                inactiveTrackColor: theme.colorScheme.outline.withOpacity(0.3),
               ),
             ],
           ),
