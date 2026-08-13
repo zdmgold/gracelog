@@ -5,13 +5,6 @@ import '../core/utils/constants.dart';
 import '../core/models/category_suggestion.dart';
 
 /// Reusable gratitude item input field with category auto-suggest.
-///
-/// Features:
-///   - Min 10 chars, max 200 chars with live counter
-///   - Category auto-suggest dropdown based on keyword matching
-///   - Filled background, 12px radius, focused border
-///   - 48dp touch target, haptic feedback on submit
-///   - Animated underline progress indicator
 class GratitudeInputField extends StatefulWidget {
   const GratitudeInputField({
     super.key,
@@ -113,50 +106,40 @@ class _GratitudeInputFieldState extends State<GratitudeInputField> {
               counterText: '$length/${widget.maxLength}',
               counterStyle: TextStyle(
                 fontSize: 12,
-                color: isValid
-                    ? theme.colorScheme.onSurface.withOpacity(0.5)
-                    : theme.colorScheme.error,
+                color: isValid ? theme.colorScheme.onSurface.withOpacity(0.5) : theme.colorScheme.error,
               ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide.none,
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide.none,
-              ),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
+              enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(
-                  color: theme.colorScheme.primary,
-                  width: 2,
-                ),
+                borderSide: BorderSide(color: theme.colorScheme.primary, width: 2),
               ),
               errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(
-                  color: theme.colorScheme.error,
-                  width: 2,
-                ),
+                borderSide: BorderSide(color: theme.colorScheme.error, width: 2),
               ),
               contentPadding: const EdgeInsets.all(16),
             ),
           ),
         ),
-        // Animated underline progress
-        AnimatedContainer(
-          duration: AppConstants.durationFast,
-          height: 2,
-          width: _isFocused
-              ? MediaQuery.of(context).size.width * progress
-              : 0,
-          margin: const EdgeInsets.only(top: 2, left: 16, right: 16),
-          decoration: BoxDecoration(
-            color: isValid
-                ? theme.colorScheme.primary
-                : theme.colorScheme.error,
-            borderRadius: BorderRadius.circular(1),
-          ),
+        // FIX: was MediaQuery.of(context).size.width * progress — the
+        // entire screen's width, not this field's. Inside a Row next
+        // to the remove-item button, the underline could overflow past
+        // the field into the button beside it. LayoutBuilder gives the
+        // field's own actual width instead.
+        LayoutBuilder(
+          builder: (context, constraints) {
+            return AnimatedContainer(
+              duration: AppConstants.durationFast,
+              height: 2,
+              width: _isFocused ? constraints.maxWidth * progress : 0,
+              margin: const EdgeInsets.only(top: 2),
+              decoration: BoxDecoration(
+                color: isValid ? theme.colorScheme.primary : theme.colorScheme.error,
+                borderRadius: BorderRadius.circular(1),
+              ),
+            );
+          },
         ),
         if (_showSuggestion && _suggestedCategory != null)
           Padding(
