@@ -5,14 +5,8 @@ import '../core/models/weekly_summary.dart';
 
 /// Bottom sheet for sharing a weekly summary with an accountability
 /// partner via the native share sheet.
-///
-/// Shows a preview of the summary, a share button, and a hint about
-/// choosing a contact. No server involved — 1-to-1 native share.
 class AccountabilityShareSheet extends StatelessWidget {
-  const AccountabilityShareSheet({
-    super.key,
-    required this.summary,
-  });
+  const AccountabilityShareSheet({super.key, required this.summary});
 
   final WeeklySummary summary;
 
@@ -31,19 +25,13 @@ class AccountabilityShareSheet extends StatelessWidget {
               child: Container(
                 width: 40,
                 height: 4,
-                decoration: BoxDecoration(
-                  color: theme.colorScheme.outline.withOpacity(0.3),
-                  borderRadius: BorderRadius.circular(2),
-                ),
+                decoration: BoxDecoration(color: theme.colorScheme.outline.withOpacity(0.3), borderRadius: BorderRadius.circular(2)),
               ),
             ),
             const SizedBox(height: 20),
             Text('Share with Your Accountability Partner', style: theme.textTheme.titleMedium),
             const SizedBox(height: 8),
-            Text(
-              'Send your weekly summary to someone who encourages your faith journey.',
-              style: theme.textTheme.bodyMedium,
-            ),
+            Text('Send your weekly summary to someone who encourages your faith journey.', style: theme.textTheme.bodyMedium),
             const SizedBox(height: 20),
             Container(
               width: double.infinity,
@@ -87,12 +75,7 @@ class AccountabilityShareSheet extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12),
-            Center(
-              child: Text(
-                'Your data stays on your device. Only what you share leaves.',
-                style: theme.textTheme.labelSmall,
-              ),
-            ),
+            Center(child: Text('Your data stays on your device. Only what you share leaves.', style: theme.textTheme.labelSmall)),
             const SizedBox(height: 8),
           ],
         ),
@@ -126,6 +109,7 @@ class AccountabilityShareSheet extends StatelessWidget {
     buffer.writeln();
     buffer.writeln('Shared from GraceLog');
 
-    await Share.share(buffer.toString(), subject: 'My GraceLog Weekly Summary');
+    // FIX: Share.share() (static, deprecated) -> SharePlus.instance.share()
+    await SharePlus.instance.share(ShareParams(text: buffer.toString(), subject: 'My GraceLog Weekly Summary'));
   }
 }
