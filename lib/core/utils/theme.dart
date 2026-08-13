@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'constants.dart';
 
@@ -85,11 +86,13 @@ class AppTheme {
         scrolledUnderElevation: 0,
         backgroundColor: surface,
         foregroundColor: textPrimary,
-        titleTextStyle: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-          color: textPrimary,
-          letterSpacing: -0.3,
+        titleTextStyle: GoogleFonts.fraunces(
+          textStyle: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: textPrimary,
+            letterSpacing: -0.3,
+          ),
         ),
       ),
       cardTheme: CardThemeData(
@@ -225,26 +228,37 @@ class AppTheme {
           color: textPrimary,
           letterSpacing: -0.5,
         ),
-        displaySmall: TextStyle(
-          fontSize: 24,
-          fontWeight: FontWeight.w600,
-          color: textPrimary,
-          letterSpacing: -0.3,
+        // Fraunces from here down — screen titles and section headers,
+        // the "moments" that earn a display face. Body/label text stays
+        // on the system sans below so nothing feels overwrought.
+        displaySmall: GoogleFonts.fraunces(
+          textStyle: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w600,
+            color: textPrimary,
+            letterSpacing: -0.3,
+          ),
         ),
-        headlineMedium: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
-          color: textPrimary,
+        headlineMedium: GoogleFonts.fraunces(
+          textStyle: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+            color: textPrimary,
+          ),
         ),
-        headlineSmall: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-          color: textPrimary,
+        headlineSmall: GoogleFonts.fraunces(
+          textStyle: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: textPrimary,
+          ),
         ),
-        titleLarge: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w600,
-          color: textPrimary,
+        titleLarge: GoogleFonts.fraunces(
+          textStyle: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+            color: textPrimary,
+          ),
         ),
         titleMedium: TextStyle(
           fontSize: 15,
