@@ -11,6 +11,7 @@ import '../core/providers/entries_provider.dart';
 import '../core/providers/subscription_provider.dart';
 import '../core/providers/theme_provider.dart';
 import '../core/services/scripture_engine.dart';
+import '../core/services/sleep_sounds_service.dart';
 import '../core/utils/constants.dart';
 import '../core/utils/date_formatter.dart';
 import '../core/utils/theme.dart';
@@ -25,6 +26,7 @@ import 'entry_detail_screen.dart';
 import 'photo_memory_screen.dart';
 import 'scripture_detail_screen.dart';
 import 'settings_screen.dart';
+import 'sleep_sounds_screen.dart';
 import 'voice_note_screen.dart';
 import 'weekly_review_screen.dart';
 
@@ -42,6 +44,7 @@ class _HomeDashboardState extends State<HomeDashboard>
   final SubscriptionProvider _subscriptionProvider = SubscriptionProvider();
   final AppStateProvider _appStateProvider = AppStateProvider();
   final ThemeProvider _themeProvider = ThemeProvider();
+  final SleepSoundsService _sleepSoundsService = SleepSoundsService();
 
   ScriptureVerse? _dailyVerse;
   WeeklySummary? _weeklySummary;
@@ -115,6 +118,7 @@ class _HomeDashboardState extends State<HomeDashboard>
             SliverToBoxAdapter(child: _buildHeroHeader(theme)),
             SliverToBoxAdapter(child: _buildTodayStatus(theme)),
             SliverToBoxAdapter(child: _buildStreakSection(theme)),
+            SliverToBoxAdapter(child: _buildSleepSoundsSection(theme)),
             SliverToBoxAdapter(child: _buildCalendarHeatmap(theme)),
             SliverToBoxAdapter(child: _buildMoodTrendSection(theme)),
             SliverToBoxAdapter(child: _buildRecentEntriesSection(theme)),
@@ -130,8 +134,7 @@ class _HomeDashboardState extends State<HomeDashboard>
   }
 
   // ═══════════════════════════════════════════════════════════════
-  // HERO HEADER — personalized greeting, rotating tagline, redesigned
-  // wordmark (Fraunces, two-tone, gold underline accent), avatar
+  // HERO HEADER
   // ═══════════════════════════════════════════════════════════════
   Widget _buildHeroHeader(ThemeData theme) {
     return AnimatedBuilder(
@@ -218,8 +221,6 @@ class _HomeDashboardState extends State<HomeDashboard>
                 ],
               ),
               const SizedBox(height: 16),
-              // Wordmark — two-tone, bold, Fraunces, with a gold
-              // underline accent instead of a plain Text() label.
               Row(
                 crossAxisAlignment: CrossAxisAlignment.baseline,
                 textBaseline: TextBaseline.alphabetic,
@@ -343,6 +344,87 @@ class _HomeDashboardState extends State<HomeDashboard>
             label: Text('Weekly Review', style: TextStyle(color: theme.colorScheme.primary)),
           ),
         ],
+      ),
+    );
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // SLEEP SOUNDS — visible homepage card, not hidden behind an icon
+  // ═══════════════════════════════════════════════════════════════
+  Widget _buildSleepSoundsSection(ThemeData theme) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
+      child: ListenableBuilder(
+        listenable: _sleepSoundsService,
+        builder: (context, _) {
+          final state = _sleepSoundsService.value;
+          final isActive = state.currentTrack != null;
+
+          return InkWell(
+            onTap: _navigateToSleepSounds,
+            borderRadius: BorderRadius.circular(16),
+            child: Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: isActive
+                    ? theme.colorScheme.primary.withOpacity(0.08)
+                    : theme.colorScheme.surfaceContainerHighest,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(
+                  color: isActive ? theme.colorScheme.primary.withOpacity(0.3) : theme.colorScheme.outline.withOpacity(0.2),
+                ),
+                boxShadow: theme.shadowLight,
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    width: 44,
+                    height: 44,
+                    decoration: BoxDecoration(
+                      color: isActive ? theme.colorScheme.primary.withOpacity(0.15) : theme.colorScheme.surface,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Icon(
+                      isActive && state.isPlaying ? Icons.graphic_eq : Icons.headphones,
+                      color: isActive ? theme.colorScheme.primary : theme.colorScheme.onSurface.withOpacity(0.5),
+                      size: 22,
+                    ),
+                  ),
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Sleep Sounds', style: theme.textTheme.titleMedium),
+                        const SizedBox(height: 2),
+                        Text(
+                          isActive ? state.currentTrack!.title : 'Ambient tracks for rest and reflection',
+                          style: theme.textTheme.bodySmall,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (isActive)
+                    IconButton(
+                      onPressed: () {
+                        Haptics.tap(context);
+                        _sleepSoundsService.togglePlayPause();
+                      },
+                      icon: Icon(
+                        state.isPlaying ? Icons.pause_circle_filled : Icons.play_circle_fill,
+                        color: theme.colorScheme.primary,
+                        size: 32,
+                      ),
+                    )
+                  else
+                    Icon(Icons.chevron_right, color: theme.colorScheme.onSurface.withOpacity(0.4)),
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }
@@ -558,6 +640,16 @@ class _HomeDashboardState extends State<HomeDashboard>
       children: [
         if (_isFabExpanded) ...[
           _buildFabAction(
+            icon: Icons.headphones,
+            label: 'Sleep Sounds',
+            onTap: () {
+              HapticFeedback.lightImpact();
+              setState(() => _isFabExpanded = false);
+              _navigateToSleepSounds();
+            },
+          ),
+          const SizedBox(height: 8),
+          _buildFabAction(
             icon: Icons.mic,
             label: 'Voice Note',
             onTap: () {
@@ -713,14 +805,16 @@ class _HomeDashboardState extends State<HomeDashboard>
         .then((_) => _refreshData());
   }
 
+  void _navigateToSleepSounds() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SleepSoundsScreen()));
+  }
+
   void _navigateToWeeklyReview() {
     Navigator.of(context).push(MaterialPageRoute(builder: (_) => const WeeklyReviewScreen()));
   }
 
   void _navigateToSettings() {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (_) => const SettingsScreen()))
-        .then((_) => setState(() {}));
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SettingsScreen()));
   }
 
   void _navigateToBedtime() {
