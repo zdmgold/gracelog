@@ -27,10 +27,11 @@ dependencies:
   package_info_plus: ^10.2.1
   uuid: ^4.2.1
   record: ^6.2.1
+  audio_service: ^0.18.15
   just_audio: ^0.9.40
+  just_audio_background: ^0.0.1-beta.13
   image_picker: ^1.1.2
   google_fonts: ^6.2.1
-  audio_service: ^0.18.15
 
 flutter:
   uses-material-design: true
@@ -42,6 +43,19 @@ flutter:
     - app/assets/scriptures_5.json
     - app/assets/scriptures_6.json
     - app/assets/scriptures_7.json
+    - app/assets/sounds/rise_up_with_grace_1.m4a
+    - app/assets/sounds/rise_up_with_grace_2.m4a
+    - app/assets/sounds/walking_in_faith_1.m4a
+    - app/assets/sounds/walking_in_faith_2.m4a
+    - app/assets/sounds/walk_in_the_light.m4a
+    - app/assets/sounds/grace_of_his_light.m4a
+    - app/assets/sounds/the_mark_of_god.m4a
+    - app/assets/sounds/gospel_hip_hop_instrumental.m4a
+    - app/assets/sounds/gospel_reflections.m4a
+    - app/assets/sounds/bible_soundtrack_instrumental.m4a
+    - app/assets/sounds/heavens_embrace_piano.m4a
+    - app/assets/sounds/messiah_instrumental.m4a
+    - app/assets/sounds/christian_worship_piano.m4a
 
 dev_dependencies:
   flutter_test:
