@@ -34,7 +34,6 @@ class SoundLibrary {
     SoundTrack(id: 'walking_in_faith_2', title: 'Walking in Faith II', assetPath: 'app/assets/sounds/walking_in_faith_2.m4a'),
     SoundTrack(id: 'walk_in_the_light', title: 'Walk in the Light', assetPath: 'app/assets/sounds/walk_in_the_light.m4a'),
     SoundTrack(id: 'grace_of_his_light', title: 'Grace of His Light', assetPath: 'app/assets/sounds/grace_of_his_light.m4a'),
-    SoundTrack(id: 'the_mark_of_god', title: 'The Mark of God', assetPath: 'app/assets/sounds/the_mark_of_god.m4a'),
     SoundTrack(id: 'gospel_hip_hop_instrumental', title: 'Gospel Hip-Hop', assetPath: 'app/assets/sounds/gospel_hip_hop_instrumental.m4a'),
     SoundTrack(id: 'gospel_reflections', title: 'Gospel Reflections', assetPath: 'app/assets/sounds/gospel_reflections.m4a'),
     SoundTrack(id: 'bible_soundtrack_instrumental', title: 'Bible Soundtrack', assetPath: 'app/assets/sounds/bible_soundtrack_instrumental.m4a'),
