@@ -75,7 +75,7 @@ jobs:
         id: gradle
         if: ${{ !cancelled() && steps.pubget.conclusion == 'success' }}
         run: |
-          gradle -p android --no-daemon --stacktrace \
+          gradle -p android --no-daemon --console=plain \
             :app:compileDebugKotlin :app:lintDebug :app:testDebugUnitTest \
             2>&1 | tee logs/04-gradle.txt
 
