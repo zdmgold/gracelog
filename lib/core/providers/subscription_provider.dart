@@ -11,7 +11,12 @@ import '../services/iap_service.dart';
 /// SharedPreferences for instant UI decisions before the IAP stream
 /// emits. Default is false (not subscribed, ads show).
 class SubscriptionProvider extends ValueNotifier<bool> {
-  SubscriptionProvider() : super(false) {
+  // Singleton: one shared subscription state for the whole app, and one
+  // listener on the purchase stream.
+  static final SubscriptionProvider _instance = SubscriptionProvider._internal();
+  factory SubscriptionProvider() => _instance;
+
+  SubscriptionProvider._internal() : super(false) {
     _load();
   }
 

@@ -51,7 +51,12 @@ class AppState {
 /// current locale, daily reminder time, and the user's display name.
 /// Persists all settings to SharedPreferences.
 class AppStateProvider extends ValueNotifier<AppState> {
-  AppStateProvider() : super(const AppState()) {
+  // Singleton: language, name and bedtime mode are read by the root app
+  // and by several screens, so they must share one instance.
+  static final AppStateProvider _instance = AppStateProvider._internal();
+  factory AppStateProvider() => _instance;
+
+  AppStateProvider._internal() : super(const AppState()) {
     _load();
   }
 

@@ -1,5 +1,7 @@
 package com.gracelog.app
 
-import io.flutter.embedding.android.FlutterActivity
+import com.ryanheise.audioservice.AudioServiceFragmentActivity
 
-class MainActivity: FlutterActivity()
+// AudioServiceFragmentActivity: required for background audio (Sleep
+// Sounds) and, being a FragmentActivity, also what biometric auth needs.
+class MainActivity : AudioServiceFragmentActivity()

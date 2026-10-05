@@ -6,7 +6,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// Persists the selection to SharedPreferences key `theme_mode`.
 /// Notifies all listeners on change. Default is [ThemeMode.system].
 class ThemeProvider extends ValueNotifier<ThemeMode> {
-  ThemeProvider() : super(ThemeMode.system) {
+  // Singleton: the root app, Settings and Onboarding must all share one
+  // instance, otherwise a theme change in Settings never reaches the app.
+  static final ThemeProvider _instance = ThemeProvider._internal();
+  factory ThemeProvider() => _instance;
+
+  ThemeProvider._internal() : super(ThemeMode.system) {
     _load();
   }
 
