@@ -1,0 +1,109 @@
+name: Compile Check (no APK)
+
+# Compiles and checks everything, never builds or uploads an APK.
+#  - flutter analyze  : compiles all Dart; fails on errors, reports lint
+#  - flutter test     : unit tests
+#  - gradle           : compiles the Kotlin/Android side, runs lint + JVM unit tests
+# Logs are pushed to the `ci-logs` branch so they can be read without
+# downloading artifacts.
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'wip/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: compile-check-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  FLUTTER_VERSION: '3.38.1'
+
+jobs:
+  compile-check:
+    name: Analyze, Test, Kotlin compile + lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.13'
+
+      - name: Prepare log folder
+        run: mkdir -p logs
+
+      - name: Install dependencies
+        id: pubget
+        run: flutter pub get 2>&1 | tee logs/01-pub-get.txt
+
+      - name: Analyze (Dart compile + lint)
+        id: analyze
+        if: ${{ !cancelled() && steps.pubget.conclusion == 'success' }}
+        run: |
+          # Fail on errors only. Infos/warnings are printed to the log.
+          flutter analyze --no-fatal-infos --no-fatal-warnings 2>&1 | tee logs/02-analyze.txt
+
+      - name: Unit tests
+        id: tests
+        if: ${{ !cancelled() && steps.pubget.conclusion == 'success' }}
+        run: flutter test 2>&1 | tee logs/03-flutter-test.txt
+
+      - name: Kotlin compile + Android lint + JVM unit tests
+        id: gradle
+        if: ${{ !cancelled() && steps.pubget.conclusion == 'success' }}
+        run: |
+          gradle -p android --no-daemon --stacktrace \
+            :app:compileDebugKotlin :app:lintDebug :app:testDebugUnitTest \
+            2>&1 | tee logs/04-gradle.txt
+
+      - name: Summary
+        if: ${{ always() }}
+        run: |
+          {
+            echo "pub get : ${{ steps.pubget.conclusion }}"
+            echo "analyze : ${{ steps.analyze.conclusion }}"
+            echo "tests   : ${{ steps.tests.conclusion }}"
+            echo "gradle  : ${{ steps.gradle.conclusion }}"
+            echo "commit  : ${GITHUB_SHA}"
+            echo "ref     : ${GITHUB_REF}"
+          } | tee logs/00-summary.txt
+
+      - name: Publish logs to ci-logs branch
+        if: ${{ always() }}
+        run: |
+          set +e
+          # Keep the tail of big logs so the branch stays small.
+          for f in logs/*.txt; do tail -n 400 "$f" > "$f.tmp" && mv "$f.tmp" "$f"; done
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout --orphan ci-logs-tmp
+          git rm -rf . -q
+          mkdir -p run
+          cp logs/*.txt run/ 2>/dev/null
+          git add run
+          git commit -q -m "compile-check logs: ${GITHUB_SHA} (run ${GITHUB_RUN_ID})"
+          git push -f origin HEAD:refs/heads/ci-logs
+          exit 0
