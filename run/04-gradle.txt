@@ -1,0 +1,400 @@
+> Task :local_auth_android:mergeDebugGeneratedProguardFiles
+> Task :local_auth_android:mergeDebugConsumerProguardFiles
+> Task :local_auth_android:prepareDebugArtProfile
+> Task :local_auth_android:prepareLintJarForPublish
+> Task :local_auth_android:processDebugJavaRes NO-SOURCE
+> Task :local_auth_android:mergeDebugJavaResource
+> Task :package_info_plus:checkDebugAarMetadata
+> Task :local_auth_android:syncDebugLibJars
+> Task :local_auth_android:bundleDebugLocalLintAar
+> Task :package_info_plus:mergeDebugJniLibFolders
+> Task :package_info_plus:mergeDebugNativeLibs NO-SOURCE
+> Task :package_info_plus:stripDebugDebugSymbols NO-SOURCE
+> Task :package_info_plus:copyDebugJniLibsProjectAndLocalJars
+> Task :package_info_plus:extractDebugAnnotations
+> Task :package_info_plus:extractDeepLinksForAarDebug
+> Task :package_info_plus:mergeDebugGeneratedProguardFiles
+> Task :package_info_plus:mergeDebugConsumerProguardFiles
+> Task :package_info_plus:prepareDebugArtProfile
+> Task :package_info_plus:prepareLintJarForPublish
+> Task :package_info_plus:processDebugJavaRes
+> Task :package_info_plus:mergeDebugJavaResource
+> Task :record_android:checkDebugAarMetadata
+> Task :package_info_plus:syncDebugLibJars
+> Task :package_info_plus:bundleDebugLocalLintAar
+> Task :record_android:mergeDebugJniLibFolders
+> Task :record_android:mergeDebugNativeLibs NO-SOURCE
+> Task :record_android:stripDebugDebugSymbols NO-SOURCE
+> Task :record_android:copyDebugJniLibsProjectAndLocalJars
+> Task :record_android:extractDebugAnnotations
+> Task :record_android:extractDeepLinksForAarDebug
+> Task :record_android:mergeDebugGeneratedProguardFiles
+> Task :record_android:mergeDebugConsumerProguardFiles
+> Task :record_android:prepareDebugArtProfile
+> Task :record_android:prepareLintJarForPublish
+> Task :record_android:processDebugJavaRes
+> Task :record_android:mergeDebugJavaResource
+> Task :share_plus:checkDebugAarMetadata
+> Task :record_android:syncDebugLibJars
+> Task :record_android:bundleDebugLocalLintAar
+> Task :share_plus:mergeDebugJniLibFolders
+> Task :share_plus:mergeDebugNativeLibs NO-SOURCE
+> Task :share_plus:stripDebugDebugSymbols NO-SOURCE
+> Task :share_plus:copyDebugJniLibsProjectAndLocalJars
+> Task :share_plus:extractDebugAnnotations
+> Task :share_plus:extractDeepLinksForAarDebug
+> Task :share_plus:mergeDebugGeneratedProguardFiles
+> Task :share_plus:mergeDebugConsumerProguardFiles
+> Task :share_plus:prepareDebugArtProfile
+> Task :share_plus:prepareLintJarForPublish
+> Task :share_plus:processDebugJavaRes
+> Task :share_plus:mergeDebugJavaResource
+> Task :shared_preferences_android:checkDebugAarMetadata
+> Task :share_plus:syncDebugLibJars
+> Task :share_plus:bundleDebugLocalLintAar
+> Task :shared_preferences_android:mergeDebugJniLibFolders
+> Task :shared_preferences_android:mergeDebugNativeLibs NO-SOURCE
+> Task :shared_preferences_android:stripDebugDebugSymbols NO-SOURCE
+> Task :shared_preferences_android:copyDebugJniLibsProjectAndLocalJars
+> Task :shared_preferences_android:extractDebugAnnotations
+> Task :shared_preferences_android:extractDeepLinksForAarDebug
+> Task :shared_preferences_android:mergeDebugGeneratedProguardFiles
+> Task :shared_preferences_android:mergeDebugConsumerProguardFiles
+> Task :shared_preferences_android:prepareDebugArtProfile
+> Task :shared_preferences_android:prepareLintJarForPublish
+> Task :shared_preferences_android:processDebugJavaRes
+> Task :shared_preferences_android:mergeDebugJavaResource
+> Task :sqflite_android:checkDebugAarMetadata
+> Task :shared_preferences_android:syncDebugLibJars
+> Task :shared_preferences_android:bundleDebugLocalLintAar
+> Task :sqflite_android:mergeDebugJniLibFolders
+> Task :sqflite_android:mergeDebugNativeLibs NO-SOURCE
+> Task :sqflite_android:stripDebugDebugSymbols NO-SOURCE
+> Task :sqflite_android:copyDebugJniLibsProjectAndLocalJars
+> Task :sqflite_android:extractDebugAnnotations
+> Task :sqflite_android:extractDeepLinksForAarDebug
+> Task :sqflite_android:mergeDebugGeneratedProguardFiles
+> Task :sqflite_android:mergeDebugConsumerProguardFiles
+> Task :sqflite_android:prepareDebugArtProfile
+> Task :sqflite_android:prepareLintJarForPublish
+> Task :sqflite_android:processDebugJavaRes NO-SOURCE
+> Task :sqflite_android:mergeDebugJavaResource
+> Task :url_launcher_android:checkDebugAarMetadata
+> Task :sqflite_android:syncDebugLibJars
+> Task :sqflite_android:bundleDebugLocalLintAar
+> Task :url_launcher_android:mergeDebugJniLibFolders
+> Task :url_launcher_android:mergeDebugNativeLibs NO-SOURCE
+> Task :url_launcher_android:stripDebugDebugSymbols NO-SOURCE
+> Task :url_launcher_android:copyDebugJniLibsProjectAndLocalJars
+> Task :url_launcher_android:extractDebugAnnotations
+> Task :url_launcher_android:extractDeepLinksForAarDebug
+> Task :url_launcher_android:mergeDebugGeneratedProguardFiles
+> Task :url_launcher_android:mergeDebugConsumerProguardFiles
+> Task :url_launcher_android:prepareDebugArtProfile
+> Task :url_launcher_android:prepareLintJarForPublish
+> Task :url_launcher_android:processDebugJavaRes
+> Task :url_launcher_android:mergeDebugJavaResource
+> Task :webview_flutter_android:checkDebugAarMetadata
+> Task :url_launcher_android:syncDebugLibJars
+> Task :url_launcher_android:bundleDebugLocalLintAar
+> Task :webview_flutter_android:mergeDebugJniLibFolders
+> Task :webview_flutter_android:mergeDebugNativeLibs NO-SOURCE
+> Task :webview_flutter_android:stripDebugDebugSymbols NO-SOURCE
+> Task :webview_flutter_android:copyDebugJniLibsProjectAndLocalJars
+> Task :webview_flutter_android:extractDebugAnnotations
+> Task :webview_flutter_android:extractDeepLinksForAarDebug
+> Task :webview_flutter_android:mergeDebugGeneratedProguardFiles
+> Task :webview_flutter_android:mergeDebugConsumerProguardFiles
+> Task :webview_flutter_android:prepareDebugArtProfile
+> Task :webview_flutter_android:prepareLintJarForPublish
+> Task :webview_flutter_android:processDebugJavaRes
+> Task :app:preDebugAndroidTestBuild SKIPPED
+> Task :app:javaPreCompileDebug
+> Task :webview_flutter_android:mergeDebugJavaResource
+> Task :app:generateDebugAndroidTestResValues
+> Task :webview_flutter_android:syncDebugLibJars
+> Task :webview_flutter_android:bundleDebugLocalLintAar
+> Task :app:compileDebugJavaWithJavac
+> Task :audio_service:bundleLibRuntimeToJarDebug
+> Task :audio_service:writeDebugLintModelMetadata
+> Task :audio_service:createFullJarDebug
+> Task :audio_session:bundleLibRuntimeToJarDebug
+> Task :audio_session:writeDebugLintModelMetadata
+> Task :audio_session:createFullJarDebug
+> Task :flutter_local_notifications:bundleLibRuntimeToJarDebug
+> Task :flutter_local_notifications:writeDebugLintModelMetadata
+> Task :app:bundleDebugClassesToCompileJar
+> Task :flutter_local_notifications:createFullJarDebug
+> Task :flutter_native_splash:bundleLibRuntimeToJarDebug
+> Task :flutter_native_splash:writeDebugLintModelMetadata
+> Task :flutter_native_splash:createFullJarDebug
+> Task :flutter_plugin_android_lifecycle:bundleLibRuntimeToJarDebug
+> Task :flutter_plugin_android_lifecycle:writeDebugLintModelMetadata
+> Task :flutter_plugin_android_lifecycle:createFullJarDebug
+> Task :google_mobile_ads:writeDebugLintModelMetadata
+> Task :google_mobile_ads:bundleLibRuntimeToJarDebug
+> Task :image_picker_android:bundleLibRuntimeToJarDebug
+> Task :google_mobile_ads:createFullJarDebug
+> Task :image_picker_android:createFullJarDebug
+> Task :image_picker_android:writeDebugLintModelMetadata
+> Task :in_app_purchase_android:writeDebugLintModelMetadata
+> Task :in_app_purchase_android:bundleLibRuntimeToJarDebug
+> Task :in_app_purchase_android:createFullJarDebug
+> Task :jni:bundleLibRuntimeToJarDebug
+> Task :jni:writeDebugLintModelMetadata
+> Task :jni:createFullJarDebug
+> Task :jni_flutter:bundleLibRuntimeToJarDebug
+> Task :jni_flutter:writeDebugLintModelMetadata
+> Task :jni_flutter:createFullJarDebug
+> Task :just_audio:bundleLibRuntimeToJarDebug
+> Task :just_audio:writeDebugLintModelMetadata
+> Task :just_audio:createFullJarDebug
+> Task :local_auth_android:bundleLibRuntimeToJarDebug
+> Task :local_auth_android:writeDebugLintModelMetadata
+> Task :local_auth_android:createFullJarDebug
+> Task :package_info_plus:bundleLibRuntimeToJarDebug
+> Task :package_info_plus:writeDebugLintModelMetadata
+> Task :package_info_plus:createFullJarDebug
+> Task :record_android:bundleLibRuntimeToJarDebug
+> Task :record_android:writeDebugLintModelMetadata
+> Task :record_android:createFullJarDebug
+> Task :share_plus:bundleLibRuntimeToJarDebug
+> Task :share_plus:writeDebugLintModelMetadata
+> Task :share_plus:createFullJarDebug
+> Task :shared_preferences_android:writeDebugLintModelMetadata
+> Task :shared_preferences_android:bundleLibRuntimeToJarDebug
+> Task :sqflite_android:bundleLibRuntimeToJarDebug
+> Task :shared_preferences_android:createFullJarDebug
+> Task :sqflite_android:createFullJarDebug
+> Task :sqflite_android:writeDebugLintModelMetadata
+> Task :url_launcher_android:bundleLibRuntimeToJarDebug
+> Task :url_launcher_android:writeDebugLintModelMetadata
+> Task :url_launcher_android:createFullJarDebug
+> Task :webview_flutter_android:writeDebugLintModelMetadata
+> Task :webview_flutter_android:bundleLibRuntimeToJarDebug
+> Task :app:extractProguardFiles
+> Task :webview_flutter_android:createFullJarDebug
+
+> Task :app:generateDebugAndroidTestLintModel
+Caught exception: Already watching path: /home/runner/work/gracelog/gracelog/android
+
+> Task :audio_service:extractProguardFiles
+> Task :audio_session:extractProguardFiles
+> Task :audio_session:generateDebugLintModel
+> Task :audio_service:generateDebugLintModel
+> Task :flutter_local_notifications:extractProguardFiles
+> Task :flutter_local_notifications:generateDebugLintModel
+> Task :flutter_native_splash:extractProguardFiles
+> Task :flutter_native_splash:generateDebugLintModel
+> Task :flutter_plugin_android_lifecycle:extractProguardFiles
+> Task :flutter_plugin_android_lifecycle:generateDebugLintModel
+> Task :google_mobile_ads:extractProguardFiles
+> Task :webview_flutter_android:extractProguardFiles
+> Task :webview_flutter_android:generateDebugLintModel
+> Task :google_mobile_ads:generateDebugLintModel
+> Task :image_picker_android:extractProguardFiles
+> Task :image_picker_android:generateDebugLintModel
+> Task :in_app_purchase_android:extractProguardFiles
+> Task :in_app_purchase_android:generateDebugLintModel
+> Task :jni:extractProguardFiles
+> Task :jni:generateDebugLintModel
+> Task :jni_flutter:extractProguardFiles
+> Task :jni_flutter:generateDebugLintModel
+> Task :just_audio:extractProguardFiles
+> Task :just_audio:generateDebugLintModel
+> Task :local_auth_android:extractProguardFiles
+> Task :local_auth_android:generateDebugLintModel
+> Task :package_info_plus:extractProguardFiles
+> Task :package_info_plus:generateDebugLintModel
+> Task :record_android:extractProguardFiles
+> Task :record_android:generateDebugLintModel
+> Task :share_plus:extractProguardFiles
+> Task :share_plus:generateDebugLintModel
+> Task :shared_preferences_android:extractProguardFiles
+> Task :shared_preferences_android:generateDebugLintModel
+> Task :sqflite_android:extractProguardFiles
+> Task :sqflite_android:generateDebugLintModel
+> Task :url_launcher_android:extractProguardFiles
+> Task :url_launcher_android:generateDebugLintModel
+> Task :app:generateDebugLintReportModel
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:generateDebugUnitTestLintModel
+> Task :flutter_plugin_android_lifecycle:lintAnalyzeDebug
+> Task :flutter_native_splash:lintAnalyzeDebug
+> Task :audio_session:lintAnalyzeDebug
+> Task :flutter_local_notifications:lintAnalyzeDebug
+> Task :audio_service:lintAnalyzeDebug
+> Task :jni:lintAnalyzeDebug
+> Task :jni_flutter:lintAnalyzeDebug
+> Task :just_audio:lintAnalyzeDebug
+> Task :local_auth_android:lintAnalyzeDebug
+> Task :package_info_plus:lintAnalyzeDebug
+> Task :image_picker_android:lintAnalyzeDebug
+> Task :share_plus:lintAnalyzeDebug
+> Task :webview_flutter_android:lintAnalyzeDebug
+> Task :record_android:lintAnalyzeDebug
+> Task :in_app_purchase_android:lintAnalyzeDebug
+> Task :sqflite_android:lintAnalyzeDebug
+> Task :app:lintAnalyzeDebugAndroidTest
+> Task :app:lintAnalyzeDebugUnitTest
+> Task :audio_service:preDebugAndroidTestBuild UP-TO-DATE
+> Task :audio_service:generateDebugAndroidTestResValues
+> Task :audio_service:generateDebugAndroidTestLintModel
+> Task :audio_service:preDebugUnitTestBuild UP-TO-DATE
+> Task :audio_service:generateDebugUnitTestLintModel
+> Task :audio_service:lintAnalyzeDebugAndroidTest
+> Task :audio_service:lintAnalyzeDebugUnitTest
+> Task :audio_session:preDebugAndroidTestBuild UP-TO-DATE
+> Task :audio_session:generateDebugAndroidTestResValues
+> Task :audio_session:generateDebugAndroidTestLintModel
+> Task :audio_session:preDebugUnitTestBuild UP-TO-DATE
+> Task :audio_session:generateDebugUnitTestLintModel
+> Task :audio_session:lintAnalyzeDebugAndroidTest
+> Task :audio_session:lintAnalyzeDebugUnitTest
+> Task :flutter_local_notifications:preDebugAndroidTestBuild UP-TO-DATE
+> Task :flutter_local_notifications:generateDebugAndroidTestResValues
+> Task :flutter_local_notifications:generateDebugAndroidTestLintModel
+> Task :flutter_local_notifications:preDebugUnitTestBuild UP-TO-DATE
+> Task :url_launcher_android:lintAnalyzeDebug
+> Task :shared_preferences_android:lintAnalyzeDebug
+> Task :flutter_local_notifications:generateDebugUnitTestLintModel
+> Task :flutter_native_splash:preDebugAndroidTestBuild UP-TO-DATE
+> Task :flutter_native_splash:generateDebugAndroidTestResValues
+> Task :flutter_native_splash:generateDebugAndroidTestLintModel
+> Task :flutter_native_splash:preDebugUnitTestBuild UP-TO-DATE
+> Task :flutter_native_splash:generateDebugUnitTestLintModel
+> Task :flutter_native_splash:lintAnalyzeDebugAndroidTest
+> Task :flutter_local_notifications:lintAnalyzeDebugAndroidTest
+> Task :flutter_plugin_android_lifecycle:preDebugAndroidTestBuild UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:generateDebugAndroidTestResValues
+> Task :flutter_native_splash:lintAnalyzeDebugUnitTest
+> Task :flutter_plugin_android_lifecycle:generateDebugAndroidTestLintModel
+> Task :flutter_plugin_android_lifecycle:preDebugUnitTestBuild UP-TO-DATE
+> Task :flutter_local_notifications:lintAnalyzeDebugUnitTest
+> Task :flutter_plugin_android_lifecycle:generateDebugUnitTestLintModel
+> Task :google_mobile_ads:preDebugAndroidTestBuild UP-TO-DATE
+> Task :google_mobile_ads:generateDebugAndroidTestResValues
+> Task :google_mobile_ads:generateDebugAndroidTestLintModel
+> Task :google_mobile_ads:preDebugUnitTestBuild UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:lintAnalyzeDebugAndroidTest
+> Task :flutter_plugin_android_lifecycle:lintAnalyzeDebugUnitTest
+> Task :google_mobile_ads:generateDebugUnitTestLintModel
+> Task :image_picker_android:preDebugAndroidTestBuild UP-TO-DATE
+> Task :image_picker_android:generateDebugAndroidTestResValues
+> Task :image_picker_android:generateDebugAndroidTestLintModel
+> Task :image_picker_android:preDebugUnitTestBuild UP-TO-DATE
+> Task :google_mobile_ads:lintAnalyzeDebugAndroidTest
+> Task :google_mobile_ads:lintAnalyzeDebugUnitTest
+> Task :image_picker_android:generateDebugUnitTestLintModel
+> Task :in_app_purchase_android:preDebugAndroidTestBuild UP-TO-DATE
+> Task :in_app_purchase_android:generateDebugAndroidTestResValues
+> Task :image_picker_android:lintAnalyzeDebugAndroidTest
+> Task :in_app_purchase_android:generateDebugAndroidTestLintModel
+> Task :in_app_purchase_android:preDebugUnitTestBuild UP-TO-DATE
+> Task :in_app_purchase_android:generateDebugUnitTestLintModel
+> Task :in_app_purchase_android:lintAnalyzeDebugAndroidTest
+> Task :jni:preDebugAndroidTestBuild UP-TO-DATE
+> Task :jni:generateDebugAndroidTestResValues
+> Task :jni:generateDebugAndroidTestLintModel
+> Task :jni:preDebugUnitTestBuild UP-TO-DATE
+> Task :jni:generateDebugUnitTestLintModel
+> Task :jni:lintAnalyzeDebugAndroidTest
+> Task :jni:lintAnalyzeDebugUnitTest
+> Task :jni_flutter:preDebugAndroidTestBuild UP-TO-DATE
+> Task :jni_flutter:generateDebugAndroidTestResValues
+> Task :jni_flutter:generateDebugAndroidTestLintModel
+> Task :jni_flutter:preDebugUnitTestBuild UP-TO-DATE
+> Task :jni_flutter:generateDebugUnitTestLintModel
+> Task :jni_flutter:lintAnalyzeDebugAndroidTest
+> Task :jni_flutter:lintAnalyzeDebugUnitTest
+> Task :just_audio:preDebugAndroidTestBuild UP-TO-DATE
+> Task :just_audio:generateDebugAndroidTestResValues
+> Task :just_audio:generateDebugAndroidTestLintModel
+> Task :just_audio:preDebugUnitTestBuild UP-TO-DATE
+> Task :just_audio:generateDebugUnitTestLintModel
+> Task :just_audio:lintAnalyzeDebugAndroidTest
+> Task :just_audio:lintAnalyzeDebugUnitTest
+> Task :local_auth_android:preDebugAndroidTestBuild UP-TO-DATE
+> Task :local_auth_android:generateDebugAndroidTestResValues
+> Task :image_picker_android:lintAnalyzeDebugUnitTest
+> Task :local_auth_android:generateDebugAndroidTestLintModel
+> Task :local_auth_android:preDebugUnitTestBuild UP-TO-DATE
+> Task :in_app_purchase_android:lintAnalyzeDebugUnitTest
+> Task :google_mobile_ads:lintAnalyzeDebug
+> Task :local_auth_android:generateDebugUnitTestLintModel
+> Task :package_info_plus:preDebugAndroidTestBuild UP-TO-DATE
+> Task :package_info_plus:generateDebugAndroidTestResValues
+> Task :package_info_plus:generateDebugAndroidTestLintModel
+> Task :package_info_plus:preDebugUnitTestBuild UP-TO-DATE
+> Task :package_info_plus:generateDebugUnitTestLintModel
+> Task :local_auth_android:lintAnalyzeDebugAndroidTest
+> Task :package_info_plus:lintAnalyzeDebugAndroidTest
+> Task :record_android:preDebugAndroidTestBuild UP-TO-DATE
+> Task :record_android:generateDebugAndroidTestResValues
+> Task :package_info_plus:lintAnalyzeDebugUnitTest
+> Task :record_android:generateDebugAndroidTestLintModel
+> Task :record_android:preDebugUnitTestBuild UP-TO-DATE
+> Task :record_android:generateDebugUnitTestLintModel
+> Task :record_android:lintAnalyzeDebugUnitTest
+> Task :share_plus:preDebugAndroidTestBuild UP-TO-DATE
+> Task :local_auth_android:lintAnalyzeDebugUnitTest
+> Task :share_plus:generateDebugAndroidTestResValues
+> Task :share_plus:generateDebugAndroidTestLintModel
+> Task :share_plus:preDebugUnitTestBuild UP-TO-DATE
+> Task :record_android:lintAnalyzeDebugAndroidTest
+> Task :share_plus:generateDebugUnitTestLintModel
+> Task :shared_preferences_android:preDebugAndroidTestBuild UP-TO-DATE
+> Task :shared_preferences_android:generateDebugAndroidTestResValues
+> Task :shared_preferences_android:generateDebugAndroidTestLintModel
+> Task :shared_preferences_android:preDebugUnitTestBuild UP-TO-DATE
+> Task :share_plus:lintAnalyzeDebugAndroidTest
+> Task :share_plus:lintAnalyzeDebugUnitTest
+> Task :app:lintAnalyzeDebug
+> Task :shared_preferences_android:generateDebugUnitTestLintModel
+> Task :sqflite_android:preDebugAndroidTestBuild UP-TO-DATE
+> Task :sqflite_android:generateDebugAndroidTestResValues
+> Task :sqflite_android:generateDebugAndroidTestLintModel
+> Task :sqflite_android:preDebugUnitTestBuild UP-TO-DATE
+> Task :sqflite_android:generateDebugUnitTestLintModel
+> Task :shared_preferences_android:lintAnalyzeDebugAndroidTest
+> Task :url_launcher_android:preDebugAndroidTestBuild UP-TO-DATE
+> Task :url_launcher_android:generateDebugAndroidTestResValues
+> Task :url_launcher_android:generateDebugAndroidTestLintModel
+> Task :url_launcher_android:preDebugUnitTestBuild UP-TO-DATE
+> Task :sqflite_android:lintAnalyzeDebugAndroidTest
+> Task :url_launcher_android:generateDebugUnitTestLintModel
+> Task :url_launcher_android:lintAnalyzeDebugAndroidTest
+> Task :webview_flutter_android:preDebugAndroidTestBuild UP-TO-DATE
+> Task :webview_flutter_android:generateDebugAndroidTestResValues
+> Task :webview_flutter_android:generateDebugAndroidTestLintModel
+> Task :webview_flutter_android:preDebugUnitTestBuild UP-TO-DATE
+> Task :webview_flutter_android:generateDebugUnitTestLintModel
+> Task :sqflite_android:lintAnalyzeDebugUnitTest
+> Task :webview_flutter_android:lintAnalyzeDebugAndroidTest
+> Task :app:bundleDebugClassesToRuntimeJar
+> Task :app:compileDebugUnitTestKotlin NO-SOURCE
+> Task :app:javaPreCompileDebugUnitTest
+> Task :app:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processDebugJavaRes
+> Task :app:processDebugUnitTestJavaRes NO-SOURCE
+> Task :app:testDebugUnitTest NO-SOURCE
+> Task :url_launcher_android:lintAnalyzeDebugUnitTest
+> Task :shared_preferences_android:lintAnalyzeDebugUnitTest
+> Task :webview_flutter_android:lintAnalyzeDebugUnitTest
+
+> Task :app:lintReportDebug
+Wrote HTML report to file:///home/runner/work/gracelog/gracelog/build/app/reports/lint-results-debug.html
+
+> Task :app:lintDebug
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/gradle-1791180820029.json
+
+[Incubating] Problems report is available at: file:///home/runner/work/gracelog/gracelog/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 5m 58s
+790 actionable tasks: 789 executed, 1 up-to-date

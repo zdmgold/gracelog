@@ -1,0 +1,400 @@
+   info • The parameter 'theme' should be final • lib/screens/home_dashboard.dart:636:29 • prefer_final_parameters
+   info • The parameter 'icon' should be final • lib/screens/home_dashboard.dart:712:4 • prefer_final_parameters
+   info • The parameter 'label' should be final • lib/screens/home_dashboard.dart:713:4 • prefer_final_parameters
+   info • The parameter 'onTap' should be final • lib/screens/home_dashboard.dart:714:4 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/home_dashboard.dart:748:16 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/home_dashboard.dart:748:25 • prefer_final_parameters
+   info • The parameter 'month' should be final • lib/screens/home_dashboard.dart:776:20 • prefer_final_parameters
+   info • Missing a required trailing comma • lib/screens/home_dashboard.dart:780:4 • require_trailing_commas
+   info • The parameter 'verse' should be final • lib/screens/home_dashboard.dart:784:25 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/home_dashboard.dart:786:42 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/home_dashboard.dart:787:15 • prefer_final_parameters
+   info • The parameter 'entry' should be final • lib/screens/home_dashboard.dart:790:30 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/home_dashboard.dart:792:42 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/home_dashboard.dart:793:15 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/home_dashboard.dart:798:42 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/home_dashboard.dart:799:15 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/home_dashboard.dart:804:42 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/home_dashboard.dart:805:15 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/home_dashboard.dart:809:59 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/home_dashboard.dart:813:59 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/home_dashboard.dart:817:59 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/home_dashboard.dart:822:42 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/home_dashboard.dart:823:15 • prefer_final_parameters
+   info • The parameter 'verse' should be final • lib/screens/home_dashboard.dart:826:34 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/home_dashboard.dart:827:59 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/home_dashboard.dart:844:15 • prefer_final_parameters
+   info • The parameter 'i' should be final • lib/screens/home_dashboard.dart:847:36 • prefer_final_parameters
+   info • The parameter 'date' should be final • lib/screens/home_dashboard.dart:852:26 • prefer_final_parameters
+   info • The parameter 'e' should be final • lib/screens/home_dashboard.dart:854:11 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/home_dashboard.dart:878:46 • deprecated_member_use
+warning • Unnecessary cast • lib/screens/home_dashboard.dart:878:58 • unnecessary_cast
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/home_dashboard.dart:881:66 • deprecated_member_use
+   info • Missing an 'await' for the 'Future' computed by this expression • lib/screens/onboarding_screen.dart:74:27 • unawaited_futures
+   info • The parameter '_' should be final • lib/screens/onboarding_screen.dart:74:71 • prefer_final_parameters
+   info • The parameter 'pageIndex' should be final • lib/screens/onboarding_screen.dart:77:26 • prefer_final_parameters
+   info • The parameter 'speed' should be final • lib/screens/onboarding_screen.dart:77:41 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/onboarding_screen.dart:80:16 • prefer_final_parameters
+   info • Unnecessary escape of ''' • lib/screens/onboarding_screen.dart:105:23 • avoid_escaping_inner_quotes
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/onboarding_screen.dart:131:91 • deprecated_member_use
+   info • The parameter 'theme' should be final • lib/screens/onboarding_screen.dart:142:31 • prefer_final_parameters
+   info • Use 'DecoratedBox' rather than a 'Container' with only a 'Decoration' • lib/screens/onboarding_screen.dart:151:9 • use_decorated_box
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/onboarding_screen.dart:160:84 • deprecated_member_use
+   info • The parameter 'context' should be final • lib/screens/onboarding_screen.dart:167:21 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/onboarding_screen.dart:167:30 • prefer_final_parameters
+   info • The parameter 'selection' should be final • lib/screens/onboarding_screen.dart:174:34 • prefer_final_parameters
+   info • The parameter 'theme' should be final • lib/screens/onboarding_screen.dart:185:5 • prefer_final_parameters
+   info • The parameter 'index' should be final • lib/screens/onboarding_screen.dart:186:5 • prefer_final_parameters
+   info • The parameter 'icon' should be final • lib/screens/onboarding_screen.dart:187:5 • prefer_final_parameters
+   info • The parameter 'title' should be final • lib/screens/onboarding_screen.dart:188:5 • prefer_final_parameters
+   info • The parameter 'body' should be final • lib/screens/onboarding_screen.dart:189:5 • prefer_final_parameters
+   info • The parameter 'buttonLabel' should be final • lib/screens/onboarding_screen.dart:190:5 • prefer_final_parameters
+   info • The parameter 'onButtonTap' should be final • lib/screens/onboarding_screen.dart:191:5 • prefer_final_parameters
+   info • The parameter 'extraContent' should be final • lib/screens/onboarding_screen.dart:192:5 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/onboarding_screen.dart:204:45 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/onboarding_screen.dart:205:47 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/onboarding_screen.dart:215:75 • deprecated_member_use
+   info • The parameter 'theme' should be final • lib/screens/onboarding_screen.dart:260:30 • prefer_final_parameters
+   info • The parameter 'i' should be final • lib/screens/onboarding_screen.dart:263:35 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/onboarding_screen.dart:271:87 • deprecated_member_use
+   info • The parameter 'source' should be final • lib/screens/photo_memory_screen.dart:44:27 • prefer_final_parameters
+   info • Don't use 'BuildContext's across async gaps • lib/screens/photo_memory_screen.dart:49:19 • use_build_context_synchronously
+   info • Catch clause should use 'on' to specify the type of exception being caught • lib/screens/photo_memory_screen.dart:51:7 • avoid_catches_without_on_clauses
+   info • The parameter 'context' should be final • lib/screens/photo_memory_screen.dart:66:17 • prefer_final_parameters
+   info • Use of an async 'dart:io' method • lib/screens/photo_memory_screen.dart:104:18 • avoid_slow_async_io
+   info • Use an 'if' element to conditionally add elements • lib/screens/photo_memory_screen.dart:115:26 • prefer_if_elements_to_conditional_expressions
+   info • Catch clause should use 'on' to specify the type of exception being caught • lib/screens/photo_memory_screen.dart:133:7 • avoid_catches_without_on_clauses
+   info • The parameter 'message' should be final • lib/screens/photo_memory_screen.dart:140:19 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/photo_memory_screen.dart:151:16 • prefer_final_parameters
+   info • The parameter 'mood' should be final • lib/screens/photo_memory_screen.dart:173:76 • prefer_final_parameters
+   info • The parameter 'theme' should be final • lib/screens/photo_memory_screen.dart:210:26 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/photo_memory_screen.dart:220:65 • deprecated_member_use
+   info • The value of the argument is redundant because it matches the default value • lib/screens/photo_memory_screen.dart:220:90 • avoid_redundant_argument_values
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/photo_memory_screen.dart:225:93 • deprecated_member_use
+warning • Unused import: '../widgets/scripture_card.dart' • lib/screens/scripture_detail_screen.dart:6:8 • unused_import
+   info • The parameter 'context' should be final • lib/screens/scripture_detail_screen.dart:23:16 • prefer_final_parameters
+   info • Closure should be a tearoff • lib/screens/scripture_detail_screen.dart:32:24 • unnecessary_lambdas
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/scripture_detail_screen.dart:52:50 • deprecated_member_use
+   info • Closure should be a tearoff • lib/screens/scripture_detail_screen.dart:108:104 • unnecessary_lambdas
+   info • The parameter 'theme' should be final • lib/screens/scripture_detail_screen.dart:118:32 • prefer_final_parameters
+   info • The parameter 'icon' should be final • lib/screens/scripture_detail_screen.dart:118:50 • prefer_final_parameters
+   info • The parameter 'label' should be final • lib/screens/scripture_detail_screen.dart:118:74 • prefer_final_parameters
+   info • The parameter 'onTap' should be final • lib/screens/scripture_detail_screen.dart:118:97 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/scripture_detail_screen.dart:125:59 • deprecated_member_use
+   info • The parameter 'context' should be final • lib/screens/scripture_detail_screen.dart:132:18 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/scripture_detail_screen.dart:133:71 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/scripture_detail_screen.dart:136:33 • prefer_final_parameters
+   info • Catch clause should use 'on' to specify the type of exception being caught • lib/screens/settings_screen.dart:53:7 • avoid_catches_without_on_clauses
+   info • The parameter 'context' should be final • lib/screens/settings_screen.dart:64:16 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/settings_screen.dart:82:23 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/settings_screen.dart:82:32 • prefer_final_parameters
+   info • Closure should be a tearoff • lib/screens/settings_screen.dart:84:25 • unnecessary_lambdas
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:120:82 • deprecated_member_use
+   info • The parameter 'theme' should be final • lib/screens/settings_screen.dart:130:30 • prefer_final_parameters
+   info • The parameter 'title' should be final • lib/screens/settings_screen.dart:130:47 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:135:89 • deprecated_member_use
+   info • The parameter 'theme' should be final • lib/screens/settings_screen.dart:140:28 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/settings_screen.dart:143:17 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/settings_screen.dart:143:26 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:148:56 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:156:82 • deprecated_member_use
+   info • The parameter 'currentName' should be final • lib/screens/settings_screen.dart:163:36 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/settings_screen.dart:167:17 • prefer_final_parameters
+   info • The parameter 'theme' should be final • lib/screens/settings_screen.dart:189:26 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/settings_screen.dart:192:17 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/settings_screen.dart:192:26 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:197:48 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:204:82 • deprecated_member_use
+   info • The parameter 'theme' should be final • lib/screens/settings_screen.dart:211:30 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/settings_screen.dart:214:17 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/settings_screen.dart:214:26 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:216:81 • deprecated_member_use
+   info • The parameter '_' should be final • lib/screens/settings_screen.dart:220:23 • prefer_final_parameters
+   info • 'activeColor' is deprecated and shouldn't be used. Use activeThumbColor instead. This feature was deprecated after v3.31.0-2.0.pre • lib/screens/settings_screen.dart:221:11 • deprecated_member_use
+   info • The parameter 'theme' should be final • lib/screens/settings_screen.dart:227:29 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/settings_screen.dart:230:17 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/settings_screen.dart:230:26 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:233:90 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:236:82 • deprecated_member_use
+   info • The parameter 'theme' should be final • lib/screens/settings_screen.dart:248:29 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/settings_screen.dart:251:17 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/settings_screen.dart:251:26 • prefer_final_parameters
+   info • The parameter 'l' should be final • lib/screens/settings_screen.dart:253:52 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:255:76 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:258:82 • deprecated_member_use
+   info • The parameter 'theme' should be final • lib/screens/settings_screen.dart:265:33 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/settings_screen.dart:268:17 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/settings_screen.dart:268:26 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:275:27 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:277:46 • deprecated_member_use
+   info • Closure should be a tearoff • lib/screens/settings_screen.dart:300:30 • unnecessary_lambdas
+   info • The parameter 'theme' should be final • lib/screens/settings_screen.dart:316:28 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:318:71 • deprecated_member_use
+   info • Closure should be a tearoff • lib/screens/settings_screen.dart:321:14 • unnecessary_lambdas
+   info • The parameter 'theme' should be final • lib/screens/settings_screen.dart:325:27 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:329:69 • deprecated_member_use
+   info • The parameter 'theme' should be final • lib/screens/settings_screen.dart:337:5 • prefer_final_parameters
+   info • The parameter 'icon' should be final • lib/screens/settings_screen.dart:338:5 • prefer_final_parameters
+   info • The parameter 'title' should be final • lib/screens/settings_screen.dart:339:5 • prefer_final_parameters
+   info • The parameter 'subtitle' should be final • lib/screens/settings_screen.dart:340:5 • prefer_final_parameters
+   info • The parameter 'onTap' should be final • lib/screens/settings_screen.dart:341:5 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:344:62 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/settings_screen.dart:347:86 • deprecated_member_use
+   info • The parameter 'url' should be final • lib/screens/settings_screen.dart:376:27 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/settings_screen.dart:388:17 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/settings_screen.dart:425:17 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/settings_screen.dart:429:25 • prefer_final_parameters
+   info • The parameter 'index' should be final • lib/screens/settings_screen.dart:429:34 • prefer_final_parameters
+   info • The parameter 'minutes' should be final • lib/screens/sleep_sounds_screen.dart:24:22 • prefer_final_parameters
+   info • The parameter 'seconds' should be final • lib/screens/sleep_sounds_screen.dart:31:27 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/sleep_sounds_screen.dart:38:16 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/sleep_sounds_screen.dart:48:19 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/sleep_sounds_screen.dart:48:28 • prefer_final_parameters
+   info • The parameter 'theme' should be final • lib/screens/sleep_sounds_screen.dart:63:30 • prefer_final_parameters
+   info • The parameter 'state' should be final • lib/screens/sleep_sounds_screen.dart:63:47 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/sleep_sounds_screen.dart:81:61 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/sleep_sounds_screen.dart:126:91 • deprecated_member_use
+   info • The parameter 'theme' should be final • lib/screens/sleep_sounds_screen.dart:136:30 • prefer_final_parameters
+   info • The parameter 'state' should be final • lib/screens/sleep_sounds_screen.dart:136:47 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/sleep_sounds_screen.dart:144:79 • deprecated_member_use
+   info • The parameter 'value' should be final • lib/screens/sleep_sounds_screen.dart:150:29 • prefer_final_parameters
+   info • 'activeColor' is deprecated and shouldn't be used. Use activeThumbColor instead. This feature was deprecated after v3.31.0-2.0.pre • lib/screens/sleep_sounds_screen.dart:154:17 • deprecated_member_use
+   info • The parameter 'minutes' should be final • lib/screens/sleep_sounds_screen.dart:164:42 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/sleep_sounds_screen.dart:169:30 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/sleep_sounds_screen.dart:173:58 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/sleep_sounds_screen.dart:175:95 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/sleep_sounds_screen.dart:178:108 • deprecated_member_use
+   info • The parameter 'theme' should be final • lib/screens/sleep_sounds_screen.dart:188:26 • prefer_final_parameters
+   info • The parameter 'state' should be final • lib/screens/sleep_sounds_screen.dart:188:43 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/sleep_sounds_screen.dart:192:21 • prefer_final_parameters
+   info • The parameter 'index' should be final • lib/screens/sleep_sounds_screen.dart:192:30 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/sleep_sounds_screen.dart:201:60 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/sleep_sounds_screen.dart:206:90 • deprecated_member_use
+   info • The import of 'package:flutter/services.dart' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' • lib/screens/voice_note_screen.dart:5:8 • unnecessary_import
+warning • Unused import: '../core/utils/constants.dart' • lib/screens/voice_note_screen.dart:14:8 • unused_import
+   info • The parameter 'state' should be final • lib/screens/voice_note_screen.dart:62:57 • prefer_final_parameters
+   info • Unnecessary duplication of receiver • lib/screens/voice_note_screen.dart:67:9 • cascade_invocations
+   info • The parameter 'position' should be final • lib/screens/voice_note_screen.dart:71:51 • prefer_final_parameters
+   info • Use of an async 'dart:io' method • lib/screens/voice_note_screen.dart:101:18 • avoid_slow_async_io
+   info • The value of the argument is redundant because it matches the default value • lib/screens/voice_note_screen.dart:106:57 • avoid_redundant_argument_values
+   info • Don't use 'BuildContext's across async gaps • lib/screens/voice_note_screen.dart:108:19 • use_build_context_synchronously
+   info • Missing an 'await' for the 'Future' computed by this expression • lib/screens/voice_note_screen.dart:109:24 • unawaited_futures
+   info • The parameter '_' should be final • lib/screens/voice_note_screen.dart:111:66 • prefer_final_parameters
+   info • Catch clause should use 'on' to specify the type of exception being caught • lib/screens/voice_note_screen.dart:117:7 • avoid_catches_without_on_clauses
+   info • Unnecessary duplication of receiver • lib/screens/voice_note_screen.dart:127:7 • cascade_invocations
+   info • Don't use 'BuildContext's across async gaps • lib/screens/voice_note_screen.dart:135:23 • use_build_context_synchronously
+   info • Catch clause should use 'on' to specify the type of exception being caught • lib/screens/voice_note_screen.dart:143:7 • avoid_catches_without_on_clauses
+   info • Use of an async 'dart:io' method • lib/screens/voice_note_screen.dart:163:19 • avoid_slow_async_io
+   info • Catch clause should use 'on' to specify the type of exception being caught • lib/screens/voice_note_screen.dart:164:9 • avoid_catches_without_on_clauses
+   info • Use an 'if' element to conditionally add elements • lib/screens/voice_note_screen.dart:185:24 • prefer_if_elements_to_conditional_expressions
+   info • The parameter 'message' should be final • lib/screens/voice_note_screen.dart:205:19 • prefer_final_parameters
+   info • The parameter 'd' should be final • lib/screens/voice_note_screen.dart:215:26 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/voice_note_screen.dart:222:16 • prefer_final_parameters
+   info • The parameter 'theme' should be final • lib/screens/voice_note_screen.dart:251:27 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/voice_note_screen.dart:267:25 • prefer_final_parameters
+   info • The parameter 'child' should be final • lib/screens/voice_note_screen.dart:267:34 • prefer_final_parameters
+   info • The parameter 'theme' should be final • lib/screens/voice_note_screen.dart:304:5 • prefer_final_parameters
+   info • The parameter 'onTap' should be final • lib/screens/voice_note_screen.dart:305:5 • prefer_final_parameters
+   info • The parameter 'icon' should be final • lib/screens/voice_note_screen.dart:306:5 • prefer_final_parameters
+   info • The parameter 'color' should be final • lib/screens/voice_note_screen.dart:307:5 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/voice_note_screen.dart:317:24 • deprecated_member_use
+   info • The parameter 'theme' should be final • lib/screens/voice_note_screen.dart:325:33 • prefer_final_parameters
+   info • The parameter 'mood' should be final • lib/screens/voice_note_screen.dart:336:68 • prefer_final_parameters
+   info • The parameter 'theme' should be final • lib/screens/voice_note_screen.dart:350:25 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/weekly_review_screen.dart:61:16 • prefer_final_parameters
+   info • The parameter 'theme' should be final • lib/screens/weekly_review_screen.dart:82:24 • prefer_final_parameters
+   info • The parameter 'e' should be final • lib/screens/weekly_review_screen.dart:86:17 • prefer_final_parameters
+   info • The parameter 'a' should be final • lib/screens/weekly_review_screen.dart:88:15 • prefer_final_parameters
+   info • The parameter 'b' should be final • lib/screens/weekly_review_screen.dart:88:18 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/weekly_review_screen.dart:146:88 • deprecated_member_use
+   info • The parameter 'context' should be final • lib/screens/weekly_review_screen.dart:157:16 • prefer_final_parameters
+   info • The parameter 'index' should be final • lib/screens/weekly_review_screen.dart:157:25 • prefer_final_parameters
+   info • The parameter 'theme' should be final • lib/screens/weekly_review_screen.dart:181:31 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/screens/weekly_review_screen.dart:193:23 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/weekly_review_screen.dart:193:32 • prefer_final_parameters
+   info • The value of the argument is redundant because it matches the default value • lib/screens/weekly_review_screen.dart:196:24 • avoid_redundant_argument_values
+   info • The parameter 'date' should be final • lib/screens/weekly_review_screen.dart:197:28 • prefer_final_parameters
+   info • The parameter 'theme' should be final • lib/screens/weekly_review_screen.dart:215:35 • prefer_final_parameters
+   info • The parameter 'weekEntries' should be final • lib/screens/weekly_review_screen.dart:215:52 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/weekly_review_screen.dart:234:65 • deprecated_member_use
+   info • Unnecessary escape of ''' • lib/screens/weekly_review_screen.dart:243:24 • avoid_escaping_inner_quotes
+   info • The parameter 'theme' should be final • lib/screens/weekly_review_screen.dart:260:34 • prefer_final_parameters
+   info • The parameter 'a' should be final • lib/screens/weekly_review_screen.dart:263:55 • prefer_final_parameters
+   info • The parameter 'b' should be final • lib/screens/weekly_review_screen.dart:263:58 • prefer_final_parameters
+   info • The parameter 'entry' should be final • lib/screens/weekly_review_screen.dart:270:46 • prefer_final_parameters
+   info • The parameter 'theme' should be final • lib/screens/weekly_review_screen.dart:304:30 • prefer_final_parameters
+   info • The parameter 'entries' should be final • lib/screens/weekly_review_screen.dart:304:47 • prefer_final_parameters
+   info • The parameter 'entries' should be final • lib/screens/weekly_review_screen.dart:344:29 • prefer_final_parameters
+   info • The parameter 'theme' should be final • lib/screens/weekly_review_screen.dart:373:5 • prefer_final_parameters
+   info • The parameter 'icon' should be final • lib/screens/weekly_review_screen.dart:374:5 • prefer_final_parameters
+   info • The parameter 'label' should be final • lib/screens/weekly_review_screen.dart:375:5 • prefer_final_parameters
+   info • The parameter 'onTap' should be final • lib/screens/weekly_review_screen.dart:376:5 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/weekly_review_screen.dart:386:63 • deprecated_member_use
+   info • The parameter 'entry' should be final • lib/screens/weekly_review_screen.dart:402:26 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/weekly_review_screen.dart:404:43 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/weekly_review_screen.dart:405:16 • prefer_final_parameters
+   info • The parameter 'id' should be final • lib/screens/weekly_review_screen.dart:408:29 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/screens/weekly_review_screen.dart:420:17 • prefer_final_parameters
+   info • The parameter 'child' should be final • lib/widgets/accessibility_wrapper.dart:16:5 • prefer_final_parameters
+   info • The parameter 'label' should be final • lib/widgets/accessibility_wrapper.dart:17:5 • prefer_final_parameters
+   info • The parameter 'hint' should be final • lib/widgets/accessibility_wrapper.dart:18:5 • prefer_final_parameters
+   info • The parameter 'selected' should be final • lib/widgets/accessibility_wrapper.dart:19:5 • prefer_final_parameters
+   info • The parameter 'checked' should be final • lib/widgets/accessibility_wrapper.dart:20:5 • prefer_final_parameters
+   info • The parameter 'enabled' should be final • lib/widgets/accessibility_wrapper.dart:21:5 • prefer_final_parameters
+   info • The parameter 'onTapHint' should be final • lib/widgets/accessibility_wrapper.dart:22:5 • prefer_final_parameters
+   info • The parameter 'onLongPressHint' should be final • lib/widgets/accessibility_wrapper.dart:23:5 • prefer_final_parameters
+   info • The parameter 'child' should be final • lib/widgets/accessibility_wrapper.dart:39:29 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/widgets/accessibility_wrapper.dart:46:5 • prefer_final_parameters
+   info • The parameter 'duration' should be final • lib/widgets/accessibility_wrapper.dart:47:5 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/widgets/accessibility_wrapper.dart:56:5 • prefer_final_parameters
+   info • The parameter 'curve' should be final • lib/widgets/accessibility_wrapper.dart:57:5 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/widgets/accessibility_wrapper.dart:83:16 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/widgets/accessibility_wrapper.dart:131:16 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/widgets/accountability_share_sheet.dart:14:16 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/accountability_share_sheet.dart:28:76 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/accountability_share_sheet.dart:42:69 • deprecated_member_use
+   info • The parameter 'theme' should be final • lib/widgets/accountability_share_sheet.dart:86:28 • prefer_final_parameters
+   info • The parameter 'icon' should be final • lib/widgets/accountability_share_sheet.dart:86:46 • prefer_final_parameters
+   info • The parameter 'value' should be final • lib/widgets/accountability_share_sheet.dart:86:70 • prefer_final_parameters
+   info • The parameter 'label' should be final • lib/widgets/accountability_share_sheet.dart:86:93 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/accountability_share_sheet.dart:90:65 • deprecated_member_use
+   info • The parameter 'context' should be final • lib/widgets/accountability_share_sheet.dart:97:30 • prefer_final_parameters
+   info • Use a function declaration rather than a variable assignment to bind a function to a name • lib/widgets/accountability_share_sheet.dart:100:11 • prefer_function_declarations_over_variables
+   info • The parameter 'd' should be final • lib/widgets/accountability_share_sheet.dart:100:18 • prefer_final_parameters
+   info • Unnecessary duplication of receiver • lib/widgets/accountability_share_sheet.dart:103:5 • cascade_invocations
+   info • Unnecessary duplication of receiver • lib/widgets/accountability_share_sheet.dart:104:5 • cascade_invocations
+   info • Unnecessary duplication of receiver • lib/widgets/accountability_share_sheet.dart:105:5 • cascade_invocations
+   info • Unnecessary duplication of receiver • lib/widgets/accountability_share_sheet.dart:106:5 • cascade_invocations
+   info • Unnecessary duplication of receiver • lib/widgets/accountability_share_sheet.dart:107:5 • cascade_invocations
+   info • Unnecessary duplication of receiver • lib/widgets/accountability_share_sheet.dart:108:5 • cascade_invocations
+   info • Unnecessary duplication of receiver • lib/widgets/accountability_share_sheet.dart:109:5 • cascade_invocations
+   info • Unnecessary duplication of receiver • lib/widgets/accountability_share_sheet.dart:110:5 • cascade_invocations
+   info • The parameter 'context' should be final • lib/widgets/bedtime_mode_toggle.dart:20:16 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/bedtime_mode_toggle.dart:42:45 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/bedtime_mode_toggle.dart:48:47 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/bedtime_mode_toggle.dart:59:51 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/bedtime_mode_toggle.dart:65:94 • deprecated_member_use
+   info • The parameter '_' should be final • lib/widgets/bedtime_mode_toggle.dart:88:29 • prefer_final_parameters
+   info • 'activeColor' is deprecated and shouldn't be used. Use activeThumbColor instead. This feature was deprecated after v3.31.0-2.0.pre • lib/widgets/bedtime_mode_toggle.dart:92:17 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/bedtime_mode_toggle.dart:93:61 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/bedtime_mode_toggle.dart:95:63 • deprecated_member_use
+   info • The parameter 'context' should be final • lib/widgets/calendar_heatmap.dart:25:16 • prefer_final_parameters
+   info • The parameter 'weekIndex' should be final • lib/widgets/calendar_heatmap.dart:40:41 • prefer_final_parameters
+   info • The parameter 'dayIndex' should be final • lib/widgets/calendar_heatmap.dart:44:43 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/widgets/calendar_heatmap.dart:60:21 • prefer_final_parameters
+   info • The parameter 'theme' should be final • lib/widgets/calendar_heatmap.dart:60:43 • prefer_final_parameters
+   info • The parameter 'date' should be final • lib/widgets/calendar_heatmap.dart:60:60 • prefer_final_parameters
+   info • The parameter 'today' should be final • lib/widgets/calendar_heatmap.dart:60:75 • prefer_final_parameters
+warning • The '!' will have no effect because the receiver can't be null • lib/widgets/calendar_heatmap.dart:74:39 • unnecessary_non_null_assertion
+warning • The '!' will have no effect because the receiver can't be null • lib/widgets/calendar_heatmap.dart:79:49 • unnecessary_non_null_assertion
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/calendar_heatmap.dart:94:45 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/calendar_heatmap.dart:98:48 • deprecated_member_use
+   info • The parameter 'context' should be final • lib/widgets/entry_list_tile.dart:26:16 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/widgets/entry_list_tile.dart:33:24 • prefer_final_parameters
+   info • The parameter '_' should be final • lib/widgets/entry_list_tile.dart:34:21 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/entry_list_tile.dart:39:42 • deprecated_member_use
+   info • The value of the argument is redundant because it matches the default value • lib/widgets/entry_list_tile.dart:61:35 • avoid_redundant_argument_values
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/entry_list_tile.dart:78:50 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/entry_list_tile.dart:96:96 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/entry_list_tile.dart:113:87 • deprecated_member_use
+   info • The parameter 'theme' should be final • lib/widgets/entry_list_tile.dart:125:29 • prefer_final_parameters
+   info • The parameter 'category' should be final • lib/widgets/entry_list_tile.dart:125:46 • prefer_final_parameters
+   info • The parameter 'month' should be final • lib/widgets/entry_list_tile.dart:136:23 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/widgets/entry_list_tile.dart:141:35 • prefer_final_parameters
+   info • The parameter 'theme' should be final • lib/widgets/entry_list_tile.dart:141:57 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/widgets/entry_list_tile.dart:144:17 • prefer_final_parameters
+   info • Sort directive sections alphabetically • lib/widgets/gratitude_input_field.dart:5:1 • directives_ordering
+   info • The parameter 'context' should be final • lib/widgets/gratitude_input_field.dart:79:16 • prefer_final_parameters
+   info • The parameter 'focused' should be final • lib/widgets/gratitude_input_field.dart:89:27 • prefer_final_parameters
+   info • The parameter 'value' should be final • lib/widgets/gratitude_input_field.dart:96:27 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/gratitude_input_field.dart:109:62 • deprecated_member_use
+   info • The parameter 'context' should be final • lib/widgets/gratitude_input_field.dart:131:21 • prefer_final_parameters
+   info • The parameter 'constraints' should be final • lib/widgets/gratitude_input_field.dart:131:30 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/widgets/mood_selector.dart:21:16 • prefer_final_parameters
+   info • The parameter 'mood' should be final • lib/widgets/mood_selector.dart:27:38 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/mood_selector.dart:44:39 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/mood_selector.dart:50:51 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/mood_selector.dart:60:87 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/mood_selector.dart:66:89 • deprecated_member_use
+   info • The parameter 'context' should be final • lib/widgets/mood_trend_chart.dart:24:16 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/mood_trend_chart.dart:42:48 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/mood_trend_chart.dart:43:51 • deprecated_member_use
+   info • The parameter 'mood' should be final • lib/widgets/mood_trend_chart.dart:77:18 • prefer_final_parameters
+   info • The parameter 'canvas' should be final • lib/widgets/mood_trend_chart.dart:80:14 • prefer_final_parameters
+   info • The parameter 'size' should be final • lib/widgets/mood_trend_chart.dart:80:29 • prefer_final_parameters
+   info • Use 'const' for final variables initialized to a constant value • lib/widgets/mood_trend_chart.dart:83:5 • prefer_const_declarations
+   info • Unnecessary type annotation on a local variable • lib/widgets/mood_trend_chart.dart:89:10 • omit_local_variable_types
+   info • Unnecessary duplication of receiver • lib/widgets/mood_trend_chart.dart:95:7 • cascade_invocations
+   info • Unnecessary duplication of receiver • lib/widgets/mood_trend_chart.dart:96:7 • cascade_invocations
+   info • Unnecessary type annotation on a local variable • lib/widgets/mood_trend_chart.dart:103:10 • omit_local_variable_types
+   info • Unnecessary duplication of receiver • lib/widgets/mood_trend_chart.dart:125:7 • cascade_invocations
+   info • Unnecessary duplication of receiver • lib/widgets/mood_trend_chart.dart:126:7 • cascade_invocations
+   info • Unnecessary type annotation on a local variable • lib/widgets/mood_trend_chart.dart:131:10 • omit_local_variable_types
+   info • Unnecessary type annotation on a local variable • lib/widgets/mood_trend_chart.dart:141:10 • omit_local_variable_types
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/mood_trend_chart.dart:152:28 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/mood_trend_chart.dart:152:56 • deprecated_member_use
+   info • Unnecessary use of a 'double' literal • lib/widgets/mood_trend_chart.dart:152:68 • prefer_int_literals
+   info • Missing a required trailing comma • lib/widgets/mood_trend_chart.dart:158:8 • require_trailing_commas
+   info • Unnecessary type annotation on a local variable • lib/widgets/mood_trend_chart.dart:170:10 • omit_local_variable_types
+   info • Unnecessary type annotation on a local variable • lib/widgets/mood_trend_chart.dart:175:10 • omit_local_variable_types
+   info • Unnecessary type annotation on a local variable • lib/widgets/mood_trend_chart.dart:179:10 • omit_local_variable_types
+   info • Unnecessary duplication of receiver • lib/widgets/mood_trend_chart.dart:186:7 • cascade_invocations
+   info • Unnecessary duplication of receiver • lib/widgets/mood_trend_chart.dart:187:7 • cascade_invocations
+   info • The parameter 'canvas' should be final • lib/widgets/mood_trend_chart.dart:191:19 • prefer_final_parameters
+   info • The parameter 'center' should be final • lib/widgets/mood_trend_chart.dart:191:34 • prefer_final_parameters
+   info • The parameter 'color' should be final • lib/widgets/mood_trend_chart.dart:191:49 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/mood_trend_chart.dart:192:57 • deprecated_member_use
+   info • Unnecessary duplication of receiver • lib/widgets/mood_trend_chart.dart:193:5 • cascade_invocations
+   info • Unnecessary duplication of receiver • lib/widgets/mood_trend_chart.dart:194:5 • cascade_invocations
+   info • The parameter 'date' should be final • lib/widgets/mood_trend_chart.dart:197:27 • prefer_final_parameters
+   info • The parameter 'oldDelegate' should be final • lib/widgets/mood_trend_chart.dart:203:22 • prefer_final_parameters
+   info • Sort directive sections alphabetically • lib/widgets/scripture_card.dart:4:1 • directives_ordering
+   info • Missing an 'await' for the 'Future' computed by this expression • lib/widgets/scripture_card.dart:55:20 • unawaited_futures
+   info • The parameter 'context' should be final • lib/widgets/scripture_card.dart:77:16 • prefer_final_parameters
+   info • Local variables should be final • lib/widgets/scripture_card.dart:83:5 • prefer_final_locals
+   info • Use 'DecoratedBox' rather than a 'Container' with only a 'Decoration' • lib/widgets/scripture_card.dart:83:26 • use_decorated_box
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/scripture_card.dart:87:61 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/scripture_card.dart:100:54 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/scripture_card.dart:123:102 • deprecated_member_use
+   info • The parameter 'icon' should be final • lib/widgets/scripture_card.dart:163:30 • prefer_final_parameters
+   info • The parameter 'label' should be final • lib/widgets/scripture_card.dart:163:54 • prefer_final_parameters
+   info • The parameter 'onTap' should be final • lib/widgets/scripture_card.dart:163:77 • prefer_final_parameters
+   info • The parameter 'isPrimary' should be final • lib/widgets/scripture_card.dart:163:106 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/scripture_card.dart:172:56 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/scripture_card.dart:178:109 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/scripture_card.dart:185:92 • deprecated_member_use
+   info • Unnecessary use of a 'double' literal • lib/widgets/streak_flame.dart:43:29 • prefer_int_literals
+   info • Unnecessary use of a 'double' literal • lib/widgets/streak_flame.dart:47:39 • prefer_int_literals
+   info • Unnecessary use of a 'double' literal • lib/widgets/streak_flame.dart:56:42 • prefer_int_literals
+   info • The parameter 'oldWidget' should be final • lib/widgets/streak_flame.dart:65:24 • prefer_final_parameters
+   info • Unnecessary duplication of receiver • lib/widgets/streak_flame.dart:75:9 • cascade_invocations
+   info • The parameter 'context' should be final • lib/widgets/streak_flame.dart:93:16 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/widgets/streak_flame.dart:106:19 • prefer_final_parameters
+   info • The parameter 'child' should be final • lib/widgets/streak_flame.dart:106:28 • prefer_final_parameters
+   info • The parameter 'context' should be final • lib/widgets/weekly_blessing_card.dart:13:16 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/weekly_blessing_card.dart:20:61 • deprecated_member_use
+   info • The value of the argument is redundant because it matches the default value • lib/widgets/weekly_blessing_card.dart:23:18 • avoid_redundant_argument_values
+   info • The value of the argument is redundant because it matches the default value • lib/widgets/weekly_blessing_card.dart:24:16 • avoid_redundant_argument_values
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/weekly_blessing_card.dart:25:41 • deprecated_member_use
+   info • Use 'const' with the constructor to improve performance • lib/widgets/weekly_blessing_card.dart:35:15 • prefer_const_constructors
+   info • The parameter 'theme' should be final • lib/widgets/weekly_blessing_card.dart:62:30 • prefer_final_parameters
+   info • Use a function declaration rather than a variable assignment to bind a function to a name • lib/widgets/weekly_blessing_card.dart:65:11 • prefer_function_declarations_over_variables
+   info • The parameter 'd' should be final • lib/widgets/weekly_blessing_card.dart:65:18 • prefer_final_parameters
+   info • The parameter 'theme' should be final • lib/widgets/weekly_blessing_card.dart:75:25 • prefer_final_parameters
+   info • The parameter 'icon' should be final • lib/widgets/weekly_blessing_card.dart:75:43 • prefer_final_parameters
+   info • The parameter 'label' should be final • lib/widgets/weekly_blessing_card.dart:75:67 • prefer_final_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/weekly_blessing_card.dart:79:65 • deprecated_member_use
+   info • The parameter 'theme' should be final • lib/widgets/weekly_blessing_card.dart:86:33 • prefer_final_parameters
+   info • The parameter 'a' should be final • lib/widgets/weekly_blessing_card.dart:87:57 • prefer_final_parameters
+   info • The parameter 'b' should be final • lib/widgets/weekly_blessing_card.dart:87:60 • prefer_final_parameters
+   info • The value of the argument is redundant because it matches the default value • test/models_test.dart:44:33 • avoid_redundant_argument_values
+   info • The value of the argument is redundant because it matches the default value • test/models_test.dart:47:38 • avoid_redundant_argument_values
+   info • The value of the argument is redundant because it matches the default value • test/models_test.dart:48:38 • avoid_redundant_argument_values
+   info • The parameter 'm' should be final • test/scripture_assets_test.dart:10:44 • prefer_final_parameters
+   info • Missing a required trailing comma • test/scripture_assets_test.dart:29:75 • require_trailing_commas
+   info • Missing a required trailing comma • test/scripture_assets_test.dart:37:60 • require_trailing_commas
+   info • The parameter 't' should be final • test/sound_library_test.dart:11:44 • prefer_final_parameters
+   info • Missing a required trailing comma • test/sound_library_test.dart:18:57 • require_trailing_commas
+   info • Missing a required trailing comma • test/sound_library_test.dart:20:70 • require_trailing_commas
+
+929 issues found. (ran in 16.9s)

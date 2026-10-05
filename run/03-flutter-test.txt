@@ -1,0 +1,19 @@
+
+✅ /home/runner/work/gracelog/gracelog/test/scripture_assets_test.dart: scripture batch files all 7 files exist, parse, and match the ScriptureVerse schema
+✅ /home/runner/work/gracelog/gracelog/test/notification_timezone_test.dart: NotificationService.pickLocationFor matches the offset of the moment it is given
+✅ /home/runner/work/gracelog/gracelog/test/notification_timezone_test.dart: NotificationService.pickLocationFor picks a UK zone for a UTC+1 / BST moment
+✅ /home/runner/work/gracelog/gracelog/test/models_test.dart: MoodType.fromString is case-insensitive
+✅ /home/runner/work/gracelog/gracelog/test/models_test.dart: MoodType.fromString falls back to peaceful for unknown values
+✅ /home/runner/work/gracelog/gracelog/test/models_test.dart: DailyEntry JSON round trip keeps every field
+✅ /home/runner/work/gracelog/gracelog/test/models_test.dart: DailyEntry JSON round trip missing photoPaths decodes to an empty list
+✅ /home/runner/work/gracelog/gracelog/test/models_test.dart: DateFormatter isSameDay ignores time of day
+✅ /home/runner/work/gracelog/gracelog/test/models_test.dart: DateFormatter getWeekRange runs Monday to Sunday
+✅ /home/runner/work/gracelog/gracelog/test/models_test.dart: DateFormatter ISO round trip preserves the moment
+✅ /home/runner/work/gracelog/gracelog/test/sound_library_test.dart: SoundLibrary ids are unique
+✅ /home/runner/work/gracelog/gracelog/test/sound_library_test.dart: SoundLibrary every track file exists on disk and is declared in pubspec.yaml
+✅ /home/runner/work/gracelog/gracelog/test/providers_test.dart: shared providers ThemeProvider is one shared instance
+✅ /home/runner/work/gracelog/gracelog/test/providers_test.dart: shared providers AppStateProvider is one shared instance
+✅ /home/runner/work/gracelog/gracelog/test/providers_test.dart: shared providers a theme change on one handle is seen by every other handle
+✅ /home/runner/work/gracelog/gracelog/test/providers_test.dart: shared providers a name change on one handle is seen by every other handle
+
+🎉 16 tests passed.
