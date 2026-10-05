@@ -12,8 +12,9 @@
     <!-- Streak-based retention loop: daily gratitude reminder notifications -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
-    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <!-- Reminders use inexact scheduling (AndroidScheduleMode.inexactAllowWhileIdle),
+         so no exact-alarm permission is declared. -->
+
 
     <!-- Biometric app lock feature (Settings > Biometric Lock) -->
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />

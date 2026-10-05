@@ -51,6 +51,7 @@ class NotificationService {
 
     try {
       tz_data.initializeTimeZones();
+      _matchDeviceTimeZone();
 
       const androidSettings =
           AndroidInitializationSettings('@drawable/ic_notification');
@@ -77,6 +78,34 @@ class NotificationService {
       _initialized = true;
       _permissionGranted = false;
     }
+  }
+
+  /// Points [tz.local] at the device's real time zone.
+  ///
+  /// The timezone package defaults [tz.local] to UTC, which would fire the
+  /// daily reminder at the wrong wall-clock time (e.g. an hour early
+  /// during British Summer Time). Without adding a plugin to read the
+  /// zone name, this finds a zone whose current offset and abbreviation
+  /// match the device's. Falls back to an offset-only match, then UTC.
+  void _matchDeviceTimeZone() {
+    final location = pickLocationFor(DateTime.now());
+    if (location != null) tz.setLocalLocation(location);
+  }
+
+  /// Finds the time zone matching [moment]'s offset and abbreviation.
+  /// Public for testing.
+  static tz.Location? pickLocationFor(DateTime moment) {
+    final offset = moment.timeZoneOffset;
+    final name = moment.timeZoneName;
+    tz.Location? offsetOnly;
+
+    for (final location in tz.timeZoneDatabase.locations.values) {
+      final zoned = tz.TZDateTime.from(moment, location);
+      if (zoned.timeZoneOffset != offset) continue;
+      if (zoned.timeZoneName == name) return location;
+      offsetOnly ??= location;
+    }
+    return offsetOnly;
   }
 
   /// Requests notification permissions from the user.
